@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-language="both">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="شرح تفاعلي ثنائي اللغة لقواعد بيانات NoSQL وأنواعها ونظرية CAP وBASE"
+    />
+    <title>NoSQL Databases | شرح ثنائي اللغة</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              arabic: ['"IBM Plex Sans Arabic"', 'Tahoma', 'sans-serif'],
+              latin: ['Manrope', '"Trebuchet MS"', 'sans-serif'],
+            },
+            colors: {
+              ink: '#10243d',
+              paper: '#f4f0e7',
+              cobalt: '#2457d6',
+              ember: '#e85d2a',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body class="min-h-screen overflow-hidden bg-paper text-ink antialiased">
+    <a class="skip-link" href="#slide-content">تخطي إلى محتوى الشريحة</a>
+
+    <div class="app-shell">
+      <header class="topbar" aria-label="شريط أدوات العرض">
+        <button class="brand-mark" id="homeButton" type="button" aria-label="العودة إلى الشريحة الأولى">
+          <span class="brand-glyph" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </span>
+          <span class="brand-copy">
+            <b>NoSQL</b>
+            <small>DATABASES</small>
+          </span>
+        </button>
+
+        <div class="chapter-readout" aria-live="polite">
+          <span id="chapterNumber">01</span>
+          <div>
+            <small id="chapterLabel">INTRODUCTION</small>
+            <b id="chapterTitle">المقدمة</b>
+          </div>
+        </div>
+
+        <div class="toolbar-actions">
+          <div class="language-switch" role="group" aria-label="اختيار لغة العرض">
+            <button type="button" data-lang="ar" aria-pressed="false">عربي</button>
+            <button type="button" data-lang="both" aria-pressed="true">AR + EN</button>
+            <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+
+          <button class="tool-button" id="tocButton" type="button" aria-label="فتح فهرس الشرائح">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <span>الفهرس</span>
+          </button>
+
+          <button class="tool-button icon-only" id="fullscreenButton" type="button" aria-label="ملء الشاشة">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="presentation-stage" id="main-content">
+        <article
+          class="slide-frame"
+          id="slide-content"
+          tabindex="-1"
+          aria-roledescription="شريحة"
+          aria-live="polite"
+        ></article>
+      </main>
+
+      <footer class="control-deck" aria-label="التنقل بين الشرائح">
+        <div class="slide-count" aria-label="رقم الشريحة">
+          <strong id="currentSlide">01</strong>
+          <span>/</span>
+          <span id="totalSlides">37</span>
+        </div>
+
+        <div class="progress-cluster" id="progressCluster" aria-label="تقدم العرض"></div>
+
+        <div class="nav-buttons">
+          <button class="nav-button" id="prevButton" type="button" aria-label="الشريحة السابقة">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            <span>السابق</span>
+          </button>
+          <button class="nav-button primary" id="nextButton" type="button" aria-label="الشريحة التالية">
+            <span>التالي</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <dialog class="toc-dialog" id="tocDialog" aria-labelledby="tocTitle">
+      <div class="toc-head">
+        <div>
+          <span class="eyebrow">LECTURE MAP</span>
+          <h2 id="tocTitle">خريطة المحاضرة</h2>
+          <p>انتقل مباشرة إلى أي مفهوم.</p>
+        </div>
+        <button class="dialog-close" id="tocClose" type="button" aria-label="إغلاق الفهرس">×</button>
+      </div>
+      <nav class="toc-list" id="tocList" aria-label="قائمة الشرائح"></nav>
+      <div class="keyboard-note">
+        <span><kbd>←</kbd><kbd>→</kbd> للتنقل</span>
+        <span><kbd>F</kbd> ملء الشاشة</span>
+        <span><kbd>Esc</kbd> إغلاق</span>
+      </div>
+    </dialog>
+
+    <div class="sr-only" id="statusMessage" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

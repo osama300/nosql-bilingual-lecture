@@ -1,14 +1,13 @@
 <!doctype html>
-<html lang="ar" dir="rtl" data-language="both">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta
       name="description"
-      content="شرح تفاعلي ثنائي اللغة لقواعد بيانات NoSQL وأنواعها ونظرية CAP وBASE"
+      content="مكتبة محاضرات تفاعلية ثنائية اللغة في تخزين البيانات الضخمة وقواعد بيانات NoSQL"
     />
-    <title>NoSQL Databases | شرح ثنائي اللغة</title>
-
+    <title>Data Systems Lectures | محاضرات أنظمة البيانات</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,122 +15,121 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              arabic: ['"IBM Plex Sans Arabic"', 'Tahoma', 'sans-serif'],
-              latin: ['Manrope', '"Trebuchet MS"', 'sans-serif'],
-            },
-            colors: {
-              ink: '#10243d',
-              paper: '#f4f0e7',
-              cobalt: '#2457d6',
-              ember: '#e85d2a',
-            },
-          },
-        },
-      };
-    </script>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./hub.css" />
   </head>
+  <body>
+    <a class="skip-link" href="#lectures">انتقل إلى المحاضرات</a>
 
-  <body class="min-h-screen overflow-hidden bg-paper text-ink antialiased">
-    <a class="skip-link" href="#slide-content">تخطي إلى محتوى الشريحة</a>
-
-    <div class="app-shell">
-      <header class="topbar" aria-label="شريط أدوات العرض">
-        <button class="brand-mark" id="homeButton" type="button" aria-label="العودة إلى الشريحة الأولى">
-          <span class="brand-glyph" aria-hidden="true">
-            <i></i><i></i><i></i>
-          </span>
-          <span class="brand-copy">
-            <b>NoSQL</b>
-            <small>DATABASES</small>
-          </span>
-        </button>
-
-        <div class="chapter-readout" aria-live="polite">
-          <span id="chapterNumber">01</span>
-          <div>
-            <small id="chapterLabel">INTRODUCTION</small>
-            <b id="chapterTitle">المقدمة</b>
-          </div>
-        </div>
-
-        <div class="toolbar-actions">
-          <div class="language-switch" role="group" aria-label="اختيار لغة العرض">
-            <button type="button" data-lang="ar" aria-pressed="false">عربي</button>
-            <button type="button" data-lang="both" aria-pressed="true">AR + EN</button>
-            <button type="button" data-lang="en" aria-pressed="false">EN</button>
-          </div>
-
-          <button class="tool-button" id="tocButton" type="button" aria-label="فتح فهرس الشرائح">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <span>الفهرس</span>
-          </button>
-
-          <button class="tool-button icon-only" id="fullscreenButton" type="button" aria-label="ملء الشاشة">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" />
-            </svg>
-          </button>
+    <main class="hub-shell">
+      <header class="hub-nav">
+        <a class="hub-brand" href="./" aria-label="الصفحة الرئيسية">
+          <span class="brand-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><b>DATA SYSTEMS</b><small>BILINGUAL LECTURE LIBRARY</small></span>
+        </a>
+        <div class="hub-meta">
+          <span>AR + EN</span>
+          <span>61 SLIDES</span>
+          <span>02 LECTURES</span>
         </div>
       </header>
 
-      <main class="presentation-stage" id="main-content">
-        <article
-          class="slide-frame"
-          id="slide-content"
-          tabindex="-1"
-          aria-roledescription="شريحة"
-          aria-live="polite"
-        ></article>
-      </main>
-
-      <footer class="control-deck" aria-label="التنقل بين الشرائح">
-        <div class="slide-count" aria-label="رقم الشريحة">
-          <strong id="currentSlide">01</strong>
-          <span>/</span>
-          <span id="totalSlides">37</span>
+      <section class="hub-hero" aria-labelledby="hub-title">
+        <div class="hero-copy">
+          <span class="eyebrow">INTERACTIVE STUDY COLLECTION · 2026</span>
+          <h1 id="hub-title">
+            <span>UNDERSTAND</span>
+            <em>DATA</em>
+            <span class="arabic-title">افهم أنظمة البيانات بصرياً</span>
+          </h1>
+          <p>
+            محاضرتان تفاعليتان تشرحان كيف نخزّن البيانات الضخمة، ثم كيف نختار نموذج
+            NoSQL المناسب—بالعربية والإنجليزية، خطوة بخطوة.
+          </p>
+          <p class="hero-en" lang="en" dir="ltr">
+            Two visual lectures—from distributed storage foundations to choosing the right NoSQL model.
+          </p>
         </div>
 
-        <div class="progress-cluster" id="progressCluster" aria-label="تقدم العرض"></div>
-
-        <div class="nav-buttons">
-          <button class="nav-button" id="prevButton" type="button" aria-label="الشريحة السابقة">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
-            <span>السابق</span>
-          </button>
-          <button class="nav-button primary" id="nextButton" type="button" aria-label="الشريحة التالية">
-            <span>التالي</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
-          </button>
+        <div class="hero-map" aria-hidden="true">
+          <span class="orbit o1"></span>
+          <span class="orbit o2"></span>
+          <span class="map-node core">DATA</span>
+          <span class="map-node storage">STORAGE</span>
+          <span class="map-node nosql">NoSQL</span>
+          <span class="map-label l1">CLUSTERS</span>
+          <span class="map-label l2">CAP · BASE</span>
+          <span class="map-label l3">DFS · SCALE</span>
         </div>
+      </section>
+
+      <section class="lecture-section" id="lectures" aria-labelledby="lectures-title">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">LECTURE MAP</span>
+            <h2 id="lectures-title">اختر نقطة البداية</h2>
+          </div>
+          <p>ابدأ بالأساسيات، أو انتقل مباشرة إلى نماذج NoSQL الأربعة.</p>
+        </div>
+
+        <div class="lecture-track">
+          <article class="lecture-entry storage-entry">
+            <a href="./big-data-storage/" aria-label="فتح محاضرة مفاهيم تخزين البيانات الضخمة">
+              <div class="entry-number">01</div>
+              <div class="entry-main">
+                <span class="entry-chapter">FOUNDATIONS · 24 SLIDES</span>
+                <h3 lang="en" dir="ltr">Big Data<br />Storage Concepts</h3>
+                <h4>مفاهيم تخزين البيانات الضخمة</h4>
+                <p>
+                  العناقيد، التوافر العالي، موازنة الأحمال، توزيع البيانات، DFS،
+                  قواعد البيانات، والتوسّع الرأسي والأفقي.
+                </p>
+                <ul aria-label="موضوعات المحاضرة">
+                  <li>Clusters</li>
+                  <li>Replication</li>
+                  <li>DFS</li>
+                  <li>Scaling</li>
+                </ul>
+                <span class="entry-action">ابدأ المحاضرة <i aria-hidden="true">←</i></span>
+              </div>
+              <div class="entry-visual storage-bars" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </a>
+          </article>
+
+          <span class="track-connector" aria-hidden="true"><i></i></span>
+
+          <article class="lecture-entry nosql-entry">
+            <a href="./nosql/" aria-label="فتح محاضرة قواعد بيانات NoSQL">
+              <div class="entry-number">02</div>
+              <div class="entry-main">
+                <span class="entry-chapter">DATA MODELS · 37 SLIDES</span>
+                <h3 lang="en" dir="ltr">NoSQL<br />Databases</h3>
+                <h4>قواعد بيانات ليست SQL فقط</h4>
+                <p>
+                  BASE مقابل ACID، نظرية CAP، ثم المفتاح–القيمة والوثائق وعائلة
+                  الأعمدة والرسوم البيانية.
+                </p>
+                <ul aria-label="موضوعات المحاضرة">
+                  <li>CAP</li>
+                  <li>Key–Value</li>
+                  <li>Document</li>
+                  <li>Graph</li>
+                </ul>
+                <span class="entry-action">ابدأ المحاضرة <i aria-hidden="true">←</i></span>
+              </div>
+              <div class="entry-visual model-glyphs" aria-hidden="true">
+                <i>K:V</i><i>{ }</i><i>▥</i><i>○—○</i>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <footer class="hub-footer">
+        <p>Prepared as an interactive bilingual study library.</p>
+        <span>HTML · TAILWIND CSS · JAVASCRIPT</span>
       </footer>
-    </div>
-
-    <dialog class="toc-dialog" id="tocDialog" aria-labelledby="tocTitle">
-      <div class="toc-head">
-        <div>
-          <span class="eyebrow">LECTURE MAP</span>
-          <h2 id="tocTitle">خريطة المحاضرة</h2>
-          <p>انتقل مباشرة إلى أي مفهوم.</p>
-        </div>
-        <button class="dialog-close" id="tocClose" type="button" aria-label="إغلاق الفهرس">×</button>
-      </div>
-      <nav class="toc-list" id="tocList" aria-label="قائمة الشرائح"></nav>
-      <div class="keyboard-note">
-        <span><kbd>←</kbd><kbd>→</kbd> للتنقل</span>
-        <span><kbd>F</kbd> ملء الشاشة</span>
-        <span><kbd>Esc</kbd> إغلاق</span>
-      </div>
-    </dialog>
-
-    <div class="sr-only" id="statusMessage" role="status" aria-live="polite"></div>
-    <script src="./app.js"></script>
+    </main>
   </body>
 </html>
