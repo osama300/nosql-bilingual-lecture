@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="ورقة مقارنة شاملة ومبسطة بين Key-Value وDocument وColumn-Family وGraph في NoSQL"
+    />
+    <title>NoSQL Comparison Sheet | ورقة المقارنة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#comparison">انتقل إلى جدول المقارنة</a>
+
+    <header class="sheet-nav">
+      <a class="sheet-brand" href="../">
+        <span class="brand-grid" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span><b>NoSQL FIELD GUIDE</b><small>ONE-SHEET COMPARISON</small></span>
+      </a>
+      <div class="nav-actions">
+        <a href="../mongo-query-guide/">MongoDB Query</a>
+        <a href="../exams/">الاختبارات</a>
+        <button id="printButton" type="button">طباعة الورقة</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="sheet-hero" aria-labelledby="sheet-title">
+        <div>
+          <span class="eyebrow">4 MODELS · ONE DECISION SHEET</span>
+          <h1 id="sheet-title">
+            <span lang="en" dir="ltr">CHOOSE BY<br /><em>DATA SHAPE.</em></span>
+            <small>اختر قاعدة NoSQL من شكل البيانات والسؤال</small>
+          </h1>
+        </div>
+        <div class="memory-rule">
+          <span>قاعدة الحفظ السريعة</span>
+          <ol>
+            <li><b>معرّف معروف؟</b><strong>KEY–VALUE</strong></li>
+            <li><b>كائن JSON كامل؟</b><strong>DOCUMENT</strong></li>
+            <li><b>كتابات هائلة مع الزمن؟</b><strong>COLUMN</strong></li>
+            <li><b>المسار والعلاقة هما الإجابة؟</b><strong>GRAPH</strong></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="shape-ribbon" aria-label="أشكال نماذج البيانات">
+        <article data-model="keyvalue">
+          <span class="model-number">01</span>
+          <div class="shape kv-shape" aria-hidden="true"><b>user:42</b><i>→</i><strong>{…}</strong></div>
+          <h2>Key–Value</h2>
+          <p>مفتاح واحد يوصلك مباشرة إلى قيمة.</p>
+        </article>
+        <article data-model="document">
+          <span class="model-number">02</span>
+          <div class="shape document-shape" aria-hidden="true">{ <b>JSON</b> }</div>
+          <h2>Document</h2>
+          <p>وثيقة مرنة تفهم القاعدة حقولها.</p>
+        </article>
+        <article data-model="column">
+          <span class="model-number">03</span>
+          <div class="shape column-shape" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <h2>Column-Family</h2>
+          <p>صفوف موزعة واسعة وكثيفة الكتابة.</p>
+        </article>
+        <article data-model="graph">
+          <span class="model-number">04</span>
+          <div class="shape graph-shape" aria-hidden="true"><i></i><i></i><i></i><b></b><b></b></div>
+          <h2>Graph</h2>
+          <p>عُقد وحواف لمسارات العلاقات.</p>
+        </article>
+      </section>
+
+      <section class="comparison-section" id="comparison" aria-labelledby="comparison-title">
+        <header class="section-head">
+          <div>
+            <span class="eyebrow">THE COMPLETE COMPARISON</span>
+            <h2 id="comparison-title">كل الفروقات في مكان واحد</h2>
+          </div>
+          <p>اقرأ الصف أفقياً للمقارنة، أو اقرأ العمود عمودياً لفهم نوع واحد كاملاً.</p>
+        </header>
+
+        <div class="comparison-scroll" tabindex="0" aria-label="جدول مقارنة قابل للتمرير أفقياً">
+          <div class="comparison-grid" role="table">
+            <div class="corner-cell" role="columnheader">
+              <span>COMPARE BY</span>
+              <b>قارن حسب</b>
+            </div>
+            <div class="model-head kv" role="columnheader">
+              <small>01 · DIRECT LOOKUP</small><strong>KEY–VALUE</strong><span>مفتاح ← قيمة</span>
+            </div>
+            <div class="model-head document" role="columnheader">
+              <small>02 · FLEXIBLE OBJECT</small><strong>DOCUMENT</strong><span>وثيقة JSON/BSON</span>
+            </div>
+            <div class="model-head column" role="columnheader">
+              <small>03 · MASSIVE WRITES</small><strong>COLUMN-FAMILY</strong><span>عائلات أعمدة</span>
+            </div>
+            <div class="model-head graph" role="columnheader">
+              <small>04 · DEEP CONNECTIONS</small><strong>GRAPH</strong><span>عُقد + حواف</span>
+            </div>
+
+            <div class="row-label"><b>التعريف</b><span>DEFINITION</span></div>
+            <div class="data-cell">أبسط نموذج؛ يخزّن قيمة خلف مفتاح فريد، والقاعدة لا تحتاج لفهم داخل القيمة.</div>
+            <div class="data-cell">يخزّن سجلاً شبه مهيكل ويمكنه الاستعلام عن الحقول الموجودة داخل الوثيقة.</div>
+            <div class="data-cell">جداول موزعة ضخمة ومتفرقة، تجمع السمات المرتبطة داخل عائلات أعمدة.</div>
+            <div class="data-cell">يخزّن الكيانات كعُقد والعلاقات كحواف مسمّاة وخصائص.</div>
+
+            <div class="row-label"><b>تخيّله مثل</b><span>MENTAL MODEL</span></div>
+            <div class="data-cell memory"><strong>قاموس عملاق</strong><code>key → value</code></div>
+            <div class="data-cell memory"><strong>مجلد وثائق مرنة</strong><code>{ field: value }</code></div>
+            <div class="data-cell memory"><strong>دفتر أحداث واسع</strong><code>rowKey → columns</code></div>
+            <div class="data-cell memory"><strong>خريطة علاقات</strong><code>(node)-[edge]→(node)</code></div>
+
+            <div class="row-label"><b>أمثلة أنظمة</b><span>DATABASES</span></div>
+            <div class="data-cell examples"><b>Redis</b><b>DynamoDB</b><b>Voldemort</b><b>Scalaris</b></div>
+            <div class="data-cell examples"><b>MongoDB</b><b>CouchDB</b><b>SimpleDB</b></div>
+            <div class="data-cell examples"><b>Cassandra</b><b>HBase</b><b>Bigtable</b></div>
+            <div class="data-cell examples"><b>Neo4j</b><b>FlockDB</b><b>Pregel</b></div>
+
+            <div class="row-label"><b>أشهر استخدام</b><span>BEST USE CASES</span></div>
+            <div class="data-cell">
+              <ul><li>Cache</li><li>Sessions</li><li>Shopping carts</li><li>Counters & leaderboards</li></ul>
+            </div>
+            <div class="data-cell">
+              <ul><li>Product catalogs</li><li>Content management</li><li>Event logging</li><li>Application profiles</li></ul>
+            </div>
+            <div class="data-cell">
+              <ul><li>Time series & sensors</li><li>Clickstreams</li><li>Chat histories</li><li>Real-time counters</li></ul>
+            </div>
+            <div class="data-cell">
+              <ul><li>Social networks</li><li>Recommendations</li><li>Fraud rings</li><li>Network dependencies</li></ul>
+            </div>
+
+            <div class="row-label use"><b>استخدمه عندما</b><span>USE WHEN</span></div>
+            <div class="data-cell use-cell">
+              <ul><li>تعرف المفتاح مسبقاً.</li><li>تريد زمناً شديد الانخفاض.</li><li>لا تحتاج JOIN أو بحثاً داخل القيمة.</li></ul>
+            </div>
+            <div class="data-cell use-cell">
+              <ul><li>بياناتك JSON أو كائناً كاملاً.</li><li>الحقول تتغير بسرعة.</li><li>تحتاج فهارس واستعلام حقول.</li></ul>
+            </div>
+            <div class="data-cell use-cell">
+              <ul><li>الكتابات بالآلاف أو الملايين.</li><li>الاستعلامات معروفة مسبقاً.</li><li>تحتاج توسعاً أفقياً ضخماً.</li></ul>
+            </div>
+            <div class="data-cell use-cell">
+              <ul><li>العلاقات مهمة مثل البيانات.</li><li>السؤال يعبر عدة مستويات.</li><li>JOIN أصبحت كثيرة ومرهقة.</li></ul>
+            </div>
+
+            <div class="row-label avoid"><b>لا تستخدمه عندما</b><span>AVOID WHEN</span></div>
+            <div class="data-cell avoid-cell">
+              <ul><li>تبحث داخل قيمة معقدة.</li><li>العلاقات أساسية.</li><li>معاملات متعددة السجلات ضرورية.</li></ul>
+            </div>
+            <div class="data-cell avoid-cell">
+              <ul><li>JOIN وmany-to-many تهيمن.</li><li>المخطط الصارم شرط أساسي.</li><li>تقارير SQL التقليدية هي الحمل الأساسي.</li></ul>
+            </div>
+            <div class="data-cell avoid-cell">
+              <ul><li>البيانات صغيرة وتناسب خادماً واحداً.</li><li>تحتاج استعلامات حرة وJOIN.</li><li>تحتاج ACID واسعاً بين الجداول.</li></ul>
+            </div>
+            <div class="data-cell avoid-cell">
+              <ul><li>العلاقات قليلة وسطحية.</li><li>البيانات Time-series ضخمة.</li><li>البحث النصي الكامل هو الهدف.</li></ul>
+            </div>
+
+            <div class="row-label exam"><b>كلمة تكشفه بالاختبار</b><span>EXAM CLUE</span></div>
+            <div class="data-cell clue">Cache · Session · ID lookup</div>
+            <div class="data-cell clue">JSON · Flexible schema · CMS</div>
+            <div class="data-cell clue">Clickstream · Sensor · Huge writes</div>
+            <div class="data-cell clue">Friends · Relationships · Path</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="decision-section" aria-labelledby="decision-title">
+        <header class="section-head inverse">
+          <div>
+            <span class="eyebrow">FAST DECISION PATH</span>
+            <h2 id="decision-title">اسأل نفسك هذا السؤال أولاً</h2>
+          </div>
+          <p>اضغط على الحالة التي تشبه مسألتك لرؤية الاختيار وسبب الاختيار.</p>
+        </header>
+
+        <div class="decision-layout">
+          <div class="scenario-list" role="list">
+            <button class="scenario active" type="button" data-scenario="cache">
+              <span>01</span><b>أريد Cache أو Session بمعرّف معروف</b>
+            </button>
+            <button class="scenario" type="button" data-scenario="catalog">
+              <span>02</span><b>أريد Product Catalog بحقول مرنة</b>
+            </button>
+            <button class="scenario" type="button" data-scenario="clickstream">
+              <span>03</span><b>لدي Clickstream بملايين الكتابات</b>
+            </button>
+            <button class="scenario" type="button" data-scenario="friends">
+              <span>04</span><b>أريد Friends of Friends</b>
+            </button>
+          </div>
+          <article class="decision-answer" id="decisionAnswer" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section class="final-memory">
+        <span>ONE LINE TO REMEMBER</span>
+        <p>
+          <b>مفتاح؟</b> Key–Value · <b>كائن؟</b> Document ·
+          <b>أحداث هائلة؟</b> Column-Family · <b>علاقات؟</b> Graph
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>ملخص مبني على محاضرة NoSQL المرفوعة — التعريفات والأمثلة وحالات الاستخدام.</p>
+      <a href="../">العودة إلى المكتبة ←</a>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="شرح تفاعلي سريع لكتابة استعلامات MongoDB بناءً على أمثلة محاضرة NoSQL"
+    />
+    <title>MongoDB Query Workshop | تعلّم كتابة الاستعلام</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#lesson">انتقل إلى الشرح</a>
+
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="العودة إلى الاختبارات">
+        <span class="prompt-mark" aria-hidden="true">&gt;_</span>
+        <span><b>MONGO QUERY WORKSHOP</b><small>LECTURE-BASED · QUICK GUIDE</small></span>
+      </a>
+      <nav aria-label="روابط الصفحة">
+        <a href="#builder">المختبر</a>
+        <a href="#practice">تدريب</a>
+        <a href="../">الاختبارات</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <span class="eyebrow">FROM THE LECTURE EXAMPLE → TO THE EXAM</span>
+          <h1 id="page-title">
+            <span lang="en" dir="ltr">WRITE THE<br /><em>QUERY.</em></span>
+            <small>تعلّم استعلام MongoDB خطوة بخطوة</small>
+          </h1>
+          <p>
+            سنفكك المثال الموجود في المحاضرة، ثم نحوله مباشرة إلى سؤال المنتجات
+            والأسعار المتوقع في الاختبار.
+          </p>
+          <a class="start-link" href="#lesson">ابدأ من المثال <i aria-hidden="true">↓</i></a>
+        </div>
+
+        <div class="hero-query" aria-label="مثال الاستعلام من المحاضرة">
+          <div class="query-tag">LECTURE EXAMPLE</div>
+          <code dir="ltr">
+            <span>db</span>.<b>users</b>.<strong>find</strong>({<br />
+            &nbsp;&nbsp;age: { <em>$gt</em>: 18 }<br />
+            }).<strong>sort</strong>({ age: 1 })
+          </code>
+          <div class="query-flow" aria-hidden="true">
+            <span>users<small>COLLECTION</small></span>
+            <i>→</i>
+            <span>age &gt; 18<small>FILTER</small></span>
+            <i>→</i>
+            <span>age ↑<small>SORT</small></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="lesson" id="lesson" aria-labelledby="lesson-title">
+        <header class="section-head">
+          <div>
+            <span class="eyebrow">01 · READ THE SYNTAX</span>
+            <h2 id="lesson-title">اقرأ الاستعلام كجملة</h2>
+          </div>
+          <p>لا تحفظ السطر كاملاً؛ افهم وظيفة كل قطعة ثم ركّبها بحسب السؤال.</p>
+        </header>
+
+        <div class="syntax-track" dir="ltr">
+          <article>
+            <b>db</b>
+            <span>ابدأ بقاعدة البيانات</span>
+            <small>DATABASE</small>
+          </article>
+          <i aria-hidden="true">.</i>
+          <article class="blue">
+            <b>products</b>
+            <span>اسم المجموعة</span>
+            <small>COLLECTION</small>
+          </article>
+          <i aria-hidden="true">.</i>
+          <article>
+            <b>find( )</b>
+            <span>ابحث عن الوثائق</span>
+            <small>OPERATION</small>
+          </article>
+          <i aria-hidden="true">→</i>
+          <article class="orange">
+            <b>{ filter }</b>
+            <span>شرط السؤال</span>
+            <small>CRITERIA</small>
+          </article>
+        </div>
+
+        <div class="translation-board">
+          <div class="question-strip">
+            <small>EXAM SENTENCE</small>
+            <p lang="en" dir="ltr">Display products with a price greater than 50.</p>
+          </div>
+          <ol>
+            <li><b>products</b><span>الكلمة بعد products تصبح اسم الـCollection.</span></li>
+            <li><b>price</b><span>الحقل الذي نطبّق عليه الشرط.</span></li>
+            <li><b>greater than</b><span>تعني العامل <code>$gt</code>.</span></li>
+            <li><b>50</b><span>القيمة رقم؛ لذلك لا نضعها بين علامتي اقتباس.</span></li>
+          </ol>
+          <div class="answer-line">
+            <span>FINAL QUERY</span>
+            <code dir="ltr">db.products.find({ price: { $gt: 50 } })</code>
+            <button class="copy-button" type="button" data-copy="db.products.find({ price: { $gt: 50 } })">
+              نسخ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="operators" aria-labelledby="operators-title">
+        <header class="section-head">
+          <div>
+            <span class="eyebrow">02 · CHOOSE THE OPERATOR</span>
+            <h2 id="operators-title">حوّل كلمات السؤال إلى رموز</h2>
+          </div>
+          <p>هذه أهم الكلمات التي تحتاجها لصياغة أسئلة المقارنة المشابهة للنموذج.</p>
+        </header>
+
+        <div class="operator-table" role="table" aria-label="عوامل المقارنة في MongoDB">
+          <div class="operator-row table-head" role="row">
+            <span role="columnheader">QUESTION WORDS</span>
+            <span role="columnheader">OPERATOR</span>
+            <span role="columnheader">المعنى</span>
+            <span role="columnheader">EXAMPLE</span>
+          </div>
+          <div class="operator-row" role="row">
+            <b lang="en">greater than</b><code>$gt</code><span>أكبر من</span><small>price: { $gt: 50 }</small>
+          </div>
+          <div class="operator-row" role="row">
+            <b lang="en">at least / ≥</b><code>$gte</code><span>أكبر من أو يساوي</span><small>age: { $gte: 18 }</small>
+          </div>
+          <div class="operator-row" role="row">
+            <b lang="en">less than</b><code>$lt</code><span>أصغر من</span><small>stock: { $lt: 10 }</small>
+          </div>
+          <div class="operator-row" role="row">
+            <b lang="en">at most / ≤</b><code>$lte</code><span>أصغر من أو يساوي</span><small>price: { $lte: 200 }</small>
+          </div>
+          <div class="operator-row" role="row">
+            <b lang="en">equal to</b><code>field: value</code><span>يساوي</span><small>status: "active"</small>
+          </div>
+          <div class="operator-row" role="row">
+            <b lang="en">not equal</b><code>$ne</code><span>لا يساوي</span><small>status: { $ne: "blocked" }</small>
+          </div>
+        </div>
+        <p class="scope-note">
+          <b>داخل المحاضرة:</b> المثال الصريح يستخدم <code>$gt</code> مع <code>find()</code>
+          و<code>sort()</code>. بقية العوامل امتداد مباشر لنفس قاعدة المقارنة وتفيدك في
+          تغيير صيغة السؤال.
+        </p>
+      </section>
+
+      <section class="builder-section" id="builder" aria-labelledby="builder-title">
+        <header class="section-head inverse">
+          <div>
+            <span class="eyebrow">03 · BUILD & SEE</span>
+            <h2 id="builder-title">مختبر تركيب الاستعلام</h2>
+          </div>
+          <p>غيّر عناصر السؤال وشاهد الاستعلام والوثائق المطابقة فوراً.</p>
+        </header>
+
+        <div class="preset-bar" aria-label="أمثلة جاهزة">
+          <span>جرّب مثالاً:</span>
+          <button type="button" data-preset="exam">سؤال السعر &gt; 50</button>
+          <button type="button" data-preset="lecture">مثال العمر من المحاضرة</button>
+          <button type="button" data-preset="category">تصنيف + ترتيب</button>
+        </div>
+
+        <div class="builder-grid">
+          <form class="query-controls" id="queryForm">
+            <label>
+              <span>1. Collection · المجموعة</span>
+              <select id="collectionSelect">
+                <option value="products">products</option>
+                <option value="users">users</option>
+              </select>
+            </label>
+            <label>
+              <span>2. Field · الحقل</span>
+              <select id="fieldSelect"></select>
+            </label>
+            <label>
+              <span>3. Operator · العامل</span>
+              <select id="operatorSelect">
+                <option value="$gt">greater than · $gt</option>
+                <option value="$gte">at least · $gte</option>
+                <option value="$lt">less than · $lt</option>
+                <option value="$lte">at most · $lte</option>
+                <option value="equals">equal to · يساوي</option>
+                <option value="$ne">not equal · $ne</option>
+              </select>
+            </label>
+            <label>
+              <span>4. Value · القيمة</span>
+              <input id="valueInput" type="text" value="50" autocomplete="off" />
+            </label>
+            <label>
+              <span>5. Display · الحقول المعروضة</span>
+              <select id="projectionSelect">
+                <option value="all">كل الحقول</option>
+                <option value="main">الاسم والحقل المختار فقط</option>
+              </select>
+            </label>
+            <label>
+              <span>6. Sort · الترتيب</span>
+              <select id="sortSelect">
+                <option value="none">بدون ترتيب</option>
+                <option value="asc">تصاعدي · 1</option>
+                <option value="desc">تنازلي · -1</option>
+              </select>
+            </label>
+          </form>
+
+          <div class="query-output">
+            <div class="output-head">
+              <span>GENERATED QUERY</span>
+              <button class="copy-button light" id="copyGenerated" type="button">نسخ الاستعلام</button>
+            </div>
+            <pre><code id="generatedQuery" dir="ltr"></code></pre>
+            <div class="result-head">
+              <span>RESULTS · النتائج</span>
+              <output id="resultCount">0 documents</output>
+            </div>
+            <div class="document-results" id="documentResults" dir="ltr"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="practice" id="practice" aria-labelledby="practice-title">
+        <header class="section-head">
+          <div>
+            <span class="eyebrow">04 · CHECK YOURSELF</span>
+            <h2 id="practice-title">ثبّت الكلمات المفتاحية</h2>
+          </div>
+          <p>اختر القطعة الصحيحة؛ النتيجة تظهر فوراً.</p>
+        </header>
+
+        <div class="practice-lines">
+          <article class="micro-question" data-answer="$gt">
+            <span>01</span>
+            <p><b lang="en">price greater than 50</b><small>أي عامل يعني “أكبر من”؟</small></p>
+            <select aria-label="إجابة السؤال الأول">
+              <option value="">اختر…</option><option>$lt</option><option>$gt</option><option>$gte</option>
+            </select>
+            <output></output>
+          </article>
+          <article class="micro-question" data-answer="$gte">
+            <span>02</span>
+            <p><b lang="en">age at least 18</b><small>كلمة at least تشمل العدد 18.</small></p>
+            <select aria-label="إجابة السؤال الثاني">
+              <option value="">اختر…</option><option>$gt</option><option>$gte</option><option>$lte</option>
+            </select>
+            <output></output>
+          </article>
+          <article class="micro-question" data-answer="-1">
+            <span>03</span>
+            <p><b lang="en">sort by price, highest first</b><small>ما قيمة الترتيب التنازلي؟</small></p>
+            <select aria-label="إجابة السؤال الثالث">
+              <option value="">اختر…</option><option>1</option><option>-1</option>
+            </select>
+            <output></output>
+          </article>
+        </div>
+
+        <div class="exam-recipe">
+          <div>
+            <span>THE 20-SECOND RECIPE</span>
+            <h3>وصفة الحل في الاختبار</h3>
+          </div>
+          <ol>
+            <li><b>حدّد المجموعة</b><span>users أم products؟</span></li>
+            <li><b>حدّد الحقل</b><span>age أم price؟</span></li>
+            <li><b>ترجم المقارنة</b><span>greater than = $gt</span></li>
+            <li><b>ركّب find()</b><span>ضع الشرط بين { }</span></li>
+            <li><b>راجع الأقواس</b><span>{ field: { $op: value } }</span></li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>مبني على مثال MongoDB Query Operation في محاضرة NoSQL.</p>
+      <a href="../">ارجع إلى نماذج الاختبار ←</a>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

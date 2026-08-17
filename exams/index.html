@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="ثمانية اختبارات نصفية تشمل نماذج مقترحة وأسئلة الدكتورة الأصلية وتحدي جديد في البيانات الضخمة وNoSQL"
+    />
+    <title>Midterm Practice Lab | اختبارات مقترحة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#examPaper">انتقل إلى الاختبار</a>
+
+    <header class="lab-topbar">
+      <a class="lab-brand" href="../" aria-label="العودة إلى مكتبة المحاضرات">
+        <span class="brand-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><b>MIDTERM LAB</b><small>DR. SUAD · BIG DATA</small></span>
+      </a>
+
+      <nav class="exam-tabs" aria-label="اختيار نموذج الاختبار" role="tablist">
+        <button type="button" role="tab" data-exam="0" aria-selected="false">A</button>
+        <button type="button" role="tab" data-exam="1" aria-selected="false">B</button>
+        <button type="button" role="tab" data-exam="2" aria-selected="false">C</button>
+        <button type="button" role="tab" data-exam="3" aria-selected="true">D</button>
+        <button type="button" role="tab" data-exam="4" aria-selected="false">E</button>
+        <button type="button" role="tab" data-exam="5" aria-selected="false">F</button>
+        <button type="button" role="tab" data-exam="6" aria-selected="false">G</button>
+        <button type="button" role="tab" data-exam="7" aria-selected="false">H</button>
+      </nav>
+
+      <a class="back-link" href="../">
+        <span>المكتبة</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+      </a>
+    </header>
+
+    <main class="lab-shell">
+      <section class="pattern-hero" aria-labelledby="pageTitle">
+        <div>
+          <span class="eyebrow">NEW SAMPLE ANALYSIS · 8 VARIANTS</span>
+          <h1 id="pageTitle">
+            <span lang="en" dir="ltr">PREDICT THE<br /><em>PATTERN.</em></span>
+            <small>نماذج تدريبية + الأسئلة الأصلية + تحدٍ غير مكرر</small>
+          </h1>
+          <p>
+            النماذج D–F تحاكي النمط، وG يجمع أسئلة الصور مع الإجابات، أما H فهو
+            محاكاة عمياء بأسئلة جديدة تماماً من المقرر.
+          </p>
+        </div>
+
+        <div class="pattern-map" aria-label="تحليل بنية نموذج الاختبار">
+          <div class="pattern-node primary"><b>05</b><span>TRUE / FALSE<br />صح وخطأ</span></div>
+          <div class="pattern-node"><b>06</b><span>TERMS + COMMANDS<br />فراغات</span></div>
+          <div class="pattern-node accent"><b>01</b><span>MONGODB CODE<br />استعلام</span></div>
+          <div class="pattern-line" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="insight-strip" aria-label="ملامح أسلوب الأسئلة">
+        <div><b>01</b><span>Reversal traps</span><small>قلب كلمة واحدة</small></div>
+        <div><b>02</b><span>Exact term</span><small>مصطلح دقيق</small></div>
+        <div><b>03</b><span>Classification</span><small>تصنيفات المقرر</small></div>
+        <div><b>04</b><span>Mongo shell</span><small>أوامر مباشرة</small></div>
+        <div><b>05</b><span>Filter + projection</span><small>شروط وحقول</small></div>
+      </section>
+
+      <section class="workspace">
+        <aside class="exam-sidebar" aria-label="أدوات الاختبار">
+          <div class="variant-readout">
+            <small>ACTIVE VARIANT</small>
+            <strong id="variantLetter">D</strong>
+            <span id="variantLabel">Verified Pattern I</span>
+          </div>
+
+          <div class="timer-panel">
+            <span>SIMULATION TIMER</span>
+            <output id="timerOutput">25:00</output>
+            <button id="timerButton" type="button">ابدأ المؤقت</button>
+          </div>
+
+          <div class="tool-stack">
+            <a class="tool guide-link" href="../mongo-query-guide/">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v14H4zM8 9l2 2-2 2M12 14h4" />
+              </svg>
+              تعلّم MongoDB Query
+            </a>
+            <a class="tool comparison-link" href="../nosql-comparison/">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16M4 12h16M4 19h16M9 3v18" />
+              </svg>
+              ورقة مقارنة NoSQL
+            </a>
+            <button class="tool primary" id="checkButton" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+              صحّح الأسئلة الموضوعية
+            </button>
+            <button class="tool" id="answersButton" type="button" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+                <circle cx="12" cy="12" r="2.5" />
+              </svg>
+              أظهر مفتاح الإجابة
+            </button>
+            <button class="tool" id="printButton" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z" />
+              </svg>
+              طباعة النموذج
+            </button>
+            <button class="tool quiet" id="resetButton" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4v6h6M20 20v-6h-6M5.5 15A7 7 0 0 0 18 17M18.5 9A7 7 0 0 0 6 7" />
+              </svg>
+              إعادة المحاولة
+            </button>
+          </div>
+
+          <div class="score-card" id="scoreCard" hidden>
+            <span>AUTO-CHECK SCORE</span>
+            <strong><b id="scoreValue">0</b>/<i id="scoreTotal">0</i></strong>
+            <p id="scoreMessage"></p>
+          </div>
+
+          <p class="sidebar-note">
+            التصحيح الآلي للصح والخطأ والفراغات؛ كود MongoDB يُراجع من مفتاح الإجابة.
+          </p>
+        </aside>
+
+        <article class="exam-paper" id="examPaper" tabindex="-1" aria-live="polite"></article>
+      </section>
+    </main>
+
+    <div class="status-message" id="statusMessage" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

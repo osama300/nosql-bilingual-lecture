@@ -15,6 +15,9 @@ with sync_playwright() as playwright:
     assert page.locator(".lecture-entry").count() == 2
     assert page.locator('a[href="./big-data-storage/"]').count() == 1
     assert page.locator('a[href="./nosql/"]').count() == 1
+    assert page.locator('a[href="./exams/"]').count() == 1
+    assert page.locator('a[href="./mongo-query-guide/"]').count() == 1
+    assert page.locator('a[href="./nosql-comparison/"]').count() == 1
 
     with page.expect_navigation():
         page.locator('a[href="./big-data-storage/"]').click()
@@ -48,4 +51,4 @@ with sync_playwright() as playwright:
 
     context.close()
     browser.close()
-    print("PASS: lecture hub links, deck totals, and mobile layout")
+    print("PASS: hub links, deck totals, exam lab link, and mobile layout")
