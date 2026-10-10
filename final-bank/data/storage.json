@@ -1,0 +1,1531 @@
+[
+ {
+  "id": "st-001",
+  "lecture": "storage",
+  "topic_en": "Big data storage definition & purpose",
+  "topic_ar": "تعريف تخزين البيانات الضخمة والغرض منه",
+  "type": "tf",
+  "q_en": "Big data storage is a scalable architecture that enables businesses to collect, manage, and analyze vast amounts of data in real-time.",
+  "q_ar": "تخزين البيانات الضخمة (Big data storage) هو بنية قابلة للتوسع (scalable architecture) تمكّن الشركات من جمع كميات هائلة من البيانات وإدارتها وتحليلها في الوقت الفعلي (real-time).",
+  "answer": true,
+  "why_ar": "صح؛ هذا هو التعريف الحرفي في السلايد وجاء في الميدتيرم.",
+  "why_en": "True — this is the slide definition of big data storage.",
+  "slide": 2,
+  "hot": true
+ },
+ {
+  "id": "st-002",
+  "lecture": "storage",
+  "topic_en": "Big data storage definition & purpose",
+  "topic_ar": "تعريف تخزين البيانات الضخمة والغرض منه",
+  "type": "tf",
+  "q_en": "Big data storage is a scalable architecture that enables businesses to collect, manage, and analyze small amounts of data in real-time.",
+  "q_ar": "تخزين البيانات الضخمة هو بنية قابلة للتوسع تمكّن الشركات من جمع كميات صغيرة (small amounts) من البيانات وإدارتها وتحليلها في الوقت الفعلي.",
+  "answer": false,
+  "correct_en": "Big data storage is a scalable architecture that enables businesses to collect, manage, and analyze vast amounts of data in real-time.",
+  "why_ar": "خطأ؛ التعريف يقول vast amounts (كميات هائلة) وليس small amounts.",
+  "why_en": "False — it handles vast amounts of data, not small amounts.",
+  "slide": 2,
+  "hot": true
+ },
+ {
+  "id": "st-003",
+  "lecture": "storage",
+  "topic_en": "Big data storage definition & purpose",
+  "topic_ar": "تعريف تخزين البيانات الضخمة والغرض منه",
+  "type": "mcq",
+  "q_en": "____ is a scalable architecture that enables businesses to collect, manage, and analyze vast amounts of data in real-time.",
+  "q_ar": "____ هو بنية قابلة للتوسع تمكّن الشركات من جمع كميات هائلة من البيانات وإدارتها وتحليلها في الوقت الفعلي.",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Big data storage",
+    "ar": "تخزين البيانات الضخمة (Big data storage)"
+   },
+   {
+    "en": "Sharding",
+    "ar": "التجزئة (Sharding)"
+   },
+   {
+    "en": "Vertical scalability",
+    "ar": "التوسع الرأسي (Vertical scalability)"
+   },
+   {
+    "en": "A load-balancing cluster",
+    "ar": "عنقود موازنة الحمل (Load-balancing cluster)"
+   }
+  ],
+  "why_ar": "الإجابة Big data storage؛ هذا تعريفه الحرفي في السلايد 2.",
+  "why_en": "This sentence defines big data storage.",
+  "slide": 2,
+  "hot": true
+ },
+ {
+  "id": "st-004",
+  "lecture": "storage",
+  "topic_en": "Big data storage definition & purpose",
+  "topic_ar": "تعريف تخزين البيانات الضخمة والغرض منه",
+  "type": "mcq",
+  "q_en": "The design of big data storage solutions is specifically tailored to address the ____ of the data sets.",
+  "q_ar": "تصميم حلول تخزين البيانات الضخمة مُفصَّل خصيصًا لمعالجة ____ لمجموعات البيانات.",
+  "answer": 1,
+  "options": [
+   {
+    "en": "cost, ownership, and language",
+    "ar": "التكلفة والملكية واللغة (cost, ownership, and language)"
+   },
+   {
+    "en": "speed, volume, and complexity",
+    "ar": "السرعة والحجم والتعقيد (speed, volume, and complexity)"
+   },
+   {
+    "en": "schema, joins, and transactions",
+    "ar": "المخطط والربط والمعاملات (schema, joins, and transactions)"
+   },
+   {
+    "en": "location, age, and format",
+    "ar": "الموقع والعمر والصيغة (location, age, and format)"
+   }
+  ],
+  "why_ar": "الإجابة: speed وvolume وcomplexity كما في السلايد 2.",
+  "why_en": "Big data storage is tailored to the speed, volume, and complexity of data sets.",
+  "explain_ar": "لاحظ الربط مع الـ 3Vs: speed تقابل Velocity، وvolume تقابل Volume، وcomplexity تقابل Variety (تنوع وتعقيد أشكال البيانات).",
+  "slide": 2,
+  "hot": false
+ },
+ {
+  "id": "st-005",
+  "lecture": "storage",
+  "topic_en": "Big data storage definition & purpose",
+  "topic_ar": "تعريف تخزين البيانات الضخمة والغرض منه",
+  "type": "tf",
+  "q_en": "The primary purpose of big data storage is to successfully store immense amounts of data for future analysis and use.",
+  "q_ar": "الغرض الأساسي من تخزين البيانات الضخمة هو تخزين كميات ضخمة من البيانات بنجاح من أجل تحليلها واستخدامها مستقبلًا.",
+  "answer": true,
+  "why_ar": "صح؛ هذا هو الغرض الأساسي (primary purpose) كما في السلايد.",
+  "why_en": "True — this is the stated primary purpose of big data storage.",
+  "slide": 2,
+  "hot": false
+ },
+ {
+  "id": "st-006",
+  "lecture": "storage",
+  "topic_en": "Cluster computing",
+  "topic_ar": "الحوسبة العنقودية",
+  "type": "tf",
+  "q_en": "Cluster computing is a distributed or parallel computing system comprising multiple stand-alone PCs connected together, working as a single, integrated, highly available resource.",
+  "q_ar": "الحوسبة العنقودية (Cluster computing) هي نظام حوسبة موزع أو متوازٍ يتكون من عدة أجهزة حاسوب مستقلة (stand-alone PCs) متصلة معًا، تعمل كمورد واحد متكامل وعالي التوفر.",
+  "answer": true,
+  "why_ar": "صح؛ هذا تعريف Cluster computing في السلايد 3.",
+  "why_en": "True — this is the slide definition of cluster computing.",
+  "slide": 3,
+  "hot": false
+ },
+ {
+  "id": "st-007",
+  "lecture": "storage",
+  "topic_en": "Cluster computing",
+  "topic_ar": "الحوسبة العنقودية",
+  "type": "tf",
+  "q_en": "Cluster computing technology is used for high availability as well as load balancing with better system performance and reliability.",
+  "q_ar": "تُستخدم تقنية الحوسبة العنقودية للتوفر العالي (high availability) وكذلك لموازنة الحمل (load balancing) مع أداء وموثوقية أفضل للنظام.",
+  "answer": true,
+  "why_ar": "صح؛ جملة حرفية من السلايد وجاءت في الميدتيرم.",
+  "why_en": "True — cluster computing is used for high availability and load balancing.",
+  "slide": 3,
+  "hot": true
+ },
+ {
+  "id": "st-008",
+  "lecture": "storage",
+  "topic_en": "Cluster computing",
+  "topic_ar": "الحوسبة العنقودية",
+  "type": "tf",
+  "q_en": "Cluster computing technology is used for high availability as well as load balancing with lower system performance and reliability.",
+  "q_ar": "تُستخدم تقنية الحوسبة العنقودية للتوفر العالي وكذلك لموازنة الحمل مع أداء وموثوقية أقل (lower) للنظام.",
+  "answer": false,
+  "correct_en": "Cluster computing technology is used for high availability as well as load balancing with better system performance and reliability.",
+  "why_ar": "خطأ؛ الحوسبة العنقودية تعطي أداء وموثوقية أفضل (better) وليس أقل.",
+  "why_en": "False — it gives better, not lower, performance and reliability.",
+  "slide": 3,
+  "hot": true
+ },
+ {
+  "id": "st-009",
+  "lecture": "storage",
+  "topic_en": "Cluster computing",
+  "topic_ar": "الحوسبة العنقودية",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT a benefit of massively parallel processors and cluster computers?",
+  "q_ar": "أيٌّ مما يلي ليس من فوائد المعالجات المتوازية الضخمة وحواسيب العناقيد؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "High availability",
+    "ar": "التوفر العالي (High availability)"
+   },
+   {
+    "en": "Scalable performance",
+    "ar": "أداء قابل للتوسع (Scalable performance)"
+   },
+   {
+    "en": "Fault tolerance",
+    "ar": "تحمّل الأعطال (Fault tolerance)"
+   },
+   {
+    "en": "The use of expensive specialized hardware",
+    "ar": "استخدام عتاد متخصص باهظ الثمن (expensive specialized hardware)"
+   }
+  ],
+  "why_ar": "الإجابة: العتاد الباهظ؛ الفائدة الرابعة الصحيحة هي استخدام عتاد سلعي رخيص (cost-effective commodity hardware).",
+  "why_en": "The fourth benefit is cost-effective commodity hardware, not expensive hardware.",
+  "explain_ar": "الفوائد الأربع في السلايد: high availability، scalable performance، fault tolerance، cost-effective commodity hardware. الفخ هنا عكس الكلمة: expensive بدل cost-effective. نفس الفكرة تتكرر في Scaling-out (low cost commodity hardware).",
+  "slide": 3,
+  "hot": false
+ },
+ {
+  "id": "st-010",
+  "lecture": "storage",
+  "topic_en": "Cluster computing",
+  "topic_ar": "الحوسبة العنقودية",
+  "type": "mcq",
+  "q_en": "Cluster computing has a ____ model and a peer-to-peer model.",
+  "q_ar": "للحوسبة العنقودية نموذج ____ ونموذج الند للند (peer-to-peer).",
+  "answer": 0,
+  "options": [
+   {
+    "en": "master-slave",
+    "ar": "السيد-التابع (master-slave)"
+   },
+   {
+    "en": "key-value",
+    "ar": "المفتاح-القيمة (key-value)"
+   },
+   {
+    "en": "scaling-up",
+    "ar": "التوسع الرأسي (scaling-up)"
+   },
+   {
+    "en": "document",
+    "ar": "المستندات (document)"
+   }
+  ],
+  "why_ar": "الإجابة master-slave؛ الحوسبة العنقودية لها نموذج master-slave ونموذج peer-to-peer.",
+  "why_en": "Cluster computing has a master-slave model and a peer-to-peer model.",
+  "slide": 3,
+  "hot": false
+ },
+ {
+  "id": "st-011",
+  "lecture": "storage",
+  "topic_en": "Cluster computing",
+  "topic_ar": "الحوسبة العنقودية",
+  "type": "mcq",
+  "q_en": "Cluster computing technology is used for ____ as well as load balancing with better system performance and reliability.",
+  "q_ar": "تُستخدم تقنية الحوسبة العنقودية لـ ____ وكذلك لموازنة الحمل مع أداء وموثوقية أفضل للنظام.",
+  "answer": 1,
+  "options": [
+   {
+    "en": "sharding",
+    "ar": "التجزئة (sharding)"
+   },
+   {
+    "en": "high availability",
+    "ar": "التوفر العالي (high availability)"
+   },
+   {
+    "en": "schema rigidity",
+    "ar": "جمود المخطط (schema rigidity)"
+   },
+   {
+    "en": "vertical scaling",
+    "ar": "التوسع الرأسي (vertical scaling)"
+   }
+  ],
+  "why_ar": "الإجابة high availability؛ وهما نفس نوعي العناقيد حسب الغرض: HA وLoad balancing.",
+  "why_en": "Cluster computing is used for high availability and load balancing.",
+  "explain_ar": "لاحظ أن الكلمتين high availability وload balancing هما نفسهما نوعا العناقيد حسب الغرض (Types of Cluster) في السلايد 5. لو تذكرت الأنواع ستعرف هذه الجملة.",
+  "slide": 3,
+  "hot": true
+ },
+ {
+  "id": "st-012",
+  "lecture": "storage",
+  "topic_en": "Cluster types",
+  "topic_ar": "أنواع العناقيد",
+  "type": "tf",
+  "q_en": "Based on their purpose, the clusters may be classified into two major types: high availability and load balancing.",
+  "q_ar": "بناءً على الغرض منها، يمكن تصنيف العناقيد إلى نوعين رئيسيين: التوفر العالي (high availability) وموازنة الحمل (load balancing).",
+  "answer": true,
+  "why_ar": "صح؛ التصنيف حسب الغرض (purpose) = High availability وLoad balancing.",
+  "why_en": "True — by purpose, clusters are high availability or load balancing.",
+  "slide": 5,
+  "hot": true
+ },
+ {
+  "id": "st-013",
+  "lecture": "storage",
+  "topic_en": "Cluster types",
+  "topic_ar": "أنواع العناقيد",
+  "type": "tf",
+  "q_en": "Based on their purpose, the clusters may be classified into two major types: symmetric and asymmetric.",
+  "q_ar": "بناءً على الغرض منها، يمكن تصنيف العناقيد إلى نوعين رئيسيين: متماثلة (symmetric) وغير متماثلة (asymmetric).",
+  "answer": false,
+  "correct_en": "Based on their purpose, the clusters may be classified into two major types: high availability and load balancing.",
+  "why_ar": "خطأ؛ symmetric وasymmetric هو تصنيف بنية العنقود حسب طريقة الربط، أما حسب الغرض فهو HA وLoad balancing.",
+  "why_en": "False — by purpose: HA and load balancing; symmetric/asymmetric is by how nodes are linked.",
+  "explain_ar": "أهم فخ في المحاضرة: الأنواع (Types) حسب الغرض purpose = High availability / Load balancing. أما البنية (Structure) حسب طريقة الربط linked = Symmetric / Asymmetric. حيلة للحفظ: Purpose → ماذا أريد؟ (توفر أو توزيع حمل). Linked → كيف رُبطت الأجهزة؟ (متساوية أو برأس).",
+  "slide": 5,
+  "hot": true
+ },
+ {
+  "id": "st-014",
+  "lecture": "storage",
+  "topic_en": "Cluster types",
+  "topic_ar": "أنواع العناقيد",
+  "type": "tf",
+  "q_en": "High availability clusters are designed to minimize downtime and provide uninterrupted service when nodes fail.",
+  "q_ar": "عناقيد التوفر العالي (High availability clusters) مصممة لتقليل وقت التوقف (downtime) وتقديم خدمة غير منقطعة عند تعطل العقد.",
+  "answer": true,
+  "why_ar": "صح؛ هذا تعريف High availability clusters في السلايد 6.",
+  "why_en": "True — this is the definition of high availability clusters.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "st-015",
+  "lecture": "storage",
+  "topic_en": "Cluster types",
+  "topic_ar": "أنواع العناقيد",
+  "type": "tf",
+  "q_en": "Load-balancing clusters are designed to minimize downtime and provide uninterrupted service when nodes fail.",
+  "q_ar": "عناقيد موازنة الحمل (Load-balancing clusters) مصممة لتقليل وقت التوقف وتقديم خدمة غير منقطعة عند تعطل العقد.",
+  "answer": false,
+  "correct_en": "High availability clusters are designed to minimize downtime and provide uninterrupted service when nodes fail.",
+  "why_ar": "خطأ؛ هذا تعريف High availability clusters. أما Load-balancing فتوزّع الحمل على العقد.",
+  "why_en": "False — that defines HA clusters; load-balancing clusters distribute workloads.",
+  "explain_ar": "فرّق بالكلمات المفتاحية: HA ← downtime، uninterrupted service، shared storage، redundant nodes، single point of failure. LB ← distribute workloads، response time، throughput، overload.",
+  "slide": [
+   6,
+   7
+  ],
+  "hot": true
+ },
+ {
+  "id": "st-016",
+  "lecture": "storage",
+  "topic_en": "Cluster types",
+  "topic_ar": "أنواع العناقيد",
+  "type": "tf",
+  "q_en": "A highly available system increases single point of failures.",
+  "q_ar": "النظام عالي التوفر (highly available system) يزيد (increases) من نقاط الفشل المفردة (single point of failures).",
+  "answer": false,
+  "correct_en": "A highly available system eliminates single point of failures.",
+  "why_ar": "خطأ؛ النظام عالي التوفر يلغي (eliminates) نقاط الفشل المفردة ولا يزيدها.",
+  "why_en": "False — a highly available system eliminates single point of failures.",
+  "explain_ar": "Single point of failure = جهاز واحد إذا تعطل يتوقف النظام كله. HA تضيف عقدًا احتياطية (redundant nodes) فلا يبقى جهاز واحد يُسقط النظام، لذلك تلغيها (eliminates/decreases) ولا تزيدها.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "st-017",
+  "lecture": "storage",
+  "topic_en": "Cluster types",
+  "topic_ar": "أنواع العناقيد",
+  "type": "mcq",
+  "q_en": "Which of the following is true about High availability clusters?",
+  "q_ar": "أيٌّ مما يلي صحيح بخصوص عناقيد التوفر العالي (High availability clusters)؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "They distribute workloads to maximize throughput and minimize response time",
+    "ar": "توزّع أحمال العمل لزيادة الإنتاجية (throughput) وتقليل زمن الاستجابة"
+   },
+   {
+    "en": "One machine acts as the head node and serves as the gateway between the user and the remaining nodes",
+    "ar": "جهاز واحد يعمل كعقدة رئيسية (head node) وبوابة بين المستخدم وباقي العقد"
+   },
+   {
+    "en": "Nodes must have access to a shared storage, and many redundant nodes sustain faults and failures",
+    "ar": "يجب أن تصل العقد إلى تخزين مشترك (shared storage)، ووجود عقد احتياطية كثيرة (redundant nodes) يتحمّل الأعطال"
+   },
+   {
+    "en": "They increase single point of failures",
+    "ar": "تزيد نقاط الفشل المفردة"
+   }
+  ],
+  "why_ar": "الإجابة: shared storage وredundant nodes من صفات HA. توزيع الحمل = Load balancing، والـ head node = Asymmetric.",
+  "why_en": "HA nodes need shared storage and redundant nodes make the system fault-tolerant.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "st-018",
+  "lecture": "storage",
+  "topic_en": "Cluster types",
+  "topic_ar": "أنواع العناقيد",
+  "type": "mcq",
+  "q_en": "____ clusters are designed to distribute workloads across different cluster nodes to share the service load among the nodes.",
+  "q_ar": "عناقيد ____ مصممة لتوزيع أحمال العمل على عقد العنقود المختلفة لمشاركة حمل الخدمة بين العقد.",
+  "answer": 3,
+  "options": [
+   {
+    "en": "High availability",
+    "ar": "التوفر العالي (High availability)"
+   },
+   {
+    "en": "Symmetric",
+    "ar": "المتماثلة (Symmetric)"
+   },
+   {
+    "en": "Asymmetric",
+    "ar": "غير المتماثلة (Asymmetric)"
+   },
+   {
+    "en": "Load-balancing",
+    "ar": "موازنة الحمل (Load-balancing)"
+   }
+  ],
+  "why_ar": "الإجابة Load-balancing؛ توزيع الأحمال (distribute workloads) هو تعريفها.",
+  "why_en": "Load-balancing clusters distribute workloads across cluster nodes.",
+  "explain_ar": "هذا بالضبط شكل سؤال الفراغ المتوقع. الكلمة المفتاحية distribute workloads / share the service load = Load-balancing. لو كانت الجملة عن minimize downtime فالجواب High availability.",
+  "slide": 7,
+  "hot": true
+ },
+ {
+  "id": "st-019",
+  "lecture": "storage",
+  "topic_en": "Cluster types",
+  "topic_ar": "أنواع العناقيد",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT an objective of load balancing?",
+  "q_ar": "أيٌّ مما يلي ليس من أهداف موازنة الحمل (load balancing)؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Provide all nodes with access to a shared storage",
+    "ar": "تزويد جميع العقد بإمكانية الوصول إلى تخزين مشترك (shared storage)"
+   },
+   {
+    "en": "Optimize the use of resources",
+    "ar": "تحسين استخدام الموارد (optimize the use of resources)"
+   },
+   {
+    "en": "Minimize response time",
+    "ar": "تقليل زمن الاستجابة (minimize response time)"
+   },
+   {
+    "en": "Maximize throughput",
+    "ar": "زيادة الإنتاجية (maximize throughput)"
+   }
+  ],
+  "why_ar": "الإجابة: shared storage شرط لعناقيد HA. أهداف LB: optimize resources، minimize response time، maximize throughput، avoid overload.",
+  "why_en": "Shared storage is an HA requirement; LB objectives are optimize resources, minimize response time, maximize throughput, avoid overload.",
+  "explain_ar": "احفظ أهداف LB الأربعة: optimize resources، minimize response time، maximize throughput، avoid overload. انتبه لعكس الكلمات: minimize response time (وليس maximize)، وmaximize throughput (وليس minimize).",
+  "slide": 7,
+  "hot": true
+ },
+ {
+  "id": "st-020",
+  "lecture": "storage",
+  "topic_en": "Cluster types",
+  "topic_ar": "أنواع العناقيد",
+  "type": "mcq",
+  "q_en": "A highly available system ____ single point of failures.",
+  "q_ar": "النظام عالي التوفر ____ نقاط الفشل المفردة (single point of failures).",
+  "answer": 2,
+  "options": [
+   {
+    "en": "increases",
+    "ar": "يزيد (increases)"
+   },
+   {
+    "en": "creates",
+    "ar": "ينشئ (creates)"
+   },
+   {
+    "en": "eliminates",
+    "ar": "يلغي (eliminates)"
+   },
+   {
+    "en": "replicates",
+    "ar": "ينسخ (replicates)"
+   }
+  ],
+  "why_ar": "الإجابة eliminates؛ النظام عالي التوفر يلغي نقاط الفشل المفردة.",
+  "why_en": "A highly available system eliminates single point of failures.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "st-021",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "tf",
+  "q_en": "Based on how these computers are linked together, cluster structure is classified into two types: symmetric clusters and asymmetric clusters.",
+  "q_ar": "بناءً على طريقة ربط الحواسيب معًا، تُصنَّف بنية العنقود (cluster structure) إلى نوعين: عناقيد متماثلة (symmetric) وعناقيد غير متماثلة (asymmetric).",
+  "answer": true,
+  "why_ar": "صح؛ التصنيف حسب طريقة الربط (linked) = Symmetric وAsymmetric.",
+  "why_en": "True — by linking, cluster structure is symmetric or asymmetric.",
+  "slide": 8,
+  "hot": true
+ },
+ {
+  "id": "st-022",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "tf",
+  "q_en": "Asymmetric cluster is a type of cluster structure in which each node functions as an individual computer capable of running applications.",
+  "q_ar": "العنقود غير المتماثل (Asymmetric cluster) هو نوع من بنية العنقود تعمل فيه كل عقدة كحاسوب مستقل قادر على تشغيل التطبيقات.",
+  "answer": false,
+  "correct_en": "Symmetric cluster is a type of cluster structure in which each node functions as an individual computer capable of running applications.",
+  "why_ar": "خطأ؛ هذا تعريف Symmetric cluster. أما Asymmetric ففيه head node يعمل كبوابة.",
+  "why_en": "False — this defines a symmetric cluster.",
+  "explain_ar": "Symmetric = متماثل = كل العقد متساوية وكل عقدة حاسوب مستقل يشغّل التطبيقات. Asymmetric = غير متماثل = هناك عقدة مميزة (head node) تتحكم وتكون بوابة بين المستخدم والباقي.",
+  "slide": 9,
+  "hot": true
+ },
+ {
+  "id": "st-023",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "tf",
+  "q_en": "Asymmetric clusters are a type of cluster structure in which one machine acts as the head node, and it serves as the gateway between the user and the remaining nodes.",
+  "q_ar": "العناقيد غير المتماثلة (Asymmetric clusters) نوع من بنية العنقود يعمل فيه جهاز واحد كعقدة رئيسية (head node)، ويعمل كبوابة (gateway) بين المستخدم وباقي العقد.",
+  "answer": true,
+  "why_ar": "صح؛ هذا تعريف Asymmetric clusters في السلايد 9.",
+  "why_en": "True — this is the definition of asymmetric clusters.",
+  "slide": 9,
+  "hot": true
+ },
+ {
+  "id": "st-024",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "tf",
+  "q_en": "In symmetric clusters, there is centralized control: the master node orchestrates all activities (task distribution, failure recovery).",
+  "q_ar": "في العناقيد المتماثلة (symmetric)، يوجد تحكم مركزي (centralized control): العقدة الرئيسية (master) تنظم جميع الأنشطة (توزيع المهام واستعادة الأعطال).",
+  "answer": false,
+  "correct_en": "In asymmetric clusters, there is centralized control: the master node orchestrates all activities (task distribution, failure recovery).",
+  "why_ar": "خطأ؛ التحكم المركزي من صفات Asymmetric clusters. في Symmetric لا توجد أدوار مخصصة (no dedicated roles).",
+  "why_en": "False — centralized control belongs to asymmetric clusters.",
+  "explain_ar": "Symmetric: All nodes identical، Shared responsibilities، No dedicated roles، Fault tolerance (العقد الأخرى تعيد توزيع العمل). Asymmetric: Specialized roles (Head/Worker/Gateway) وCentralized control. أي كلمة master أو head أو centralized تعني Asymmetric.",
+  "slide": [
+   10,
+   11
+  ],
+  "hot": true
+ },
+ {
+  "id": "st-025",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "tf",
+  "q_en": "In symmetric clusters, no single node acts as a permanent \"master\"; leadership is often dynamic or rotated.",
+  "q_ar": "في العناقيد المتماثلة، لا توجد عقدة واحدة تعمل كـ \"master\" دائم؛ القيادة غالبًا ديناميكية أو متناوبة (dynamic or rotated).",
+  "answer": true,
+  "why_ar": "صح؛ هذه صفة No dedicated roles في العناقيد المتماثلة.",
+  "why_en": "True — symmetric clusters have no dedicated roles; leadership is dynamic or rotated.",
+  "slide": 10,
+  "hot": true
+ },
+ {
+  "id": "st-026",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "mcq",
+  "q_en": "In symmetric clusters, if one node fails:",
+  "q_ar": "في العناقيد المتماثلة، إذا تعطلت عقدة واحدة:",
+  "answer": 1,
+  "options": [
+   {
+    "en": "The head node must be replaced before work continues",
+    "ar": "يجب استبدال العقدة الرئيسية قبل استمرار العمل"
+   },
+   {
+    "en": "Others redistribute its workload automatically",
+    "ar": "تعيد العقد الأخرى توزيع حملها تلقائيًا"
+   },
+   {
+    "en": "The whole cluster stops",
+    "ar": "يتوقف العنقود بأكمله"
+   },
+   {
+    "en": "Only the gateway node can take over its tasks",
+    "ar": "عقدة البوابة فقط تستطيع تولي مهامها"
+   }
+  ],
+  "why_ar": "الإجابة: العقد الأخرى تعيد توزيع الحمل تلقائيًا (Fault tolerance).",
+  "why_en": "In symmetric clusters, other nodes redistribute the failed node's workload automatically.",
+  "slide": 10,
+  "hot": true
+ },
+ {
+  "id": "st-027",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "mcq",
+  "q_en": "In asymmetric clusters, Gateway Nodes:",
+  "q_ar": "في العناقيد غير المتماثلة، عقد البوابة (Gateway Nodes):",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Execute compute/storage tasks",
+    "ar": "تنفذ مهام الحوسبة/التخزين"
+   },
+   {
+    "en": "Manage resources, schedule tasks and monitor health",
+    "ar": "تدير الموارد وتجدول المهام وتراقب الحالة"
+   },
+   {
+    "en": "Handle external communications",
+    "ar": "تتولى الاتصالات الخارجية (external communications)"
+   },
+   {
+    "en": "Store file metadata and block mapping",
+    "ar": "تخزن البيانات الوصفية للملفات وخريطة الكتل"
+   }
+  ],
+  "why_ar": "الإجابة: Gateway Nodes تتولى الاتصالات الخارجية؛ Worker تنفذ المهام، وHead تدير الموارد.",
+  "why_en": "Gateway nodes handle external communications.",
+  "slide": 11,
+  "hot": true
+ },
+ {
+  "id": "st-028",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "mcq",
+  "q_en": "In asymmetric clusters, which node manages resources, schedules tasks, and monitors health?",
+  "q_ar": "في العناقيد غير المتماثلة، أي عقدة تدير الموارد وتجدول المهام وتراقب الحالة؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Worker Node",
+    "ar": "العقدة العاملة (Worker Node)"
+   },
+   {
+    "en": "Gateway Node",
+    "ar": "عقدة البوابة (Gateway Node)"
+   },
+   {
+    "en": "Data Node",
+    "ar": "عقدة البيانات (Data Node)"
+   },
+   {
+    "en": "Head Node/Master",
+    "ar": "العقدة الرئيسية (Head Node/Master)"
+   }
+  ],
+  "why_ar": "الإجابة Head Node/Master؛ هي المسؤولة عن إدارة الموارد وجدولة المهام ومراقبة الحالة.",
+  "why_en": "The head node/master manages resources, schedules tasks and monitors health.",
+  "explain_ar": "الأدوار الثلاثة: Head = المدير (manages, schedules, monitors). Worker = المنفّذ (execute compute/storage). Gateway = التواصل الخارجي (external communications). Data Node من محاضرة DFS وليست من أدوار Asymmetric clusters.",
+  "slide": 11,
+  "hot": true
+ },
+ {
+  "id": "st-029",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "mcq",
+  "q_en": "Which of the following describes symmetric clusters?",
+  "q_ar": "أيٌّ مما يلي يصف العناقيد المتماثلة (symmetric clusters)؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "All nodes are identical and share responsibilities; the setup is simple and straightforward",
+    "ar": "جميع العقد متطابقة وتتشارك المسؤوليات؛ والإعداد بسيط ومباشر"
+   },
+   {
+    "en": "Nodes have specialized roles: head, worker and gateway",
+    "ar": "للعقد أدوار متخصصة: رئيسية وعاملة وبوابة"
+   },
+   {
+    "en": "The master node orchestrates all activities",
+    "ar": "العقدة الرئيسية تنظم جميع الأنشطة"
+   },
+   {
+    "en": "One machine acts as the head node and gateway",
+    "ar": "جهاز واحد يعمل كعقدة رئيسية وبوابة"
+   }
+  ],
+  "why_ar": "الإجابة: العقد متطابقة وتتشارك المسؤوليات والإعداد بسيط؛ باقي الخيارات صفات Asymmetric.",
+  "why_en": "Symmetric clusters have identical nodes with shared responsibilities and a simple setup.",
+  "slide": [
+   9,
+   10
+  ],
+  "hot": true
+ },
+ {
+  "id": "st-030",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العناقيد",
+  "type": "mcq",
+  "q_en": "In asymmetric clusters, ____ execute compute/storage tasks.",
+  "q_ar": "في العناقيد غير المتماثلة، ____ تنفذ مهام الحوسبة/التخزين.",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Head Nodes",
+    "ar": "العقد الرئيسية (Head Nodes)"
+   },
+   {
+    "en": "Gateway Nodes",
+    "ar": "عقد البوابة (Gateway Nodes)"
+   },
+   {
+    "en": "Worker Nodes",
+    "ar": "العقد العاملة (Worker Nodes)"
+   },
+   {
+    "en": "Metadata Nodes",
+    "ar": "عقد البيانات الوصفية (Metadata Nodes)"
+   }
+  ],
+  "why_ar": "الإجابة Worker Nodes؛ هي التي تنفذ مهام الحوسبة والتخزين.",
+  "why_en": "Worker nodes execute compute/storage tasks.",
+  "slide": 11,
+  "hot": true
+ },
+ {
+  "id": "st-031",
+  "lecture": "storage",
+  "topic_en": "Distribution models",
+  "topic_ar": "نماذج توزيع البيانات",
+  "type": "tf",
+  "q_en": "The main reason behind distributing data over a large cluster is to overcome the difficulty and to cut the cost of buying expensive servers.",
+  "q_ar": "السبب الرئيسي وراء توزيع البيانات على عنقود كبير هو التغلب على الصعوبة وخفض تكلفة شراء خوادم باهظة الثمن.",
+  "answer": true,
+  "why_ar": "صح؛ جملة حرفية من السلايد 12.",
+  "why_en": "True — distribution cuts the cost of buying expensive servers.",
+  "slide": 12,
+  "hot": false
+ },
+ {
+  "id": "st-032",
+  "lecture": "storage",
+  "topic_en": "Distribution models",
+  "topic_ar": "نماذج توزيع البيانات",
+  "type": "tf",
+  "q_en": "The downside of distributing data over a large cluster is the complexity it introduces with the decrease in the number of computers added to the cluster.",
+  "q_ar": "عيب توزيع البيانات على عنقود كبير هو التعقيد الذي يسببه مع انخفاض (decrease) عدد الحواسيب المضافة إلى العنقود.",
+  "answer": false,
+  "correct_en": "The downside of this type of architecture is the complexity it introduces with the increase in the number of computers added to the cluster.",
+  "why_ar": "خطأ؛ التعقيد يزداد مع زيادة (increase) عدد الحواسيب وليس انخفاضه.",
+  "why_en": "False — complexity comes with the increase in the number of computers.",
+  "slide": 12,
+  "hot": false
+ },
+ {
+  "id": "st-033",
+  "lecture": "storage",
+  "topic_en": "Distribution models",
+  "topic_ar": "نماذج توزيع البيانات",
+  "type": "tf",
+  "q_en": "Sharding is the process of placing the same set of data over multiple nodes.",
+  "q_ar": "التجزئة (Sharding) هي عملية وضع نفس مجموعة البيانات على عدة عقد.",
+  "answer": false,
+  "correct_en": "Replication is the process of placing the same set of data over multiple nodes.",
+  "why_ar": "خطأ؛ هذا تعريف Replication. أما Sharding فهو وضع مجموعات مختلفة من البيانات على عقد مختلفة.",
+  "why_en": "False — that is replication; sharding places different data on different nodes.",
+  "explain_ar": "Replication = نسخ = نفس البيانات (same) على عدة عقد (للحماية من الأعطال). Sharding = تقسيم = بيانات مختلفة (different) على عقد مختلفة (لتوزيع الحجم). حيلة: shard تعني شظية/قطعة، أي كل عقدة تأخذ قطعة مختلفة.",
+  "slide": 13,
+  "hot": false
+ },
+ {
+  "id": "st-034",
+  "lecture": "storage",
+  "topic_en": "Distribution models",
+  "topic_ar": "نماذج توزيع البيانات",
+  "type": "mcq",
+  "q_en": "____ is the process of placing different sets of data on different nodes.",
+  "q_ar": "____ هي عملية وضع مجموعات مختلفة من البيانات على عقد مختلفة.",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Replication",
+    "ar": "النسخ المتماثل (Replication)"
+   },
+   {
+    "en": "Sharding",
+    "ar": "التجزئة (Sharding)"
+   },
+   {
+    "en": "Scaling-up",
+    "ar": "التوسع الرأسي (Scaling-up)"
+   },
+   {
+    "en": "Load balancing",
+    "ar": "موازنة الحمل (Load balancing)"
+   }
+  ],
+  "why_ar": "الإجابة Sharding؛ Replication يضع نفس البيانات على عدة عقد.",
+  "why_en": "Sharding places different sets of data on different nodes.",
+  "slide": 13,
+  "hot": false
+ },
+ {
+  "id": "st-035",
+  "lecture": "storage",
+  "topic_en": "Distribution models",
+  "topic_ar": "نماذج توزيع البيانات",
+  "type": "mcq",
+  "q_en": "Replication can be performed using:",
+  "q_ar": "يمكن تنفيذ النسخ المتماثل (Replication) باستخدام:",
+  "answer": 2,
+  "options": [
+   {
+    "en": "a symmetric model or an asymmetric model",
+    "ar": "نموذج متماثل أو غير متماثل"
+   },
+   {
+    "en": "a key-value model or a graph model",
+    "ar": "نموذج المفتاح-القيمة أو النموذج الرسومي"
+   },
+   {
+    "en": "a peer-to-peer model or a master-slave model",
+    "ar": "نموذج الند للند (peer-to-peer) أو نموذج السيد-التابع (master-slave)"
+   },
+   {
+    "en": "a scaling-up model or a scaling-out model",
+    "ar": "نموذج التوسع الرأسي أو الأفقي"
+   }
+  ],
+  "why_ar": "الإجابة: peer-to-peer أو master-slave، كما في السلايد 13.",
+  "why_en": "Replication uses a peer-to-peer or master-slave model.",
+  "slide": 13,
+  "hot": false
+ },
+ {
+  "id": "st-036",
+  "lecture": "storage",
+  "topic_en": "Distribution models",
+  "topic_ar": "نماذج توزيع البيانات",
+  "type": "mcq",
+  "q_en": "Which statement about sharding and replication is correct?",
+  "q_ar": "أي عبارة عن التجزئة (sharding) والنسخ المتماثل (replication) صحيحة؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "They can never be used together",
+    "ar": "لا يمكن استخدامهما معًا أبدًا"
+   },
+   {
+    "en": "Replication places different sets of data on different nodes",
+    "ar": "النسخ المتماثل يضع مجموعات مختلفة من البيانات على عقد مختلفة"
+   },
+   {
+    "en": "They are the two types of cluster structure",
+    "ar": "هما نوعا بنية العنقود"
+   },
+   {
+    "en": "They can either be used alone or together",
+    "ar": "يمكن استخدامهما منفردين أو معًا"
+   }
+  ],
+  "why_ar": "الإجابة: يمكن استخدامهما منفردين أو معًا؛ وهما أهم تقنيتين لتوزيع البيانات (data distribution).",
+  "why_en": "Sharding and replication can be used alone or together; they are the two major data-distribution techniques.",
+  "explain_ar": "Replication وSharding هما the two major techniques of data distribution، وليسا أنواع عناقيد (Types = HA/LB، Structure = Symmetric/Asymmetric). يمكن الجمع بينهما: نقسم البيانات إلى shards ثم ننسخ كل shard على أكثر من عقدة.",
+  "slide": [
+   12,
+   13
+  ],
+  "hot": false
+ },
+ {
+  "id": "st-037",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "mcq",
+  "q_en": "A storage system managing files across multiple nodes, appearing as a single entity to users, is called:",
+  "q_ar": "نظام تخزين يدير الملفات عبر عدة عقد ويظهر للمستخدمين ككيان واحد يسمى:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Distributed File System (DFS)",
+    "ar": "نظام الملفات الموزع (Distributed File System - DFS)"
+   },
+   {
+    "en": "Relational database (RDBMS)",
+    "ar": "قاعدة البيانات العلائقية (RDBMS)"
+   },
+   {
+    "en": "Load-balancing cluster",
+    "ar": "عنقود موازنة الحمل (Load-balancing cluster)"
+   },
+   {
+    "en": "Key-value store",
+    "ar": "مخزن المفتاح-القيمة (Key-value store)"
+   }
+  ],
+  "why_ar": "الإجابة DFS؛ وهو مصمم للتوسع وتحمّل الأعطال في بيئات Big Data/cloud.",
+  "why_en": "This is the definition of a distributed file system (DFS).",
+  "slide": 14,
+  "hot": true
+ },
+ {
+  "id": "st-038",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "tf",
+  "q_en": "The Metadata Node (e.g., NameNode in HDFS) coordinates file operations (read/write).",
+  "q_ar": "عقدة البيانات الوصفية (Metadata Node) مثل NameNode في HDFS تنسّق عمليات الملفات (القراءة/الكتابة).",
+  "answer": true,
+  "why_ar": "صح؛ الـ Metadata Node هي التي تنسق عمليات الملفات وتخزن البيانات الوصفية.",
+  "why_en": "True — the Metadata Node (NameNode) coordinates file operations.",
+  "slide": 15,
+  "hot": true
+ },
+ {
+  "id": "st-039",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "tf",
+  "q_en": "Data Nodes coordinate file operations (read/write).",
+  "q_ar": "عقد البيانات (Data Nodes) تنسّق عمليات الملفات (القراءة/الكتابة).",
+  "answer": false,
+  "correct_en": "Metadata Node (e.g., NameNode in HDFS) coordinates file operations (read/write).",
+  "why_ar": "خطأ؛ التنسيق مهمة Metadata Node (NameNode). أما Data Nodes فتخزن الكتل وتخدم طلبات القراءة/الكتابة.",
+  "why_en": "False — the Metadata Node coordinates file operations; Data Nodes store blocks and serve requests.",
+  "explain_ar": "هذا سؤال الميدتيرم حرفيًا. Metadata Node = المدير: يعرف أين كل شيء (names, locations, permissions, block mapping) وينسق. Data Nodes = العمال: تخزن الكتل الفعلية (128MB) وتخدم القراءة/الكتابة مباشرة للعميل. coordinates = Metadata Node دائمًا.",
+  "slide": 15,
+  "hot": true
+ },
+ {
+  "id": "st-040",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "tf",
+  "q_en": "Data Nodes store file metadata (names, locations, permissions, block mapping).",
+  "q_ar": "عقد البيانات (Data Nodes) تخزن البيانات الوصفية للملفات (الأسماء والمواقع والصلاحيات وخريطة الكتل).",
+  "answer": false,
+  "correct_en": "Metadata Node (e.g., NameNode in HDFS) stores file metadata (names, locations, permissions, block mapping).",
+  "why_ar": "خطأ؛ البيانات الوصفية تخزنها Metadata Node. أما Data Nodes فتخزن كتل البيانات الفعلية.",
+  "why_en": "False — the Metadata Node stores file metadata; Data Nodes store actual data blocks.",
+  "slide": 15,
+  "hot": true
+ },
+ {
+  "id": "st-041",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "tf",
+  "q_en": "When reading a file, the client reads blocks directly from the Metadata Node.",
+  "q_ar": "عند قراءة ملف، يقرأ العميل (client) الكتل مباشرة من عقدة البيانات الوصفية (Metadata Node).",
+  "answer": false,
+  "correct_en": "When reading a file, the client queries the Metadata Node for block locations, then reads blocks directly from the nearest Data Nodes.",
+  "why_ar": "خطأ؛ العميل يسأل Metadata Node عن مواقع الكتل فقط، ثم يقرأ الكتل مباشرة من أقرب Data Nodes.",
+  "why_en": "False — the client gets block locations from the Metadata Node and reads blocks from the nearest Data Nodes.",
+  "explain_ar": "القراءة خطوتان: (1) سؤال Metadata Node: أين الكتل؟ (2) القراءة مباشرة من أقرب Data Nodes. البيانات نفسها لا تمر عبر Metadata Node، وهذا يتوافق مع أن Data Nodes تخدم read/write directly to clients.",
+  "slide": 16,
+  "hot": true
+ },
+ {
+  "id": "st-042",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "tf",
+  "q_en": "In DFS, Data Locality means processing data on the node where it's stored.",
+  "q_ar": "في DFS، تعني محلية البيانات (Data Locality) معالجة البيانات على العقدة التي تُخزَّن فيها.",
+  "answer": true,
+  "why_ar": "صح؛ Data Locality من الميزات الأساسية لـ DFS: المعالجة تتم حيث توجد البيانات.",
+  "why_en": "True — data locality means processing data on the node where it is stored.",
+  "slide": 14,
+  "hot": true
+ },
+ {
+  "id": "st-043",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT a key feature of DFS?",
+  "q_ar": "أيٌّ مما يلي ليس من الميزات الأساسية لنظام الملفات الموزع (DFS)؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Schema rigidity: schema changes require downtime",
+    "ar": "جمود المخطط (Schema rigidity): تغيير المخطط يتطلب توقف النظام"
+   },
+   {
+    "en": "Fault tolerance: automatic data replication (e.g., 3 copies)",
+    "ar": "تحمّل الأعطال (Fault tolerance): نسخ تلقائي للبيانات (مثلًا 3 نسخ)"
+   },
+   {
+    "en": "Data locality: processing data on the node where it's stored",
+    "ar": "محلية البيانات (Data locality): المعالجة على العقدة التي تُخزَّن فيها البيانات"
+   },
+   {
+    "en": "Scalability: add nodes to increase capacity",
+    "ar": "قابلية التوسع (Scalability): إضافة عقد لزيادة السعة"
+   }
+  ],
+  "why_ar": "الإجابة Schema rigidity؛ وهي مشكلة في RDBMS وليست ميزة لـ DFS.",
+  "why_en": "Schema rigidity is an RDBMS problem; DFS features are fault tolerance, data locality and scalability.",
+  "slide": [
+   14,
+   18
+  ],
+  "hot": true
+ },
+ {
+  "id": "st-044",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "mcq",
+  "q_en": "HDFS, which is used for batch processing of large files, was inspired by:",
+  "q_ar": "نظام HDFS المستخدم للمعالجة الدفعية (batch processing) للملفات الكبيرة، استُلهم من:",
+  "answer": 1,
+  "options": [
+   {
+    "en": "HBase",
+    "ar": "HBase"
+   },
+   {
+    "en": "Google File System (GFS)",
+    "ar": "نظام ملفات جوجل (Google File System - GFS)"
+   },
+   {
+    "en": "Cassandra",
+    "ar": "Cassandra"
+   },
+   {
+    "en": "MongoDB",
+    "ar": "MongoDB"
+   }
+  ],
+  "why_ar": "الإجابة GFS؛ السلايد يقول Google File System هو مصدر الإلهام لـ HDFS.",
+  "why_en": "GFS was the inspiration for HDFS.",
+  "slide": 14,
+  "hot": true
+ },
+ {
+  "id": "st-045",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "mcq",
+  "q_en": "When writing a file in DFS, which step comes LAST?",
+  "q_ar": "عند كتابة ملف في DFS، أي خطوة تأتي في النهاية؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Client splits file into blocks",
+    "ar": "يقسم العميل الملف إلى كتل"
+   },
+   {
+    "en": "Metadata Node assigns blocks to Data Nodes",
+    "ar": "تخصص Metadata Node الكتل لعقد البيانات"
+   },
+   {
+    "en": "Blocks replicate across ≥3 nodes (pipelined write)",
+    "ar": "تُنسخ الكتل على 3 عقد أو أكثر (pipelined write)"
+   },
+   {
+    "en": "Metadata Node updates file-block mapping",
+    "ar": "تحدّث Metadata Node خريطة الملف-الكتل (file-block mapping)"
+   }
+  ],
+  "why_ar": "الإجابة: تحديث file-block mapping هو الخطوة الأخيرة. الترتيب: split ← assign ← replicate ← update.",
+  "why_en": "Write order: client splits, Metadata Node assigns, blocks replicate (≥3), Metadata Node updates mapping.",
+  "explain_ar": "ترتيب الكتابة: (1) العميل يقسم الملف إلى blocks، (2) Metadata Node تخصص الكتل لـ Data Nodes، (3) الكتل تُنسخ على 3 عقد أو أكثر بطريقة pipelined، (4) Metadata Node تحدّث file-block mapping. لاحظ أن Metadata Node تبدأ وتنهي.",
+  "slide": 16,
+  "hot": true
+ },
+ {
+  "id": "st-046",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع (DFS)",
+  "type": "mcq",
+  "q_en": "Which component stores actual data blocks (e.g., 128MB chunks in HDFS) and serves read/write requests directly to clients?",
+  "q_ar": "أي مكوّن يخزن كتل البيانات الفعلية (مثلًا قطع بحجم 128MB في HDFS) ويخدم طلبات القراءة/الكتابة مباشرة للعملاء؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Metadata Node (NameNode)",
+    "ar": "عقدة البيانات الوصفية (NameNode)"
+   },
+   {
+    "en": "Head Node",
+    "ar": "العقدة الرئيسية (Head Node)"
+   },
+   {
+    "en": "Data Nodes",
+    "ar": "عقد البيانات (Data Nodes)"
+   },
+   {
+    "en": "Gateway Node",
+    "ar": "عقدة البوابة (Gateway Node)"
+   }
+  ],
+  "why_ar": "الإجابة Data Nodes. الكتل (blocks) حجمها الثابت مثلًا 64MB–256MB وتُنسخ عبر العقد للتكرار (redundancy).",
+  "why_en": "Data Nodes store the actual blocks and serve read/write requests directly.",
+  "slide": 15,
+  "hot": true
+ },
+ {
+  "id": "st-047",
+  "lecture": "storage",
+  "topic_en": "RDBMS vs NoSQL",
+  "topic_ar": "قواعد البيانات العلائقية مقابل NoSQL",
+  "type": "tf",
+  "q_en": "Relational databases become unsuitable for vast amounts of data that may not be structured, which has led to the evolution of non-relational databases, which are schema-less.",
+  "q_ar": "تصبح قواعد البيانات العلائقية غير مناسبة للكميات الهائلة من البيانات التي قد لا تكون مهيكلة، مما أدى إلى تطور قواعد البيانات غير العلائقية (non-relational) التي لا تعتمد على مخطط (schema-less).",
+  "answer": true,
+  "why_ar": "صح؛ هذا مضمون السلايد 17: NoSQL غير علائقية وschema-less، ومن أمثلتها Neo4J وRedis وCassandra وMongoDB.",
+  "why_en": "True — non-relational (NoSQL) databases are schema-less.",
+  "slide": 17,
+  "hot": false
+ },
+ {
+  "id": "st-048",
+  "lecture": "storage",
+  "topic_en": "RDBMS vs NoSQL",
+  "topic_ar": "قواعد البيانات العلائقية مقابل NoSQL",
+  "type": "tf",
+  "q_en": "In relational databases, horizontal scaling (adding CPU/RAM) hits hardware limits at TBs of data.",
+  "q_ar": "في قواعد البيانات العلائقية، التوسع الأفقي (horizontal scaling) بإضافة CPU/RAM يصل إلى حدود العتاد عند التيرابايتات من البيانات.",
+  "answer": false,
+  "correct_en": "Vertical scaling (adding CPU/RAM) hits hardware limits at TBs of data.",
+  "why_ar": "خطأ؛ إضافة CPU/RAM هي التوسع الرأسي (vertical scaling). أما NoSQL فتستخدم التوسع الأفقي.",
+  "why_en": "False — adding CPU/RAM is vertical scaling, which is the RDBMS scalability issue.",
+  "explain_ar": "أي شيء فيه adding CPU/RAM أو resources to the existing server = Vertical = Scaling-up = مشكلة RDBMS. أما Horizontal = Scaling-out = إضافة عقد/خوادم، وهي طريقة NoSQL (Distribute data across 1,000s of nodes).",
+  "slide": 18,
+  "hot": false
+ },
+ {
+  "id": "st-049",
+  "lecture": "storage",
+  "topic_en": "RDBMS vs NoSQL",
+  "topic_ar": "قواعد البيانات العلائقية مقابل NoSQL",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT one of the big data challenges of relational databases (RDBMS)?",
+  "q_ar": "أيٌّ مما يلي ليس من تحديات البيانات الضخمة في قواعد البيانات العلائقية (RDBMS)؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Scalability",
+    "ar": "قابلية التوسع (Scalability)"
+   },
+   {
+    "en": "Schema rigidity",
+    "ar": "جمود المخطط (Schema rigidity)"
+   },
+   {
+    "en": "Performance",
+    "ar": "الأداء (Performance)"
+   },
+   {
+    "en": "Eventual consistency",
+    "ar": "الاتساق النهائي (Eventual consistency)"
+   }
+  ],
+  "why_ar": "الإجابة Eventual consistency؛ وهي جزء من نموذج BASE في NoSQL. تحديات RDBMS: Scalability وSchema rigidity وPerformance (JOINs بطيئة وreplication يسبب تأخير).",
+  "why_en": "Eventual consistency belongs to NoSQL's BASE model; RDBMS issues are scalability, schema rigidity and performance.",
+  "explain_ar": "تحديات RDBMS الثلاثة: Scalability (vertical يصل لحدود العتاد)، Schema rigidity (تغيير المخطط يحتاج downtime ويصعب مع JSON/logs)، Performance (JOINs بطيئة عبر العقد الموزعة وreplication يسبب latency).",
+  "slide": [
+   18,
+   19
+  ],
+  "hot": false
+ },
+ {
+  "id": "st-050",
+  "lecture": "storage",
+  "topic_en": "RDBMS vs NoSQL",
+  "topic_ar": "قواعد البيانات العلائقية مقابل NoSQL",
+  "type": "mcq",
+  "q_en": "In NoSQL databases, the BASE model stands for:",
+  "q_ar": "في قواعد بيانات NoSQL، نموذج BASE يعني:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Basically Available, Soft state, Eventual consistency",
+    "ar": "Basically Available, Soft state, Eventual consistency"
+   },
+   {
+    "en": "Basically Available, Strict state, Eventual consistency",
+    "ar": "Basically Available, Strict state, Eventual consistency"
+   },
+   {
+    "en": "Batch Available, Soft state, Exact consistency",
+    "ar": "Batch Available, Soft state, Exact consistency"
+   },
+   {
+    "en": "Basically Atomic, Shared state, Eventual consistency",
+    "ar": "Basically Atomic, Shared state, Eventual consistency"
+   }
+  ],
+  "why_ar": "الإجابة: Basically Available وSoft state وEventual consistency.",
+  "why_en": "BASE = Basically Available, Soft state, Eventual consistency.",
+  "slide": 19,
+  "hot": false
+ },
+ {
+  "id": "st-051",
+  "lecture": "storage",
+  "topic_en": "NoSQL types & NewSQL",
+  "topic_ar": "أنواع NoSQL و NewSQL",
+  "type": "tf",
+  "q_en": "Columnar NoSQL databases (e.g., Cassandra, HBase) are used for time-series and IoT data.",
+  "q_ar": "قواعد بيانات NoSQL العمودية (Columnar) مثل Cassandra وHBase تُستخدم لبيانات السلاسل الزمنية (time-series) وإنترنت الأشياء (IoT).",
+  "answer": true,
+  "why_ar": "صح؛ حسب جدول السلايد 20: Columnar = Columns grouped، استخدامها time-series وIoT، وأمثلتها Cassandra وHBase.",
+  "why_en": "True — columnar databases (Cassandra, HBase) serve time-series and IoT data.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "st-052",
+  "lecture": "storage",
+  "topic_en": "NoSQL types & NewSQL",
+  "topic_ar": "أنواع NoSQL و NewSQL",
+  "type": "tf",
+  "q_en": "Redis and DynamoDB are examples of document NoSQL databases.",
+  "q_ar": "Redis وDynamoDB أمثلة على قواعد بيانات NoSQL من نوع المستندات (document).",
+  "answer": false,
+  "correct_en": "Redis and DynamoDB are examples of key-value NoSQL databases.",
+  "why_ar": "خطأ؛ Redis وDynamoDB من نوع Key-Value. أمثلة Document هي MongoDB وCouchbase.",
+  "why_en": "False — Redis and DynamoDB are key-value; MongoDB and Couchbase are document databases.",
+  "explain_ar": "احفظ الجدول: Document (JSON-like) ← MongoDB, Couchbase | Key-Value ← Redis, DynamoDB | Columnar ← Cassandra, HBase | Graph ← Neo4j, Amazon Neptune.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "st-053",
+  "lecture": "storage",
+  "topic_en": "NoSQL types & NewSQL",
+  "topic_ar": "أنواع NoSQL و NewSQL",
+  "type": "mcq",
+  "q_en": "Which NoSQL type (Key → Value pairs) is best suited for caching and session management?",
+  "q_ar": "أي نوع من NoSQL (أزواج مفتاح ← قيمة) هو الأنسب للتخزين المؤقت (caching) وإدارة الجلسات (session management)؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Document",
+    "ar": "المستندات (Document)"
+   },
+   {
+    "en": "Columnar",
+    "ar": "العمودية (Columnar)"
+   },
+   {
+    "en": "Key-Value",
+    "ar": "المفتاح-القيمة (Key-Value)"
+   },
+   {
+    "en": "Graph",
+    "ar": "الرسومية (Graph)"
+   }
+  ],
+  "why_ar": "الإجابة Key-Value مثل Redis وDynamoDB.",
+  "why_en": "Key-value databases serve caching and session management.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "st-054",
+  "lecture": "storage",
+  "topic_en": "NoSQL types & NewSQL",
+  "topic_ar": "أنواع NoSQL و NewSQL",
+  "type": "mcq",
+  "q_en": "A social network that stores nodes and relationships and needs fraud detection across those relationships is best served by a ____ database.",
+  "q_ar": "شبكة اجتماعية تخزن العقد والعلاقات (nodes/relationships) وتحتاج كشف الاحتيال عبر هذه العلاقات، يناسبها قاعدة بيانات من نوع ____.",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Document (e.g., MongoDB, Couchbase)",
+    "ar": "مستندات (Document) مثل MongoDB وCouchbase"
+   },
+   {
+    "en": "Graph (e.g., Neo4j, Amazon Neptune)",
+    "ar": "رسومية (Graph) مثل Neo4j وAmazon Neptune"
+   },
+   {
+    "en": "Key-Value (e.g., Redis, DynamoDB)",
+    "ar": "مفتاح-قيمة (Key-Value) مثل Redis وDynamoDB"
+   },
+   {
+    "en": "Columnar (e.g., Cassandra, HBase)",
+    "ar": "عمودية (Columnar) مثل Cassandra وHBase"
+   }
+  ],
+  "why_ar": "الإجابة Graph؛ بنيتها Nodes/relationships واستخداماتها Fraud detection وsocial networks.",
+  "why_en": "Graph databases (nodes/relationships) serve fraud detection and social networks.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "st-055",
+  "lecture": "storage",
+  "topic_en": "NoSQL types & NewSQL",
+  "topic_ar": "أنواع NoSQL و NewSQL",
+  "type": "tf",
+  "q_en": "NewSQL databases provide scalable performance similar to that of NoSQL systems combining the ACID properties of a traditional database management system.",
+  "q_ar": "قواعد بيانات NewSQL توفر أداءً قابلًا للتوسع مشابهًا لأنظمة NoSQL مع الجمع بين خصائص ACID لأنظمة إدارة قواعد البيانات التقليدية.",
+  "answer": true,
+  "why_ar": "صح؛ NewSQL = قابلية توسع NoSQL + خصائص ACID. من أمثلتها VoltDB وNuoDB وClustrix وMemSQL وTokuDB.",
+  "why_en": "True — NewSQL combines NoSQL-like scalability with ACID properties.",
+  "slide": 21,
+  "hot": false
+ },
+ {
+  "id": "st-056",
+  "lecture": "storage",
+  "topic_en": "NoSQL types & NewSQL",
+  "topic_ar": "أنواع NoSQL و NewSQL",
+  "type": "tf",
+  "q_en": "NewSQL databases provide scalable performance similar to that of NoSQL systems combining the BASE properties of a traditional database management system.",
+  "q_ar": "قواعد بيانات NewSQL توفر أداءً قابلًا للتوسع مشابهًا لأنظمة NoSQL مع الجمع بين خصائص BASE لأنظمة إدارة قواعد البيانات التقليدية.",
+  "answer": false,
+  "correct_en": "NewSQL databases provide scalable performance similar to that of NoSQL systems combining the ACID properties of a traditional database management system.",
+  "why_ar": "خطأ؛ NewSQL تجمع خصائص ACID (من قواعد البيانات التقليدية)، أما BASE فهو نموذج NoSQL.",
+  "why_en": "False — NewSQL combines ACID properties, not BASE.",
+  "explain_ar": "ACID = خصائص قواعد البيانات التقليدية (العلائقية). BASE = نموذج NoSQL. NewSQL تأخذ الأفضل من الاثنين: scalability من NoSQL وACID من التقليدية.",
+  "slide": 21,
+  "hot": false
+ },
+ {
+  "id": "st-057",
+  "lecture": "storage",
+  "topic_en": "NoSQL types & NewSQL",
+  "topic_ar": "أنواع NoSQL و NewSQL",
+  "type": "mcq",
+  "q_en": "NewSQL databases (e.g., VoltDB, NuoDB, Clustrix) support relational data model with three layers:",
+  "q_ar": "قواعد بيانات NewSQL (مثل VoltDB وNuoDB وClustrix) تدعم النموذج العلائقي بثلاث طبقات:",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Presentation layer, business layer and data layer",
+    "ar": "طبقة العرض وطبقة الأعمال وطبقة البيانات"
+   },
+   {
+    "en": "Administrative layer, transactional layer and storage layer",
+    "ar": "الطبقة الإدارية (administrative) وطبقة المعاملات (transactional) وطبقة التخزين (storage)"
+   },
+   {
+    "en": "Head layer, worker layer and gateway layer",
+    "ar": "طبقة الرأس وطبقة العمال وطبقة البوابة"
+   },
+   {
+    "en": "Metadata layer, block layer and replication layer",
+    "ar": "طبقة البيانات الوصفية وطبقة الكتل وطبقة النسخ"
+   }
+  ],
+  "why_ar": "الإجابة: administrative وtransactional وstorage.",
+  "why_en": "NewSQL's three layers are administrative, transactional and storage.",
+  "slide": 21,
+  "hot": false
+ },
+ {
+  "id": "st-058",
+  "lecture": "storage",
+  "topic_en": "Scaling up vs scaling out",
+  "topic_ar": "التوسع الرأسي مقابل التوسع الأفقي",
+  "type": "tf",
+  "q_en": "Scaling-up is limited to the maximum scaling capacity of the server data.",
+  "q_ar": "التوسع الرأسي (Scaling-up) محدود بأقصى سعة توسع لبيانات الخادم.",
+  "answer": true,
+  "why_ar": "صح؛ التوسع الرأسي يضيف موارد لنفس الخادم، فهو محدود بأقصى سعة لهذا الخادم. جاءت في الميدتيرم.",
+  "why_en": "True — vertical scaling is limited to the maximum capacity of the server.",
+  "slide": 23,
+  "hot": true
+ },
+ {
+  "id": "st-059",
+  "lecture": "storage",
+  "topic_en": "Scaling up vs scaling out",
+  "topic_ar": "التوسع الرأسي مقابل التوسع الأفقي",
+  "type": "tf",
+  "q_en": "Scaling-out is limited to the maximum scaling capacity of the server data.",
+  "q_ar": "التوسع الأفقي (Scaling-out) محدود بأقصى سعة توسع لبيانات الخادم.",
+  "answer": false,
+  "correct_en": "Scaling-up is limited to the maximum scaling capacity of the server data.",
+  "why_ar": "خطأ؛ هذا القيد خاص بـ Scaling-up. أما Scaling-out فيضيف خوادم/عقد جديدة حسب الحاجة.",
+  "why_en": "False — this limit applies to scaling-up; scaling-out adds new servers as needed.",
+  "explain_ar": "Scaling-up = vertical = نكبّر نفس الخادم (CPU/RAM/storage أكثر) ← سقفه هو أقصى سعة للخادم. Scaling-out = horizontal = نضيف خوادم (nodes) ← يتوسع للعرض wider بدون هذا السقف. تخيّل: up = بناء طوابق فوق نفس البيت (له حد)، out = بناء بيوت جديدة بجانبه.",
+  "slide": [
+   23,
+   24
+  ],
+  "hot": true
+ },
+ {
+  "id": "st-060",
+  "lecture": "storage",
+  "topic_en": "Scaling up vs scaling out",
+  "topic_ar": "التوسع الرأسي مقابل التوسع الأفقي",
+  "type": "mcq",
+  "q_en": "____ adds more resources (storage, CPU) to the existing server to increase its capacity to hold more data.",
+  "q_ar": "____ يضيف المزيد من الموارد (التخزين والمعالج CPU) إلى الخادم الموجود لزيادة سعته لاستيعاب بيانات أكثر.",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Scaling-out",
+    "ar": "التوسع الأفقي (Scaling-out)"
+   },
+   {
+    "en": "Scaling-up",
+    "ar": "التوسع الرأسي (Scaling-up)"
+   },
+   {
+    "en": "Sharding",
+    "ar": "التجزئة (Sharding)"
+   },
+   {
+    "en": "Replication",
+    "ar": "النسخ المتماثل (Replication)"
+   }
+  ],
+  "why_ar": "الإجابة Scaling-up؛ التوسع الرأسي يضيف موارد إلى الخادم الموجود لزيادة سعته.",
+  "why_en": "Scaling-up (vertical) adds more resources to the existing server.",
+  "explain_ar": "في النموذج الحقيقي جاءت حرفيًا: «____ adds more storage resources and CPU to increase capacity» والإجابة Scaling-up. القاعدة: إضافة موارد (CPU/storage) إلى نفس الخادم الموجود = Scaling-up (رأسي)، أما إضافة خوادم/عقد جديدة (new servers / nodes) = Scaling-out (أفقي).",
+  "slide": 23,
+  "hot": true
+ },
+ {
+  "id": "st-061",
+  "lecture": "storage",
+  "topic_en": "Scaling up vs scaling out",
+  "topic_ar": "التوسع الرأسي مقابل التوسع الأفقي",
+  "type": "tf",
+  "q_en": "Big data technologies work on the basis of scaling out storage.",
+  "q_ar": "تقنيات البيانات الضخمة تعمل على أساس التوسع الأفقي للتخزين (scaling out storage).",
+  "answer": true,
+  "why_ar": "صح؛ البيانات الضخمة تعتمد على Scaling-out.",
+  "why_en": "True — big data technologies work on scaling out storage.",
+  "slide": 24,
+  "hot": true
+ },
+ {
+  "id": "st-062",
+  "lecture": "storage",
+  "topic_en": "Scaling up vs scaling out",
+  "topic_ar": "التوسع الرأسي مقابل التوسع الأفقي",
+  "type": "tf",
+  "q_en": "Scaling up storage uses low cost commodity hardware and storage components.",
+  "q_ar": "التوسع الرأسي للتخزين (Scaling up) يستخدم عتادًا سلعيًا رخيصًا (low cost commodity hardware) ومكونات تخزين.",
+  "answer": false,
+  "correct_en": "Scaling out storage uses low cost commodity hardware and storage components.",
+  "why_ar": "خطأ؛ العتاد السلعي الرخيص من صفات Scaling-out، أما Scaling-up فيستخدم خادمًا قويًا (مثل Oracle on a powerful server).",
+  "why_en": "False — scaling out uses low cost commodity hardware.",
+  "slide": 24,
+  "hot": true
+ },
+ {
+  "id": "st-063",
+  "lecture": "storage",
+  "topic_en": "Scaling up vs scaling out",
+  "topic_ar": "التوسع الرأسي مقابل التوسع الأفقي",
+  "type": "mcq",
+  "q_en": "In horizontal scalability, the additional component added is termed as:",
+  "q_ar": "في التوسع الأفقي (horizontal scalability)، يُسمى المكوّن الإضافي المضاف:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "node",
+    "ar": "عقدة (node)"
+   },
+   {
+    "en": "block",
+    "ar": "كتلة (block)"
+   },
+   {
+    "en": "shard",
+    "ar": "جزء (shard)"
+   },
+   {
+    "en": "schema",
+    "ar": "مخطط (schema)"
+   }
+  ],
+  "why_ar": "الإجابة node؛ المكوّن الإضافي في Scaling-out يسمى node.",
+  "why_en": "The additional component added in scaling-out is termed a node.",
+  "slide": 24,
+  "hot": true
+ },
+ {
+  "id": "st-064",
+  "lecture": "storage",
+  "topic_en": "Scaling up vs scaling out",
+  "topic_ar": "التوسع الرأسي مقابل التوسع الأفقي",
+  "type": "mcq",
+  "q_en": "Which of the following is a big data use case of scaling-up?",
+  "q_ar": "أيٌّ مما يلي من حالات استخدام التوسع الرأسي (scaling-up) في البيانات الضخمة؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "NoSQL data distributed across 1,000s of nodes",
+    "ar": "بيانات NoSQL موزعة على آلاف العقد"
+   },
+   {
+    "en": "HDFS clusters built from low cost commodity hardware",
+    "ar": "عناقيد HDFS مبنية من عتاد سلعي رخيص"
+   },
+   {
+    "en": "Traditional RDBMS (e.g., Oracle on a powerful server)",
+    "ar": "قواعد البيانات العلائقية التقليدية (مثل Oracle على خادم قوي)"
+   },
+   {
+    "en": "Applications with rapidly exploding data growth",
+    "ar": "تطبيقات ذات نمو بيانات سريع جدًا"
+   }
+  ],
+  "why_ar": "الإجابة: Traditional RDBMS. حالات Scaling-up: RDBMS التقليدية والتطبيقات ذات نمو بيانات منخفض إلى متوسط.",
+  "why_en": "Scaling-up suits traditional RDBMS and applications with low-to-moderate data growth.",
+  "explain_ar": "Scaling-up يناسب الأنظمة التي لا تكبر كثيرًا: Traditional RDBMS (Oracle على خادم قوي) وApplications with low-to-moderate data growth. أي شيء فيه آلاف العقد أو commodity hardware أو نمو ضخم = Scaling-out.",
+  "slide": 23,
+  "hot": true
+ },
+ {
+  "id": "st-065",
+  "lecture": "storage",
+  "topic_en": "Scaling up vs scaling out",
+  "topic_ar": "التوسع الرأسي مقابل التوسع الأفقي",
+  "type": "mcq",
+  "q_en": "The storage platforms can be scaled in two ways:",
+  "q_ar": "يمكن توسيع منصات التخزين بطريقتين:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Replication and sharding",
+    "ar": "النسخ المتماثل والتجزئة (Replication and sharding)"
+   },
+   {
+    "en": "Symmetric and asymmetric",
+    "ar": "متماثل وغير متماثل (Symmetric and asymmetric)"
+   },
+   {
+    "en": "High availability and load balancing",
+    "ar": "التوفر العالي وموازنة الحمل"
+   },
+   {
+    "en": "Scaling-up (vertical) and Scaling-out (horizontal)",
+    "ar": "التوسع الرأسي (Scaling-up) والتوسع الأفقي (Scaling-out)"
+   }
+  ],
+  "why_ar": "الإجابة: Scaling-up وScaling-out. Scalability هي قدرة النظام على تلبية الطلب المتزايد على سعة التخزين.",
+  "why_en": "Storage platforms scale up (vertical) or out (horizontal).",
+  "slide": 22,
+  "hot": false
+ }
+]

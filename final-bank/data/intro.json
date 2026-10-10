@@ -1,0 +1,191 @@
+[
+ {
+  "id": "in-001",
+  "lecture": "intro",
+  "topic_en": "Big data volume range",
+  "topic_ar": "نطاق حجم البيانات الضخمة",
+  "type": "tf",
+  "q_en": "Big data technology is capable of storing and processing data that range from petabytes to zettabytes.",
+  "q_ar": "تقنية البيانات الضخمة (Big data technology) قادرة على تخزين ومعالجة بيانات يتراوح حجمها من البيتابايت (petabytes) إلى الزيتابايت (zettabytes).",
+  "answer": true,
+  "why_ar": "صح؛ هذه الجملة جاءت حرفيًا في الميدتيرم: النطاق من petabytes إلى zettabytes.",
+  "why_en": "True — big data ranges from petabytes to zettabytes.",
+  "slide": 0,
+  "hot": true
+ },
+ {
+  "id": "in-002",
+  "lecture": "intro",
+  "topic_en": "Big data volume range",
+  "topic_ar": "نطاق حجم البيانات الضخمة",
+  "type": "tf",
+  "q_en": "Big data technology is capable of storing and processing data that range from gigabytes to terabytes.",
+  "q_ar": "تقنية البيانات الضخمة قادرة على تخزين ومعالجة بيانات يتراوح حجمها من الجيجابايت (gigabytes) إلى التيرابايت (terabytes).",
+  "answer": false,
+  "correct_en": "Big data technology is capable of storing and processing data that range from petabytes to zettabytes.",
+  "why_ar": "خطأ؛ النطاق الصحيح من petabytes إلى zettabytes، أما gigabytes إلى terabytes فهو حجم بيانات عادية.",
+  "why_en": "False — the range is petabytes to zettabytes, not gigabytes to terabytes.",
+  "explain_ar": "هذه نسخة الخطأ التي وضعتها الدكتورة في الميدتيرم نفسه: غيّرت الوحدات فقط. احفظ الترتيب: KB < MB < GB < TB < PB < EB < ZB. البيانات الضخمة تبدأ من PB وتصل إلى ZB.",
+  "slide": 0,
+  "hot": true
+ },
+ {
+  "id": "in-003",
+  "lecture": "intro",
+  "topic_en": "The 3Vs of big data",
+  "topic_ar": "خصائص البيانات الضخمة (3Vs)",
+  "type": "tf",
+  "q_en": "Big data refers to massive volume of data characterized by Volume, Velocity and Variety.",
+  "q_ar": "البيانات الضخمة (Big data) تشير إلى كمية هائلة من البيانات تتميز بالحجم (Volume) والسرعة (Velocity) والتنوع (Variety).",
+  "answer": true,
+  "why_ar": "صح؛ هذه هي الخصائص الثلاث 3Vs: Volume وVelocity وVariety.",
+  "why_en": "True — the 3Vs are Volume, Velocity and Variety.",
+  "slide": 0,
+  "hot": true
+ },
+ {
+  "id": "in-004",
+  "lecture": "intro",
+  "topic_en": "MapReduce",
+  "topic_ar": "MapReduce",
+  "type": "tf",
+  "q_en": "MapReduce is the real-time processing programming model for the Hadoop framework and big data.",
+  "q_ar": "MapReduce هو نموذج البرمجة للمعالجة الفورية (real-time processing) لإطار عمل Hadoop والبيانات الضخمة.",
+  "answer": false,
+  "correct_en": "MapReduce is the batch-processing programming model for the Hadoop framework and big data.",
+  "why_ar": "خطأ؛ MapReduce نموذج برمجة للمعالجة الدفعية (batch-processing) وليس الفورية.",
+  "why_en": "False — MapReduce is the batch-processing programming model for Hadoop.",
+  "explain_ar": "الكلمة المفتاحية هي batch: MapReduce يعالج كمية كبيرة من البيانات دفعة واحدة (مثل HDFS المصمم لـ batch processing of large files). أي جملة تصفه بـ real-time أو streaming فهي خطأ.",
+  "slide": 0,
+  "hot": true
+ },
+ {
+  "id": "in-005",
+  "lecture": "intro",
+  "topic_en": "The 3Vs of big data",
+  "topic_ar": "خصائص البيانات الضخمة (3Vs)",
+  "type": "mcq",
+  "q_en": "Big data refers to massive volume of data characterized by:",
+  "q_ar": "تشير البيانات الضخمة إلى كمية هائلة من البيانات تتميز بـ:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Volume, Velocity and Variety",
+    "ar": "الحجم (Volume) والسرعة (Velocity) والتنوع (Variety)"
+   },
+   {
+    "en": "Volume, Validity and Visualization",
+    "ar": "الحجم (Volume) والصلاحية (Validity) والتصوير (Visualization)"
+   },
+   {
+    "en": "Velocity, Value and Vendor",
+    "ar": "السرعة (Velocity) والقيمة (Value) والمورّد (Vendor)"
+   },
+   {
+    "en": "Variety, Version and Virtualization",
+    "ar": "التنوع (Variety) والإصدار (Version) والمحاكاة (Virtualization)"
+   }
+  ],
+  "why_ar": "الإجابة: Volume وVelocity وVariety وهي الـ 3Vs كما جاءت في الميدتيرم.",
+  "why_en": "The 3Vs are Volume, Velocity and Variety.",
+  "explain_ar": "تذكّر بالترتيب: Volume = كم البيانات كبير، Velocity = بأي سرعة تصل، Variety = كم نوعًا مختلفًا (structured / semi-structured / unstructured). باقي الخيارات تخلط كلمات تبدأ بحرف V لكنها ليست الثلاثة المطلوبة.",
+  "slide": 0,
+  "hot": true
+ },
+ {
+  "id": "in-006",
+  "lecture": "intro",
+  "topic_en": "Big data types",
+  "topic_ar": "أنواع البيانات الضخمة",
+  "type": "mcq",
+  "q_en": "The data types of big data are:",
+  "q_ar": "أنواع بيانات البيانات الضخمة هي:",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Relational, Non-relational and NewSQL",
+    "ar": "علائقية (Relational) وغير علائقية (Non-relational) و NewSQL"
+   },
+   {
+    "en": "Structured, Semi-structured and Unstructured",
+    "ar": "مهيكلة (Structured) وشبه مهيكلة (Semi-structured) وغير مهيكلة (Unstructured)"
+   },
+   {
+    "en": "Structured, Relational and Graph",
+    "ar": "مهيكلة (Structured) وعلائقية (Relational) ورسومية (Graph)"
+   },
+   {
+    "en": "Batch, Streaming and Real-time",
+    "ar": "دفعية (Batch) وتدفقية (Streaming) وفورية (Real-time)"
+   }
+  ],
+  "why_ar": "الإجابة: Structured وSemi-structured وUnstructured.",
+  "why_en": "Big data types are structured, semi-structured and unstructured.",
+  "slide": 0,
+  "hot": true
+ },
+ {
+  "id": "in-007",
+  "lecture": "intro",
+  "topic_en": "MapReduce",
+  "topic_ar": "MapReduce",
+  "type": "mcq",
+  "q_en": "____ is the batch-processing programming model for the Hadoop framework and big data.",
+  "q_ar": "____ هو نموذج البرمجة للمعالجة الدفعية (batch-processing) لإطار عمل Hadoop والبيانات الضخمة.",
+  "answer": 2,
+  "options": [
+   {
+    "en": "HDFS",
+    "ar": "HDFS"
+   },
+   {
+    "en": "HBase",
+    "ar": "HBase"
+   },
+   {
+    "en": "MapReduce",
+    "ar": "MapReduce"
+   },
+   {
+    "en": "NoSQL",
+    "ar": "NoSQL"
+   }
+  ],
+  "why_ar": "الإجابة MapReduce؛ أما HDFS فهو نظام ملفات للتخزين، وHBase قاعدة بيانات عمودية.",
+  "why_en": "MapReduce is Hadoop's batch-processing programming model; HDFS stores files and HBase is a database.",
+  "slide": 0,
+  "hot": true
+ },
+ {
+  "id": "in-008",
+  "lecture": "intro",
+  "topic_en": "Big data volume range",
+  "topic_ar": "نطاق حجم البيانات الضخمة",
+  "type": "mcq",
+  "q_en": "Big data technology is capable of storing and processing data that range from:",
+  "q_ar": "تقنية البيانات الضخمة قادرة على تخزين ومعالجة بيانات يتراوح حجمها من:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "kilobytes to megabytes",
+    "ar": "الكيلوبايت إلى الميجابايت (kilobytes to megabytes)"
+   },
+   {
+    "en": "megabytes to gigabytes",
+    "ar": "الميجابايت إلى الجيجابايت (megabytes to gigabytes)"
+   },
+   {
+    "en": "gigabytes to terabytes",
+    "ar": "الجيجابايت إلى التيرابايت (gigabytes to terabytes)"
+   },
+   {
+    "en": "petabytes to zettabytes",
+    "ar": "البيتابايت إلى الزيتابايت (petabytes to zettabytes)"
+   }
+  ],
+  "why_ar": "الإجابة: من petabytes إلى zettabytes؛ وخيار gigabytes to terabytes هو الفخ الذي جاء في الميدتيرم.",
+  "why_en": "Big data ranges from petabytes to zettabytes.",
+  "slide": 0,
+  "hot": true
+ }
+]

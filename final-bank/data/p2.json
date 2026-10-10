@@ -1,0 +1,1544 @@
+[
+  {
+    "id": "p2-001",
+    "lecture": "p2",
+    "topic_en": "Hadoop Writable types and MapReduce input formats",
+    "topic_ar": "أنواع Writable في Hadoop وصيغ إدخال MapReduce",
+    "type": "tf",
+    "q_en": "In TextInputFormat, the key is of IntWritable type, and it is the byte offset of the starting of the line within the entire file.",
+    "q_ar": "في TextInputFormat يكون المفتاح (key) من نوع IntWritable، وهو إزاحة البايت (byte offset) لبداية السطر داخل الملف كاملاً.",
+    "answer": false,
+    "correct_en": "The key is of LongWritable type, and it is the byte offset of the starting of the line within the entire file.",
+    "why_ar": "خطأ؛ المفتاح من نوع LongWritable وليس IntWritable.",
+    "why_en": "False — the key is of LongWritable type, not IntWritable.",
+    "explain_ar": "الفخ هنا تبديل كلمة واحدة: Int بدل Long. تذكّر: الإزاحة داخل ملف ضخم قد تكون رقماً كبيراً جداً، لذلك تحتاج نوعاً طويلاً (Long) ← LongWritable.",
+    "slide": 4,
+    "hot": false
+  },
+  {
+    "id": "p2-002",
+    "lecture": "p2",
+    "topic_en": "Hadoop Writable types and MapReduce input formats",
+    "topic_ar": "أنواع Writable في Hadoop وصيغ إدخال MapReduce",
+    "type": "tf",
+    "q_en": "In TextInputFormat, the given input file is broken into lines, and each line is divided into key-value pairs.",
+    "q_ar": "في TextInputFormat يُقسَّم ملف الإدخال إلى أسطر (lines)، ويُقسَّم كل سطر إلى أزواج مفتاح-قيمة (key-value pairs).",
+    "answer": true,
+    "why_ar": "صح؛ هذه جملة السلايد حرفياً: الملف يُقسم إلى أسطر وكل سطر إلى key-value.",
+    "why_en": "True — the file is broken into lines and each line into key-value pairs.",
+    "slide": 4,
+    "hot": false
+  },
+  {
+    "id": "p2-003",
+    "lecture": "p2",
+    "topic_en": "Hadoop Writable types and MapReduce input formats",
+    "topic_ar": "أنواع Writable في Hadoop وصيغ إدخال MapReduce",
+    "type": "mcq",
+    "q_en": "Which of the following is NOT one of the primitive data types in Hadoop?",
+    "q_ar": "أيٌّ مما يلي ليس من أنواع البيانات الأولية (primitive data types) في Hadoop؟",
+    "answer": 2,
+    "options": [
+      {
+        "en": "VIntWritable",
+        "ar": "VIntWritable"
+      },
+      {
+        "en": "BooleanWritable",
+        "ar": "BooleanWritable"
+      },
+      {
+        "en": "StringWritable",
+        "ar": "StringWritable"
+      },
+      {
+        "en": "DoubleWritable",
+        "ar": "DoubleWritable"
+      }
+    ],
+    "why_ar": "StringWritable غير موجود في القائمة؛ الأنواع الثمانية هي Boolean, Byte, Int, VInt, Float, Long, VLong, Double + Writable.",
+    "why_en": "StringWritable is not in the slide list of eight primitive Writable types.",
+    "explain_ar": "الأنواع الثمانية: BooleanWritable, ByteWritable, IntWritable, VIntWritable, FloatWritable, LongWritable, VLongWritable, DoubleWritable. لاحظ أن VInt وVLong موجودان فعلاً فلا تنخدع بهما، أما String فليس منها.",
+    "slide": 3,
+    "hot": false
+  },
+  {
+    "id": "p2-004",
+    "lecture": "p2",
+    "topic_en": "Hadoop Writable types and MapReduce input formats",
+    "topic_ar": "أنواع Writable في Hadoop وصيغ إدخال MapReduce",
+    "type": "mcq",
+    "q_en": "____ is the default MapReduce InputFormat.",
+    "q_ar": "____ هي صيغة الإدخال (InputFormat) الافتراضية في MapReduce.",
+    "answer": 0,
+    "options": [
+      {
+        "en": "TextInputFormat",
+        "ar": "TextInputFormat"
+      },
+      {
+        "en": "KeyValueTextInputFormat",
+        "ar": "KeyValueTextInputFormat"
+      },
+      {
+        "en": "NLineInputFormat",
+        "ar": "NLineInputFormat"
+      },
+      {
+        "en": "SequenceFileInputFormat",
+        "ar": "SequenceFileInputFormat"
+      }
+    ],
+    "why_ar": "الصيغة الافتراضية هي TextInputFormat، والبقية صيغ أخرى يدعمها MapReduce.",
+    "why_en": "TextInputFormat is the default; the others are other supported formats.",
+    "slide": 4,
+    "hot": false
+  },
+  {
+    "id": "p2-005",
+    "lecture": "p2",
+    "topic_en": "Hadoop Writable types and MapReduce input formats",
+    "topic_ar": "أنواع Writable في Hadoop وصيغ إدخال MapReduce",
+    "type": "mcq",
+    "q_en": "In TextInputFormat, the key is of LongWritable type, and it is:",
+    "q_ar": "في TextInputFormat يكون المفتاح من نوع LongWritable، وهو:",
+    "answer": 3,
+    "options": [
+      {
+        "en": "The number of words in the line",
+        "ar": "عدد الكلمات في السطر"
+      },
+      {
+        "en": "The content of the whole line",
+        "ar": "محتوى السطر كاملاً"
+      },
+      {
+        "en": "The name of the input file",
+        "ar": "اسم ملف الإدخال"
+      },
+      {
+        "en": "The byte offset of the starting of the line within the entire file",
+        "ar": "إزاحة البايت (byte offset) لبداية السطر داخل الملف كاملاً"
+      }
+    ],
+    "why_ar": "المفتاح هو byte offset لبداية السطر داخل الملف.",
+    "why_en": "The key is the byte offset of the start of the line within the file.",
+    "slide": 4,
+    "hot": false
+  },
+  {
+    "id": "p2-006",
+    "lecture": "p2",
+    "topic_en": "YARN core components",
+    "topic_ar": "المكونات الأساسية لـ YARN",
+    "type": "tf",
+    "q_en": "A ResourceManager is a one-per-cluster application that manages the allocation of resources to various applications.",
+    "q_ar": "مدير الموارد (ResourceManager) تطبيق واحد لكل عنقود (one-per-cluster) يدير تخصيص الموارد للتطبيقات المختلفة.",
+    "answer": true,
+    "why_ar": "صح؛ ResourceManager واحد لكل cluster ويوزّع الموارد على التطبيقات.",
+    "why_en": "True — one ResourceManager per cluster allocates resources to applications.",
+    "slide": 5,
+    "hot": false
+  },
+  {
+    "id": "p2-007",
+    "lecture": "p2",
+    "topic_en": "YARN core components",
+    "topic_ar": "المكونات الأساسية لـ YARN",
+    "type": "tf",
+    "q_en": "The ResourceManager runs in all the slave nodes and is a per-node application.",
+    "q_ar": "مدير الموارد (ResourceManager) يعمل في جميع العقد التابعة (slave nodes) وهو تطبيق لكل عقدة (per-node).",
+    "answer": false,
+    "correct_en": "The NodeManager runs in all the slave nodes and is a per-node application.",
+    "why_ar": "خطأ؛ الذي يعمل في كل slave node هو NodeManager، أما ResourceManager فواحد لكل cluster.",
+    "why_en": "False — that describes the NodeManager; the ResourceManager is one per cluster.",
+    "explain_ar": "فرّق بالاسم: Resource = موارد العنقود كله ← واحد لكل cluster. Node = عقدة ← واحد في كل عقدة (per-node) وينفّذ جزءاً من الـ job.",
+    "slide": 5,
+    "hot": false
+  },
+  {
+    "id": "p2-008",
+    "lecture": "p2",
+    "topic_en": "YARN core components",
+    "topic_ar": "المكونات الأساسية لـ YARN",
+    "type": "tf",
+    "q_en": "The NodeManager monitors the status of the running applications and restarts the applications in case of failures.",
+    "q_ar": "مدير العقدة (NodeManager) يراقب حالة التطبيقات العاملة ويعيد تشغيلها في حالة الفشل.",
+    "answer": false,
+    "correct_en": "ApplicationMaster is for the execution of the application, monitors the status of the running applications, and restarts the applications in case of failures.",
+    "why_ar": "خطأ؛ مراقبة التطبيقات وإعادة تشغيلها عند الفشل هي مهمة ApplicationMaster.",
+    "why_en": "False — monitoring and restarting applications is the ApplicationMaster's job.",
+    "explain_ar": "ApplicationMaster مسؤول عن تطبيق واحد: ينفّذه ويراقبه ويعيد تشغيله إذا فشل. NodeManager فقط ينفّذ جزءاً (portion) من الـ job على عقدته.",
+    "slide": 5,
+    "hot": false
+  },
+  {
+    "id": "p2-009",
+    "lecture": "p2",
+    "topic_en": "YARN core components",
+    "topic_ar": "المكونات الأساسية لـ YARN",
+    "type": "mcq",
+    "q_en": "The ____ is responsible for executing a portion of a job.",
+    "q_ar": "____ مسؤول عن تنفيذ جزء (portion) من الـ job.",
+    "answer": 1,
+    "options": [
+      {
+        "en": "ResourceManager",
+        "ar": "ResourceManager"
+      },
+      {
+        "en": "NodeManager",
+        "ar": "NodeManager"
+      },
+      {
+        "en": "ApplicationMaster",
+        "ar": "ApplicationMaster"
+      },
+      {
+        "en": "NameNode",
+        "ar": "NameNode"
+      }
+    ],
+    "why_ar": "NodeManager يعمل على كل slave node وينفّذ جزءاً من الـ job.",
+    "why_en": "The NodeManager executes a portion of a job on its node.",
+    "slide": 5,
+    "hot": false
+  },
+  {
+    "id": "p2-010",
+    "lecture": "p2",
+    "topic_en": "YARN core components",
+    "topic_ar": "المكونات الأساسية لـ YARN",
+    "type": "mcq",
+    "q_en": "Which of the following is NOT one of the core components of YARN?",
+    "q_ar": "أيٌّ مما يلي ليس من المكونات الأساسية لـ YARN؟",
+    "answer": 1,
+    "options": [
+      {
+        "en": "ResourceManager",
+        "ar": "ResourceManager"
+      },
+      {
+        "en": "DataNode",
+        "ar": "DataNode"
+      },
+      {
+        "en": "ApplicationMaster",
+        "ar": "ApplicationMaster"
+      },
+      {
+        "en": "NodeManager",
+        "ar": "NodeManager"
+      }
+    ],
+    "why_ar": "مكونات YARN الثلاثة: ResourceManager وApplicationMaster وNodeManager. أما DataNode فمن مكونات HDFS.",
+    "why_en": "YARN's core components are ResourceManager, ApplicationMaster and NodeManager; DataNode belongs to HDFS.",
+    "slide": 5,
+    "hot": false
+  },
+  {
+    "id": "p2-011",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "tf",
+    "q_en": "Zookeeper provides a centralized service and manages the coordination between the components of a distributed system.",
+    "q_ar": "يوفّر Zookeeper خدمة مركزية (centralized service) ويدير التنسيق (coordination) بين مكونات النظام الموزّع.",
+    "answer": true,
+    "why_ar": "صح؛ وظيفة Zookeeper هي التنسيق بين مكونات النظام الموزع.",
+    "why_en": "True — ZooKeeper is the coordination service.",
+    "slide": 6,
+    "hot": false
+  },
+  {
+    "id": "p2-012",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "tf",
+    "q_en": "Pig is developed at Google.",
+    "q_ar": "تم تطوير Pig في شركة Google.",
+    "answer": false,
+    "correct_en": "Pig is developed at Yahoo.",
+    "why_ar": "خطأ؛ Pig تم تطويره في Yahoo.",
+    "why_en": "False — Pig is developed at Yahoo.",
+    "slide": 7,
+    "hot": false
+  },
+  {
+    "id": "p2-013",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "tf",
+    "q_en": "Pig has two components: the pig language, called Pig Latin, and the environment where the Pig Latin scripts are executed.",
+    "q_ar": "لـ Pig مكوّنان: لغة Pig المسماة Pig Latin، والبيئة التي تُنفَّذ فيها سكربتات Pig Latin.",
+    "answer": true,
+    "why_ar": "صح؛ مكوّنا Pig هما لغة Pig Latin وبيئة التنفيذ.",
+    "why_en": "True — Pig = Pig Latin language + execution environment.",
+    "slide": 7,
+    "hot": false
+  },
+  {
+    "id": "p2-014",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "tf",
+    "q_en": "Flume is an open-source data serialization framework.",
+    "q_ar": "Flume إطار عمل مفتوح المصدر لتسلسل البيانات (data serialization).",
+    "answer": false,
+    "correct_en": "Apache Avro is an open-source data serialization framework.",
+    "why_ar": "خطأ؛ إطار data serialization هو Apache Avro، أما Flume فأداة لجمع البيانات المتدفقة (streaming data).",
+    "why_en": "False — Avro is the serialization framework; Flume collects streaming data.",
+    "explain_ar": "data serialization = تحويل البيانات من الذاكرة إلى صيغة ثنائية أو نصية لنقلها عبر الشبكة أو تخزينها على القرص ← Avro. أما Flume فـ«يجمع» (collect) كميات كبيرة من البيانات المتدفقة من مصادر متعددة.",
+    "slide": 6,
+    "hot": false
+  },
+  {
+    "id": "p2-015",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "tf",
+    "q_en": "Avro has a data format that can be processed by multiple languages.",
+    "q_ar": "لدى Avro صيغة بيانات يمكن معالجتها بواسطة لغات برمجة متعددة.",
+    "answer": true,
+    "why_ar": "صح؛ صيغة بيانات Avro قابلة للمعالجة بعدة لغات.",
+    "why_en": "True — Avro's data format can be processed by multiple languages.",
+    "slide": 6,
+    "hot": false
+  },
+  {
+    "id": "p2-016",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "tf",
+    "q_en": "Mahout allows multiple Map/Reduce jobs to combine into a logical unit of work to accomplish the larger task.",
+    "q_ar": "يسمح Mahout بدمج عدة مهام Map/Reduce في وحدة عمل منطقية واحدة لإنجاز مهمة أكبر.",
+    "answer": false,
+    "correct_en": "Oozie allows multiple Map/Reduce jobs to combine into a logical unit of work to accomplish the larger task.",
+    "why_ar": "خطأ؛ هذا وصف Oozie الذي يدير سير العمل (workflow). أما Mahout فهو لتعلم الآلة.",
+    "why_en": "False — that is Oozie (workflow); Mahout is for machine learning.",
+    "explain_ar": "Oozie = مدير سير العمل (workflow): يرتّب البرامج بالترتيب المطلوب في بيئة Hadoop ويجمع عدة MapReduce jobs في وحدة واحدة. Mahout = خوارزميات Machine Learning (clustering, classification, recommendation).",
+    "slide": 7,
+    "hot": false
+  },
+  {
+    "id": "p2-017",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "tf",
+    "q_en": "Hive is a tool to process unstructured data in the Hadoop environment.",
+    "q_ar": "Hive أداة لمعالجة البيانات غير المهيكلة (unstructured data) في بيئة Hadoop.",
+    "answer": false,
+    "correct_en": "Hive is a tool to process structured data in the Hadoop environment.",
+    "why_ar": "خطأ؛ Hive يعالج البيانات المهيكلة (structured data). الذي يتعامل مع أي نوع بيانات هو Pig.",
+    "why_en": "False — Hive processes structured data.",
+    "explain_ar": "Hive يشبه SQL (لغة HQL) والجداول، لذلك منطقي أنه للبيانات المهيكلة (structured). أما Pig فيعالج أي نوع: structured وsemi-structured وunstructured.",
+    "slide": 7,
+    "hot": false
+  },
+  {
+    "id": "p2-018",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "mcq",
+    "q_en": "____ can be used to move data from relational databases to HBase.",
+    "q_ar": "____ يمكن استخدامه لنقل البيانات من قواعد البيانات العلائقية (relational databases) إلى HBase.",
+    "answer": 3,
+    "options": [
+      {
+        "en": "Flume",
+        "ar": "Flume"
+      },
+      {
+        "en": "Avro",
+        "ar": "Avro"
+      },
+      {
+        "en": "Oozie",
+        "ar": "Oozie"
+      },
+      {
+        "en": "Sqoop",
+        "ar": "Sqoop"
+      }
+    ],
+    "why_ar": "Sqoop ينقل البيانات من قواعد البيانات العلائقية إلى HBase، ويستورد البيانات أيضاً إلى HBase وHive.",
+    "why_en": "Sqoop moves data from relational databases to HBase (and can import into HBase and Hive).",
+    "explain_ar": "حيلة للحفظ: SQoop = SQL + Hadoop، أي جسر بين قواعد بيانات SQL العلائقية وبين HBase/Hive. أما Flume فيجمع بيانات streaming، وليس من RDBMS.",
+    "slide": 6,
+    "hot": false
+  },
+  {
+    "id": "p2-019",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "mcq",
+    "q_en": "____ is a distributed and reliable tool for collecting large amount of streaming data from multiple data sources.",
+    "q_ar": "____ أداة موزّعة وموثوقة لجمع كميات كبيرة من البيانات المتدفقة (streaming data) من مصادر بيانات متعددة.",
+    "answer": 0,
+    "options": [
+      {
+        "en": "Flume",
+        "ar": "Flume"
+      },
+      {
+        "en": "Sqoop",
+        "ar": "Sqoop"
+      },
+      {
+        "en": "Zookeeper",
+        "ar": "Zookeeper"
+      },
+      {
+        "en": "Mahout",
+        "ar": "Mahout"
+      }
+    ],
+    "why_ar": "Flume هي أداة جمع البيانات المتدفقة من مصادر متعددة.",
+    "why_en": "Flume collects large amounts of streaming data from multiple sources.",
+    "slide": 6,
+    "hot": false
+  },
+  {
+    "id": "p2-020",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "mcq",
+    "q_en": "Apache Mahout is an open-source machine learning algorithm that implements:",
+    "q_ar": "Apache Mahout خوارزمية تعلم آلي (machine learning) مفتوحة المصدر تطبّق:",
+    "answer": 2,
+    "options": [
+      {
+        "en": "Data serialization into binary or textual format",
+        "ar": "تسلسل البيانات إلى صيغة ثنائية أو نصية"
+      },
+      {
+        "en": "Coordination between the components of a distributed system",
+        "ar": "التنسيق بين مكونات النظام الموزّع"
+      },
+      {
+        "en": "Clustering, classification, and recommendation algorithms",
+        "ar": "خوارزميات العنقدة (clustering) والتصنيف (classification) والتوصية (recommendation)"
+      },
+      {
+        "en": "Collection of streaming data from multiple sources",
+        "ar": "جمع البيانات المتدفقة من مصادر متعددة"
+      }
+    ],
+    "why_ar": "Mahout يطبّق clustering وclassification وrecommendation، وهو مرن لتطبيق خوارزميات أخرى أيضاً.",
+    "why_en": "Mahout implements clustering, classification and recommendation algorithms.",
+    "slide": 7,
+    "hot": false
+  },
+  {
+    "id": "p2-021",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "mcq",
+    "q_en": "Data in Hive is organized into:",
+    "q_ar": "تُنظَّم البيانات في Hive إلى:",
+    "answer": 3,
+    "options": [
+      {
+        "en": "Rows, column families, and columns",
+        "ar": "صفوف وعائلات أعمدة وأعمدة"
+      },
+      {
+        "en": "Collections, documents, and fields",
+        "ar": "مجموعات (Collections) ووثائق وحقول"
+      },
+      {
+        "en": "Lines, key-value pairs, and offsets",
+        "ar": "أسطر وأزواج مفتاح-قيمة وإزاحات"
+      },
+      {
+        "en": "Tables, partitions, and buckets",
+        "ar": "جداول (Tables) وأقسام (Partitions) وحاويات (Buckets)"
+      }
+    ],
+    "why_ar": "بيانات Hive تُنظم في Tables ثم Partitions ثم Buckets.",
+    "why_en": "Hive data is organized into tables, partitions and buckets.",
+    "explain_ar": "انتبه للمشتّتات من محاضرات أخرى: rows/column families/columns تخص HBase، وcollections/documents/fields تخص MongoDB. Hive = Tables → Partitions → Buckets.",
+    "slide": 8,
+    "hot": false
+  },
+  {
+    "id": "p2-022",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "mcq",
+    "q_en": "Hive is a platform to develop scripts similar to SQL to perform MapReduce operations. The language for querying is called:",
+    "q_ar": "Hive منصة لتطوير سكربتات تشبه SQL لتنفيذ عمليات MapReduce. لغة الاستعلام فيها تسمى:",
+    "answer": 1,
+    "options": [
+      {
+        "en": "Pig Latin",
+        "ar": "Pig Latin"
+      },
+      {
+        "en": "HQL",
+        "ar": "HQL"
+      },
+      {
+        "en": "JDBC",
+        "ar": "JDBC"
+      },
+      {
+        "en": "Avro",
+        "ar": "Avro"
+      }
+    ],
+    "why_ar": "لغة الاستعلام في Hive هي HQL. أما ODBC/JDBC فهي واجهات (interfaces) يرسل Hive عبرها الاستعلامات إلى Hadoop.",
+    "why_en": "Hive's query language is HQL; JDBC/ODBC are interfaces, Pig Latin is Pig's language.",
+    "explain_ar": "Hive يتواصل مع Hadoop بإرسال الاستعلام عبر واجهة مثل ODBC أو JDBC — هذه واجهات وليست لغة. اللغة = HQL (Hive Query Language)، ولغة Pig = Pig Latin.",
+    "slide": 7,
+    "hot": false
+  },
+  {
+    "id": "p2-023",
+    "lecture": "p2",
+    "topic_en": "Hadoop ecosystem tools",
+    "topic_ar": "أدوات منظومة Hadoop",
+    "type": "mcq",
+    "q_en": "Pig can handle which type of data sets?",
+    "q_ar": "ما نوع مجموعات البيانات التي يستطيع Pig التعامل معها؟",
+    "answer": 2,
+    "options": [
+      {
+        "en": "Structured data only",
+        "ar": "البيانات المهيكلة فقط"
+      },
+      {
+        "en": "Unstructured data only",
+        "ar": "البيانات غير المهيكلة فقط"
+      },
+      {
+        "en": "Structured, semi-structured, and unstructured",
+        "ar": "المهيكلة وشبه المهيكلة وغير المهيكلة"
+      },
+      {
+        "en": "Streaming data only",
+        "ar": "البيانات المتدفقة فقط"
+      }
+    ],
+    "why_ar": "Pig يتعامل مع أي نوع من البيانات: structured وsemi-structured وunstructured.",
+    "why_en": "Pig can handle any type of data: structured, semi-structured and unstructured.",
+    "slide": 7,
+    "hot": false
+  },
+  {
+    "id": "p2-024",
+    "lecture": "p2",
+    "topic_en": "Data warehouse, BI and big data analytics",
+    "topic_ar": "مستودع البيانات وذكاء الأعمال وتحليلات البيانات الضخمة",
+    "type": "tf",
+    "q_en": "Data warehouse, also termed as Enterprise Data Warehouse (EDW), is a repository for the data that various organizations and business enterprises collect.",
+    "q_ar": "مستودع البيانات (Data warehouse)، ويسمى أيضاً مستودع بيانات المؤسسة (EDW)، هو مخزن للبيانات التي تجمعها المؤسسات والشركات المختلفة.",
+    "answer": true,
+    "why_ar": "صح؛ هذا تعريف Data warehouse (EDW) حرفياً.",
+    "why_en": "True — this is the slide definition of a data warehouse (EDW).",
+    "slide": 10,
+    "hot": false
+  },
+  {
+    "id": "p2-025",
+    "lecture": "p2",
+    "topic_en": "Data warehouse, BI and big data analytics",
+    "topic_ar": "مستودع البيانات وذكاء الأعمال وتحليلات البيانات الضخمة",
+    "type": "tf",
+    "q_en": "Big data analytics allows to make better decisions, find new business opportunities, compete against business rivals, improve performance and efficiency, and increase cost.",
+    "q_ar": "تحليلات البيانات الضخمة تسمح باتخاذ قرارات أفضل وإيجاد فرص عمل جديدة ومنافسة المنافسين وتحسين الأداء والكفاءة وزيادة التكلفة.",
+    "answer": false,
+    "correct_en": "Big data analytics allows to make better decisions, find new business opportunities, compete against business rivals, improve performance and efficiency, and reduce cost.",
+    "why_ar": "خطأ؛ تحليلات البيانات الضخمة تقلّل التكلفة (reduce cost) ولا تزيدها.",
+    "why_en": "False — big data analytics reduces cost.",
+    "explain_ar": "تبديل الضد (antonym) من أسلوب الدكتورة: reduce ← increase. كل الفوائد في الجملة إيجابية، فزيادة التكلفة لا يمكن أن تكون فائدة.",
+    "slide": 11,
+    "hot": false
+  },
+  {
+    "id": "p2-026",
+    "lecture": "p2",
+    "topic_en": "Data warehouse, BI and big data analytics",
+    "topic_ar": "مستودع البيانات وذكاء الأعمال وتحليلات البيانات الضخمة",
+    "type": "mcq",
+    "q_en": "____ is the process of analyzing the data producing a desirable output to the organizations and end users to make decisions.",
+    "q_ar": "____ هو عملية تحليل البيانات وإنتاج مخرجات مرغوبة للمؤسسات والمستخدمين النهائيين لاتخاذ القرارات.",
+    "answer": 0,
+    "options": [
+      {
+        "en": "Business intelligence (BI)",
+        "ar": "ذكاء الأعمال (Business intelligence - BI)"
+      },
+      {
+        "en": "Enterprise Data Warehouse (EDW)",
+        "ar": "مستودع بيانات المؤسسة (EDW)"
+      },
+      {
+        "en": "Data serialization",
+        "ar": "تسلسل البيانات (Data serialization)"
+      },
+      {
+        "en": "Sentiment analysis",
+        "ar": "تحليل المشاعر (Sentiment analysis)"
+      }
+    ],
+    "why_ar": "هذا تعريف Business intelligence. أما EDW فهو مخزن (repository) للبيانات فقط.",
+    "why_en": "That defines Business intelligence; an EDW is just a repository for data.",
+    "explain_ar": "فرّق: Data warehouse = «مكان» تُخزَّن فيه البيانات (repository). BI = «عملية» تحليل تنتج مخرجات تساعد على اتخاذ القرار. وData analytics = تحليل البيانات الخام (raw data) بواسطة علماء البيانات لاتخاذ قرارات الأعمال.",
+    "slide": [
+      10,
+      27
+    ],
+    "hot": false
+  },
+  {
+    "id": "p2-027",
+    "lecture": "p2",
+    "topic_en": "Data warehouse, BI and big data analytics",
+    "topic_ar": "مستودع البيانات وذكاء الأعمال وتحليلات البيانات الضخمة",
+    "type": "mcq",
+    "q_en": "Big data analytics is the science of examining or analyzing large data sets with a variety of data types, which may be:",
+    "q_ar": "تحليلات البيانات الضخمة هي علم فحص أو تحليل مجموعات بيانات كبيرة بأنواع بيانات متنوعة، والتي قد تكون:",
+    "answer": 0,
+    "options": [
+      {
+        "en": "Structured, semi-structured, or unstructured data, streaming or batch",
+        "ar": "بيانات مهيكلة أو شبه مهيكلة أو غير مهيكلة، متدفقة (streaming) أو دفعية (batch)"
+      },
+      {
+        "en": "Structured batch data only",
+        "ar": "بيانات مهيكلة دفعية فقط"
+      },
+      {
+        "en": "Unstructured streaming data only",
+        "ar": "بيانات غير مهيكلة متدفقة فقط"
+      },
+      {
+        "en": "Relational tables stored in a single server only",
+        "ar": "جداول علائقية مخزنة في خادم واحد فقط"
+      }
+    ],
+    "why_ar": "البيانات في big data analytics متنوعة: structured/semi-structured/unstructured، وقد تكون streaming أو batch.",
+    "why_en": "Big data analytics covers structured, semi-structured or unstructured data, streaming or batch.",
+    "slide": 11,
+    "hot": false
+  },
+  {
+    "id": "p2-028",
+    "lecture": "p2",
+    "topic_en": "Four types of analytics",
+    "topic_ar": "الأنواع الأربعة للتحليلات",
+    "type": "tf",
+    "q_en": "Predictive Analytics gives insight into the past.",
+    "q_ar": "التحليلات التنبؤية (Predictive Analytics) تعطي رؤية عن الماضي.",
+    "answer": false,
+    "correct_en": "Descriptive Analytics—Insight into the past.",
+    "why_ar": "خطأ؛ الرؤية عن الماضي هي Descriptive Analytics، أما Predictive فهي فهم المستقبل.",
+    "why_en": "False — insight into the past is Descriptive; Predictive is understanding the future.",
+    "explain_ar": "ترتيب زمني سهل: Descriptive = ماذا حدث (الماضي) ← Diagnostic = لماذا حدث ← Predictive = ماذا سيحدث (المستقبل) ← Prescriptive = ماذا نفعل (نصيحة/advice).",
+    "slide": 12,
+    "hot": false
+  },
+  {
+    "id": "p2-029",
+    "lecture": "p2",
+    "topic_en": "Four types of analytics",
+    "topic_ar": "الأنواع الأربعة للتحليلات",
+    "type": "tf",
+    "q_en": "Prescriptive Analytics gives advice on possible outcomes.",
+    "q_ar": "التحليلات التوجيهية (Prescriptive Analytics) تقدّم نصيحة (advice) حول النتائج المحتملة.",
+    "answer": true,
+    "why_ar": "صح؛ Prescriptive = Advice on possible outcomes.",
+    "why_en": "True — Prescriptive analytics is advice on possible outcomes.",
+    "slide": 12,
+    "hot": false
+  },
+  {
+    "id": "p2-030",
+    "lecture": "p2",
+    "topic_en": "Four types of analytics",
+    "topic_ar": "الأنواع الأربعة للتحليلات",
+    "type": "mcq",
+    "q_en": "Which type of analytics gives insight into the past?",
+    "q_ar": "أي نوع من التحليلات يعطي رؤية عن الماضي؟",
+    "answer": 2,
+    "options": [
+      {
+        "en": "Diagnostic Analytics",
+        "ar": "التحليلات التشخيصية (Diagnostic Analytics)"
+      },
+      {
+        "en": "Predictive Analytics",
+        "ar": "التحليلات التنبؤية (Predictive Analytics)"
+      },
+      {
+        "en": "Descriptive Analytics",
+        "ar": "التحليلات الوصفية (Descriptive Analytics)"
+      },
+      {
+        "en": "Prescriptive Analytics",
+        "ar": "التحليلات التوجيهية (Prescriptive Analytics)"
+      }
+    ],
+    "why_ar": "Descriptive Analytics = Insight into the past.",
+    "why_en": "Descriptive analytics gives insight into the past.",
+    "slide": 12,
+    "hot": false
+  },
+  {
+    "id": "p2-031",
+    "lecture": "p2",
+    "topic_en": "Four types of analytics",
+    "topic_ar": "الأنواع الأربعة للتحليلات",
+    "type": "mcq",
+    "q_en": "Understanding what is happening and why did it happen is:",
+    "q_ar": "فهم ما يحدث ولماذا حدث هو:",
+    "answer": 1,
+    "options": [
+      {
+        "en": "Descriptive Analytics",
+        "ar": "التحليلات الوصفية (Descriptive Analytics)"
+      },
+      {
+        "en": "Diagnostic Analytics",
+        "ar": "التحليلات التشخيصية (Diagnostic Analytics)"
+      },
+      {
+        "en": "Predictive Analytics",
+        "ar": "التحليلات التنبؤية (Predictive Analytics)"
+      },
+      {
+        "en": "Prescriptive Analytics",
+        "ar": "التحليلات التوجيهية (Prescriptive Analytics)"
+      }
+    ],
+    "why_ar": "Diagnostic = فهم ما يحدث ولماذا (why) — مثل الطبيب الذي يشخّص سبب المرض.",
+    "why_en": "Diagnostic analytics explains what is happening and why.",
+    "slide": 12,
+    "hot": false
+  },
+  {
+    "id": "p2-032",
+    "lecture": "p2",
+    "topic_en": "Four types of analytics",
+    "topic_ar": "الأنواع الأربعة للتحليلات",
+    "type": "mcq",
+    "q_en": "Understanding the future is the goal of:",
+    "q_ar": "فهم المستقبل هو هدف:",
+    "answer": 3,
+    "options": [
+      {
+        "en": "Descriptive Analytics",
+        "ar": "التحليلات الوصفية (Descriptive Analytics)"
+      },
+      {
+        "en": "Diagnostic Analytics",
+        "ar": "التحليلات التشخيصية (Diagnostic Analytics)"
+      },
+      {
+        "en": "Prescriptive Analytics",
+        "ar": "التحليلات التوجيهية (Prescriptive Analytics)"
+      },
+      {
+        "en": "Predictive Analytics",
+        "ar": "التحليلات التنبؤية (Predictive Analytics)"
+      }
+    ],
+    "why_ar": "Predictive Analytics = Understanding the future.",
+    "why_en": "Predictive analytics is understanding the future.",
+    "slide": 12,
+    "hot": false
+  },
+  {
+    "id": "p2-033",
+    "lecture": "p2",
+    "topic_en": "Data analytics life cycle",
+    "topic_ar": "دورة حياة تحليل البيانات",
+    "type": "tf",
+    "q_en": "In the data analytics life cycle, identifying the source data necessary to solve the issue is called data selection.",
+    "q_ar": "في دورة حياة تحليل البيانات، يُسمّى تحديد بيانات المصدر اللازمة لحل المشكلة اختيار البيانات (data selection).",
+    "answer": true,
+    "why_ar": "صح؛ identify the source data necessary to solve the issue = Data selection.",
+    "why_en": "True — identifying the necessary source data is data selection.",
+    "slide": [
+      13,
+      14
+    ],
+    "hot": false
+  },
+  {
+    "id": "p2-034",
+    "lecture": "p2",
+    "topic_en": "Data analytics life cycle",
+    "topic_ar": "دورة حياة تحليل البيانات",
+    "type": "mcq",
+    "q_en": "The first step of the data analytics life cycle is to:",
+    "q_ar": "الخطوة الأولى في دورة حياة تحليل البيانات هي:",
+    "answer": 1,
+    "options": [
+      {
+        "en": "Data Preparation",
+        "ar": "تجهيز البيانات (Data Preparation)"
+      },
+      {
+        "en": "Define the business problem that has to be solved with data analytics",
+        "ar": "تحديد مشكلة العمل التي يجب حلّها بتحليل البيانات"
+      },
+      {
+        "en": "Data Analysis and Visualization",
+        "ar": "تحليل البيانات وتصويرها (Data Analysis and Visualization)"
+      },
+      {
+        "en": "Analytics Application",
+        "ar": "تطبيق التحليلات (Analytics Application)"
+      }
+    ],
+    "why_ar": "تبدأ الدورة بتعريف مشكلة العمل، ثم data selection، ثم preparation، ثم extraction & transformation، ثم analysis & visualization، وأخيراً analytics application.",
+    "why_en": "The cycle starts by defining the business problem; Analytics Application is the last step.",
+    "explain_ar": "رتّب الخطوات كقصة: (1) ما المشكلة؟ (2) أي بيانات نحتاج؟ Data selection (3) Data Preparation (4) Data Extraction and Transformation (5) Data Analysis and Visualization (6) Analytics Application.",
+    "slide": 13,
+    "hot": false
+  },
+  {
+    "id": "p2-035",
+    "lecture": "p2",
+    "topic_en": "Data analytics life cycle",
+    "topic_ar": "دورة حياة تحليل البيانات",
+    "type": "mcq",
+    "q_en": "In the data analytics life cycle diagram, the Preprocessed Data is produced by which stage?",
+    "q_ar": "في مخطط دورة حياة تحليل البيانات، البيانات المعالجة مسبقاً (Preprocessed Data) تنتج عن أي مرحلة؟",
+    "answer": 0,
+    "options": [
+      {
+        "en": "Data Cleaning",
+        "ar": "تنظيف البيانات (Data Cleaning)"
+      },
+      {
+        "en": "Data Selection",
+        "ar": "اختيار البيانات (Data Selection)"
+      },
+      {
+        "en": "Data Transformation",
+        "ar": "تحويل البيانات (Data Transformation)"
+      },
+      {
+        "en": "Interpretation and Evaluation",
+        "ar": "التفسير والتقييم (Interpretation and Evaluation)"
+      }
+    ],
+    "why_ar": "في المخطط: Source Data → (Data Selection) Data Mart → (Data Cleaning) Preprocessed Data → (Data Transformation) Transformed Data → (Analysis) Patterns → (Interpretation and Evaluation) Analytics Application.",
+    "why_en": "In the diagram, Data Cleaning produces the Preprocessed Data.",
+    "explain_ar": "كل مرحلة تنتج شيئاً: Data Selection ← Data Mart، Data Cleaning ← Preprocessed Data، Data Transformation ← Transformed Data، Analysis ← Patterns، Interpretation and Evaluation ← Analytics Application.",
+    "slide": 14,
+    "hot": false
+  },
+  {
+    "id": "p2-036",
+    "lecture": "p2",
+    "topic_en": "Quantitative and qualitative analysis",
+    "topic_ar": "التحليل الكمي والنوعي",
+    "type": "tf",
+    "q_en": "Quantitative data is the data based on numbers.",
+    "q_ar": "البيانات الكمية (Quantitative data) هي البيانات القائمة على الأرقام.",
+    "answer": true,
+    "why_ar": "صح؛ Quantitative = أرقام، وتحليلها هو quantitative analysis.",
+    "why_en": "True — quantitative data is based on numbers.",
+    "slide": 15,
+    "hot": false
+  },
+  {
+    "id": "p2-037",
+    "lecture": "p2",
+    "topic_en": "Quantitative and qualitative analysis",
+    "topic_ar": "التحليل الكمي والنوعي",
+    "type": "tf",
+    "q_en": "Quantitative analysis in big data is the analysis of data in their natural settings.",
+    "q_ar": "التحليل الكمي (Quantitative analysis) في البيانات الضخمة هو تحليل البيانات في بيئتها الطبيعية (natural settings).",
+    "answer": false,
+    "correct_en": "Qualitative analysis in big data is the analysis of data in their natural settings.",
+    "why_ar": "خطأ؛ تحليل البيانات في بيئتها الطبيعية هو Qualitative analysis.",
+    "why_en": "False — analysis of data in their natural settings is qualitative analysis.",
+    "explain_ar": "Quantitative من quantity (كمية/أرقام). Qualitative من quality (نوع/وصف) — بيانات لا تتحول بسهولة إلى أرقام مثل القصص والمقالات وتعليقات الاستبيان والمحادثات والموسيقى والصور.",
+    "slide": [
+      15,
+      16
+    ],
+    "hot": false
+  },
+  {
+    "id": "p2-038",
+    "lecture": "p2",
+    "topic_en": "Quantitative and qualitative analysis",
+    "topic_ar": "التحليل الكمي والنوعي",
+    "type": "tf",
+    "q_en": "An inductive approach is performed by using the emergent framework of the research to group the data and then look for the relationships in them.",
+    "q_ar": "يُنفَّذ المنهج الاستقرائي (inductive approach) باستخدام الإطار الناشئ (emergent framework) للبحث لتجميع البيانات ثم البحث عن العلاقات بينها.",
+    "answer": true,
+    "why_ar": "صح؛ inductive يستخدم emergent framework ثم يبحث عن العلاقات (relationships). أما deductive فيستخدم أسئلة البحث ثم يبحث عن التشابه والاختلاف.",
+    "why_en": "True — inductive uses the emergent framework and looks for relationships.",
+    "explain_ar": "Deductive = يبدأ من research questions لتجميع البيانات ← يبحث عن similarities or differences. Inductive = يبدأ من emergent framework ← يبحث عن relationships. كن حذراً: الدكتورة قد تبدّل الكلمتين.",
+    "slide": 16,
+    "hot": false
+  },
+  {
+    "id": "p2-039",
+    "lecture": "p2",
+    "topic_en": "Quantitative and qualitative analysis",
+    "topic_ar": "التحليل الكمي والنوعي",
+    "type": "tf",
+    "q_en": "Narrative analysis is used for the purpose of classification, tabulation, and summarization.",
+    "q_ar": "يُستخدم التحليل السردي (Narrative analysis) لأغراض التصنيف والجدولة والتلخيص.",
+    "answer": false,
+    "correct_en": "Content analysis is used for the purpose of classification, tabulation, and summarization.",
+    "why_ar": "خطأ؛ classification وtabulation وsummarization هي Content analysis. أما Narrative فيُستخدم لتدوين (transcribe) بيانات الملاحظة أو المقابلة.",
+    "why_en": "False — that is content analysis; narrative analysis transcribes observation or interview data.",
+    "explain_ar": "أنواع Qualitative الخمسة: Content (تصنيف وجدولة وتلخيص)، Narrative (تدوين الملاحظات والمقابلات)، Discourse (نص مكتوب أو محادثة طبيعية)، Framework (تحديد الإطار الأولي من المشكلة)، Grounded theory (حالة واحدة ← نظرية عامة).",
+    "slide": 17,
+    "hot": false
+  },
+  {
+    "id": "p2-040",
+    "lecture": "p2",
+    "topic_en": "Quantitative and qualitative analysis",
+    "topic_ar": "التحليل الكمي والنوعي",
+    "type": "mcq",
+    "q_en": "Which of the following is NOT one of the types of quantitative data?",
+    "q_ar": "أيٌّ مما يلي ليس من أنواع البيانات الكمية (quantitative data)؟",
+    "answer": 3,
+    "options": [
+      {
+        "en": "Nominal data",
+        "ar": "البيانات الاسمية (Nominal data)"
+      },
+      {
+        "en": "Ordinal data",
+        "ar": "البيانات الترتيبية (Ordinal data)"
+      },
+      {
+        "en": "Ratio data",
+        "ar": "البيانات النسبية (Ratio data)"
+      },
+      {
+        "en": "Narrative data",
+        "ar": "البيانات السردية (Narrative data)"
+      }
+    ],
+    "why_ar": "أنواع البيانات الكمية: Nominal وOrdinal وInterval وRatio. أما Narrative فنوع من التحليل النوعي.",
+    "why_en": "The quantitative data types are nominal, ordinal, interval and ratio; narrative is a qualitative analysis type.",
+    "slide": 15,
+    "hot": false
+  },
+  {
+    "id": "p2-041",
+    "lecture": "p2",
+    "topic_en": "Quantitative and qualitative analysis",
+    "topic_ar": "التحليل الكمي والنوعي",
+    "type": "mcq",
+    "q_en": "Which of the following is an example of qualitative data?",
+    "q_ar": "أيٌّ مما يلي مثال على البيانات النوعية (qualitative data)؟",
+    "answer": 2,
+    "options": [
+      {
+        "en": "Interval data",
+        "ar": "بيانات الفترات (Interval data)"
+      },
+      {
+        "en": "Ratio data",
+        "ar": "البيانات النسبية (Ratio data)"
+      },
+      {
+        "en": "Survey comments and conversations",
+        "ar": "تعليقات الاستبيانات والمحادثات"
+      },
+      {
+        "en": "Data based on numbers",
+        "ar": "بيانات قائمة على الأرقام"
+      }
+    ],
+    "why_ar": "البيانات النوعية لا تتحول بسهولة إلى أرقام: stories, articles, survey comments, transcriptions, conversations, music, graphics, art, pictures.",
+    "why_en": "Survey comments and conversations are qualitative; the others are quantitative.",
+    "slide": 16,
+    "hot": false
+  },
+  {
+    "id": "p2-042",
+    "lecture": "p2",
+    "topic_en": "Quantitative and qualitative analysis",
+    "topic_ar": "التحليل الكمي والنوعي",
+    "type": "mcq",
+    "q_en": "____ basically starts with examining one particular case from the population and formulating a general theory about the entire population.",
+    "q_ar": "____ يبدأ أساساً بفحص حالة واحدة معينة من المجتمع (population) ثم صياغة نظرية عامة عن المجتمع كله.",
+    "answer": 2,
+    "options": [
+      {
+        "en": "Framework analysis",
+        "ar": "تحليل الإطار (Framework analysis)"
+      },
+      {
+        "en": "Discourse analysis",
+        "ar": "تحليل الخطاب (Discourse analysis)"
+      },
+      {
+        "en": "Grounded theory",
+        "ar": "النظرية المجذّرة (Grounded theory)"
+      },
+      {
+        "en": "Content analysis",
+        "ar": "تحليل المحتوى (Content analysis)"
+      }
+    ],
+    "why_ar": "Grounded theory: حالة واحدة ← نظرية عامة. Framework يحدد الإطار الأولي، وDiscourse يحلل النص المكتوب أو المحادثة الطبيعية.",
+    "why_en": "Grounded theory goes from one particular case to a general theory.",
+    "explain_ar": "Grounded = مؤسَّس على الأرض/الواقع: تبدأ من حالة واقعية واحدة وتبني منها theory. Framework analysis يحدد initial framework المطوّر من المشكلة الحالية. Discourse analysis لتحليل written text أو naturally occurring conversation.",
+    "slide": 17,
+    "hot": false
+  },
+  {
+    "id": "p2-043",
+    "lecture": "p2",
+    "topic_en": "Statistical analysis",
+    "topic_ar": "التحليل الإحصائي",
+    "type": "tf",
+    "q_en": "A/B testing, also called split testing or bucket testing, is a method that compares two versions of an object under interest to determine which among the two versions performs better.",
+    "q_ar": "اختبار A/B، ويسمى أيضاً split testing أو bucket testing، طريقة تقارن نسختين من الشيء محل الاهتمام لتحديد أيّ النسختين أداؤها أفضل.",
+    "answer": true,
+    "why_ar": "صح؛ هذا تعريف A/B testing وأسماؤه الأخرى split وbucket testing.",
+    "why_en": "True — A/B (split/bucket) testing compares two versions to see which performs better.",
+    "slide": 18,
+    "hot": false
+  },
+  {
+    "id": "p2-044",
+    "lecture": "p2",
+    "topic_en": "Statistical analysis",
+    "topic_ar": "التحليل الإحصائي",
+    "type": "tf",
+    "q_en": "Positive correlation—When one variable increases, the other variable decreases.",
+    "q_ar": "الارتباط الموجب (Positive correlation): عندما يزيد أحد المتغيرين ينقص المتغير الآخر.",
+    "answer": false,
+    "correct_en": "Positive correlation—When one variable increases, the other variable increases.",
+    "why_ar": "خطأ؛ هذا الارتباط السالب (Negative). في الموجب يزيد الآخر أيضاً.",
+    "why_en": "False — that is negative correlation; in positive correlation the other variable increases.",
+    "slide": 19,
+    "hot": false
+  },
+  {
+    "id": "p2-045",
+    "lecture": "p2",
+    "topic_en": "Statistical analysis",
+    "topic_ar": "التحليل الإحصائي",
+    "type": "tf",
+    "q_en": "The major difference between regression and correlation is that regression does not imply causation.",
+    "q_ar": "الفرق الرئيسي بين الانحدار (regression) والارتباط (correlation) هو أن الانحدار لا يدل على السببية (causation).",
+    "answer": false,
+    "correct_en": "The major difference between regression and correlation is that correlation does not imply causation.",
+    "why_ar": "خطأ؛ correlation هو الذي لا يدل على السببية، أما regression فيدل على درجة من السببية بين المتغير التابع والمستقل.",
+    "why_en": "False — correlation does not imply causation; regression implies a degree of causation.",
+    "explain_ar": "مثال: مبيعات المظلات ومبيعات الأحذية المطاطية مرتبطتان بقوة (correlation)، لكن إحداهما لا تسبب الأخرى. Regression يفترض درجة من السببية: X يؤثر في Y، لذلك نستخدمه لتوقع قيمة Y من X المعروف.",
+    "slide": 20,
+    "hot": false
+  },
+  {
+    "id": "p2-046",
+    "lecture": "p2",
+    "topic_en": "Statistical analysis",
+    "topic_ar": "التحليل الإحصائي",
+    "type": "tf",
+    "q_en": "In regression, the dependent variable is the outcome variable or the response variable or predicted variable, denoted by “Y”.",
+    "q_ar": "في الانحدار (regression)، المتغير التابع (dependent variable) هو متغير النتيجة أو الاستجابة أو المتغير المتوقَّع، ويُرمز له بـ «Y».",
+    "answer": true,
+    "why_ar": "صح؛ dependent = outcome/response/predicted = Y. أما independent = predictor/explanatory = X.",
+    "why_en": "True — the dependent variable (outcome/response/predicted) is Y.",
+    "slide": 20,
+    "hot": false
+  },
+  {
+    "id": "p2-047",
+    "lecture": "p2",
+    "topic_en": "Statistical analysis",
+    "topic_ar": "التحليل الإحصائي",
+    "type": "mcq",
+    "q_en": "The statistical analysis techniques described are:",
+    "q_ar": "تقنيات التحليل الإحصائي (Statistical analysis) الموصوفة هي:",
+    "answer": 3,
+    "options": [
+      {
+        "en": "Parsing, searching and retrieval, and text mining",
+        "ar": "Parsing والبحث والاسترجاع (Searching and retrieval) والتنقيب في النصوص (Text mining)"
+      },
+      {
+        "en": "Content, narrative, and discourse analysis",
+        "ar": "تحليل المحتوى والتحليل السردي وتحليل الخطاب"
+      },
+      {
+        "en": "MOLAP, ROLAP, and HOLAP",
+        "ar": "MOLAP وROLAP وHOLAP"
+      },
+      {
+        "en": "A/B testing, correlation, and regression",
+        "ar": "اختبار A/B والارتباط (correlation) والانحدار (regression)"
+      }
+    ],
+    "why_ar": "Statistical analysis يستخدم طرقاً إحصائية: A/B testing وCorrelation وRegression.",
+    "why_en": "The statistical techniques are A/B testing, correlation and regression.",
+    "explain_ar": "المشتتات قوائم من نفس المحاضرة: Parsing/Searching/Text mining = خطوات text analysis، وContent/Narrative/Discourse = أنواع qualitative analysis، وMOLAP/ROLAP/HOLAP = أنواع OLAP.",
+    "slide": 18,
+    "hot": false
+  },
+  {
+    "id": "p2-048",
+    "lecture": "p2",
+    "topic_en": "Statistical analysis",
+    "topic_ar": "التحليل الإحصائي",
+    "type": "mcq",
+    "q_en": "In regression, the independent variable \"X\" is also called the:",
+    "q_ar": "في الانحدار (regression)، المتغير المستقل «X» يُسمّى أيضاً:",
+    "answer": 0,
+    "options": [
+      {
+        "en": "Predictor or explanatory variable",
+        "ar": "المتغير المتنبِّئ (predictor) أو التفسيري (explanatory)"
+      },
+      {
+        "en": "Outcome variable",
+        "ar": "متغير النتيجة (outcome)"
+      },
+      {
+        "en": "Response variable",
+        "ar": "متغير الاستجابة (response)"
+      },
+      {
+        "en": "Predicted variable",
+        "ar": "المتغير المتوقَّع (predicted)"
+      }
+    ],
+    "why_ar": "X = independent = predictor/explanatory/carrier/input variable. أما outcome/response/predicted فهي أسماء Y.",
+    "why_en": "X is the predictor/explanatory variable; outcome, response and predicted describe Y.",
+    "explain_ar": "لا تخلط بين predictor (المتنبِّئ = X الذي نستخدمه للتوقع) وpredicted (المتوقَّع = Y الذي نريد معرفته). المستقل يُدخَل (input) والتابع يخرج (outcome).",
+    "slide": 20,
+    "hot": false
+  },
+  {
+    "id": "p2-049",
+    "lecture": "p2",
+    "topic_en": "Statistical analysis",
+    "topic_ar": "التحليل الإحصائي",
+    "type": "mcq",
+    "q_en": "When one variable increases and the other variable does not change, this is called:",
+    "q_ar": "عندما يزيد أحد المتغيرين ولا يتغير المتغير الآخر، يُسمّى ذلك:",
+    "answer": 1,
+    "options": [
+      {
+        "en": "Positive correlation",
+        "ar": "ارتباط موجب (Positive correlation)"
+      },
+      {
+        "en": "No correlation",
+        "ar": "لا ارتباط (No correlation)"
+      },
+      {
+        "en": "Negative correlation",
+        "ar": "ارتباط سالب (Negative correlation)"
+      },
+      {
+        "en": "Split testing",
+        "ar": "اختبار التقسيم (Split testing)"
+      }
+    ],
+    "why_ar": "No correlation: يزيد أحدهما ولا يتغير الآخر.",
+    "why_en": "No correlation — the other variable does not change.",
+    "slide": 19,
+    "hot": false
+  },
+  {
+    "id": "p2-050",
+    "lecture": "p2",
+    "topic_en": "Semantic analysis (NLP, text analytics, sentiment)",
+    "topic_ar": "التحليل الدلالي (NLP وتحليل النصوص وتحليل المشاعر)",
+    "type": "tf",
+    "q_en": "There are two components in NLP, namely, Natural Language Understanding (NLU) and Natural Language Generation (NLG).",
+    "q_ar": "يوجد في معالجة اللغات الطبيعية (NLP) مكوّنان هما: فهم اللغة الطبيعية (NLU) وتوليد اللغة الطبيعية (NLG).",
+    "answer": true,
+    "why_ar": "صح؛ مكوّنا NLP هما NLU وNLG، والمدخل قد يكون كلاماً (speech) أو نصاً مكتوباً.",
+    "why_en": "True — NLP has two components: NLU and NLG.",
+    "slide": 22,
+    "hot": false
+  },
+  {
+    "id": "p2-051",
+    "lecture": "p2",
+    "topic_en": "Semantic analysis (NLP, text analytics, sentiment)",
+    "topic_ar": "التحليل الدلالي (NLP وتحليل النصوص وتحليل المشاعر)",
+    "type": "tf",
+    "q_en": "Syntactic analysis involves dividing the whole input text data into paragraphs, sentences, and words.",
+    "q_ar": "التحليل النحوي (Syntactic analysis) يتضمن تقسيم نص الإدخال كاملاً إلى فقرات وجمل وكلمات.",
+    "answer": false,
+    "correct_en": "Lexical analysis involves dividing the whole input text data into paragraphs, sentences, and words.",
+    "why_ar": "خطأ؛ التقسيم إلى فقرات وجمل وكلمات هو Lexical analysis. أما Syntactic فيحلل القواعد (grammar) ويرتب الكلمات بشكل منطقي.",
+    "why_en": "False — that is lexical analysis; syntactic analysis checks grammar and word arrangement.",
+    "explain_ar": "مراحل NLP الأربع بالترتيب: Lexical (تقطيع إلى فقرات/جمل/كلمات) ← Syntactic (القواعد grammar وترتيب الكلمات) ← Semantic (المعنى من القاموس أو السياق) ← Pragmatic (ماذا يقصد المتكلم فعلاً).",
+    "slide": 22,
+    "hot": false
+  },
+  {
+    "id": "p2-052",
+    "lecture": "p2",
+    "topic_en": "Semantic analysis (NLP, text analytics, sentiment)",
+    "topic_ar": "التحليل الدلالي (NLP وتحليل النصوص وتحليل المشاعر)",
+    "type": "tf",
+    "q_en": "Sentiment analysis is also known as text mining as it is the process of determining the opinion or attitude of the writer.",
+    "q_ar": "تحليل المشاعر (Sentiment analysis) يُعرف أيضاً بالتنقيب في النصوص (text mining) لأنه عملية تحديد رأي الكاتب أو موقفه.",
+    "answer": false,
+    "correct_en": "Sentiment analysis is also known as opinion mining as it is the process of determining the opinion or attitude of the writer.",
+    "why_ar": "خطأ؛ Sentiment analysis يُعرف بـ opinion mining. أما text mining فهو اكتشاف الأنماط في مجموعات نصية ضخمة.",
+    "why_en": "False — sentiment analysis is also known as opinion mining.",
+    "explain_ar": "opinion mining = تنقيب عن «الرأي»، ومنطقي لأن sentiment analysis يحدد هل النص positive أو negative أو neutral. مثال تطبيقي: معرفة شعور الناس تجاه منتج أو حادثة أو موقف.",
+    "slide": [
+      23,
+      25
+    ],
+    "hot": false
+  },
+  {
+    "id": "p2-053",
+    "lecture": "p2",
+    "topic_en": "Semantic analysis (NLP, text analytics, sentiment)",
+    "topic_ar": "التحليل الدلالي (NLP وتحليل النصوص وتحليل المشاعر)",
+    "type": "tf",
+    "q_en": "Text analytics is the process of transforming the unstructured data into meaningful data by applying machine learning, text mining, and NLP techniques.",
+    "q_ar": "تحليل النصوص (Text analytics) هو عملية تحويل البيانات غير المهيكلة إلى بيانات ذات معنى بتطبيق تقنيات تعلم الآلة والتنقيب في النصوص (text mining) وNLP.",
+    "answer": true,
+    "why_ar": "صح؛ text analytics = ML + text mining + NLP لتحويل unstructured إلى meaningful data.",
+    "why_en": "True — text analytics applies machine learning, text mining and NLP.",
+    "slide": 23,
+    "hot": false
+  },
+  {
+    "id": "p2-054",
+    "lecture": "p2",
+    "topic_en": "Semantic analysis (NLP, text analytics, sentiment)",
+    "topic_ar": "التحليل الدلالي (NLP وتحليل النصوص وتحليل المشاعر)",
+    "type": "mcq",
+    "q_en": "NLP is performed in different stages, namely:",
+    "q_ar": "تُنفَّذ معالجة اللغات الطبيعية (NLP) على مراحل هي:",
+    "answer": 3,
+    "options": [
+      {
+        "en": "Parsing, searching and retrieval, and text mining",
+        "ar": "Parsing والبحث والاسترجاع والتنقيب في النصوص"
+      },
+      {
+        "en": "Descriptive, diagnostic, predictive, and prescriptive analytics",
+        "ar": "التحليلات الوصفية والتشخيصية والتنبؤية والتوجيهية"
+      },
+      {
+        "en": "Nominal, ordinal, interval, and ratio data",
+        "ar": "البيانات الاسمية والترتيبية والفترية والنسبية"
+      },
+      {
+        "en": "Lexical, syntactic, semantic, and pragmatic analysis",
+        "ar": "التحليل المعجمي والنحوي والدلالي والتداولي (Lexical, syntactic, semantic, pragmatic)"
+      }
+    ],
+    "why_ar": "مراحل NLP: lexical وsyntactic وsemantic وpragmatic. أما parsing/searching/text mining فهي خطوات text analysis.",
+    "why_en": "NLP stages are lexical, syntactic, semantic and pragmatic.",
+    "slide": 22,
+    "hot": false
+  },
+  {
+    "id": "p2-055",
+    "lecture": "p2",
+    "topic_en": "Semantic analysis (NLP, text analytics, sentiment)",
+    "topic_ar": "التحليل الدلالي (NLP وتحليل النصوص وتحليل المشاعر)",
+    "type": "mcq",
+    "q_en": "____ analysis involves the analysis of what is intended to be spoken by the speaker.",
+    "q_ar": "تحليل ____ يتضمن تحليل ما يقصد المتكلم قوله.",
+    "answer": 2,
+    "options": [
+      {
+        "en": "Lexical",
+        "ar": "المعجمي (Lexical)"
+      },
+      {
+        "en": "Syntactic",
+        "ar": "النحوي (Syntactic)"
+      },
+      {
+        "en": "Pragmatic",
+        "ar": "التداولي (Pragmatic)"
+      },
+      {
+        "en": "Semantic",
+        "ar": "الدلالي (Semantic)"
+      }
+    ],
+    "why_ar": "Pragmatic يركز على المعنى الضمني لكلمات المتكلم لتفسير ما كان يقصده فعلاً.",
+    "why_en": "Pragmatic analysis interprets what the speaker actually meant.",
+    "explain_ar": "Semantic = المعنى الحرفي من القاموس أو السياق. Pragmatic = «القصد» الحقيقي للمتكلم. مثال: «الجو بارد هنا» معناها الحرفي (semantic) وصف للجو، لكن قصدها (pragmatic) قد يكون «أغلق النافذة».",
+    "slide": 22,
+    "hot": false
+  },
+  {
+    "id": "p2-056",
+    "lecture": "p2",
+    "topic_en": "Semantic analysis (NLP, text analytics, sentiment)",
+    "topic_ar": "التحليل الدلالي (NLP وتحليل النصوص وتحليل المشاعر)",
+    "type": "mcq",
+    "q_en": "____ is the process that transforms unstructured text data into structured data for further analysis.",
+    "q_ar": "____ هو العملية التي تحوّل بيانات النص غير المهيكلة إلى بيانات مهيكلة لمزيد من التحليل.",
+    "answer": 1,
+    "options": [
+      {
+        "en": "Searching and retrieval",
+        "ar": "البحث والاسترجاع (Searching and retrieval)"
+      },
+      {
+        "en": "Parsing",
+        "ar": "Parsing"
+      },
+      {
+        "en": "Text mining",
+        "ar": "التنقيب في النصوص (Text mining)"
+      },
+      {
+        "en": "Sentiment analysis",
+        "ar": "تحليل المشاعر (Sentiment analysis)"
+      }
+    ],
+    "why_ar": "Parsing يحوّل unstructured text إلى structured data. Searching and retrieval يحدد المستند الذي فيه key term، وText mining يستخدم key terms لاستخراج رؤى.",
+    "why_en": "Parsing transforms unstructured text into structured data.",
+    "explain_ar": "خطوات text analysis الثلاث بالترتيب: Parsing (تحويل إلى structured) ← Searching and retrieval (إيجاد المستند الذي يحتوي key term: كلمة أو عبارة أو موضوع) ← Text mining (استخدام key terms لاستخراج insights تخص المشكلة).",
+    "slide": 24,
+    "hot": false
+  },
+  {
+    "id": "p2-057",
+    "lecture": "p2",
+    "topic_en": "Semantic analysis (NLP, text analytics, sentiment)",
+    "topic_ar": "التحليل الدلالي (NLP وتحليل النصوص وتحليل المشاعر)",
+    "type": "mcq",
+    "q_en": "The types of semantic analysis are:",
+    "q_ar": "أنواع التحليل الدلالي (Semantic analysis) هي:",
+    "answer": 0,
+    "options": [
+      {
+        "en": "NLP, text analytics, and sentiment analysis",
+        "ar": "NLP وتحليل النصوص (Text analytics) وتحليل المشاعر (Sentiment analysis)"
+      },
+      {
+        "en": "Quantitative, qualitative, and statistical analysis",
+        "ar": "التحليل الكمي والنوعي والإحصائي"
+      },
+      {
+        "en": "A/B testing, correlation, and regression",
+        "ar": "اختبار A/B والارتباط والانحدار"
+      },
+      {
+        "en": "MOLAP, ROLAP, and HOLAP",
+        "ar": "MOLAP وROLAP وHOLAP"
+      }
+    ],
+    "why_ar": "Semantic analysis = استخراج معلومات ذات معنى من الكلام والنصوص، وأنواعه: NLP وText analytics وSentiment analysis.",
+    "why_en": "Semantic analysis types are NLP, text analytics and sentiment analysis.",
+    "slide": 21,
+    "hot": false
+  },
+  {
+    "id": "p2-058",
+    "lecture": "p2",
+    "topic_en": "Visual analysis, BI, OLTP/OLAP and RTAP",
+    "topic_ar": "التحليل المرئي وذكاء الأعمال وOLTP/OLAP وRTAP",
+    "type": "tf",
+    "q_en": "Compared to OLTP, OLAP systems handle relatively larger numbers of transactions.",
+    "q_ar": "مقارنةً بـ OLTP، تتعامل أنظمة OLAP مع عدد أكبر نسبياً من المعاملات (transactions).",
+    "answer": false,
+    "correct_en": "Compared to OLTP, OLAP systems handle relatively smaller numbers of transactions.",
+    "why_ar": "خطأ؛ OLAP تتعامل مع عدد أصغر نسبياً (smaller) من المعاملات مقارنة بـ OLTP.",
+    "why_en": "False — OLAP handles relatively smaller numbers of transactions than OLTP.",
+    "explain_ar": "OLTP (T = Transaction) مصمم للمعاملات اليومية الكثيرة في الوقت الحقيقي (مثل السحب من الصراف). OLAP (A = Analytical) لاستعلامات التحليل على كميات ضخمة من البيانات، لكن بعدد معاملات أقل.",
+    "slide": 27,
+    "hot": false
+  },
+  {
+    "id": "p2-059",
+    "lecture": "p2",
+    "topic_en": "Visual analysis, BI, OLTP/OLAP and RTAP",
+    "topic_ar": "التحليل المرئي وذكاء الأعمال وOLTP/OLAP وRTAP",
+    "type": "tf",
+    "q_en": "In OLTP, the applications are processed in real time and not in batch; hence the name OLTP.",
+    "q_ar": "في OLTP تُعالَج التطبيقات في الوقت الحقيقي (real time) وليس على دفعات (batch)؛ ومن هنا جاء اسم OLTP.",
+    "answer": true,
+    "why_ar": "صح؛ OLTP يعالج التطبيقات الموجهة للمعاملات في real time وليس batch.",
+    "why_en": "True — OLTP processes transaction-oriented applications in real time, not batch.",
+    "slide": 27,
+    "hot": false
+  },
+  {
+    "id": "p2-060",
+    "lecture": "p2",
+    "topic_en": "Visual analysis, BI, OLTP/OLAP and RTAP",
+    "topic_ar": "التحليل المرئي وذكاء الأعمال وOLTP/OLAP وRTAP",
+    "type": "tf",
+    "q_en": "Online transaction processing (OLTP) systems are used to process data analysis queries and perform effective analysis on massive amounts of data.",
+    "q_ar": "تُستخدم أنظمة معالجة المعاملات عبر الإنترنت (OLTP) لمعالجة استعلامات تحليل البيانات وإجراء تحليل فعّال على كميات ضخمة من البيانات.",
+    "answer": false,
+    "correct_en": "Online analytical processing (OLAP) systems are used to process data analysis queries and perform effective analysis on massive amounts of data.",
+    "why_ar": "خطأ؛ هذا وصف OLAP. أما OLTP فيعالج ويدير التطبيقات الموجهة للمعاملات (transaction oriented).",
+    "why_en": "False — that describes OLAP; OLTP manages transaction-oriented applications.",
+    "slide": 27,
+    "hot": false
+  },
+  {
+    "id": "p2-061",
+    "lecture": "p2",
+    "topic_en": "Visual analysis, BI, OLTP/OLAP and RTAP",
+    "topic_ar": "التحليل المرئي وذكاء الأعمال وOLTP/OLAP وRTAP",
+    "type": "tf",
+    "q_en": "Real-time analytics platform (RTAP) applications can be used to alert the end users when a situation occurs.",
+    "q_ar": "يمكن استخدام تطبيقات منصة التحليلات في الوقت الحقيقي (RTAP) لتنبيه المستخدمين النهائيين عند حدوث موقف ما.",
+    "answer": true,
+    "why_ar": "صح؛ تطبيقات RTAP تنبّه (alert) المستخدمين عند وقوع حدث.",
+    "why_en": "True — RTAP applications can alert end users when a situation occurs.",
+    "slide": 29,
+    "hot": false
+  },
+  {
+    "id": "p2-062",
+    "lecture": "p2",
+    "topic_en": "Visual analysis, BI, OLTP/OLAP and RTAP",
+    "topic_ar": "التحليل المرئي وذكاء الأعمال وOLTP/OLAP وRTAP",
+    "type": "mcq",
+    "q_en": "Which of the following is NOT a type of OLAP system?",
+    "q_ar": "أيٌّ مما يلي ليس من أنواع أنظمة OLAP؟",
+    "answer": 0,
+    "options": [
+      {
+        "en": "RTAP",
+        "ar": "RTAP"
+      },
+      {
+        "en": "MOLAP",
+        "ar": "MOLAP"
+      },
+      {
+        "en": "ROLAP",
+        "ar": "ROLAP"
+      },
+      {
+        "en": "HOLAP",
+        "ar": "HOLAP"
+      }
+    ],
+    "why_ar": "أنواع OLAP: Multidimensional (MOLAP) وRelational (ROLAP) وHybrid (HOLAP). أما RTAP فهي منصة تحليلات في الوقت الحقيقي.",
+    "why_en": "OLAP types are MOLAP, ROLAP and HOLAP; RTAP is a real-time analytics platform.",
+    "slide": 28,
+    "hot": false
+  },
+  {
+    "id": "p2-063",
+    "lecture": "p2",
+    "topic_en": "Visual analysis, BI, OLTP/OLAP and RTAP",
+    "topic_ar": "التحليل المرئي وذكاء الأعمال وOLTP/OLAP وRTAP",
+    "type": "mcq",
+    "q_en": "____ is the process of analyzing the results of data analysis integrated with data visualization techniques to understand the complex system in a better way.",
+    "q_ar": "____ هو عملية تحليل نتائج تحليل البيانات مدمجةً مع تقنيات تصوير البيانات لفهم النظام المعقد بشكل أفضل.",
+    "answer": 1,
+    "options": [
+      {
+        "en": "Semantic analysis",
+        "ar": "التحليل الدلالي (Semantic analysis)"
+      },
+      {
+        "en": "Visual analysis",
+        "ar": "التحليل المرئي (Visual analysis)"
+      },
+      {
+        "en": "Sentiment analysis",
+        "ar": "تحليل المشاعر (Sentiment analysis)"
+      },
+      {
+        "en": "Content analysis",
+        "ar": "تحليل المحتوى (Content analysis)"
+      }
+    ],
+    "why_ar": "Visual analysis يدمج نتائج التحليل مع data visualization لفهم النظام المعقد.",
+    "why_en": "Visual analysis integrates analysis results with data visualization techniques.",
+    "slide": 26,
+    "hot": false
+  },
+  {
+    "id": "p2-064",
+    "lecture": "p2",
+    "topic_en": "Visual analysis, BI, OLTP/OLAP and RTAP",
+    "topic_ar": "التحليل المرئي وذكاء الأعمال وOLTP/OLAP وRTAP",
+    "type": "mcq",
+    "q_en": "OLAP technologies are used for collecting, processing, and presenting the business users with ____ data for analysis.",
+    "q_ar": "تُستخدم تقنيات OLAP لجمع ومعالجة وتقديم بيانات ____ لمستخدمي الأعمال من أجل التحليل.",
+    "answer": 2,
+    "options": [
+      {
+        "en": "Transaction-oriented",
+        "ar": "موجهة للمعاملات (Transaction-oriented)"
+      },
+      {
+        "en": "Serialized",
+        "ar": "متسلسلة (Serialized)"
+      },
+      {
+        "en": "Multidimensional",
+        "ar": "متعددة الأبعاد (Multidimensional)"
+      },
+      {
+        "en": "Key-value",
+        "ar": "مفتاح-قيمة (Key-value)"
+      }
+    ],
+    "why_ar": "OLAP يقدّم لمستخدمي الأعمال بيانات multidimensional للتحليل.",
+    "why_en": "OLAP presents business users with multidimensional data for analysis.",
+    "slide": 27,
+    "hot": false
+  },
+  {
+    "id": "p2-065",
+    "lecture": "p2",
+    "topic_en": "Visual analysis, BI, OLTP/OLAP and RTAP",
+    "topic_ar": "التحليل المرئي وذكاء الأعمال وOLTP/OLAP وRTAP",
+    "type": "mcq",
+    "q_en": "In a Real-Time Analytics Platform (RTAP), applying analytic techniques to ____ transforms data into business insights and actionable information.",
+    "q_ar": "في منصة التحليلات في الوقت الحقيقي (RTAP)، تطبيق تقنيات التحليل على ____ يحوّل البيانات إلى رؤى أعمال ومعلومات قابلة للتنفيذ.",
+    "answer": 3,
+    "options": [
+      {
+        "en": "Data stored in a data warehouse only",
+        "ar": "البيانات المخزنة في مستودع البيانات فقط"
+      },
+      {
+        "en": "Batch data processed overnight",
+        "ar": "بيانات دفعية (batch) تُعالَج ليلاً"
+      },
+      {
+        "en": "Historical data of the past only",
+        "ar": "البيانات التاريخية للماضي فقط"
+      },
+      {
+        "en": "Data in motion",
+        "ar": "البيانات المتحركة (Data in motion)"
+      }
+    ],
+    "why_ar": "RTAP يحلل data in motion عبر streaming computing من مصادر متعددة بسرعات وأحجام غير مسبوقة.",
+    "why_en": "RTAP applies analytics to data in motion using streaming computing.",
+    "slide": 29,
+    "hot": false
+  }
+]

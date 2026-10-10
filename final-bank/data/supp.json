@@ -1,0 +1,698 @@
+[
+ {
+  "id": "st-066",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العنقود",
+  "type": "tf",
+  "q_en": "In asymmetric clusters, Worker Nodes manage resources, schedule tasks, and monitor health.",
+  "q_ar": "في العناقيد غير المتماثلة، العقد العاملة (Worker Nodes) تدير الموارد وتجدول المهام وتراقب الحالة.",
+  "answer": false,
+  "why_ar": "خطأ؛ هذا دور Head Node/Master. أما Worker Nodes فتنفذ مهام الحوسبة والتخزين.",
+  "why_en": "False — that is the Head Node/Master; worker nodes execute compute/storage tasks.",
+  "slide": 11,
+  "hot": false,
+  "correct_en": "Head Node/Master: Manages resources, schedules tasks, monitors health."
+ },
+ {
+  "id": "st-067",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العنقود",
+  "type": "mcq",
+  "q_en": "In an asymmetric cluster, which nodes handle external communications?",
+  "q_ar": "في العنقود غير المتماثل، أي العقد تتولى الاتصالات الخارجية (external communications)؟",
+  "options": [
+   {
+    "en": "Head Node/Master",
+    "ar": "العقدة الرئيسية (Head Node)"
+   },
+   {
+    "en": "Worker Nodes",
+    "ar": "العقد العاملة (Worker Nodes)"
+   },
+   {
+    "en": "Gateway Nodes",
+    "ar": "عقد البوابة (Gateway Nodes)"
+   },
+   {
+    "en": "Data Nodes",
+    "ar": "عقد البيانات (Data Nodes)"
+   }
+  ],
+  "answer": 2,
+  "why_ar": "الإجابة Gateway Nodes؛ الشريحة 11: Gateway Nodes: Handle external communications.",
+  "why_en": "Gateway Nodes handle external communications (slide 11).",
+  "slide": 11,
+  "hot": false,
+  "explain_ar": "أدوار العقد في Asymmetric: Head Node = يدير الموارد ويجدول ويراقب، Worker Nodes = تنفذ مهام الحوسبة والتخزين، Gateway Nodes = الاتصالات الخارجية. ملاحظة: الشريحة 9 تصف الـ head node بأنه gateway بين المستخدم وباقي العقد، لكن إذا جاء السؤال بلفظ external communications فالجواب Gateway Nodes."
+ },
+ {
+  "id": "st-068",
+  "lecture": "storage",
+  "topic_en": "Distributed File System (DFS)",
+  "topic_ar": "نظام الملفات الموزع",
+  "type": "tf",
+  "q_en": "In DFS, files are split into variable-size blocks.",
+  "q_ar": "في نظام الملفات الموزع (DFS)، تُقسم الملفات إلى كتل (blocks) متغيرة الحجم.",
+  "answer": false,
+  "why_ar": "خطأ؛ الكتل ثابتة الحجم (fixed-size) مثل 64MB إلى 256MB.",
+  "why_en": "False — files are split into fixed-size blocks (e.g., 64MB–256MB).",
+  "slide": 15,
+  "hot": false,
+  "correct_en": "Files are split into fixed-size blocks (e.g., 64MB–256MB)."
+ },
+ {
+  "id": "st-069",
+  "lecture": "storage",
+  "topic_en": "RDBMS vs NoSQL",
+  "topic_ar": "العلائقية مقابل NoSQL",
+  "type": "tf",
+  "q_en": "One big data challenge of relational databases is performance: JOINs become slow across distributed nodes, and replication causes latency.",
+  "q_ar": "من تحديات قواعد البيانات العلائقية مع البيانات الضخمة الأداء (Performance): عمليات الربط (JOINs) تصبح بطيئة عبر العقد الموزعة، والنسخ المتماثل يسبب تأخيرًا (latency).",
+  "answer": true,
+  "why_ar": "صح؛ هذا بند Performance في جدول تحديات RDBMS.",
+  "why_en": "True — the Performance issue in the RDBMS challenges table.",
+  "slide": 18,
+  "hot": false,
+  "explain_ar": "جدول تحديات RDBMS فيه 3 بنود: Scalability (التوسع الرأسي يصطدم بحدود العتاد عند TBs)، Schema Rigidity (تغيير المخطط يحتاج توقف ولا يناسب البيانات غير المهيكلة)، Performance (الـ JOINs بطيئة عبر العقد والـ replication يسبب latency)."
+ },
+ {
+  "id": "st-070",
+  "lecture": "storage",
+  "topic_en": "NoSQL types & NewSQL",
+  "topic_ar": "أنواع NoSQL و NewSQL",
+  "type": "mcq",
+  "q_en": "Which of the following is a NewSQL database?",
+  "q_ar": "أي مما يلي يُعد قاعدة بيانات NewSQL؟",
+  "options": [
+   {
+    "en": "MemSQL",
+    "ar": "MemSQL"
+   },
+   {
+    "en": "MongoDB",
+    "ar": "MongoDB"
+   },
+   {
+    "en": "Cassandra",
+    "ar": "Cassandra"
+   },
+   {
+    "en": "Neo4j",
+    "ar": "Neo4j"
+   }
+  ],
+  "answer": 0,
+  "why_ar": "الإجابة MemSQL؛ أمثلة NewSQL في الشريحة: VoltDB, NuoDB, Clustrix, MemSQL, TokuDB.",
+  "why_en": "MemSQL — NewSQL examples are VoltDB, NuoDB, Clustrix, MemSQL and TokuDB.",
+  "slide": 21,
+  "hot": false,
+  "explain_ar": "احفظ أمثلة NewSQL الخمسة: VoltDB, NuoDB, Clustrix, MemSQL, TokuDB. أما MongoDB فهي Document، و Cassandra فهي Column، و Neo4j فهي Graph."
+ },
+ {
+  "id": "st-071",
+  "lecture": "storage",
+  "topic_en": "Scaling up vs scaling out",
+  "topic_ar": "التوسع الرأسي مقابل الأفقي",
+  "type": "tf",
+  "q_en": "Scalability is the ability of the system to meet the increasing demand for storage capacity.",
+  "q_ar": "قابلية التوسع (Scalability) هي قدرة النظام على تلبية الطلب المتزايد على سعة التخزين.",
+  "answer": true,
+  "why_ar": "صح؛ هذا تعريف Scalability في الشريحة 22.",
+  "why_en": "True — slide 22 definition of scalability.",
+  "slide": 22,
+  "hot": false
+ },
+ {
+  "id": "st-072",
+  "lecture": "storage",
+  "topic_en": "Cluster structure",
+  "topic_ar": "بنية العنقود",
+  "type": "tf",
+  "q_en": "The asymmetric cluster setup is simple and straightforward, and additional machines can be added as needed.",
+  "q_ar": "إعداد العنقود غير المتماثل (Asymmetric) بسيط ومباشر، ويمكن إضافة أجهزة إضافية حسب الحاجة.",
+  "answer": false,
+  "why_ar": "خطأ؛ هذا وصف Symmetric cluster. أما Asymmetric ففيه head node يعمل كبوابة بين المستخدم وباقي العقد.",
+  "why_en": "False — that describes the symmetric cluster.",
+  "slide": 9,
+  "hot": false,
+  "correct_en": "The symmetric cluster setup is simple and straightforward; additional machines can be added as needed."
+ },
+ {
+  "id": "ns-071",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "BASE مقابل ACID",
+  "type": "tf",
+  "q_en": "In the BASE vs ACID comparison, BASE accomplishes consistency \"eventually\", while ACID provides strong consistency.",
+  "q_ar": "في مقارنة BASE و ACID، يحقق BASE الاتساق «في النهاية» (eventually)، بينما يوفر ACID اتساقًا قويًا (strong consistency).",
+  "answer": true,
+  "why_ar": "صح؛ الصف الأول في جدول المقارنة: BASE يحقق الاتساق eventually و ACID = Strong consistency.",
+  "why_en": "True — BASE reaches consistency eventually; ACID has strong consistency.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "ns-072",
+  "lecture": "nosql",
+  "topic_en": "CAP theorem",
+  "topic_ar": "نظرية CAP",
+  "type": "mcq",
+  "q_en": "On the CAP slide, relational databases (such as GreenPlum) are listed under which group?",
+  "q_ar": "في شريحة CAP، تُصنف قواعد البيانات العلائقية (مثل GreenPlum) ضمن أي مجموعة؟",
+  "options": [
+   {
+    "en": "AP",
+    "ar": "AP"
+   },
+   {
+    "en": "CP",
+    "ar": "CP"
+   },
+   {
+    "en": "CA",
+    "ar": "CA"
+   },
+   {
+    "en": "BASE",
+    "ar": "BASE"
+   }
+  ],
+  "answer": 2,
+  "why_ar": "الإجابة CA؛ الشريحة 8 تضع Relational databases و Vertica و GreenPlum تحت CA.",
+  "why_en": "CA — slide 8 lists relational databases, Vertica and GreenPlum under CA.",
+  "slide": 8,
+  "hot": false,
+  "explain_ar": "الشريحة 9 تضيف أن CA ليست ممكنة فعليًا في نظام موزع (typically single-node)، وهذا ينطبق على قواعد البيانات العلائقية التقليدية. باقي التصنيف: CP = BigTable, MongoDB, HBase، و AP = Voldemort, CouchDB, Riak, Cassandra, DynamoDB."
+ },
+ {
+  "id": "ns-073",
+  "lecture": "nosql",
+  "topic_en": "Key-value",
+  "topic_ar": "قواعد Key-value",
+  "type": "tf",
+  "q_en": "Key-value stores should not be used for operations by sets, since operations are limited to one key at a time.",
+  "q_ar": "لا يُنصح باستخدام مخازن Key-value للعمليات على مجموعات (operations by sets)، لأن العمليات محدودة بمفتاح واحد في كل مرة.",
+  "answer": true,
+  "why_ar": "صح؛ من حالات Not to Use في الشريحة 19.",
+  "why_en": "True — slide 19 \"Not to Use: Operations by Sets\".",
+  "slide": 19,
+  "hot": false
+ },
+ {
+  "id": "ns-074",
+  "lecture": "nosql",
+  "topic_en": "Document",
+  "topic_ar": "قواعد Document",
+  "type": "tf",
+  "q_en": "MongoDB stores data in the form of documents, which are JSON-like field and value pairs.",
+  "q_ar": "تخزن MongoDB البيانات على شكل مستندات (documents)، وهي أزواج حقل وقيمة (field and value) شبيهة بـ JSON.",
+  "answer": true,
+  "why_ar": "صح؛ نص الشريحة 21.",
+  "why_en": "True — slide 21.",
+  "slide": 21,
+  "hot": false
+ },
+ {
+  "id": "mg-056",
+  "lecture": "mongo",
+  "topic_en": "Query operators",
+  "topic_ar": "معاملات الاستعلام",
+  "type": "mcq",
+  "q_en": "Which operator matches values that are less than or equal to a specified value?",
+  "q_ar": "أي معامل يطابق القيم الأصغر من أو تساوي قيمة محددة؟",
+  "options": [
+   {
+    "en": "$lt",
+    "ar": "$lt"
+   },
+   {
+    "en": "$lte",
+    "ar": "$lte"
+   },
+   {
+    "en": "$gte",
+    "ar": "$gte"
+   },
+   {
+    "en": "$ne",
+    "ar": "$ne"
+   }
+  ],
+  "answer": 1,
+  "why_ar": "الإجابة $lte (less than or equal).",
+  "why_en": "$lte — less than or equal.",
+  "slide": 21,
+  "hot": false,
+  "explain_ar": "القاعدة: الحرف e في الآخر = equal. $lt أصغر، $lte أصغر أو يساوي، $gt أكبر، $gte أكبر أو يساوي، $ne لا يساوي."
+ },
+ {
+  "id": "mg-057",
+  "lecture": "mongo",
+  "topic_en": "Query operators",
+  "topic_ar": "معاملات الاستعلام",
+  "type": "mcq",
+  "q_en": "Which operator matches values that are equal to a specified value?",
+  "q_ar": "أي معامل يطابق القيم التي تساوي قيمة محددة؟",
+  "options": [
+   {
+    "en": "$eq",
+    "ar": "$eq"
+   },
+   {
+    "en": "$in",
+    "ar": "$in"
+   },
+   {
+    "en": "$ne",
+    "ar": "$ne"
+   },
+   {
+    "en": "$nin",
+    "ar": "$nin"
+   }
+  ],
+  "answer": 0,
+  "why_ar": "الإجابة $eq (equal).",
+  "why_en": "$eq — equal.",
+  "slide": 21,
+  "hot": false
+ },
+ {
+  "id": "mg-058",
+  "lecture": "mongo",
+  "topic_en": "Query operators",
+  "topic_ar": "معاملات الاستعلام",
+  "type": "tf",
+  "q_en": "$and inverts the effect of a query expression and returns documents that do not match the query expression.",
+  "q_ar": "المعامل $and يعكس أثر تعبير الاستعلام ويعيد المستندات التي لا تطابقه.",
+  "answer": false,
+  "why_ar": "خطأ؛ هذا وصف $not. أما $and فيعيد المستندات التي تطابق الشرطين معًا.",
+  "why_en": "False — that is $not; $and returns documents matching both clauses.",
+  "slide": 22,
+  "hot": false,
+  "correct_en": "$not inverts the effect of a query expression and returns documents that do not match the query expression."
+ },
+ {
+  "id": "mg-059",
+  "lecture": "mongo",
+  "topic_en": "Query operators",
+  "topic_ar": "معاملات الاستعلام",
+  "type": "tf",
+  "q_en": "$nor joins query clauses and returns all documents that match the conditions of either clause.",
+  "q_ar": "المعامل $nor يربط شروط الاستعلام ويعيد كل المستندات التي تطابق أيًّا من الشرطين.",
+  "answer": false,
+  "why_ar": "خطأ؛ هذا وصف $or. أما $nor فيعيد المستندات التي لا تطابق أيًّا من الشرطين (fail to match both).",
+  "why_en": "False — that is $or; $nor returns documents that fail to match both clauses.",
+  "slide": 22,
+  "hot": false,
+  "correct_en": "$nor joins query clauses with a logical NOR and returns all documents that fail to match both clauses.",
+  "explain_ar": "$and = تطابق الشرطين معًا، $or = تطابق أيًّا منهما، $nor = لا تطابق أيًّا منهما (عكس $or)، $not = يعكس تعبيرًا واحدًا."
+ },
+ {
+  "id": "mg-060",
+  "lecture": "mongo",
+  "topic_en": "CRUD operations",
+  "topic_ar": "عمليات CRUD",
+  "type": "tf",
+  "q_en": "In the CRUD slide, db.collection.remove(<query>, <justOne>) is listed under the Delete operation.",
+  "q_ar": "في شريحة CRUD، يُذكر الأمر db.collection.remove(<query>, <justOne>) تحت عملية الحذف (Delete).",
+  "answer": true,
+  "why_ar": "صح؛ الشريحة 13: Delete → db.collection.remove(<query>, <justOne>).",
+  "why_en": "True — slide 13 lists remove() under Delete.",
+  "slide": 13,
+  "hot": false
+ },
+ {
+  "id": "p1-061",
+  "lecture": "p1",
+  "topic_en": "Virtualization",
+  "topic_ar": "الافتراضية",
+  "type": "tf",
+  "q_en": "Isolation is a technique in which VMs are isolated from each other and from the host physical system.",
+  "q_ar": "العزل (Isolation) تقنية تكون فيها الأجهزة الافتراضية (VMs) معزولة عن بعضها وعن الجهاز الفيزيائي المضيف.",
+  "answer": true,
+  "why_ar": "صح؛ تعريف Isolation في الشريحة 14.",
+  "why_en": "True — slide 14 definition of isolation.",
+  "slide": 14,
+  "hot": false
+ },
+ {
+  "id": "p1-062",
+  "lecture": "p1",
+  "topic_en": "Cloud computing",
+  "topic_ar": "الحوسبة السحابية",
+  "type": "mcq",
+  "q_en": "To meet the growing storage demand, big data requires a system that is all of the following EXCEPT:",
+  "q_ar": "لتلبية الطلب المتزايد على التخزين، تحتاج البيانات الضخمة نظامًا يتصف بكل ما يلي ما عدا:",
+  "options": [
+   {
+    "en": "Highly scalable",
+    "ar": "عالي قابلية التوسع"
+   },
+   {
+    "en": "Fault-tolerant",
+    "ar": "متحمل للأعطال"
+   },
+   {
+    "en": "Centralized",
+    "ar": "مركزي (Centralized)"
+   },
+   {
+    "en": "Cost-effective",
+    "ar": "فعال من حيث التكلفة"
+   }
+  ],
+  "answer": 2,
+  "why_ar": "الإجابة Centralized؛ الشريحة 18 تقول decentralized (لا مركزي).",
+  "why_en": "Centralized — slide 18 requires a decentralized system.",
+  "slide": 18,
+  "hot": false,
+  "explain_ar": "الشريحة 18: big data requires a highly scalable, highly reliable and highly available, cost-effective, decentralized, and fault-tolerant system. انتبه: الكلمة decentralized قابلة للتبديل إلى centralized في سؤال صح/خطأ."
+ },
+ {
+  "id": "p1-063",
+  "lecture": "p1",
+  "topic_en": "Hadoop ecosystem & advantages",
+  "topic_ar": "منظومة Hadoop ومزاياه",
+  "type": "tf",
+  "q_en": "In the Hadoop ecosystem diagram, HDFS and MapReduce run on top of the JVM, which runs on the Windows operating system.",
+  "q_ar": "في مخطط منظومة Hadoop، يعمل HDFS و MapReduce فوق JVM، والذي يعمل فوق نظام التشغيل Windows.",
+  "answer": false,
+  "why_ar": "خطأ؛ نظام التشغيل في المخطط هو Linux.",
+  "why_en": "False — the operating system layer is Linux.",
+  "slide": 28,
+  "hot": false,
+  "correct_en": "HDFS and MapReduce run on top of the JVM, which runs on the Operating System (Linux)."
+ },
+ {
+  "id": "p1-064",
+  "lecture": "p1",
+  "topic_en": "Hadoop ecosystem & advantages",
+  "topic_ar": "منظومة Hadoop ومزاياه",
+  "type": "tf",
+  "q_en": "Hadoop framework allows the user to quickly write and test distributed systems.",
+  "q_ar": "يتيح إطار Hadoop للمستخدم كتابة الأنظمة الموزعة واختبارها بسرعة.",
+  "answer": true,
+  "why_ar": "صح؛ أول ميزة في شريحة Advantages of Hadoop.",
+  "why_en": "True — first advantage on slide 29.",
+  "slide": 29,
+  "hot": false
+ },
+ {
+  "id": "p1-065",
+  "lecture": "p1",
+  "topic_en": "Hadoop basics & history",
+  "topic_ar": "أساسيات Hadoop وتاريخه",
+  "type": "tf",
+  "q_en": "The Hadoop project was funded by Google.",
+  "q_ar": "تم تمويل مشروع Hadoop من قبل Google.",
+  "answer": false,
+  "why_ar": "خطأ؛ المشروع موّلته Yahoo، ثم في 2006 أعطته Yahoo لـ Apache. (Google طوّرت GFS و MapReduce فقط.)",
+  "why_en": "False — it was funded by Yahoo.",
+  "slide": 23,
+  "hot": false,
+  "correct_en": "The project was funded by Yahoo.",
+  "explain_ar": "فخ متوقع: Google طوّرت Google File System و MapReduce (فكرة)، لكن Hadoop طوّره Doug Cutting و Michael J. Cafarella لمشروع Nutch بتمويل Yahoo، وفي 2006 انتقل إلى Apache."
+ },
+ {
+  "id": "p1-066",
+  "lecture": "p1",
+  "topic_en": "Hadoop ecosystem & advantages",
+  "topic_ar": "منظومة Hadoop ومزاياه",
+  "type": "mcq",
+  "q_en": "In the Hadoop ecosystem diagram, which of the following appears as a vertical bar that spans all layers?",
+  "q_ar": "في مخطط منظومة Hadoop، أي مما يلي يظهر كعمود رأسي يمتد عبر كل الطبقات؟",
+  "options": [
+   {
+    "en": "Security",
+    "ar": "الأمان (Security)"
+   },
+   {
+    "en": "Pig",
+    "ar": "Pig"
+   },
+   {
+    "en": "HDFS",
+    "ar": "HDFS"
+   },
+   {
+    "en": "JVM",
+    "ar": "JVM"
+   }
+  ],
+  "answer": 0,
+  "why_ar": "الإجابة Security؛ الأعمدة الرأسية: Backup & Recovery و Deployment و Security و Management.",
+  "why_en": "Security — the vertical bars are Backup & Recovery, Deployment, Security and Management.",
+  "slide": 28,
+  "hot": false
+ },
+ {
+  "id": "p2-066",
+  "lecture": "p2",
+  "topic_en": "Quantitative & qualitative analysis",
+  "topic_ar": "التحليل الكمي والنوعي",
+  "type": "mcq",
+  "q_en": "Various analytics techniques involved in big data are quantitative analysis, qualitative analysis, and ____ analysis.",
+  "q_ar": "تقنيات التحليل في البيانات الضخمة هي: التحليل الكمي والتحليل النوعي والتحليل ____.",
+  "options": [
+   {
+    "en": "Statistical",
+    "ar": "الإحصائي (Statistical)"
+   },
+   {
+    "en": "Descriptive",
+    "ar": "الوصفي (Descriptive)"
+   },
+   {
+    "en": "Predictive",
+    "ar": "التنبؤي (Predictive)"
+   },
+   {
+    "en": "Prescriptive",
+    "ar": "التوجيهي (Prescriptive)"
+   }
+  ],
+  "answer": 0,
+  "why_ar": "الإجابة Statistical؛ الشريحة 15: Quantitative, Qualitative, Statistical.",
+  "why_en": "Statistical — slide 15 lists quantitative, qualitative and statistical analysis.",
+  "slide": 15,
+  "hot": false,
+  "explain_ar": "لا تخلط: تقنيات التحليل (techniques) = Quantitative و Qualitative و Statistical. أما أنواع التحليلات (types of analytics) فهي Descriptive و Diagnostic و Predictive و Prescriptive."
+ },
+ {
+  "id": "p2-067",
+  "lecture": "p2",
+  "topic_en": "Quantitative & qualitative analysis",
+  "topic_ar": "التحليل الكمي والنوعي",
+  "type": "tf",
+  "q_en": "A deductive analysis is performed by using the research questions to group the data under study and then look for similarities or differences in them.",
+  "q_ar": "يتم التحليل الاستنتاجي (Deductive) باستخدام أسئلة البحث لتجميع البيانات ثم البحث عن أوجه التشابه أو الاختلاف بينها.",
+  "answer": true,
+  "why_ar": "صح؛ هذا تعريف Deductive. أما Inductive فيستخدم الإطار الناشئ (emergent framework) ثم يبحث عن العلاقات.",
+  "why_en": "True — deductive uses the research questions; inductive uses the emergent framework.",
+  "slide": 16,
+  "hot": false,
+  "explain_ar": "Deductive = يبدأ من أسئلة البحث ← يبحث عن تشابه/اختلاف. Inductive = يبدأ من إطار يظهر من البحث (emergent framework) ← يبحث عن العلاقات."
+ },
+ {
+  "id": "p2-068",
+  "lecture": "p2",
+  "topic_en": "Quantitative & qualitative analysis",
+  "topic_ar": "التحليل الكمي والنوعي",
+  "type": "mcq",
+  "q_en": "Which type of qualitative analysis is used in analyzing data such as written text or a naturally occurring conversation?",
+  "q_ar": "أي نوع من التحليل النوعي يُستخدم لتحليل بيانات مثل النص المكتوب أو المحادثة الطبيعية؟",
+  "options": [
+   {
+    "en": "Content analysis",
+    "ar": "تحليل المحتوى"
+   },
+   {
+    "en": "Narrative analysis",
+    "ar": "التحليل السردي"
+   },
+   {
+    "en": "Discourse analysis",
+    "ar": "تحليل الخطاب (Discourse)"
+   },
+   {
+    "en": "Framework analysis",
+    "ar": "تحليل الإطار"
+   }
+  ],
+  "answer": 2,
+  "why_ar": "الإجابة Discourse analysis.",
+  "why_en": "Discourse analysis — written text or naturally occurring conversation.",
+  "slide": 17,
+  "hot": false,
+  "explain_ar": "Content = تصنيف وجدولة وتلخيص. Narrative = تفريغ بيانات الملاحظة أو المقابلات. Discourse = نص مكتوب أو محادثة طبيعية. Framework = تحديد الإطار الأولي من المشكلة. Grounded theory = يبدأ من حالة واحدة ويعمم نظرية."
+ },
+ {
+  "id": "p2-069",
+  "lecture": "p2",
+  "topic_en": "Quantitative & qualitative analysis",
+  "topic_ar": "التحليل الكمي والنوعي",
+  "type": "tf",
+  "q_en": "Narrative analysis is used in identifying the initial framework, which is developed from the problem in hand.",
+  "q_ar": "يُستخدم التحليل السردي (Narrative analysis) لتحديد الإطار الأولي الذي يُطوَّر من المشكلة المطروحة.",
+  "answer": false,
+  "why_ar": "خطأ؛ هذا تعريف Framework analysis. أما Narrative فلتفريغ بيانات الملاحظة أو المقابلات.",
+  "why_en": "False — that is framework analysis; narrative analysis transcribes observation/interview data.",
+  "slide": 17,
+  "hot": false,
+  "correct_en": "Framework analysis is used in identifying the initial framework, which is developed from the problem in hand."
+ },
+ {
+  "id": "p2-070",
+  "lecture": "p2",
+  "topic_en": "Semantic analysis",
+  "topic_ar": "التحليل الدلالي",
+  "type": "tf",
+  "q_en": "In text analytics, the search item (a word, a phrase, or a topic) is generally called a key term.",
+  "q_ar": "في تحليل النصوص، يُسمى عنصر البحث (كلمة أو عبارة أو موضوع) عادةً المصطلح المفتاحي (key term).",
+  "answer": true,
+  "why_ar": "صح؛ الشريحة 24 (Searching and retrieval).",
+  "why_en": "True — slide 24.",
+  "slide": 24,
+  "hot": false
+ },
+ {
+  "id": "p2-071",
+  "lecture": "p2",
+  "topic_en": "Hadoop ecosystem tools",
+  "topic_ar": "أدوات منظومة Hadoop",
+  "type": "tf",
+  "q_en": "The Hive tool interacts with the Hadoop framework by sending queries through an interface such as ODBC or JDBC.",
+  "q_ar": "تتفاعل أداة Hive مع إطار Hadoop بإرسال الاستعلامات عبر واجهة مثل ODBC أو JDBC.",
+  "answer": true,
+  "why_ar": "صح؛ الشريحة 7.",
+  "why_en": "True — slide 7.",
+  "slide": 7,
+  "hot": false
+ },
+ {
+  "id": "p2-072",
+  "lecture": "p2",
+  "topic_en": "Hadoop ecosystem tools",
+  "topic_ar": "أدوات منظومة Hadoop",
+  "type": "tf",
+  "q_en": "Mahout can import data into HBase and Hive.",
+  "q_ar": "تستطيع Mahout استيراد البيانات إلى HBase و Hive.",
+  "answer": false,
+  "why_ar": "خطأ؛ هذه SQOOP. أما Mahout فهي خوارزميات تعلم آلة (clustering, classification, recommendation).",
+  "why_en": "False — that is SQOOP; Mahout is a machine-learning library.",
+  "slide": 6,
+  "hot": false,
+  "correct_en": "SQOOP can also import data into HBase and Hive."
+ },
+ {
+  "id": "p2-073",
+  "lecture": "p2",
+  "topic_en": "Semantic analysis",
+  "topic_ar": "التحليل الدلالي",
+  "type": "tf",
+  "q_en": "Natural Language Generation (NLG) is the NLP stage that divides the whole input text into paragraphs, sentences, and words.",
+  "q_ar": "توليد اللغة الطبيعية (NLG) هو مرحلة NLP التي تقسم النص المُدخل إلى فقرات وجمل وكلمات.",
+  "answer": false,
+  "why_ar": "خطأ؛ تقسيم النص إلى فقرات وجمل وكلمات هو Lexical analysis. و NLG مكوّن من مكوّني NLP (مع NLU) وليس مرحلة.",
+  "why_en": "False — that is lexical analysis; NLG is a component of NLP, not a stage.",
+  "slide": 22,
+  "hot": false,
+  "correct_en": "Lexical analysis involves dividing the whole input text data into paragraphs, sentences, and words.",
+  "explain_ar": "NLP له مكوّنان: NLU و NLG. وله أربع مراحل: Lexical (التقسيم)، Syntactic (القواعد والترتيب)، Semantic (المعنى)، Pragmatic (قصد المتكلم)."
+ },
+ {
+  "id": "p2-074",
+  "lecture": "p2",
+  "topic_en": "Visual analysis, BI, OLAP & RTAP",
+  "topic_ar": "التحليل المرئي و BI و OLAP و RTAP",
+  "type": "tf",
+  "q_en": "In the big data analytics architecture, fraud detection and risk management are examples of enhanced applications.",
+  "q_ar": "في معمارية تحليل البيانات الضخمة، يُعد كشف الاحتيال (fraud detection) وإدارة المخاطر (risk management) أمثلة على التطبيقات المحسّنة (enhanced applications).",
+  "answer": true,
+  "why_ar": "صح؛ في مخطط الشريحة 30: Enhanced Applications = Customer experience, New Business Model, Financial Performance, Fraud detection, Risk Management.",
+  "why_en": "True — listed under Enhanced Applications on slide 30.",
+  "slide": 30,
+  "hot": false
+ },
+ {
+  "id": "vz-021",
+  "lecture": "vis",
+  "topic_en": "Visualization tools",
+  "topic_ar": "أدوات التصوير",
+  "type": "mcq",
+  "q_en": "Which tool is used for monitoring metrics, time-series data, and operational systems?",
+  "q_ar": "أي أداة تُستخدم لمراقبة المقاييس وبيانات السلاسل الزمنية والأنظمة التشغيلية؟",
+  "options": [
+   {
+    "en": "Tableau",
+    "ar": "Tableau"
+   },
+   {
+    "en": "Grafana",
+    "ar": "Grafana"
+   },
+   {
+    "en": "D3.js",
+    "ar": "D3.js"
+   },
+   {
+    "en": "Microsoft Power BI",
+    "ar": "Microsoft Power BI"
+   }
+  ],
+  "answer": 1,
+  "why_ar": "الإجابة Grafana.",
+  "why_en": "Grafana — monitoring metrics, time-series and operational systems.",
+  "slide": 5,
+  "hot": false
+ },
+ {
+  "id": "vz-022",
+  "lecture": "vis",
+  "topic_en": "Tableau",
+  "topic_ar": "Tableau",
+  "type": "tf",
+  "q_en": "In Tableau, a Dashboard is a sequence of views or dashboards used to communicate an analytical narrative.",
+  "q_ar": "في Tableau، لوحة المعلومات (Dashboard) هي تسلسل من العروض أو لوحات المعلومات يُستخدم لإيصال سرد تحليلي.",
+  "answer": false,
+  "why_ar": "خطأ؛ هذا تعريف Story. أما Dashboard فهي مجموعة views مرتبة معًا في شاشة تفاعلية واحدة.",
+  "why_en": "False — that defines a Story; a Dashboard is multiple views on one interactive screen.",
+  "slide": 6,
+  "hot": false,
+  "explain_ar": "Worksheet = مساحة عمل لرسم واحد أو أكثر. Dashboard = عدة views في شاشة تفاعلية واحدة. Story = تسلسل views أو dashboards يحكي قصة.",
+  "correct_en": "Story: a sequence of views or dashboards used to communicate an analytical narrative."
+ },
+ {
+  "id": "vz-023",
+  "lecture": "vis",
+  "topic_en": "Tableau",
+  "topic_ar": "Tableau",
+  "type": "tf",
+  "q_en": "Tableau Prep is used to create and analyze visualizations.",
+  "q_ar": "تُستخدم Tableau Prep لإنشاء التصورات (visualizations) وتحليلها.",
+  "answer": false,
+  "why_ar": "خطأ؛ الإنشاء والتحليل لـ Tableau Desktop. أما Tableau Prep فلتنظيف البيانات وتجهيزها.",
+  "why_en": "False — Tableau Desktop creates and analyzes; Tableau Prep cleans and prepares data.",
+  "slide": 6,
+  "hot": false,
+  "correct_en": "Tableau Desktop: create and analyze visualizations. Tableau Prep: clean and prepare data."
+ },
+ {
+  "id": "ns-075",
+  "lecture": "nosql",
+  "topic_en": "Key-value",
+  "topic_ar": "قواعد Key-value",
+  "type": "tf",
+  "q_en": "Key-value stores are a good choice when there are relationships among data.",
+  "q_ar": "مخازن Key-value خيار مناسب عندما توجد علاقات بين البيانات.",
+  "answer": false,
+  "why_ar": "خطأ؛ Relationships among data من حالات Not to Use لـ Key-value (الأنسب لها Graph).",
+  "why_en": "False — relationships among data is a \"not to use\" case for key-value.",
+  "slide": 19,
+  "hot": false,
+  "correct_en": "Key-value — Not to Use: Relationships among data, Multi-operation Transactions, Query by Data, Operations by Sets."
+ }
+]

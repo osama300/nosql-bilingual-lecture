@@ -1,0 +1,1751 @@
+[
+ {
+  "id": "ns-001",
+  "lecture": "nosql",
+  "topic_en": "Intro & NoSQL characteristics",
+  "topic_ar": "مقدمة وخصائص قواعد NoSQL",
+  "type": "tf",
+  "q_en": "NoSQL database means \"Not Only SQL\".",
+  "q_ar": "قاعدة بيانات NoSQL تعني «ليس SQL فقط» (Not Only SQL).",
+  "answer": true,
+  "why_ar": "صحيح؛ الاختصار NoSQL = Not Only SQL، أي ليست بالضرورة «بدون SQL».",
+  "why_en": "True — NOSQL = NOT ONLY SQL.",
+  "explain_ar": "انتبه للفخ: الشريحة تذكر أن No SQL قد تُفهم «لا تستخدم لغة SQL»، لكن التعريف المعتمد هو NOT ONLY SQL أي «ليس SQL فقط». إذا جاءك خيار «No SQL at all» فهو الخطأ.",
+  "slide": [
+   3,
+   4
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-002",
+  "lecture": "nosql",
+  "topic_en": "Intro & NoSQL characteristics",
+  "topic_ar": "مقدمة وخصائص قواعد NoSQL",
+  "type": "tf",
+  "q_en": "NoSQL databases are next generation databases mostly addressing being non-relational, distributed, open-source and vertically scalable.",
+  "q_ar": "قواعد NoSQL هي قواعد الجيل التالي وتتميز غالبًا بأنها غير علائقية (non-relational) وموزعة ومفتوحة المصدر وقابلة للتوسع العمودي (vertically scalable).",
+  "answer": false,
+  "correct_en": "NoSQL databases are next generation databases mostly addressing being non-relational, distributed, open-source and horizontally scalable.",
+  "why_ar": "خطأ؛ قواعد NoSQL قابلة للتوسع الأفقي (horizontally scalable) وليس العمودي.",
+  "why_en": "False — NoSQL databases are horizontally scalable, not vertically.",
+  "explain_ar": "التوسع الأفقي (scale out) = إضافة أجهزة جديدة للعنقود، والتوسع العمودي (scale up) = تقوية جهاز واحد. NoSQL تعمل على العناقيد (clusters) لذلك هي horizontally scalable.",
+  "slide": 4,
+  "hot": false
+ },
+ {
+  "id": "ns-003",
+  "lecture": "nosql",
+  "topic_en": "Intro & NoSQL characteristics",
+  "topic_ar": "مقدمة وخصائص قواعد NoSQL",
+  "type": "tf",
+  "q_en": "NoSQL databases provide an ACID system, but not BASE as a Relational Database Management System.",
+  "q_ar": "قواعد NoSQL توفر نظام ACID وليس BASE مثل نظام إدارة قواعد البيانات العلائقية (RDBMS).",
+  "answer": false,
+  "correct_en": "NoSQL databases provide a BASE (Basically Available, Soft state, Eventual consistent) system, but not ACID as a Relational Database Management System.",
+  "why_ar": "خطأ؛ قواعد NoSQL توفر BASE وليس ACID، أما ACID فهو خاصية قواعد البيانات العلائقية.",
+  "why_en": "False — NoSQL provides BASE, not ACID; ACID belongs to RDBMS.",
+  "slide": 5,
+  "hot": false
+ },
+ {
+  "id": "ns-004",
+  "lecture": "nosql",
+  "topic_en": "Intro & NoSQL characteristics",
+  "topic_ar": "مقدمة وخصائص قواعد NoSQL",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT a characteristic of NoSQL databases?",
+  "q_ar": "أيٌّ مما يلي ليس من خصائص قواعد بيانات NoSQL؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Schema-free",
+    "ar": "بدون مخطط ثابت (Schema-free)"
+   },
+   {
+    "en": "Easy replication support and running well on clusters",
+    "ar": "دعم سهل للنسخ المتماثل (replication) والعمل الجيد على العناقيد"
+   },
+   {
+    "en": "Full ACID transactions like an RDBMS",
+    "ar": "معاملات ACID كاملة مثل RDBMS"
+   },
+   {
+    "en": "Simple API",
+    "ar": "واجهة برمجة بسيطة (Simple API)"
+   }
+  ],
+  "why_ar": "خصائص NoSQL: نظام BASE وليس ACID، بدون مخطط، نسخ متماثل سهل على العناقيد، وواجهة API بسيطة.",
+  "why_en": "Characteristics are BASE (not ACID), schema-free, easy replication on clusters, and simple API.",
+  "slide": 5,
+  "hot": false
+ },
+ {
+  "id": "ns-005",
+  "lecture": "nosql",
+  "topic_en": "Intro & NoSQL characteristics",
+  "topic_ar": "مقدمة وخصائص قواعد NoSQL",
+  "type": "mcq",
+  "q_en": "BASE stands for:",
+  "q_ar": "يرمز الاختصار BASE إلى:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Basically Available, Soft state, Eventual consistency",
+    "ar": "Basically Available, Soft state, Eventual consistency"
+   },
+   {
+    "en": "Basically Atomic, Strong state, Eventual consistency",
+    "ar": "Basically Atomic, Strong state, Eventual consistency"
+   },
+   {
+    "en": "Basically Available, Shared state, Exact consistency",
+    "ar": "Basically Available, Shared state, Exact consistency"
+   },
+   {
+    "en": "Batch Available, Soft state, Extended consistency",
+    "ar": "Batch Available, Soft state, Extended consistency"
+   }
+  ],
+  "why_ar": "BASE = متاح أساسًا (Basically Available)، حالة مرنة (Soft state)، اتساق نهائي (Eventual consistency).",
+  "why_en": "BASE = Basically Available, Soft state, Eventual consistent.",
+  "explain_ar": "لاحظ أن BASE عكس ACID كيميائيًا (قاعدة/حمض). كلمة Eventual هي المفتاح: البيانات تصبح متسقة «مع الوقت» وليس فورًا.",
+  "slide": 5,
+  "hot": false
+ },
+ {
+  "id": "ns-006",
+  "lecture": "nosql",
+  "topic_en": "Intro & NoSQL characteristics",
+  "topic_ar": "مقدمة وخصائص قواعد NoSQL",
+  "type": "mcq",
+  "q_en": "According to the introduction, why is the relational database not suitable today? Because today we have:",
+  "q_ar": "وفق المقدمة، لماذا لم تعد قاعدة البيانات العلائقية مناسبة اليوم؟ لأن لدينا اليوم:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Fewer users, more data, and batch apps",
+    "ar": "مستخدمين أقل، وبيانات أكثر، وتطبيقات دفعية"
+   },
+   {
+    "en": "More users, less data, and static apps",
+    "ar": "مستخدمين أكثر، وبيانات أقل، وتطبيقات ثابتة"
+   },
+   {
+    "en": "Fewer users, less data, and offline apps",
+    "ar": "مستخدمين أقل، وبيانات أقل، وتطبيقات غير متصلة"
+   },
+   {
+    "en": "More users, more data, and interactive apps",
+    "ar": "مستخدمين أكثر، وبيانات أكثر، وتطبيقات تفاعلية"
+   }
+  ],
+  "why_ar": "لدينا اليوم مستخدمون أكثر وبيانات أكثر وتطبيقات تفاعلية، فتغيرت متطلبات التخزين نحو التخزين والمعالجة الموزعة.",
+  "why_en": "Today we have more users, more data and interactive apps, so storage needs distributed storage and processing.",
+  "slide": [
+   2,
+   3
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-007",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "tf",
+  "q_en": "BASE is suitable for financial portals, while ACID is suitable for non-financial web-based applications.",
+  "q_ar": "BASE مناسب للبوابات المالية (Financial Portals)، بينما ACID مناسب لتطبيقات الويب غير المالية.",
+  "answer": false,
+  "correct_en": "BASE is suitable for non-financial web-based applications, while ACID is suitable for financial portals.",
+  "why_ar": "خطأ؛ العكس هو الصحيح: BASE لتطبيقات الويب غير المالية، و ACID للبوابات المالية لأنه آمن (Safe).",
+  "why_en": "False — reversed: BASE suits non-financial web apps; ACID suits financial portals.",
+  "explain_ar": "تذكّر: المال يحتاج أمانًا واتساقًا قويًا (Strong consistency) ← ACID = Safe. أما مواقع الويب العادية فتحتاج سرعة وتوافرًا ← BASE = Fast.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "ns-008",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "tf",
+  "q_en": "BASE uses scale out (unlimited), while ACID uses scale up (limited).",
+  "q_ar": "يستخدم BASE التوسع الأفقي (Scale out) غير المحدود، بينما يستخدم ACID التوسع العمودي (Scale up) المحدود.",
+  "answer": true,
+  "why_ar": "صحيح؛ BASE يعمل على عنقود (cluster) ويتوسع أفقيًا بلا حد، و ACID على جهاز واحد ويتوسع عموديًا بحد.",
+  "why_en": "True — BASE scales out without limit; ACID scales up with a limit.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "ns-009",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "tf",
+  "q_en": "In BASE, indexing uses full indexes, while in ACID indexing is mostly on keys.",
+  "q_ar": "في BASE تكون الفهرسة كاملة (Full Indexes)، بينما في ACID تكون الفهرسة غالبًا على المفاتيح.",
+  "answer": false,
+  "correct_en": "In BASE, indexing is mostly on keys, while ACID has full indexes.",
+  "why_ar": "خطأ؛ العكس: في BASE الفهرسة غالبًا على المفاتيح (Keys)، وفي ACID فهارس كاملة.",
+  "why_en": "False — reversed: BASE indexing is mostly on keys; ACID has full indexes.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "ns-010",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "tf",
+  "q_en": "BASE provides strong consistency, while ACID accomplishes consistency \"eventually\".",
+  "q_ar": "يوفر BASE اتساقًا قويًا (Strong consistency)، بينما يحقق ACID الاتساق «في النهاية» (eventually).",
+  "answer": false,
+  "correct_en": "ACID provides strong consistency, while BASE accomplishes consistency \"eventually\" (the system keeps functioning, data becomes consistent over time).",
+  "why_ar": "خطأ؛ ACID هو صاحب الاتساق القوي، أما BASE فالبيانات تصبح متسقة مع الوقت (eventually).",
+  "why_en": "False — reversed: ACID gives strong consistency; BASE reaches consistency eventually.",
+  "slide": [
+   6,
+   7
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-011",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "tf",
+  "q_en": "NoSQL often trades immediate consistency for availability, partition tolerance, and performance.",
+  "q_ar": "غالبًا ما تضحي NoSQL بالاتساق الفوري (immediate consistency) مقابل التوافر وتحمل التقسيم (partition tolerance) والأداء.",
+  "answer": true,
+  "why_ar": "صحيح؛ هذه هي مقايضة BASE: النظام يبقى يعمل والبيانات تتسق مع الوقت.",
+  "why_en": "True — this is the BASE trade-off on slide 7.",
+  "slide": 7,
+  "hot": false
+ },
+ {
+  "id": "ns-012",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "tf",
+  "q_en": "All NoSQL systems are BASE; none of them offers ACID transactions.",
+  "q_ar": "جميع أنظمة NoSQL هي BASE، ولا يوفر أيٌّ منها معاملات ACID.",
+  "answer": false,
+  "correct_en": "Not all NoSQL systems are BASE – some offer tunable consistency, even ACID transactions at the document level (MongoDB, Couchbase).",
+  "why_ar": "خطأ؛ ليست كل أنظمة NoSQL من نوع BASE، فبعضها يوفر اتساقًا قابلًا للضبط بل ومعاملات ACID على مستوى المستند مثل MongoDB و Couchbase.",
+  "why_en": "False — not all NoSQL systems are BASE; MongoDB and Couchbase offer ACID at the document level.",
+  "explain_ar": "الفخ في كلمة All. الشريحة 7 تقول Not all NoSQL systems are BASE. أي جملة تعمم «كل NoSQL = BASE» أو «لا يوجد ACID في NoSQL» فهي خاطئة.",
+  "slide": 7,
+  "hot": false
+ },
+ {
+  "id": "ns-013",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "mcq",
+  "q_en": "In the comparison between ACID and BASE, BASE architecture is described as:",
+  "q_ar": "في المقارنة بين ACID و BASE، توصف معمارية BASE بأنها:",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Shared Something (Disk, Memory)",
+    "ar": "شيء مشترك (Shared Something: القرص والذاكرة)"
+   },
+   {
+    "en": "Shared Nothing",
+    "ar": "لا شيء مشترك (Shared Nothing)"
+   },
+   {
+    "en": "Shared Disk only",
+    "ar": "قرص مشترك فقط (Shared Disk only)"
+   },
+   {
+    "en": "Shared Everything",
+    "ar": "كل شيء مشترك (Shared Everything)"
+   }
+  ],
+  "why_ar": "BASE معماريته Shared Nothing (كل عقدة مستقلة)، أما ACID فهو Shared Something (القرص والذاكرة).",
+  "why_en": "BASE is Shared Nothing; ACID is Shared Something (Disk, Memory).",
+  "explain_ar": "Shared Nothing يعني أن كل عقدة في العنقود لها قرصها وذاكرتها، ولذلك يمكن التوسع أفقيًا بلا حدود. ACID يعمل على جهاز واحد يتشارك القرص والذاكرة.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "ns-014",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "mcq",
+  "q_en": "Which of the following describes ACID (not BASE)?",
+  "q_ar": "أيٌّ مما يلي يصف ACID (وليس BASE)؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Complex code, simple database",
+    "ar": "كود معقد وقاعدة بيانات بسيطة (Complex code, simple database)"
+   },
+   {
+    "en": "Simple code, robust database",
+    "ar": "كود بسيط وقاعدة بيانات متينة (Simple code, robust database)"
+   },
+   {
+    "en": "Scale out (unlimited)",
+    "ar": "توسع أفقي غير محدود (Scale out)"
+   },
+   {
+    "en": "Simpler, faster, easier evolution",
+    "ar": "أبسط وأسرع وتطور أسهل"
+   }
+  ],
+  "why_ar": "ACID: كود بسيط وقاعدة بيانات متينة. أما الخيارات الأخرى فهي صفات BASE.",
+  "why_en": "ACID = simple code, robust database; the other options describe BASE.",
+  "explain_ar": "في BASE تنتقل المسؤولية إلى التطبيق: القاعدة بسيطة فيصبح الكود معقدًا (يعالج الاتساق بنفسه). في ACID القاعدة متينة تتكفل بكل شيء فيبقى الكود بسيطًا.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "ns-015",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "mcq",
+  "q_en": "In the BASE vs ACID table, BASE is described as:",
+  "q_ar": "في جدول المقارنة بين BASE و ACID، يوصف BASE بأنه:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Safe, isolation, runs on a single machine",
+    "ar": "آمن، العزل (Isolation)، يعمل على جهاز واحد"
+   },
+   {
+    "en": "Safe, availability first, runs on a single machine",
+    "ar": "آمن، الأولوية للتوافر، يعمل على جهاز واحد"
+   },
+   {
+    "en": "Fast, isolation, full indexes",
+    "ar": "سريع، العزل، فهارس كاملة"
+   },
+   {
+    "en": "Fast, availability first, runs on a cluster",
+    "ar": "سريع، الأولوية للتوافر (Availability first)، يعمل على عنقود (cluster)"
+   }
+  ],
+  "why_ar": "BASE: سريع، التوافر أولًا، عنقود. ACID: آمن، العزل، جهاز واحد.",
+  "why_en": "BASE: fast, availability first, a cluster; ACID: safe, isolation, single machine.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "ns-016",
+  "lecture": "nosql",
+  "topic_en": "BASE vs ACID",
+  "topic_ar": "مقارنة BASE و ACID",
+  "type": "mcq",
+  "q_en": "Which property belongs to BASE in the comparison table?",
+  "q_ar": "أي خاصية تنتمي إلى BASE في جدول المقارنة؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Simpler, faster, easier evolution",
+    "ar": "أبسط وأسرع وتطور أسهل (Easier evolution)"
+   },
+   {
+    "en": "Difficult evolution",
+    "ar": "تطور صعب (Difficult evolution)"
+   },
+   {
+    "en": "Isolation",
+    "ar": "العزل (Isolation)"
+   },
+   {
+    "en": "Full indexes",
+    "ar": "فهارس كاملة (Full Indexes)"
+   }
+  ],
+  "why_ar": "BASE: أبسط وأسرع وتطوره أسهل. أما التطور الصعب والعزل والفهارس الكاملة فهي صفات ACID.",
+  "why_en": "BASE has simpler, faster, easier evolution; ACID has difficult evolution, isolation and full indexes.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "ns-017",
+  "lecture": "nosql",
+  "topic_en": "CAP theorem",
+  "topic_ar": "نظرية CAP",
+  "type": "tf",
+  "q_en": "Any distributed database and shared-data system can have at most two of the three CAP properties.",
+  "q_ar": "أي قاعدة بيانات موزعة أو نظام بيانات مشتركة يمكن أن يحقق على الأكثر خاصيتين من خصائص CAP الثلاث.",
+  "answer": true,
+  "why_ar": "صحيح؛ نظرية CAP: لا يمكن تحقيق أكثر من اثنتين من الاتساق والتوافر وتحمل التقسيم في الوقت نفسه.",
+  "why_en": "True — CAP: at most two of Consistency, Availability, Partition tolerance.",
+  "slide": [
+   8,
+   9
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-018",
+  "lecture": "nosql",
+  "topic_en": "CAP theorem",
+  "topic_ar": "نظرية CAP",
+  "type": "tf",
+  "q_en": "Availability means that every read receives the most recent write.",
+  "q_ar": "التوافر (Availability) يعني أن كل عملية قراءة تحصل على آخر عملية كتابة.",
+  "answer": false,
+  "correct_en": "Consistency – Every read receives the most recent write.",
+  "why_ar": "خطأ؛ هذا تعريف الاتساق (Consistency). أما التوافر فيعني أن كل طلب يتلقى استجابة (غير خطأ).",
+  "why_en": "False — that is Consistency; Availability means every request receives a (non-error) response.",
+  "explain_ar": "طريقة التمييز: C = البيانات «صحيحة وحديثة» (most recent write). A = النظام «يرد دائمًا» (non-error response). P = النظام «يستمر رغم انقطاع الشبكة» (network partitions).",
+  "slide": 9,
+  "hot": false
+ },
+ {
+  "id": "ns-019",
+  "lecture": "nosql",
+  "topic_en": "CAP theorem",
+  "topic_ar": "نظرية CAP",
+  "type": "tf",
+  "q_en": "During a network partition, a system must choose between consistency and partition tolerance.",
+  "q_ar": "أثناء انقسام الشبكة (network partition)، يجب على النظام أن يختار بين الاتساق وتحمل التقسيم.",
+  "answer": false,
+  "correct_en": "During a network partition, a system must choose between C and A (Consistency and Availability).",
+  "why_ar": "خطأ؛ أثناء انقسام الشبكة يجب الاختيار بين الاتساق (C) والتوافر (A).",
+  "why_en": "False — during a partition the choice is between C and A (Consistency and Availability).",
+  "explain_ar": "في النظام الموزع الانقسام أمر واقع لا مفر منه، فـ P لازمة. لذلك الاختيار الحقيقي يكون بين C و A: إما أن ترفض الطلب لتبقى متسقًا (CP) أو ترد بأي بيانات متاحة (AP).",
+  "slide": 9,
+  "hot": false
+ },
+ {
+  "id": "ns-020",
+  "lecture": "nosql",
+  "topic_en": "CAP theorem",
+  "topic_ar": "نظرية CAP",
+  "type": "tf",
+  "q_en": "Partition tolerance means the system continues to operate despite network partitions.",
+  "q_ar": "تحمل التقسيم (Partition Tolerance) يعني أن النظام يستمر في العمل رغم انقسامات الشبكة.",
+  "answer": true,
+  "why_ar": "صحيح؛ هذا هو تعريف Partition Tolerance في الشريحة.",
+  "why_en": "True — this is the slide definition of Partition Tolerance.",
+  "slide": 9,
+  "hot": false
+ },
+ {
+  "id": "ns-021",
+  "lecture": "nosql",
+  "topic_en": "CAP theorem",
+  "topic_ar": "نظرية CAP",
+  "type": "mcq",
+  "q_en": "In the CAP theorem, Availability means:",
+  "q_ar": "في نظرية CAP، التوافر (Availability) يعني:",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Every read receives the most recent write",
+    "ar": "كل قراءة تحصل على آخر كتابة"
+   },
+   {
+    "en": "The system continues to operate despite network partitions",
+    "ar": "النظام يستمر في العمل رغم انقسامات الشبكة"
+   },
+   {
+    "en": "Every request receives a (non-error) response",
+    "ar": "كل طلب يتلقى استجابة (غير خطأ)"
+   },
+   {
+    "en": "Data becomes consistent over time",
+    "ar": "البيانات تصبح متسقة مع مرور الوقت"
+   }
+  ],
+  "why_ar": "التوافر = كل طلب يتلقى استجابة غير خاطئة. أما «كل قراءة تحصل على آخر كتابة» فهو Consistency، و«الاستمرار رغم انقسامات الشبكة» هو Partition tolerance.",
+  "why_en": "Availability = every request receives a (non-error) response.",
+  "slide": 9,
+  "hot": false
+ },
+ {
+  "id": "ns-022",
+  "lecture": "nosql",
+  "topic_en": "CAP theorem",
+  "topic_ar": "نظرية CAP",
+  "type": "mcq",
+  "q_en": "Which group of databases is classified as CP?",
+  "q_ar": "أي مجموعة من قواعد البيانات تُصنَّف ضمن CP؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Cassandra, DynamoDB, Couchbase",
+    "ar": "Cassandra و DynamoDB و Couchbase"
+   },
+   {
+    "en": "Voldemort, CouchDB, Riak",
+    "ar": "Voldemort و CouchDB و Riak"
+   },
+   {
+    "en": "Relational databases (single-node)",
+    "ar": "قواعد البيانات العلائقية (عقدة واحدة)"
+   },
+   {
+    "en": "BigTable, HBase, MongoDB (strict mode)",
+    "ar": "BigTable و HBase و MongoDB (في الوضع الصارم)"
+   }
+  ],
+  "why_ar": "CP: BigTable و HBase و MongoDB. أما Cassandra و DynamoDB و Couchbase و Voldemort و CouchDB و Riak فهي AP، والعلائقية CA.",
+  "why_en": "CP = BigTable, HBase, MongoDB; AP = Cassandra, DynamoDB, Couchbase, Voldemort, CouchDB, Riak; CA = relational/single-node.",
+  "explain_ar": "حيلة للحفظ: CP = «عائلة جوجل + مونغو»: BigTable ومستنسخه HBase ومعهم MongoDB. أما AP فهي التي تفضل الرد دائمًا: Cassandra و DynamoDB و Riak و Voldemort و CouchDB و Couchbase. انتبه: CouchDB (AP) غير MongoDB (CP).",
+  "slide": [
+   8,
+   9
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-023",
+  "lecture": "nosql",
+  "topic_en": "CAP theorem",
+  "topic_ar": "نظرية CAP",
+  "type": "mcq",
+  "q_en": "Voldemort, CouchDB, Riak, Cassandra and DynamoDB align with which CAP choice?",
+  "q_ar": "Voldemort و CouchDB و Riak و Cassandra و DynamoDB تتوافق مع أي اختيار من CAP؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "CP",
+    "ar": "CP"
+   },
+   {
+    "en": "AP",
+    "ar": "AP"
+   },
+   {
+    "en": "CA",
+    "ar": "CA"
+   },
+   {
+    "en": "CAP (all three)",
+    "ar": "CAP (الثلاثة معًا)"
+   }
+  ],
+  "why_ar": "هذه القواعد من نوع AP، أي تفضل التوافر وتحمل التقسيم على الاتساق الفوري.",
+  "why_en": "These databases are AP (Availability + Partition tolerance).",
+  "slide": [
+   8,
+   9
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-024",
+  "lecture": "nosql",
+  "topic_en": "CAP theorem",
+  "topic_ar": "نظرية CAP",
+  "type": "mcq",
+  "q_en": "Which CAP combination is associated with relational databases, and is typically single-node (not truly possible in a distributed system)?",
+  "q_ar": "أي تركيبة من CAP ترتبط بقواعد البيانات العلائقية، وتكون عادةً على عقدة واحدة (غير ممكنة فعليًا في نظام موزع)؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "CP",
+    "ar": "CP"
+   },
+   {
+    "en": "AP",
+    "ar": "AP"
+   },
+   {
+    "en": "CA",
+    "ar": "CA"
+   },
+   {
+    "en": "CAP (all three)",
+    "ar": "CAP (الثلاثة معًا)"
+   }
+  ],
+  "why_ar": "CA هي قواعد البيانات العلائقية، وتكون عادة على عقدة واحدة لأن النظام الموزع لا بد أن يتحمل التقسيم.",
+  "why_en": "CA = relational databases, typically single-node.",
+  "slide": [
+   8,
+   9
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-025",
+  "lecture": "nosql",
+  "topic_en": "Types of NoSQL databases",
+  "topic_ar": "أنواع قواعد بيانات NoSQL",
+  "type": "tf",
+  "q_en": "NoSQL databases are classified into four types: key-value, document, column-family, and graph.",
+  "q_ar": "تُصنَّف قواعد بيانات NoSQL إلى أربعة أنواع: المفتاح-القيمة (key-value)، والمستندات (document)، وعائلات الأعمدة (column-family)، والرسومية (graph).",
+  "answer": true,
+  "why_ar": "صحيح؛ أنواع NoSQL الأربعة هي: Key-value و Document و Column-family و Graph.",
+  "why_en": "True — the four NoSQL types are key-value, document, column-family and graph.",
+  "slide": [
+   11,
+   12
+  ],
+  "hot": true
+ },
+ {
+  "id": "ns-026",
+  "lecture": "nosql",
+  "topic_en": "Types of NoSQL databases",
+  "topic_ar": "أنواع قواعد بيانات NoSQL",
+  "type": "tf",
+  "q_en": "NoSQL databases are classified into three types: key-value, document, and graph.",
+  "q_ar": "تُصنَّف قواعد بيانات NoSQL إلى ثلاثة أنواع: المفتاح-القيمة، والمستندات، والرسومية.",
+  "answer": false,
+  "correct_en": "NoSQL databases are classified into four types: key-value, document, column-family, and graph.",
+  "why_ar": "خطأ؛ الأنواع أربعة وليست ثلاثة، والنوع الناقص هو عائلات الأعمدة (Column-family).",
+  "why_en": "False — there are four types; column-family (column-oriented) is missing.",
+  "explain_ar": "احفظها بالترتيب KDCG: Key-value ← Document ← Column ← Graph. الدكتورة قد تغير العدد (three/five) أو تحذف نوعًا أو تضيف Relational، وكل ذلك خطأ.",
+  "slide": [
+   11,
+   12
+  ],
+  "hot": true
+ },
+ {
+  "id": "ns-027",
+  "lecture": "nosql",
+  "topic_en": "Types of NoSQL databases",
+  "topic_ar": "أنواع قواعد بيانات NoSQL",
+  "type": "tf",
+  "q_en": "There are more than 225 NoSQL databases.",
+  "q_ar": "يوجد أكثر من 225 قاعدة بيانات NoSQL.",
+  "answer": true,
+  "why_ar": "صحيح؛ الشريحة تذكر أن هناك أكثر من 225 قاعدة بيانات NoSQL.",
+  "why_en": "True — the slide says there are more than 225 NoSQL databases.",
+  "slide": 11,
+  "hot": false
+ },
+ {
+  "id": "ns-028",
+  "lecture": "nosql",
+  "topic_en": "Types of NoSQL databases",
+  "topic_ar": "أنواع قواعد بيانات NoSQL",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT a type of NoSQL database?",
+  "q_ar": "أيٌّ مما يلي ليس نوعًا من أنواع قواعد بيانات NoSQL؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Relational",
+    "ar": "العلائقية (Relational)"
+   },
+   {
+    "en": "Key-value",
+    "ar": "المفتاح-القيمة (Key-value)"
+   },
+   {
+    "en": "Document",
+    "ar": "المستندات (Document)"
+   },
+   {
+    "en": "Graph",
+    "ar": "الرسومية (Graph)"
+   }
+  ],
+  "why_ar": "أنواع NoSQL هي Key-value و Document و Column-family و Graph، أما Relational فهي SQL وليست NoSQL.",
+  "why_en": "NoSQL types are key-value, document, column-family and graph; relational is not NoSQL.",
+  "slide": [
+   11,
+   12
+  ],
+  "hot": true
+ },
+ {
+  "id": "ns-029",
+  "lecture": "nosql",
+  "topic_en": "Types of NoSQL databases",
+  "topic_ar": "أنواع قواعد بيانات NoSQL",
+  "type": "mcq",
+  "q_en": "According to the license/storage-type table, BigTable is:",
+  "q_ar": "وفق جدول نوع الترخيص ونوع التخزين، فإن BigTable:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Proprietary – Column",
+    "ar": "مملوكة (Proprietary) – عمودية (Column)"
+   },
+   {
+    "en": "Open source – Column",
+    "ar": "مفتوحة المصدر – عمودية"
+   },
+   {
+    "en": "Proprietary – Document",
+    "ar": "مملوكة – مستندات"
+   },
+   {
+    "en": "Open source – Key-value",
+    "ar": "مفتوحة المصدر – مفتاح-قيمة"
+   }
+  ],
+  "why_ar": "BigTable ترخيصها مملوك (Proprietary) ونوع تخزينها عمودي (Column).",
+  "why_en": "BigTable is Proprietary and Column storage type.",
+  "explain_ar": "في الجدول قاعدتان فقط Proprietary: BigTable (Column) و SimpleDB (Document). الباقي Open source: Voldemort و Dynamo (Key-value)، MongoDB (Open source/GPL) و CouchDB (Document)، Cassandra و HBase (Column)، Neo4j (Graph).",
+  "slide": 12,
+  "hot": false
+ },
+ {
+  "id": "ns-030",
+  "lecture": "nosql",
+  "topic_en": "Types of NoSQL databases",
+  "topic_ar": "أنواع قواعد بيانات NoSQL",
+  "type": "mcq",
+  "q_en": "Which pairing of database and storage type is correct according to the table?",
+  "q_ar": "أي ربط بين قاعدة البيانات ونوع التخزين صحيح وفق الجدول؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "SimpleDB – Column",
+    "ar": "SimpleDB – عمودية (Column)"
+   },
+   {
+    "en": "Cassandra – Document",
+    "ar": "Cassandra – مستندات (Document)"
+   },
+   {
+    "en": "Voldemort – Key-value",
+    "ar": "Voldemort – مفتاح-قيمة (Key-value)"
+   },
+   {
+    "en": "Neo4j – Key-value",
+    "ar": "Neo4j – مفتاح-قيمة (Key-value)"
+   }
+  ],
+  "why_ar": "Voldemort من نوع Key-value. أما SimpleDB فهي Document، و Cassandra عمودية، و Neo4j رسومية.",
+  "why_en": "Voldemort is key-value; SimpleDB is document, Cassandra is column, Neo4j is graph.",
+  "slide": 12,
+  "hot": false
+ },
+ {
+  "id": "ns-031",
+  "lecture": "nosql",
+  "topic_en": "Key-value stores",
+  "topic_ar": "مخازن المفتاح-القيمة (Key-value)",
+  "type": "tf",
+  "q_en": "A caching layer on websites, reducing load on the primary database, is a suitable use case for a key-value database.",
+  "q_ar": "طبقة التخزين المؤقت (Caching layer) في المواقع، التي تقلل الحمل على قاعدة البيانات الأساسية، هي حالة استخدام مناسبة لقاعدة بيانات المفتاح-القيمة (Key-value).",
+  "answer": true,
+  "why_ar": "صحيح؛ طبقة الكاش من حالات الاستخدام المناسبة لـ Key-value لأنها سريعة جدًا والوصول بالمفتاح.",
+  "why_en": "True — caching layer is a key-value use case.",
+  "slide": 17,
+  "hot": true
+ },
+ {
+  "id": "ns-032",
+  "lecture": "nosql",
+  "topic_en": "Key-value stores",
+  "topic_ar": "مخازن المفتاح-القيمة (Key-value)",
+  "type": "tf",
+  "q_en": "A caching layer on websites, reducing load on the primary database, is a suitable use case for a graph database.",
+  "q_ar": "طبقة التخزين المؤقت في المواقع، التي تقلل الحمل على قاعدة البيانات الأساسية، هي حالة استخدام مناسبة لقاعدة البيانات الرسومية (Graph).",
+  "answer": false,
+  "correct_en": "Caching layer – reducing load on primary database – is a suitable use case for a key-value database.",
+  "why_ar": "خطأ؛ طبقة الكاش من حالات استخدام Key-value وليس Graph.",
+  "why_en": "False — a caching layer is a key-value use case, not graph.",
+  "slide": 17,
+  "hot": true
+ },
+ {
+  "id": "ns-033",
+  "lecture": "nosql",
+  "topic_en": "Key-value stores",
+  "topic_ar": "مخازن المفتاح-القيمة (Key-value)",
+  "type": "mcq",
+  "q_en": "Cache layer on websites (reducing load on the primary database) is best served by a ____ database.",
+  "q_ar": "طبقة الكاش في المواقع (لتقليل الحمل على قاعدة البيانات الأساسية) يناسبها أكثر قاعدة بيانات من نوع ____.",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Document",
+    "ar": "المستندات (Document)"
+   },
+   {
+    "en": "Key-value",
+    "ar": "المفتاح-القيمة (Key-value)"
+   },
+   {
+    "en": "Column-family",
+    "ar": "عائلات الأعمدة (Column-family)"
+   },
+   {
+    "en": "Graph",
+    "ar": "الرسومية (Graph)"
+   }
+  ],
+  "why_ar": "طبقة الكاش من حالات استخدام Key-value لأن الوصول يكون بالمفتاح وبزمن استجابة منخفض جدًا.",
+  "why_en": "Caching layer is a key-value use case (e.g., Redis).",
+  "explain_ar": "كلمات Key-value المفتاحية: cache، session، shopping cart، leaderboard (Redis sorted sets)، feature flags، rate limiting/counters (INCR)، Pub/Sub. كلها وصول سريع بمفتاح واحد.",
+  "slide": 17,
+  "hot": true
+ },
+ {
+  "id": "ns-034",
+  "lecture": "nosql",
+  "topic_en": "Key-value stores",
+  "topic_ar": "مخازن المفتاح-القيمة (Key-value)",
+  "type": "tf",
+  "q_en": "Key-value stores can easily model complex data structures such as objects.",
+  "q_ar": "تستطيع مخازن المفتاح-القيمة نمذجة هياكل البيانات المعقدة مثل الكائنات (objects) بسهولة.",
+  "answer": false,
+  "correct_en": "Key-value cons: Can't model more complex data structure such as objects.",
+  "why_ar": "خطأ؛ من عيوب Key-value أنها لا تستطيع نمذجة هياكل البيانات المعقدة مثل الكائنات.",
+  "why_en": "False — the con of key-value is that it can't model more complex data structures such as objects.",
+  "explain_ar": "مزايا Key-value: سريعة جدًا، قابلة للتوسع جدًا (موزعة أفقيًا حسب المفتاح)، نموذج بيانات بسيط. العيب الوحيد المذكور: لا تنمذج البيانات المعقدة مثل objects.",
+  "slide": 15,
+  "hot": false
+ },
+ {
+  "id": "ns-035",
+  "lecture": "nosql",
+  "topic_en": "Key-value stores",
+  "topic_ar": "مخازن المفتاح-القيمة (Key-value)",
+  "type": "tf",
+  "q_en": "Key-value stores support single-record transactions and eventual consistency.",
+  "q_ar": "تدعم مخازن المفتاح-القيمة معاملات السجل الواحد (single-record transactions) والاتساق النهائي (eventual consistency).",
+  "answer": true,
+  "why_ar": "صحيح؛ من خصائص تطبيق Key-value: معاملات على سجل واحد واتساق نهائي.",
+  "why_en": "True — key-value implementation: single-record transactions, eventual consistency.",
+  "slide": 14,
+  "hot": false
+ },
+ {
+  "id": "ns-036",
+  "lecture": "nosql",
+  "topic_en": "Key-value stores",
+  "topic_ar": "مخازن المفتاح-القيمة (Key-value)",
+  "type": "mcq",
+  "q_en": "In key-value stores, records are distributed to nodes based on:",
+  "q_ar": "في مخازن المفتاح-القيمة، تُوزَّع السجلات على العقد بناءً على:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Value",
+    "ar": "القيمة (Value)"
+   },
+   {
+    "en": "Document contents",
+    "ar": "محتوى المستند (Document contents)"
+   },
+   {
+    "en": "Edges",
+    "ar": "الحواف (Edges)"
+   },
+   {
+    "en": "Key",
+    "ar": "المفتاح (Key)"
+   }
+  ],
+  "why_ar": "تُوزَّع السجلات على العقد حسب المفتاح، ولهذا هي قابلة للتوسع الأفقي جدًا.",
+  "why_en": "Records are distributed to nodes based on key (horizontally distributed).",
+  "slide": [
+   14,
+   15
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-037",
+  "lecture": "nosql",
+  "topic_en": "Key-value stores",
+  "topic_ar": "مخازن المفتاح-القيمة (Key-value)",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT one of the key-value store operations?",
+  "q_ar": "أيٌّ مما يلي ليس من عمليات مخازن المفتاح-القيمة؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Insert(key, value)",
+    "ar": "Insert(key, value)"
+   },
+   {
+    "en": "Join(key1, key2)",
+    "ar": "Join(key1, key2)"
+   },
+   {
+    "en": "Fetch(key)",
+    "ar": "Fetch(key)"
+   },
+   {
+    "en": "Delete(key)",
+    "ar": "Delete(key)"
+   }
+  ],
+  "why_ar": "العمليات هي Insert و Fetch و Update و Delete فقط، ولا يوجد Join لأن الواجهة بسيطة جدًا.",
+  "why_en": "Operations are Insert(key, value), Fetch(key), Update(key), Delete(key); there is no join.",
+  "slide": 14,
+  "hot": false
+ },
+ {
+  "id": "ns-038",
+  "lecture": "nosql",
+  "topic_en": "Key-value stores",
+  "topic_ar": "مخازن المفتاح-القيمة (Key-value)",
+  "type": "mcq",
+  "q_en": "Which of the following are examples of key-value stores?",
+  "q_ar": "أيٌّ مما يلي أمثلة على مخازن المفتاح-القيمة؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "DynamoDB, Voldemort, Scalaris",
+    "ar": "DynamoDB و Voldemort و Scalaris"
+   },
+   {
+    "en": "CouchDB, MongoDB, SimpleDB",
+    "ar": "CouchDB و MongoDB و SimpleDB"
+   },
+   {
+    "en": "Neo4j, FlockDB, Pregel",
+    "ar": "Neo4j و FlockDB و Pregel"
+   },
+   {
+    "en": "Cassandra, HBase, BigTable",
+    "ar": "Cassandra و HBase و BigTable"
+   }
+  ],
+  "why_ar": "أمثلة Key-value: DynamoDB و Voldemort و Scalaris. أما CouchDB و MongoDB و SimpleDB فهي Document، و Neo4j و FlockDB و Pregel فهي Graph، و Cassandra و HBase و BigTable فهي Column.",
+  "why_en": "Key-value examples: DynamoDB, Voldemort, Scalaris.",
+  "slide": 14,
+  "hot": false
+ },
+ {
+  "id": "ns-039",
+  "lecture": "nosql",
+  "topic_en": "Key-value stores",
+  "topic_ar": "مخازن المفتاح-القيمة (Key-value)",
+  "type": "mcq",
+  "q_en": "Key-value stores are NOT suitable when you need:",
+  "q_ar": "مخازن المفتاح-القيمة غير مناسبة عندما تحتاج إلى:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "An access pattern almost exclusively by primary key",
+    "ar": "نمط وصول يكون غالبًا بالمفتاح الأساسي فقط"
+   },
+   {
+    "en": "Extreme low-latency requirements",
+    "ar": "متطلبات زمن استجابة منخفض جدًا"
+   },
+   {
+    "en": "Highly dynamic data with frequent writes and reads",
+    "ar": "بيانات شديدة التغير مع قراءة وكتابة متكررة"
+   },
+   {
+    "en": "Operations by sets (operating on multiple keys at the same time)",
+    "ar": "عمليات على مجموعات (التعامل مع عدة مفاتيح في الوقت نفسه)"
+   }
+  ],
+  "why_ar": "لا تُستخدم Key-value مع العلاقات بين البيانات، والمعاملات متعددة العمليات، والاستعلام بالبيانات، والعمليات على المجموعات لأن العمليات محدودة بمفتاح واحد.",
+  "why_en": "Not to use: relationships, multi-operation transactions, query by data, operations by sets.",
+  "explain_ar": "العمليات محدودة بمفتاح واحد في كل مرة، فإذا أردت التعامل مع عدة مفاتيح فعليك معالجة ذلك من جهة العميل (client side). الخيارات الأخرى كلها من قائمة When to Use.",
+  "slide": [
+   18,
+   19
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-040",
+  "lecture": "nosql",
+  "topic_en": "Document stores",
+  "topic_ar": "مخازن المستندات (Document)",
+  "type": "tf",
+  "q_en": "Document database is based on JSON format: a data model which supports lists, maps, dates, Boolean with nesting.",
+  "q_ar": "قاعدة بيانات المستندات (Document) تعتمد على صيغة JSON: نموذج بيانات يدعم القوائم والخرائط والتواريخ والقيم المنطقية (Boolean) مع التداخل (nesting).",
+  "answer": true,
+  "why_ar": "صحيح؛ قواعد المستندات تعتمد على JSON الذي يدعم lists و maps و dates و Boolean مع التداخل.",
+  "why_en": "True — document-based databases are based on JSON format.",
+  "slide": 21,
+  "hot": true
+ },
+ {
+  "id": "ns-041",
+  "lecture": "nosql",
+  "topic_en": "Document stores",
+  "topic_ar": "مخازن المستندات (Document)",
+  "type": "tf",
+  "q_en": "Key-value database is based on JSON format: a data model which supports lists, maps, dates, Boolean with nesting.",
+  "q_ar": "قاعدة بيانات المفتاح-القيمة (Key-value) تعتمد على صيغة JSON: نموذج بيانات يدعم القوائم والخرائط والتواريخ والقيم المنطقية مع التداخل.",
+  "answer": false,
+  "correct_en": "Document database is based on JSON format: a data model which supports lists, maps, dates, Boolean with nesting.",
+  "why_ar": "خطأ؛ قاعدة المستندات (Document) هي التي تعتمد على صيغة JSON وليست Key-value.",
+  "why_en": "False — it is the document database that is based on JSON format.",
+  "slide": 21,
+  "hot": true
+ },
+ {
+  "id": "ns-042",
+  "lecture": "nosql",
+  "topic_en": "Document stores",
+  "topic_ar": "مخازن المستندات (Document)",
+  "type": "mcq",
+  "q_en": "____ database uses JSON format (a data model supporting lists, maps, dates, Boolean with nesting).",
+  "q_ar": "قاعدة بيانات ____ تستخدم صيغة JSON (نموذج بيانات يدعم القوائم والخرائط والتواريخ و Boolean مع التداخل).",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Key-value",
+    "ar": "المفتاح-القيمة (Key-value)"
+   },
+   {
+    "en": "Column-family",
+    "ar": "عائلات الأعمدة (Column-family)"
+   },
+   {
+    "en": "Document",
+    "ar": "المستندات (Document)"
+   },
+   {
+    "en": "Graph",
+    "ar": "الرسومية (Graph)"
+   }
+  ],
+  "why_ar": "قواعد المستندات مثل MongoDB تخزن البيانات كمستندات JSON (أزواج حقل وقيمة).",
+  "why_en": "Document databases (e.g., MongoDB) use JSON format.",
+  "explain_ar": "MongoDB تخزن البيانات على شكل مستندات، وهي أزواج حقل وقيمة شبيهة بـ JSON (JSON-like field and value pairs). أي ذكر لـ JSON أو XML أو semistructured documents يعني Document.",
+  "slide": 21,
+  "hot": true
+ },
+ {
+  "id": "ns-043",
+  "lecture": "nosql",
+  "topic_en": "Document stores",
+  "topic_ar": "مخازن المستندات (Document)",
+  "type": "tf",
+  "q_en": "Document stores are like key-value stores except that the value is a document.",
+  "q_ar": "مخازن المستندات تشبه مخازن المفتاح-القيمة باستثناء أن القيمة تكون مستندًا (document).",
+  "answer": true,
+  "why_ar": "صحيح؛ نموذج البيانات في Document هو أزواج (key, document).",
+  "why_en": "True — document stores: (key, document) pairs.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "ns-044",
+  "lecture": "nosql",
+  "topic_en": "Document stores",
+  "topic_ar": "مخازن المستندات (Document)",
+  "type": "tf",
+  "q_en": "Document stores can fetch data only by key; they cannot fetch based on document contents.",
+  "q_ar": "مخازن المستندات تستطيع جلب البيانات بالمفتاح فقط، ولا يمكنها الجلب بناءً على محتوى المستند.",
+  "answer": false,
+  "correct_en": "Document stores: basic operations Insert(key, document), Fetch(key), Update(key), Delete(key); also fetch based on document contents.",
+  "why_ar": "خطأ؛ مخازن المستندات تدعم أيضًا الجلب بناءً على محتوى المستند، وهذا ما يميزها عن Key-value.",
+  "why_en": "False — document stores also fetch based on document contents.",
+  "explain_ar": "الفرق الجوهري: Key-value لا تعرف ما داخل القيمة فتجلب بالمفتاح فقط، أما Document فتفهم محتوى المستند (فهارس على المستندات شبه المهيكلة) فتجلب بالمحتوى أيضًا.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "ns-045",
+  "lecture": "nosql",
+  "topic_en": "Document stores",
+  "topic_ar": "مخازن المستندات (Document)",
+  "type": "mcq",
+  "q_en": "The data model of document stores is:",
+  "q_ar": "نموذج البيانات في مخازن المستندات هو:",
+  "answer": 2,
+  "options": [
+   {
+    "en": "(key, value) pairs",
+    "ar": "أزواج (key, value)"
+   },
+   {
+    "en": "Nodes and edges",
+    "ar": "عقد وحواف (Nodes and edges)"
+   },
+   {
+    "en": "(key, document) pairs",
+    "ar": "أزواج (key, document)"
+   },
+   {
+    "en": "Families of attributes defined in a schema",
+    "ar": "عائلات من السمات معرفة في مخطط"
+   }
+  ],
+  "why_ar": "نموذج Document هو (key, document)، والمستند قد يكون JSON أو XML أو صيغ شبه مهيكلة أخرى.",
+  "why_en": "Document data model = (key, document) pairs, where documents are JSON, XML or other semistructured formats.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "ns-046",
+  "lecture": "nosql",
+  "topic_en": "Document stores",
+  "topic_ar": "مخازن المستندات (Document)",
+  "type": "mcq",
+  "q_en": "Which group lists example document stores?",
+  "q_ar": "أي مجموعة تذكر أمثلة على مخازن المستندات؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "DynamoDB, Voldemort, Scalaris",
+    "ar": "DynamoDB و Voldemort و Scalaris"
+   },
+   {
+    "en": "Neo4j, FlockDB, Pregel",
+    "ar": "Neo4j و FlockDB و Pregel"
+   },
+   {
+    "en": "Cassandra, HBase, BigTable",
+    "ar": "Cassandra و HBase و BigTable"
+   },
+   {
+    "en": "CouchDB, MongoDB, SimpleDB",
+    "ar": "CouchDB و MongoDB و SimpleDB"
+   }
+  ],
+  "why_ar": "أمثلة Document: CouchDB و MongoDB و SimpleDB.",
+  "why_en": "Document examples: CouchDB, MongoDB, SimpleDB.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "ns-047",
+  "lecture": "nosql",
+  "topic_en": "Document stores",
+  "topic_ar": "مخازن المستندات (Document)",
+  "type": "mcq",
+  "q_en": "Which of the following is a suitable use case for document stores?",
+  "q_ar": "أيٌّ مما يلي حالة استخدام مناسبة لمخازن المستندات؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Real-time leaderboards using Redis sorted sets",
+    "ar": "لوحات الصدارة الفورية باستخدام Redis sorted sets"
+   },
+   {
+    "en": "Content Management Systems",
+    "ar": "أنظمة إدارة المحتوى (Content Management Systems)"
+   },
+   {
+    "en": "Rate limiting / counters with atomic INCR operations",
+    "ar": "تحديد المعدل والعدادات بعمليات INCR الذرية"
+   },
+   {
+    "en": "Network & IT topology – asset dependencies",
+    "ar": "طوبولوجيا الشبكات وتقنية المعلومات – اعتماديات الأصول"
+   }
+  ],
+  "why_ar": "حالات استخدام Document: تسجيل الأحداث، أنظمة إدارة المحتوى، تحليلات الويب أو التحليل الفوري، تطبيقات التجارة الإلكترونية.",
+  "why_en": "Document use cases: event logging, CMS, web analytics/real-time analysis, e-commerce.",
+  "slide": 25,
+  "hot": false
+ },
+ {
+  "id": "ns-048",
+  "lecture": "nosql",
+  "topic_en": "Document stores",
+  "topic_ar": "مخازن المستندات (Document)",
+  "type": "mcq",
+  "q_en": "Document databases are NOT a good choice when:",
+  "q_ar": "قواعد المستندات ليست خيارًا جيدًا عندما:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Data has intensive many-to-many relationships that demand frequent joins",
+    "ar": "تحتوي البيانات على علاقات كثيرة-لكثيرة مكثفة تتطلب عمليات ربط (joins) متكررة"
+   },
+   {
+    "en": "The schema evolves rapidly and you need flexibility",
+    "ar": "يتطور المخطط بسرعة وتحتاج إلى مرونة"
+   },
+   {
+    "en": "Your data is naturally document-centric (JSON/XML)",
+    "ar": "تكون بياناتك بطبيعتها متمحورة حول المستندات (JSON/XML)"
+   },
+   {
+    "en": "You have rapid development cycles with no schema migrations",
+    "ar": "لديك دورات تطوير سريعة دون ترحيل للمخطط"
+   }
+  ],
+  "why_ar": "العلاقات الكثيرة-لكثيرة مع joins متكررة من حالات عدم الاستخدام، أما باقي الخيارات فهي من حالات الاستخدام.",
+  "why_en": "Many-to-many relationships with frequent joins is a 'when NOT to use'; the others are 'when to use'.",
+  "explain_ar": "لا تستخدم Document أيضًا مع: بيانات علائقية عالية التطبيع مع معاملات ACID عبر المجموعات، التقارير الثقيلة و BI بلغة SQL، والمخطط الصارم الإلزامي (مثل الامتثال المالي schema-on-write). ملاحظة: ACID متعدد المستندات موجود منذ MongoDB 4.0 لكن بتكلفة أداء.",
+  "slide": [
+   26,
+   27
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-049",
+  "lecture": "nosql",
+  "topic_en": "Column-family stores",
+  "topic_ar": "مخازن عائلات الأعمدة (Column-family)",
+  "type": "tf",
+  "q_en": "Write-heavy applications such as clickstream recording and fraud detection events are suitable use cases for column-family databases.",
+  "q_ar": "التطبيقات كثيفة الكتابة (Write-heavy) مثل تسجيل مسار النقرات (clickstream) وأحداث كشف الاحتيال هي حالات استخدام مناسبة لقواعد عائلات الأعمدة (Column-family).",
+  "answer": true,
+  "why_ar": "صحيح؛ تسجيل clickstream وأحداث الاحتيال تطبيقات كثيفة الكتابة وتناسب Column-family.",
+  "why_en": "True — write-heavy apps (clickstream recording, fraud detection events) are column-family use cases.",
+  "slide": 29,
+  "hot": true
+ },
+ {
+  "id": "ns-050",
+  "lecture": "nosql",
+  "topic_en": "Column-family stores",
+  "topic_ar": "مخازن عائلات الأعمدة (Column-family)",
+  "type": "tf",
+  "q_en": "A clickstream recording system (a write-heavy application) is best served by a document database.",
+  "q_ar": "نظام تسجيل مسار النقرات (clickstream)، وهو تطبيق كثيف الكتابة، تناسبه أكثر قاعدة بيانات المستندات (Document).",
+  "answer": false,
+  "correct_en": "Write-heavy applications – clickstream recording, fraud detection events – are column-family use cases.",
+  "why_ar": "خطأ؛ تسجيل clickstream من حالات استخدام Column-family لأنها تتحمل معدل كتابة عالٍ جدًا.",
+  "why_en": "False — clickstream recording is a column-family use case.",
+  "slide": 29,
+  "hot": true
+ },
+ {
+  "id": "ns-051",
+  "lecture": "nosql",
+  "topic_en": "Column-family stores",
+  "topic_ar": "مخازن عائلات الأعمدة (Column-family)",
+  "type": "mcq",
+  "q_en": "Clickstream analysis system records user clicks on large websites → ____ database.",
+  "q_ar": "نظام تحليل مسار النقرات (Clickstream analysis) الذي يسجّل نقرات المستخدمين في المواقع الكبيرة يناسبه قاعدة بيانات ____.",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Key-value",
+    "ar": "المفتاح-القيمة (Key-value)"
+   },
+   {
+    "en": "Document",
+    "ar": "المستندات (Document)"
+   },
+   {
+    "en": "Graph",
+    "ar": "الرسومية (Graph)"
+   },
+   {
+    "en": "Column-family",
+    "ar": "عائلات الأعمدة (Column-family)"
+   }
+  ],
+  "why_ar": "تسجيل clickstream تطبيق كثيف الكتابة، و Column-family مصممة لمعدل كتابة عالٍ جدًا (آلاف إلى ملايين الكتابات في الثانية).",
+  "why_en": "Clickstream recording is a write-heavy column-family use case.",
+  "explain_ar": "هذه صياغة سؤال النموذج الحقيقي تقريبًا. لا تنخدع بكلمة analysis وتختار Document (لأن Web Analytics من استخدامات Document)؛ المفتاح هنا records user clicks = تسجيل كثيف للكتابة (write-heavy) والشريحة 29 تقول صراحة: Write-heavy applications – clickstream recording ← Column-family.",
+  "slide": 29,
+  "hot": true
+ },
+ {
+  "id": "ns-052",
+  "lecture": "nosql",
+  "topic_en": "Column-family stores",
+  "topic_ar": "مخازن عائلات الأعمدة (Column-family)",
+  "type": "tf",
+  "q_en": "The storing principle of column-oriented databases is big hashed centralized tables.",
+  "q_ar": "مبدأ التخزين في قواعد البيانات العمودية هو جداول كبيرة مُجزّأة (hashed) مركزية.",
+  "answer": false,
+  "correct_en": "Column-oriented storing principle: big hashed distributed tables.",
+  "why_ar": "خطأ؛ مبدأ التخزين هو جداول كبيرة مجزأة وموزعة (distributed) وليست مركزية.",
+  "why_en": "False — the storing principle is big hashed distributed tables.",
+  "explain_ar": "خصائص Column-oriented: تخزين البيانات بترتيب الأعمدة، تخزين أزواج key-value واسترجاعها بالمفتاح في نظام متوازٍ ضخم، التقسيم أفقيًا و/أو عموديًا مع التوافر العالي بشفافية تامة للتطبيق.",
+  "slide": 28,
+  "hot": false
+ },
+ {
+  "id": "ns-053",
+  "lecture": "nosql",
+  "topic_en": "Column-family stores",
+  "topic_ar": "مخازن عائلات الأعمدة (Column-family)",
+  "type": "tf",
+  "q_en": "In column-oriented databases, the data model is families of attributes defined in a schema, and new attributes can be added.",
+  "q_ar": "في قواعد البيانات العمودية، يكون نموذج البيانات عائلات من السمات (families of attributes) معرفة في مخطط، ويمكن إضافة سمات جديدة.",
+  "answer": true,
+  "why_ar": "صحيح؛ هذا هو نموذج بيانات Column-oriented، ومثاله Cassandra.",
+  "why_en": "True — data model: families of attributes defined in a schema; new attributes can be added.",
+  "slide": 28,
+  "hot": false
+ },
+ {
+  "id": "ns-054",
+  "lecture": "nosql",
+  "topic_en": "Column-family stores",
+  "topic_ar": "مخازن عائلات الأعمدة (Column-family)",
+  "type": "mcq",
+  "q_en": "Column-family databases are a good choice when:",
+  "q_ar": "قواعد عائلات الأعمدة خيار جيد عندما:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "You have extremely high write throughput (thousands to millions writes/sec)",
+    "ar": "يكون لديك معدل كتابة عالٍ جدًا (آلاف إلى ملايين الكتابات في الثانية)"
+   },
+   {
+    "en": "Ad-hoc queries and complex joins are a primary requirement",
+    "ar": "تكون الاستعلامات المرتجلة وعمليات الربط المعقدة متطلبًا أساسيًا"
+   },
+   {
+    "en": "You need full ACID transactions across multiple rows/tables",
+    "ar": "تحتاج إلى معاملات ACID كاملة عبر عدة صفوف أو جداول"
+   },
+   {
+    "en": "Your team expects full SQL expressiveness",
+    "ar": "يتوقع فريقك قدرة SQL التعبيرية الكاملة"
+   }
+  ],
+  "why_ar": "معدل الكتابة العالي جدًا من حالات الاستخدام، أما الباقي فمن حالات عدم الاستخدام.",
+  "why_en": "Extremely high write throughput is a 'when to use'; the others are 'when NOT to use'.",
+  "slide": [
+   30,
+   31
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-055",
+  "lecture": "nosql",
+  "topic_en": "Column-family stores",
+  "topic_ar": "مخازن عائلات الأعمدة (Column-family)",
+  "type": "mcq",
+  "q_en": "Column-family databases are NOT recommended when:",
+  "q_ar": "لا يُنصح باستخدام قواعد عائلات الأعمدة عندما:",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Multi-region active-active deployments are needed",
+    "ar": "تكون هناك حاجة لنشر نشط-نشط متعدد المناطق"
+   },
+   {
+    "en": "Data is mostly time-partitioned or event-based",
+    "ar": "تكون البيانات مقسمة زمنيًا أو قائمة على الأحداث"
+   },
+   {
+    "en": "Small or medium datasets fit on a single server",
+    "ar": "تكون مجموعات البيانات صغيرة أو متوسطة ويكفيها خادم واحد"
+   },
+   {
+    "en": "You require linear horizontal scalability with no single point of failure",
+    "ar": "تحتاج إلى توسع أفقي خطي دون نقطة فشل واحدة"
+   }
+  ],
+  "why_ar": "البيانات الصغيرة أو المتوسطة على خادم واحد لا تبرر تكلفة Column-family، أما الخيارات الأخرى فهي من حالات الاستخدام.",
+  "why_en": "Small/medium datasets on a single server don't justify the overhead; the others are 'when to use'.",
+  "explain_ar": "من حالات عدم الاستخدام أيضًا: التحديثات الكثيرة التي تتطلب القراءة قبل الكتابة بشكل تنافسي (القفل غير طبيعي)، وتغيير المخطط المتكرر مع قيود السلامة العلائقية. أما multi-region active-active فهو نقطة قوة Cassandra.",
+  "slide": [
+   30,
+   31
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-056",
+  "lecture": "nosql",
+  "topic_en": "Column-family stores",
+  "topic_ar": "مخازن عائلات الأعمدة (Column-family)",
+  "type": "mcq",
+  "q_en": "Time-series sensor streams, stock tick data and messaging systems storing chat histories are suitable use cases for which database type?",
+  "q_ar": "تدفقات الحساسات الزمنية وبيانات أسعار الأسهم اللحظية وأنظمة المراسلة التي تخزن سجل المحادثات هي حالات استخدام مناسبة لأي نوع؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Graph (e.g., Neo4j)",
+    "ar": "الرسومية (مثل Neo4j)"
+   },
+   {
+    "en": "Column-family (e.g., Cassandra)",
+    "ar": "عائلات الأعمدة (مثل Cassandra)"
+   },
+   {
+    "en": "Document (e.g., MongoDB)",
+    "ar": "المستندات (مثل MongoDB)"
+   },
+   {
+    "en": "Key-value (e.g., Voldemort)",
+    "ar": "المفتاح-القيمة (مثل Voldemort)"
+   }
+  ],
+  "why_ar": "البيانات الزمنية (Time-series) وسجل المحادثات من حالات استخدام Column-family، ومثالها Cassandra.",
+  "why_en": "Time-series data and chat histories are column-family use cases.",
+  "slide": [
+   28,
+   29
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-057",
+  "lecture": "nosql",
+  "topic_en": "Graph databases",
+  "topic_ar": "قواعد البيانات الرسومية (Graph)",
+  "type": "tf",
+  "q_en": "The data model of a graph database is nodes and edges.",
+  "q_ar": "نموذج البيانات في قاعدة البيانات الرسومية هو العقد والحواف (nodes and edges).",
+  "answer": true,
+  "why_ar": "صحيح؛ نموذج Graph يتكون من عقد (nodes) وحواف (edges).",
+  "why_en": "True — graph data model: nodes and edges.",
+  "slide": 32,
+  "hot": false
+ },
+ {
+  "id": "ns-058",
+  "lecture": "nosql",
+  "topic_en": "Graph databases",
+  "topic_ar": "قواعد البيانات الرسومية (Graph)",
+  "type": "tf",
+  "q_en": "In graph databases, edges may have properties (including ID), and nodes may have labels or roles.",
+  "q_ar": "في قواعد البيانات الرسومية، قد تحتوي الحواف على خصائص (بما فيها المعرّف ID)، وقد تحتوي العقد على تسميات أو أدوار (labels or roles).",
+  "answer": false,
+  "correct_en": "Nodes may have properties (including ID); edges may have labels or roles.",
+  "why_ar": "خطأ؛ العكس: العقد (nodes) لها خصائص بما فيها ID، والحواف (edges) لها تسميات أو أدوار.",
+  "why_en": "False — reversed: nodes have properties (including ID); edges have labels or roles.",
+  "explain_ar": "تخيّل شبكة اجتماعية: العقدة = شخص له خصائص (الاسم، العمر، ID)، والحافة = العلاقة بينهما ولها تسمية/دور مثل «صديق» أو «يعمل لدى».",
+  "slide": 32,
+  "hot": false
+ },
+ {
+  "id": "ns-059",
+  "lecture": "nosql",
+  "topic_en": "Graph databases",
+  "topic_ar": "قواعد البيانات الرسومية (Graph)",
+  "type": "tf",
+  "q_en": "RDF \"triple stores\" can map to graph databases.",
+  "q_ar": "مخازن RDF الثلاثية (triple stores) يمكن أن تُربط (map) بقواعد البيانات الرسومية.",
+  "answer": true,
+  "why_ar": "صحيح؛ مخازن RDF الثلاثية يمكن تمثيلها كقواعد بيانات رسومية.",
+  "why_en": "True — RDF triple stores can map to graph databases.",
+  "slide": 33,
+  "hot": false
+ },
+ {
+  "id": "ns-060",
+  "lecture": "nosql",
+  "topic_en": "Graph databases",
+  "topic_ar": "قواعد البيانات الرسومية (Graph)",
+  "type": "tf",
+  "q_en": "Graph databases are a good choice when you need to store and process massive amounts of time-series numeric data.",
+  "q_ar": "قواعد البيانات الرسومية خيار جيد عندما تحتاج إلى تخزين ومعالجة كميات ضخمة من البيانات الرقمية الزمنية (time-series).",
+  "answer": false,
+  "correct_en": "Graph – When NOT to use: you need to store and process massive amounts of time-series numeric data (column-family better).",
+  "why_ar": "خطأ؛ هذه من حالات عدم استخدام Graph، والأفضل لها Column-family.",
+  "why_en": "False — this is a 'when NOT to use' for graph; column-family is better for time-series.",
+  "slide": 36,
+  "hot": false
+ },
+ {
+  "id": "ns-061",
+  "lecture": "nosql",
+  "topic_en": "Graph databases",
+  "topic_ar": "قواعد البيانات الرسومية (Graph)",
+  "type": "mcq",
+  "q_en": "Which of the following are example graph database systems?",
+  "q_ar": "أيٌّ مما يلي أمثلة على أنظمة قواعد البيانات الرسومية؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Neo4j, FlockDB, Pregel",
+    "ar": "Neo4j و FlockDB و Pregel"
+   },
+   {
+    "en": "DynamoDB, Voldemort, Scalaris",
+    "ar": "DynamoDB و Voldemort و Scalaris"
+   },
+   {
+    "en": "CouchDB, MongoDB, SimpleDB",
+    "ar": "CouchDB و MongoDB و SimpleDB"
+   },
+   {
+    "en": "Cassandra, HBase, BigTable",
+    "ar": "Cassandra و HBase و BigTable"
+   }
+  ],
+  "why_ar": "أمثلة Graph: Neo4j و FlockDB و Pregel، وواجهاتها ولغات استعلامها تختلف (خطوة واحدة، path expressions، أو تكرار كامل).",
+  "why_en": "Graph examples: Neo4j, FlockDB, Pregel.",
+  "slide": 33,
+  "hot": false
+ },
+ {
+  "id": "ns-062",
+  "lecture": "nosql",
+  "topic_en": "Graph databases",
+  "topic_ar": "قواعد البيانات الرسومية (Graph)",
+  "type": "mcq",
+  "q_en": "Which of the following is a use case of graph databases?",
+  "q_ar": "أيٌّ مما يلي حالة استخدام لقواعد البيانات الرسومية؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Session stores – fast user session retrieval by session ID",
+    "ar": "مخازن الجلسات – استرجاع سريع لجلسة المستخدم بمعرّف الجلسة"
+   },
+   {
+    "en": "Social networks – friends of friends, influencer detection",
+    "ar": "الشبكات الاجتماعية – أصدقاء الأصدقاء، واكتشاف المؤثرين"
+   },
+   {
+    "en": "Event logging",
+    "ar": "تسجيل الأحداث (Event logging)"
+   },
+   {
+    "en": "Time-series data – sensor streams, stock tick data",
+    "ar": "البيانات الزمنية – تدفقات الحساسات وبيانات الأسهم"
+   }
+  ],
+  "why_ar": "الشبكات الاجتماعية من حالات استخدام Graph. أما الجلسات فـ Key-value، وتسجيل الأحداث Document، والبيانات الزمنية Column-family.",
+  "why_en": "Social networks (friends of friends) are a graph use case.",
+  "explain_ar": "حالات Graph الست: الشبكات الاجتماعية، محركات التوصية («من اشترى هذا اشترى أيضًا»)، كشف الاحتيال بمطابقة الأنماط عبر حلقات المعاملات، الرسوم المعرفية (Knowledge graphs)، إدارة البيانات الرئيسية (Master Data Management)، وطوبولوجيا الشبكات.",
+  "slide": 34,
+  "hot": false
+ },
+ {
+  "id": "ns-063",
+  "lecture": "nosql",
+  "topic_en": "Graph databases",
+  "topic_ar": "قواعد البيانات الرسومية (Graph)",
+  "type": "mcq",
+  "q_en": "Graph databases are a good choice when:",
+  "q_ar": "قواعد البيانات الرسومية خيار جيد عندما:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Data is mostly tabular with few relationships",
+    "ar": "تكون البيانات جدولية غالبًا مع علاقات قليلة"
+   },
+   {
+    "en": "Primary workload is bulk analytical processing over non-graph data (OLAP)",
+    "ar": "يكون العمل الأساسي معالجة تحليلية مجمعة لبيانات غير رسومية (OLAP)"
+   },
+   {
+    "en": "Your team lacks graph modeling skills",
+    "ar": "يفتقر فريقك إلى مهارات النمذجة الرسومية"
+   },
+   {
+    "en": "The connections between data points are as important as the data itself",
+    "ar": "تكون الروابط بين نقاط البيانات بأهمية البيانات نفسها"
+   }
+  ],
+  "why_ar": "Graph مناسبة عندما تكون العلاقات مهمة كالبيانات، أما الخيارات الأخرى فهي من حالات عدم الاستخدام.",
+  "why_en": "Graph fits when connections matter as much as data; the others are 'when NOT to use'.",
+  "explain_ar": "من حالات الاستخدام أيضًا: تجاوز عدة مستويات من العلاقات (مثل علاقات الدرجة الثالثة)، علاقات many-to-many كثيفة، عندما يصبح أداء JOIN في SQL لا يُحتمل (أكثر من 10 joins)، وتشغيل خوارزميات الرسوم (centrality, community detection).",
+  "slide": [
+   35,
+   36
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-064",
+  "lecture": "nosql",
+  "topic_en": "Graph databases",
+  "topic_ar": "قواعد البيانات الرسومية (Graph)",
+  "type": "mcq",
+  "q_en": "According to the slides, if full-text search is the main requirement, you should use:",
+  "q_ar": "وفق الشرائح، إذا كان البحث في النص الكامل (Full-text search) هو المتطلب الأساسي فيجب استخدام:",
+  "answer": 2,
+  "options": [
+   {
+    "en": "A graph database like Neo4j",
+    "ar": "قاعدة بيانات رسومية مثل Neo4j"
+   },
+   {
+    "en": "A key-value store like Voldemort",
+    "ar": "مخزن مفتاح-قيمة مثل Voldemort"
+   },
+   {
+    "en": "A search engine like Elasticsearch",
+    "ar": "محرك بحث مثل Elasticsearch"
+   },
+   {
+    "en": "A column-family store like HBase",
+    "ar": "مخزن عائلات أعمدة مثل HBase"
+   }
+  ],
+  "why_ar": "البحث في النص الكامل من حالات عدم استخدام Graph، والبديل محرك بحث مثل Elasticsearch.",
+  "why_en": "Full-text search is a 'when NOT to use' for graph; use a search engine like Elasticsearch.",
+  "slide": 36,
+  "hot": false
+ },
+ {
+  "id": "ns-065",
+  "lecture": "nosql",
+  "topic_en": "Scenario → NoSQL type",
+  "topic_ar": "سيناريو ← نوع NoSQL",
+  "type": "mcq",
+  "q_en": "A bank wants to detect fraud by pattern matching across rings of transactions. Which NoSQL type fits best?",
+  "q_ar": "يريد بنك كشف الاحتيال عبر مطابقة الأنماط عبر حلقات (rings) من المعاملات. أي نوع NoSQL هو الأنسب؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Column-family",
+    "ar": "عائلات الأعمدة (Column-family)"
+   },
+   {
+    "en": "Graph",
+    "ar": "الرسومية (Graph)"
+   },
+   {
+    "en": "Key-value",
+    "ar": "المفتاح-القيمة (Key-value)"
+   },
+   {
+    "en": "Document",
+    "ar": "المستندات (Document)"
+   }
+  ],
+  "why_ar": "مطابقة الأنماط عبر حلقات المعاملات تعتمد على العلاقات، فهي من حالات استخدام Graph.",
+  "why_en": "Pattern matching across rings of transactions is a graph use case.",
+  "explain_ar": "فخ التداخل: Fraud detection تظهر مرتين. «pattern matching across rings» (علاقات) ← Graph. «fraud detection events» بكتابة كثيفة ← Column-family. ركّز على الكلمة المميزة.",
+  "slide": 34,
+  "hot": false
+ },
+ {
+  "id": "ns-066",
+  "lecture": "nosql",
+  "topic_en": "Scenario → NoSQL type",
+  "topic_ar": "سيناريو ← نوع NoSQL",
+  "type": "mcq",
+  "q_en": "A recommendation engine must store user activity with a very high write volume. Which NoSQL type fits best?",
+  "q_ar": "محرك توصيات يجب أن يخزن نشاط المستخدمين بحجم كتابة عالٍ جدًا. أي نوع NoSQL هو الأنسب؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Graph",
+    "ar": "الرسومية (Graph)"
+   },
+   {
+    "en": "Key-value",
+    "ar": "المفتاح-القيمة (Key-value)"
+   },
+   {
+    "en": "Column-family",
+    "ar": "عائلات الأعمدة (Column-family)"
+   },
+   {
+    "en": "Document",
+    "ar": "المستندات (Document)"
+   }
+  ],
+  "why_ar": "محركات التوصية التي تخزن نشاط المستخدم بكتابة كثيفة من حالات Column-family.",
+  "why_en": "Recommendation engines with user activity at high write volume are a column-family use case.",
+  "explain_ar": "فخ التداخل: Recommendation تظهر مرتين. «user activity with high write volume» ← Column-family. «people who bought this also bought» (علاقات) ← Graph.",
+  "slide": [
+   29,
+   34
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-067",
+  "lecture": "nosql",
+  "topic_en": "Scenario → NoSQL type",
+  "topic_ar": "سيناريو ← نوع NoSQL",
+  "type": "mcq",
+  "q_en": "An online store needs fast user-session retrieval by session ID, shopping carts keyed by user ID, and real-time leaderboards. Which NoSQL type fits best?",
+  "q_ar": "متجر إلكتروني يحتاج إلى استرجاع سريع للجلسات بمعرّف الجلسة، وسلال تسوق مفهرسة بمعرّف المستخدم، ولوحات صدارة فورية. أي نوع NoSQL هو الأنسب؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Key-value",
+    "ar": "المفتاح-القيمة (Key-value)"
+   },
+   {
+    "en": "Graph",
+    "ar": "الرسومية (Graph)"
+   },
+   {
+    "en": "Column-family",
+    "ar": "عائلات الأعمدة (Column-family)"
+   },
+   {
+    "en": "Document",
+    "ar": "المستندات (Document)"
+   }
+  ],
+  "why_ar": "مخازن الجلسات وسلال التسوق ولوحات الصدارة (Redis sorted sets) كلها من حالات Key-value.",
+  "why_en": "Session stores, shopping carts and leaderboards are key-value use cases.",
+  "slide": [
+   16,
+   17
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-068",
+  "lecture": "nosql",
+  "topic_en": "Scenario → NoSQL type",
+  "topic_ar": "سيناريو ← نوع NoSQL",
+  "type": "mcq",
+  "q_en": "A company builds a content management system and an e-commerce application whose items are stored as flexible JSON documents. Which NoSQL type fits best?",
+  "q_ar": "شركة تبني نظام إدارة محتوى وتطبيق تجارة إلكترونية تُخزَّن عناصره كمستندات JSON مرنة. أي نوع NoSQL هو الأنسب؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Key-value",
+    "ar": "المفتاح-القيمة (Key-value)"
+   },
+   {
+    "en": "Graph",
+    "ar": "الرسومية (Graph)"
+   },
+   {
+    "en": "Column-family",
+    "ar": "عائلات الأعمدة (Column-family)"
+   },
+   {
+    "en": "Document",
+    "ar": "المستندات (Document)"
+   }
+  ],
+  "why_ar": "أنظمة إدارة المحتوى وتطبيقات التجارة الإلكترونية من حالات استخدام Document.",
+  "why_en": "CMS and e-commerce applications are document-store use cases.",
+  "slide": [
+   21,
+   25
+  ],
+  "hot": false
+ },
+ {
+  "id": "ns-069",
+  "lecture": "nosql",
+  "topic_en": "Which one is best?",
+  "topic_ar": "أيها الأفضل؟",
+  "type": "tf",
+  "q_en": "Choosing the best NoSQL database depends on the application requirements: size of data, complexity, CAP theory and format of data.",
+  "q_ar": "اختيار أفضل قاعدة بيانات NoSQL يعتمد على متطلبات التطبيق: حجم البيانات، والتعقيد، ونظرية CAP، وصيغة البيانات.",
+  "answer": true,
+  "why_ar": "صحيح؛ لا يوجد نوع أفضل مطلقًا، والاختيار يعتمد على حجم البيانات والتعقيد ونظرية CAP وصيغة البيانات.",
+  "why_en": "True — it depends on size of data, complexity, CAP theory and format of data.",
+  "slide": 37,
+  "hot": false
+ },
+ {
+  "id": "ns-070",
+  "lecture": "nosql",
+  "topic_en": "Which one is best?",
+  "topic_ar": "أيها الأفضل؟",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT one of the listed factors for choosing the best NoSQL database?",
+  "q_ar": "أيٌّ مما يلي ليس من العوامل المذكورة لاختيار أفضل قاعدة بيانات NoSQL؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Size of data",
+    "ar": "حجم البيانات (Size of data)"
+   },
+   {
+    "en": "Complexity",
+    "ar": "التعقيد (Complexity)"
+   },
+   {
+    "en": "Popularity of the vendor",
+    "ar": "شهرة الشركة المزودة"
+   },
+   {
+    "en": "Format of data",
+    "ar": "صيغة البيانات (Format of data)"
+   }
+  ],
+  "why_ar": "العوامل المذكورة: حجم البيانات، التعقيد، نظرية CAP، صيغة البيانات. شهرة الشركة ليست منها.",
+  "why_en": "Factors: size of data, complexity, CAP theory, format of data.",
+  "slide": 37,
+  "hot": false
+ }
+]

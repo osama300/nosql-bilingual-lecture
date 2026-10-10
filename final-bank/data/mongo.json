@@ -1,0 +1,1466 @@
+[
+ {
+  "id": "mg-001",
+  "lecture": "mongo",
+  "topic_en": "MongoDB definition, install & Compass",
+  "topic_ar": "تعريف MongoDB وتثبيته و Compass",
+  "type": "tf",
+  "q_en": "MongoDB is a NoSQL (non-relational) database. It stores data in JSON-like documents (BSON) instead of tables.",
+  "q_ar": "MongoDB قاعدة بيانات NoSQL (غير علائقية - non-relational). تخزن البيانات في مستندات شبيهة بـ JSON (BSON) بدلاً من الجداول.",
+  "answer": true,
+  "why_ar": "صح؛ هذا تعريف MongoDB كما في الشريحة: NoSQL ويخزن البيانات في مستندات BSON لا في جداول.",
+  "why_en": "True — this is the slide definition of MongoDB.",
+  "slide": 3,
+  "hot": false
+ },
+ {
+  "id": "mg-002",
+  "lecture": "mongo",
+  "topic_en": "MongoDB definition, install & Compass",
+  "topic_ar": "تعريف MongoDB وتثبيته و Compass",
+  "type": "tf",
+  "q_en": "MongoDB is an open source and column-oriented database.",
+  "q_ar": "MongoDB قاعدة بيانات مفتوحة المصدر (open source) وموجهة بالأعمدة (column-oriented).",
+  "answer": false,
+  "correct_en": "An open source and document-oriented database.",
+  "why_ar": "خطأ؛ MongoDB موجهة بالمستندات (document-oriented)، أما column-oriented فهي صفة HBase.",
+  "why_en": "False — MongoDB is document-oriented; HBase is the column-oriented one.",
+  "explain_ar": "فخ تبديل الأخوين: MongoDB = document-oriented (مستندات JSON/BSON)، و HBase = column-oriented (تطبيق لـ Google BigTable). احفظها: Mongo ← مستند، HBase ← عمود. الأستاذة تبدل هذه الكلمة بالذات في الاتجاهين.",
+  "slide": 3,
+  "hot": false
+ },
+ {
+  "id": "mg-003",
+  "lecture": "mongo",
+  "topic_en": "MongoDB definition, install & Compass",
+  "topic_ar": "تعريف MongoDB وتثبيته و Compass",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT a property of MongoDB as described in the slides?",
+  "q_ar": "أيٌّ مما يلي ليس من خصائص MongoDB كما وردت في الشرائح؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "It stores data in tables of rows and columns.",
+    "ar": "تخزن البيانات في جداول من صفوف وأعمدة."
+   },
+   {
+    "en": "Dynamic schemas.",
+    "ar": "مخططات ديناميكية (Dynamic schemas)."
+   },
+   {
+    "en": "Designed with both scalability and developer agility.",
+    "ar": "مصممة مع مراعاة قابلية التوسع (scalability) ومرونة المطور (developer agility)."
+   },
+   {
+    "en": "An open source and document-oriented database.",
+    "ar": "قاعدة بيانات مفتوحة المصدر وموجهة بالمستندات."
+   }
+  ],
+  "why_ar": "MongoDB تخزن البيانات في مستندات BSON بدلاً من الجداول؛ باقي الخيارات منصوصة في الشريحة.",
+  "why_en": "MongoDB stores data in JSON-like documents (BSON) instead of tables.",
+  "slide": 3,
+  "hot": false
+ },
+ {
+  "id": "mg-004",
+  "lecture": "mongo",
+  "topic_en": "MongoDB definition, install & Compass",
+  "topic_ar": "تعريف MongoDB وتثبيته و Compass",
+  "type": "mcq",
+  "q_en": "To set up MongoDB on Windows, you first create the data directory and then run and connect to the server. Which commands are used, in order?",
+  "q_ar": "لإعداد MongoDB على Windows تنشئ أولاً مجلد البيانات (data directory) ثم تشغّل الخادم وتتصل به. ما الأوامر المستخدمة بالترتيب؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "mongod  then  md data\\db",
+    "ar": "mongod  then  md data\\db"
+   },
+   {
+    "en": "md data\\db  then  mongod",
+    "ar": "md data\\db  then  mongod"
+   },
+   {
+    "en": "md data\\db  then  show dbs",
+    "ar": "md data\\db  then  show dbs"
+   },
+   {
+    "en": "use data\\db  then  mongod",
+    "ar": "use data\\db  then  mongod"
+   }
+  ],
+  "why_ar": "الأمر md data\\db ينشئ مجلد البيانات الذي يحتاجه MongoDB، ثم mongod يشغّل الخادم ويتصل به.",
+  "why_en": "md data\\db creates the data folder; mongod runs and connects to the server.",
+  "slide": 4,
+  "hot": false
+ },
+ {
+  "id": "mg-005",
+  "lecture": "mongo",
+  "topic_en": "MongoDB definition, install & Compass",
+  "topic_ar": "تعريف MongoDB وتثبيته و Compass",
+  "type": "mcq",
+  "q_en": "MongoDB Compass is a graphical user interface (GUI) tool for MongoDB. Which of the following is NOT something it lets you do?",
+  "q_ar": "MongoDB Compass أداة واجهة رسومية (GUI) لـ MongoDB. أيٌّ مما يلي لا تتيحه لك؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Visualize your MongoDB data.",
+    "ar": "عرض بيانات MongoDB بصرياً (Visualize)."
+   },
+   {
+    "en": "Analyze schema.",
+    "ar": "تحليل المخطط (Analyze schema)."
+   },
+   {
+    "en": "Split tables into regions served by region servers.",
+    "ar": "تقسيم الجداول إلى مناطق (regions) تخدمها خوادم المناطق (region servers)."
+   },
+   {
+    "en": "Manage your databases without using the command line.",
+    "ar": "إدارة قواعد البيانات دون استخدام سطر الأوامر."
+   }
+  ],
+  "why_ar": "تقسيم الجداول إلى regions من بنية HBase وليس من وظائف Compass؛ Compass تعرض البيانات وتشغل الاستعلامات وتحلل المخطط وتدير القواعد بلا سطر أوامر.",
+  "why_en": "Splitting tables into regions is HBase architecture, not a Compass feature.",
+  "slide": 5,
+  "hot": false
+ },
+ {
+  "id": "mg-006",
+  "lecture": "mongo",
+  "topic_en": "SQL vs MongoDB concepts",
+  "topic_ar": "مقارنة مفاهيم SQL و MongoDB",
+  "type": "tf",
+  "q_en": "In SQL vs Mongo concepts, a SQL table corresponds to a MongoDB collection, and a SQL row corresponds to a MongoDB document.",
+  "q_ar": "في مقارنة مفاهيم SQL و Mongo: الجدول (table) في SQL يقابله المجموعة (collection) في MongoDB، والصف (row) يقابله المستند (document).",
+  "answer": true,
+  "why_ar": "صح؛ Table ← Collection و Row ← Document كما في جدول الشريحة.",
+  "why_en": "True — Table → Collection and Row → Document.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "mg-007",
+  "lecture": "mongo",
+  "topic_en": "SQL vs MongoDB concepts",
+  "topic_ar": "مقارنة مفاهيم SQL و MongoDB",
+  "type": "tf",
+  "q_en": "In SQL vs Mongo concepts, a SQL column corresponds to a MongoDB document.",
+  "q_ar": "في مقارنة مفاهيم SQL و Mongo: العمود (column) في SQL يقابله المستند (document) في MongoDB.",
+  "answer": false,
+  "correct_en": "Column → Field (and Row → Document).",
+  "why_ar": "خطأ؛ العمود يقابله الحقل (Field)، أما المستند (Document) فيقابل الصف (Row).",
+  "why_en": "False — Column → Field; it is Row → Document.",
+  "explain_ar": "تخيل جدول Excel: الجدول كله = collection، كل سطر = document، وكل خانة عنوان عمود = field. لذلك column ← field وليس document.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "mg-008",
+  "lecture": "mongo",
+  "topic_en": "SQL vs MongoDB concepts",
+  "topic_ar": "مقارنة مفاهيم SQL و MongoDB",
+  "type": "tf",
+  "q_en": "In SQL vs Mongo concepts, a SQL foreign key corresponds to a shard in MongoDB.",
+  "q_ar": "في مقارنة مفاهيم SQL و Mongo: المفتاح الأجنبي (foreign key) في SQL يقابله الـ shard في MongoDB.",
+  "answer": false,
+  "correct_en": "Foreign Key → Reference (and Partition → Shard).",
+  "why_ar": "خطأ؛ المفتاح الأجنبي يقابله المرجع (Reference)، أما Shard فيقابل التقسيم (Partition).",
+  "why_en": "False — Foreign Key → Reference; Partition → Shard.",
+  "explain_ar": "الـ foreign key يشير إلى سجل في جدول آخر، وكذلك الـ Reference يشير إلى مستند آخر عبر _id. أما Partition (تقسيم البيانات على أجزاء) فهو Shard. لا تخلط بين الاثنين.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "mg-009",
+  "lecture": "mongo",
+  "topic_en": "SQL vs MongoDB concepts",
+  "topic_ar": "مقارنة مفاهيم SQL و MongoDB",
+  "type": "mcq",
+  "q_en": "The SQL concept \"Join\" corresponds in MongoDB to:",
+  "q_ar": "مفهوم الربط (Join) في SQL يقابله في MongoDB:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Aggregation pipeline",
+    "ar": "Aggregation pipeline"
+   },
+   {
+    "en": "Shard",
+    "ar": "Shard"
+   },
+   {
+    "en": "_id field",
+    "ar": "حقل _id"
+   },
+   {
+    "en": "Embedded documents and linking",
+    "ar": "المستندات المضمنة والربط (Embedded documents and linking)"
+   }
+  ],
+  "why_ar": "حسب جدول الشريحة: Join ← Embedded Documents And Linking.",
+  "why_en": "Join → Embedded documents and linking.",
+  "explain_ar": "بدل عمل Join بين جدولين، MongoDB إما يضع المستند المرتبط داخل المستند الأصلي (embedded) أو يربطه بمرجع (linking/reference). لذلك الإجابة تجمع الاثنين.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "mg-010",
+  "lecture": "mongo",
+  "topic_en": "SQL vs MongoDB concepts",
+  "topic_ar": "مقارنة مفاهيم SQL و MongoDB",
+  "type": "mcq",
+  "q_en": "The SQL concept \"Aggregation\" corresponds in MongoDB to:",
+  "q_ar": "مفهوم التجميع (Aggregation) في SQL يقابله في MongoDB:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Aggregation pipeline",
+    "ar": "Aggregation pipeline"
+   },
+   {
+    "en": "Reference",
+    "ar": "Reference"
+   },
+   {
+    "en": "Embedded documents",
+    "ar": "Embedded documents"
+   },
+   {
+    "en": "Shard",
+    "ar": "Shard"
+   }
+  ],
+  "why_ar": "حسب الشريحة: Aggregation ← Aggregation Pipeline.",
+  "why_en": "Aggregation → Aggregation pipeline.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "mg-011",
+  "lecture": "mongo",
+  "topic_en": "SQL vs MongoDB concepts",
+  "topic_ar": "مقارنة مفاهيم SQL و MongoDB",
+  "type": "mcq",
+  "q_en": "Which pair is a CORRECT SQL → MongoDB mapping?",
+  "q_ar": "أي زوج يمثل مقابلة صحيحة من SQL إلى MongoDB؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Row → Field",
+    "ar": "Row ← Field"
+   },
+   {
+    "en": "Partition → Shard",
+    "ar": "Partition ← Shard"
+   },
+   {
+    "en": "Table → Document",
+    "ar": "Table ← Document"
+   },
+   {
+    "en": "Foreign Key → Index",
+    "ar": "Foreign Key ← Index"
+   }
+  ],
+  "why_ar": "الصحيح Partition ← Shard. أما Row ← Document و Table ← Collection و Foreign Key ← Reference.",
+  "why_en": "Partition → Shard; Row → Document, Table → Collection, Foreign Key → Reference.",
+  "explain_ar": "احفظ الجدول كاملاً: Database=Database، Table=Collection، Row=Document، Column=Field، Index=Index، Join=Embedded documents and linking، Primary key=_id، Aggregation=Aggregation pipeline، Foreign key=Reference، Partition=Shard.",
+  "slide": 6,
+  "hot": true
+ },
+ {
+  "id": "mg-012",
+  "lecture": "mongo",
+  "topic_en": "MongoDB data model",
+  "topic_ar": "نموذج البيانات في MongoDB",
+  "type": "mcq",
+  "q_en": "In a MongoDB JSON-document, the value of a field can be:",
+  "q_ar": "في مستند JSON في MongoDB، يمكن أن تكون قيمة الحقل (field):",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Only native data types",
+    "ar": "أنواع بيانات أصلية فقط"
+   },
+   {
+    "en": "Only arrays of strings",
+    "ar": "مصفوفات نصوص فقط"
+   },
+   {
+    "en": "Native data types, arrays, or other documents",
+    "ar": "أنواع بيانات أصلية (Native data types) أو مصفوفات (arrays) أو مستندات أخرى"
+   },
+   {
+    "en": "Only references to other collections",
+    "ar": "مراجع إلى مجموعات أخرى فقط"
+   }
+  ],
+  "why_ar": "حسب الشريحة: قيمة الحقل قد تكون Native data types أو Arrays أو Other documents.",
+  "why_en": "The value of a field can be native data types, arrays, or other documents.",
+  "slide": 7,
+  "hot": false
+ },
+ {
+  "id": "mg-013",
+  "lecture": "mongo",
+  "topic_en": "MongoDB data model",
+  "topic_ar": "نموذج البيانات في MongoDB",
+  "type": "tf",
+  "q_en": "In MongoDB, the _id field is always the primary key.",
+  "q_ar": "في MongoDB، الحقل _id هو دائماً المفتاح الأساسي (primary key).",
+  "answer": true,
+  "why_ar": "صح؛ الشريحة تنص: _Id Field Is Always The Primary Key.",
+  "why_en": "True — _id field is always the primary key.",
+  "slide": [
+   6,
+   9
+  ],
+  "hot": false
+ },
+ {
+  "id": "mg-014",
+  "lecture": "mongo",
+  "topic_en": "MongoDB data model",
+  "topic_ar": "نموذج البيانات في MongoDB",
+  "type": "mcq",
+  "q_en": "Placing a related document (for example, an address) inside another document is called:",
+  "q_ar": "وضع مستند مرتبط (مثل العنوان) داخل مستند آخر يسمى:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "Reference documents",
+    "ar": "المستندات المرجعية (Reference documents)"
+   },
+   {
+    "en": "Shard",
+    "ar": "Shard"
+   },
+   {
+    "en": "Projection",
+    "ar": "الإسقاط (Projection)"
+   },
+   {
+    "en": "Embedded documents",
+    "ar": "المستندات المضمنة (Embedded documents)"
+   }
+  ],
+  "why_ar": "المستند داخل مستند آخر = Embedded document.",
+  "why_en": "A document inside another document is an embedded document.",
+  "explain_ar": "الفرق: Embedded = المستند الفرعي موجود داخل المستند الأب نفسه (نسخة واحدة متداخلة). Reference/Linking = المستند منفصل في مكان آخر ونربطه بقيمة _id الخاصة به.",
+  "slide": 9,
+  "hot": false
+ },
+ {
+  "id": "mg-015",
+  "lecture": "mongo",
+  "topic_en": "MongoDB data model",
+  "topic_ar": "نموذج البيانات في MongoDB",
+  "type": "mcq",
+  "q_en": "Keeping related data in a separate document and linking to it by its _id is called:",
+  "q_ar": "حفظ البيانات المرتبطة في مستند منفصل والربط إليه عبر _id الخاص به يسمى:",
+  "answer": 0,
+  "options": [
+   {
+    "en": "Reference documents or linking documents",
+    "ar": "المستندات المرجعية أو مستندات الربط (Reference / linking documents)"
+   },
+   {
+    "en": "Embedded documents",
+    "ar": "المستندات المضمنة (Embedded documents)"
+   },
+   {
+    "en": "Aggregation pipeline",
+    "ar": "Aggregation pipeline"
+   },
+   {
+    "en": "Compound index",
+    "ar": "الفهرس المركب (Compound index)"
+   }
+  ],
+  "why_ar": "هذا نموذج Reference documents أو linking documents كما في الشريحة 10.",
+  "why_en": "That is the reference (linking) documents model.",
+  "slide": 10,
+  "hot": false
+ },
+ {
+  "id": "mg-016",
+  "lecture": "mongo",
+  "topic_en": "Database & collection commands",
+  "topic_ar": "أوامر قاعدة البيانات والمجموعات",
+  "type": "tf",
+  "q_en": "To check the currently selected database, use the command db.",
+  "q_ar": "للتحقق من قاعدة البيانات المحددة حالياً، استخدم الأمر db.",
+  "answer": true,
+  "why_ar": "صح؛ الأمر db يعرض قاعدة البيانات المحددة حالياً.",
+  "why_en": "True — db shows the currently selected database.",
+  "explain_ar": "انتبه للفرق: db يعرض القاعدة الحالية فقط، show dbs يعرض قائمة كل القواعد، use <name> ينقلك إلى قاعدة معينة.",
+  "slide": 11,
+  "hot": true
+ },
+ {
+  "id": "mg-017",
+  "lecture": "mongo",
+  "topic_en": "Database & collection commands",
+  "topic_ar": "أوامر قاعدة البيانات والمجموعات",
+  "type": "tf",
+  "q_en": "The command show dbs lists out all names of collections in the current database.",
+  "q_ar": "الأمر show dbs يعرض أسماء جميع المجموعات (collections) في قاعدة البيانات الحالية.",
+  "answer": false,
+  "correct_en": "show collections lists out all names of collection in current database (show dbs displays the list of databases).",
+  "why_ar": "خطأ؛ show collections هو الذي يعرض المجموعات، أما show dbs فيعرض قائمة قواعد البيانات.",
+  "why_en": "False — show collections lists collections; show dbs displays the list of databases.",
+  "slide": [
+   11,
+   12
+  ],
+  "hot": true
+ },
+ {
+  "id": "mg-018",
+  "lecture": "mongo",
+  "topic_en": "Database & collection commands",
+  "topic_ar": "أوامر قاعدة البيانات والمجموعات",
+  "type": "tf",
+  "q_en": "In MongoDB you must create a collection before inserting a document into it.",
+  "q_ar": "في MongoDB يجب أن تنشئ المجموعة (collection) قبل إدخال مستند فيها.",
+  "answer": false,
+  "correct_en": "In MongoDB you don't need to create collection. MongoDB creates collection automatically, when you insert some document.",
+  "why_ar": "خطأ؛ لا تحتاج لإنشاء المجموعة، MongoDB ينشئها تلقائياً عند إدخال أول مستند.",
+  "why_en": "False — MongoDB creates the collection automatically when you insert a document.",
+  "slide": 12,
+  "hot": true
+ },
+ {
+  "id": "mg-019",
+  "lecture": "mongo",
+  "topic_en": "Database & collection commands",
+  "topic_ar": "أوامر قاعدة البيانات والمجموعات",
+  "type": "mcq",
+  "q_en": "To list all collections in the current database use:",
+  "q_ar": "لعرض جميع المجموعات (collections) في قاعدة البيانات الحالية استخدم:",
+  "answer": 1,
+  "options": [
+   {
+    "en": "show dbs",
+    "ar": "show dbs"
+   },
+   {
+    "en": "show collections",
+    "ar": "show collections"
+   },
+   {
+    "en": "db",
+    "ar": "db"
+   },
+   {
+    "en": "use <database name>",
+    "ar": "use <database name>"
+   }
+  ],
+  "why_ar": "show collections يعرض أسماء كل المجموعات في القاعدة الحالية.",
+  "why_en": "show collections lists all collection names in the current database.",
+  "slide": 12,
+  "hot": true
+ },
+ {
+  "id": "mg-020",
+  "lecture": "mongo",
+  "topic_en": "Database & collection commands",
+  "topic_ar": "أوامر قاعدة البيانات والمجموعات",
+  "type": "mcq",
+  "q_en": "____ switches to the database provided with the command.",
+  "q_ar": "____ ينقلك (switch) إلى قاعدة البيانات المذكورة في الأمر.",
+  "answer": 2,
+  "options": [
+   {
+    "en": "db",
+    "ar": "db"
+   },
+   {
+    "en": "show dbs",
+    "ar": "show dbs"
+   },
+   {
+    "en": "use <database name>",
+    "ar": "use <database name>"
+   },
+   {
+    "en": "db.createCollection(name)",
+    "ar": "db.createCollection(name)"
+   }
+  ],
+  "why_ar": "الأمر use <database name> ينقلك إلى القاعدة المحددة.",
+  "why_en": "use <database name> switches to that database.",
+  "slide": 11,
+  "hot": true
+ },
+ {
+  "id": "mg-021",
+  "lecture": "mongo",
+  "topic_en": "Database & collection commands",
+  "topic_ar": "أوامر قاعدة البيانات والمجموعات",
+  "type": "mcq",
+  "q_en": "To drop (delete) the current database use:",
+  "q_ar": "لحذف قاعدة البيانات الحالية استخدم:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "db.collection.drop()",
+    "ar": "db.collection.drop()"
+   },
+   {
+    "en": "db.drop()",
+    "ar": "db.drop()"
+   },
+   {
+    "en": "show dbs",
+    "ar": "show dbs"
+   },
+   {
+    "en": "db.dropDatabase()",
+    "ar": "db.dropDatabase()"
+   }
+  ],
+  "why_ar": "db.dropDatabase() يحذف قاعدة البيانات، أما db.collection.drop() فيحذف مجموعة فقط.",
+  "why_en": "db.dropDatabase() drops the database.",
+  "explain_ar": "فرّق بين المستويين: قاعدة البيانات كلها ← db.dropDatabase()، مجموعة واحدة ← db.collectionName.drop().",
+  "slide": [
+   11,
+   26
+  ],
+  "hot": true
+ },
+ {
+  "id": "mg-022",
+  "lecture": "mongo",
+  "topic_en": "Database & collection commands",
+  "topic_ar": "أوامر قاعدة البيانات والمجموعات",
+  "type": "mcq",
+  "q_en": "Which command drops the collection Stud from the database?",
+  "q_ar": "أي أمر يحذف المجموعة Stud من قاعدة البيانات؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "db.Stud.drop()",
+    "ar": "db.Stud.drop()"
+   },
+   {
+    "en": "db.dropDatabase()",
+    "ar": "db.dropDatabase()"
+   },
+   {
+    "en": "db.createCollection(\"Stud\")",
+    "ar": "db.createCollection(\"Stud\")"
+   },
+   {
+    "en": "show collections",
+    "ar": "show collections"
+   }
+  ],
+  "why_ar": "db.collection.drop() يحذف مجموعة من القاعدة، مثل db.Stud.drop().",
+  "why_en": "db.collection.drop() drops a collection, e.g. db.Stud.drop().",
+  "slide": [
+   12,
+   26
+  ],
+  "hot": true
+ },
+ {
+  "id": "mg-023",
+  "lecture": "mongo",
+  "topic_en": "Database & collection commands",
+  "topic_ar": "أوامر قاعدة البيانات والمجموعات",
+  "type": "mcq",
+  "q_en": "Which command explicitly creates a collection named Stud?",
+  "q_ar": "أي أمر ينشئ صراحةً مجموعة باسم Stud؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "db.Stud.drop()",
+    "ar": "db.Stud.drop()"
+   },
+   {
+    "en": "db.createCollection(\"Stud\")",
+    "ar": "db.createCollection(\"Stud\")"
+   },
+   {
+    "en": "use Stud",
+    "ar": "use Stud"
+   },
+   {
+    "en": "show collections",
+    "ar": "show collections"
+   }
+  ],
+  "why_ar": "db.createCollection(name) لإنشاء مجموعة، أما use فهو للتنقل بين قواعد البيانات.",
+  "why_en": "db.createCollection(name) creates a collection.",
+  "slide": [
+   12,
+   14
+  ],
+  "hot": true
+ },
+ {
+  "id": "mg-024",
+  "lecture": "mongo",
+  "topic_en": "CRUD operations",
+  "topic_ar": "عمليات CRUD",
+  "type": "tf",
+  "q_en": "In MongoDB CRUD, db.collection.update( <query>, <update>, { upsert: true } ) can be used as a Create operation.",
+  "q_ar": "في عمليات CRUD في MongoDB، يمكن استخدام db.collection.update( <query>, <update>, { upsert: true } ) كعملية إنشاء (Create).",
+  "answer": true,
+  "why_ar": "صح؛ الشريحة تضع insert و save و update مع upsert: true تحت Create.",
+  "why_en": "True — the slide lists insert, save, and update with upsert: true under Create.",
+  "slide": 13,
+  "hot": false
+ },
+ {
+  "id": "mg-025",
+  "lecture": "mongo",
+  "topic_en": "CRUD operations",
+  "topic_ar": "عمليات CRUD",
+  "type": "tf",
+  "q_en": "In MongoDB CRUD, db.collection.remove( <query>, <justOne> ) is a Read operation.",
+  "q_ar": "في عمليات CRUD في MongoDB، db.collection.remove( <query>, <justOne> ) عملية قراءة (Read).",
+  "answer": false,
+  "correct_en": "Delete: db.collection.remove( <query>, <justOne> ).",
+  "why_ar": "خطأ؛ remove() عملية حذف (Delete)، أما القراءة فتتم بـ find() و findOne().",
+  "why_en": "False — remove() is the Delete operation; Read uses find() and findOne().",
+  "slide": 13,
+  "hot": false
+ },
+ {
+  "id": "mg-026",
+  "lecture": "mongo",
+  "topic_en": "CRUD operations",
+  "topic_ar": "عمليات CRUD",
+  "type": "tf",
+  "q_en": "db.users.updateMany( { age: { $lt: 18 } }, { $set: { status: \"reject\" } } ) sets status to \"reject\" for users older than 18.",
+  "q_ar": "الأمر db.users.updateMany( { age: { $lt: 18 } }, { $set: { status: \"reject\" } } ) يجعل status = \"reject\" للمستخدمين الأكبر من 18.",
+  "answer": false,
+  "correct_en": "db.users.updateMany( { age: { $lt: 18 } }, { $set: { status: \"reject\" } } ) sets status to \"reject\" for users whose age is less than 18.",
+  "why_ar": "خطأ؛ $lt تعني أصغر من، فالأمر يحدّث المستخدمين الأصغر من 18.",
+  "why_en": "False — $lt means less than, so it updates users younger than 18.",
+  "explain_ar": "الوسيط الأول هو update filter (من نحدّث؟) والثاني update action (ماذا نغيّر؟ عبر $set). $lt = less than، $gt = greater than.",
+  "slide": [
+   16,
+   17,
+   21
+  ],
+  "hot": false
+ },
+ {
+  "id": "mg-027",
+  "lecture": "mongo",
+  "topic_en": "CRUD operations",
+  "topic_ar": "عمليات CRUD",
+  "type": "mcq",
+  "q_en": "Which statement inserts ONE document into the users collection?",
+  "q_ar": "أي أمر يُدخل مستنداً واحداً فقط في المجموعة users؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "db.users.insertMany({ name: \"Alice\", age: 25 })",
+    "ar": "db.users.insertMany({ name: \"Alice\", age: 25 })"
+   },
+   {
+    "en": "db.users.find({ name: \"Alice\", age: 25 })",
+    "ar": "db.users.find({ name: \"Alice\", age: 25 })"
+   },
+   {
+    "en": "db.users.insertOne({ name: \"Alice\", age: 25 })",
+    "ar": "db.users.insertOne({ name: \"Alice\", age: 25 })"
+   },
+   {
+    "en": "db.users.deleteOne({ name: \"Alice\", age: 25 })",
+    "ar": "db.users.deleteOne({ name: \"Alice\", age: 25 })"
+   }
+  ],
+  "why_ar": "insertOne() يُدخل مستنداً واحداً، و insertMany() يأخذ مصفوفة [ ] من المستندات.",
+  "why_en": "insertOne() inserts a single document; insertMany() takes an array of documents.",
+  "slide": 15,
+  "hot": false
+ },
+ {
+  "id": "mg-028",
+  "lecture": "mongo",
+  "topic_en": "CRUD operations",
+  "topic_ar": "عمليات CRUD",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT an update method in MongoDB?",
+  "q_ar": "أيٌّ مما يلي ليس من دوال التحديث (update) في MongoDB؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "db.collection.updateOne()",
+    "ar": "db.collection.updateOne()"
+   },
+   {
+    "en": "db.collection.updateMany()",
+    "ar": "db.collection.updateMany()"
+   },
+   {
+    "en": "db.collection.replaceOne()",
+    "ar": "db.collection.replaceOne()"
+   },
+   {
+    "en": "db.collection.deleteMany()",
+    "ar": "db.collection.deleteMany()"
+   }
+  ],
+  "why_ar": "deleteMany() للحذف؛ دوال التحديث هي updateOne و updateMany و replaceOne.",
+  "why_en": "deleteMany() is a delete method; the update methods are updateOne, updateMany, replaceOne.",
+  "slide": [
+   16,
+   18
+  ],
+  "hot": false
+ },
+ {
+  "id": "mg-029",
+  "lecture": "mongo",
+  "topic_en": "CRUD operations",
+  "topic_ar": "عمليات CRUD",
+  "type": "mcq",
+  "q_en": "Which statement changes the age of the user named Ali to 26?",
+  "q_ar": "أي أمر يغيّر عمر المستخدم Ali إلى 26؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "db.users.updateOne({ name: \"Ali\" }, { $set: { age: 26 } })",
+    "ar": "db.users.updateOne({ name: \"Ali\" }, { $set: { age: 26 } })"
+   },
+   {
+    "en": "db.users.updateOne({ $set: { age: 26 } }, { name: \"Ali\" })",
+    "ar": "db.users.updateOne({ $set: { age: 26 } }, { name: \"Ali\" })"
+   },
+   {
+    "en": "db.users.updateOne({ name: \"Ali\" }, { age: { $set: 26 } })",
+    "ar": "db.users.updateOne({ name: \"Ali\" }, { age: { $set: 26 } })"
+   },
+   {
+    "en": "db.users.find({ name: \"Ali\" }, { $set: { age: 26 } })",
+    "ar": "db.users.find({ name: \"Ali\" }, { $set: { age: 26 } })"
+   }
+  ],
+  "why_ar": "الشرط (filter) أولاً ثم { $set: { age: 26 } } ثانياً.",
+  "why_en": "Filter first, then { $set: { field: value } }.",
+  "explain_ar": "الأخطاء في البدائل: عكس ترتيب الوسيطين، أو وضع $set داخل الحقل بدل أن يكون الحقل داخل $set، أو استخدام find للتحديث. الصيغة: updateOne(<filter>, { $set: { <field>: <value> } }).",
+  "slide": 17,
+  "hot": false
+ },
+ {
+  "id": "mg-030",
+  "lecture": "mongo",
+  "topic_en": "CRUD operations",
+  "topic_ar": "عمليات CRUD",
+  "type": "mcq",
+  "q_en": "In db.collection.find( <query>, <projection> ), the second argument (projection) is used to:",
+  "q_ar": "في db.collection.find( <query>, <projection> )، الوسيط الثاني (projection) يُستخدم لـ:",
+  "answer": 1,
+  "options": [
+   {
+    "en": "Filter which documents are returned",
+    "ar": "تصفية المستندات التي تُعرض"
+   },
+   {
+    "en": "Choose which fields are returned",
+    "ar": "اختيار الحقول التي تُعرض في النتيجة"
+   },
+   {
+    "en": "Delete only one matching document (justOne)",
+    "ar": "حذف مستند مطابق واحد فقط (justOne)"
+   },
+   {
+    "en": "Insert the document if no match exists (upsert)",
+    "ar": "إدخال المستند إذا لم يوجد تطابق (upsert)"
+   }
+  ],
+  "why_ar": "الوسيط الأول query يصفّي المستندات، والثاني projection يحدد الحقول المعروضة.",
+  "why_en": "The query filters documents; the projection selects the fields to display.",
+  "explain_ar": "مثال الشريحة: db.users.find({ }, { user_id: 1, status: 1 }) يقابل SELECT id, user_id, status FROM users؛ القوس الأول الفارغ = بلا شرط، والثاني = الأعمدة المختارة (1 للإظهار).",
+  "slide": [
+   13,
+   20
+  ],
+  "hot": false
+ },
+ {
+  "id": "mg-031",
+  "lecture": "mongo",
+  "topic_en": "CRUD operations",
+  "topic_ar": "عمليات CRUD",
+  "type": "mcq",
+  "q_en": "Which statement deletes ALL users whose status is \"reject\"?",
+  "q_ar": "أي أمر يحذف جميع المستخدمين الذين حالتهم \"reject\"؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "db.users.deleteOne({ status: \"reject\" })",
+    "ar": "db.users.deleteOne({ status: \"reject\" })"
+   },
+   {
+    "en": "db.users.drop({ status: \"reject\" })",
+    "ar": "db.users.drop({ status: \"reject\" })"
+   },
+   {
+    "en": "db.users.deleteMany({ status: \"reject\" })",
+    "ar": "db.users.deleteMany({ status: \"reject\" })"
+   },
+   {
+    "en": "db.users.find({ status: \"reject\" })",
+    "ar": "db.users.find({ status: \"reject\" })"
+   }
+  ],
+  "why_ar": "deleteMany() يحذف كل المستندات المطابقة، أما deleteOne() فيحذف واحداً فقط، و drop() يحذف المجموعة كلها.",
+  "why_en": "deleteMany() deletes all matching documents; deleteOne() deletes only one.",
+  "slide": 18,
+  "hot": false
+ },
+ {
+  "id": "mg-032",
+  "lecture": "mongo",
+  "topic_en": "Query operators & queries",
+  "topic_ar": "معاملات الاستعلام وكتابة الاستعلامات",
+  "type": "tf",
+  "q_en": "$nin matches none of the values specified in an array.",
+  "q_ar": "المعامل $nin يطابق القيم التي ليست من القيم المحددة في المصفوفة (none of the values).",
+  "answer": true,
+  "why_ar": "صح؛ $nin عكس $in: يطابق القيم غير الموجودة في المصفوفة.",
+  "why_en": "True — $nin is the opposite of $in.",
+  "slide": 21,
+  "hot": true
+ },
+ {
+  "id": "mg-033",
+  "lecture": "mongo",
+  "topic_en": "Query operators & queries",
+  "topic_ar": "معاملات الاستعلام وكتابة الاستعلامات",
+  "type": "tf",
+  "q_en": "$nor joins query clauses with a logical NOR and returns all documents that fail to match both clauses.",
+  "q_ar": "المعامل $nor يربط شروط الاستعلام بـ NOR منطقي ويعيد جميع المستندات التي لا تطابق كلا الشرطين.",
+  "answer": true,
+  "why_ar": "صح؛ هذا تعريف $nor في الشريحة.",
+  "why_en": "True — this is the slide definition of $nor.",
+  "explain_ar": "فرّق بين المعاملات المنطقية: $and = يطابق الشرطين معاً، $or = يطابق أحدهما، $nor = يفشل في الاثنين، $not = يعكس تعبيراً واحداً.",
+  "slide": 22,
+  "hot": true
+ },
+ {
+  "id": "mg-034",
+  "lecture": "mongo",
+  "topic_en": "Query operators & queries",
+  "topic_ar": "معاملات الاستعلام وكتابة الاستعلامات",
+  "type": "mcq",
+  "q_en": "Which operator matches all values that are not equal to a specified value?",
+  "q_ar": "أي معامل يطابق جميع القيم التي لا تساوي قيمة محددة؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "$not",
+    "ar": "$not"
+   },
+   {
+    "en": "$nin",
+    "ar": "$nin"
+   },
+   {
+    "en": "$nor",
+    "ar": "$nor"
+   },
+   {
+    "en": "$ne",
+    "ar": "$ne"
+   }
+  ],
+  "why_ar": "$ne تعني not equal (لا يساوي).",
+  "why_en": "$ne = not equal.",
+  "explain_ar": "فخ الأسماء المتشابهة: $ne = لا يساوي قيمة واحدة، $nin = ليس ضمن مصفوفة قيم، $not = يعكس تعبير استعلام، $nor = NOR بين شرطين.",
+  "slide": 21,
+  "hot": true
+ },
+ {
+  "id": "mg-035",
+  "lecture": "mongo",
+  "topic_en": "Query operators & queries",
+  "topic_ar": "معاملات الاستعلام وكتابة الاستعلامات",
+  "type": "mcq",
+  "q_en": "____ joins query clauses with a logical OR and returns all documents that match the conditions of either clause.",
+  "q_ar": "____ يربط شروط الاستعلام بـ OR منطقي ويعيد جميع المستندات التي تطابق أياً من الشرطين.",
+  "answer": 0,
+  "options": [
+   {
+    "en": "$or",
+    "ar": "$or"
+   },
+   {
+    "en": "$and",
+    "ar": "$and"
+   },
+   {
+    "en": "$nor",
+    "ar": "$nor"
+   },
+   {
+    "en": "$not",
+    "ar": "$not"
+   }
+  ],
+  "why_ar": "$or يطابق أحد الشرطين (either clause).",
+  "why_en": "$or matches either clause.",
+  "slide": 22,
+  "hot": true
+ },
+ {
+  "id": "mg-036",
+  "lecture": "mongo",
+  "topic_en": "Query operators & queries",
+  "topic_ar": "معاملات الاستعلام وكتابة الاستعلامات",
+  "type": "mcq",
+  "q_en": "Which MongoDB query is equivalent to: SELECT id, user_id, status FROM users",
+  "q_ar": "أي استعلام MongoDB يكافئ: SELECT id, user_id, status FROM users",
+  "answer": 1,
+  "options": [
+   {
+    "en": "db.users.find({ user_id: 1, status: 1 })",
+    "ar": "db.users.find({ user_id: 1, status: 1 })"
+   },
+   {
+    "en": "db.users.find({ }, { user_id: 1, status: 1 })",
+    "ar": "db.users.find({ }, { user_id: 1, status: 1 })"
+   },
+   {
+    "en": "db.users.find({ status: \"A\" })",
+    "ar": "db.users.find({ status: \"A\" })"
+   },
+   {
+    "en": "db.users.find({ user_id: 1, status: 1 }, { })",
+    "ar": "db.users.find({ user_id: 1, status: 1 }, { })"
+   }
+  ],
+  "why_ar": "الشرط فارغ {} والحقول المطلوبة في الوسيط الثاني (projection)؛ و id هو _id ويظهر افتراضياً.",
+  "why_en": "Empty query {} then the projection as the second argument.",
+  "explain_ar": "إذا وضعت الحقول في الوسيط الأول فسيعاملها MongoDB كشرط (user_id يساوي 1) وليس كاختيار أعمدة. الـ projection دائماً الوسيط الثاني.",
+  "slide": 20,
+  "hot": true
+ },
+ {
+  "id": "mg-037",
+  "lecture": "mongo",
+  "topic_en": "Query operators & queries",
+  "topic_ar": "معاملات الاستعلام وكتابة الاستعلامات",
+  "type": "mcq",
+  "q_en": "Which query displays student-name, address and email for students whose age is greater than 18 and degree is greater than 90?",
+  "q_ar": "أي استعلام يعرض student-name و address و email للطلاب الذين أعمارهم أكبر من 18 ودرجاتهم أكبر من 90؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "db.students.find({ age: { $gt: 18 }, degree: { $gt: 90 } }, { student-name: 1, address: 1, email: 1 })",
+    "ar": "db.students.find({ age: { $gt: 18 }, degree: { $gt: 90 } }, { student-name: 1, address: 1, email: 1 })"
+   },
+   {
+    "en": "db.students.find({ \"student-name\": 1, address: 1, email: 1 }, { age: { $gt: 18 }, degree: { $gt: 90 } })",
+    "ar": "db.students.find({ \"student-name\": 1, address: 1, email: 1 }, { age: { $gt: 18 }, degree: { $gt: 90 } })"
+   },
+   {
+    "en": "db.students.find({ age: { $gt: 18 }, degree: { $gt: 90 } }, { \"student-name\": 1, address: 1, email: 1 })",
+    "ar": "db.students.find({ age: { $gt: 18 }, degree: { $gt: 90 } }, { \"student-name\": 1, address: 1, email: 1 })"
+   },
+   {
+    "en": "db.students.find({ $or: [ { age: { $gt: 18 } }, { degree: { $gt: 90 } } ] }, { \"student-name\": 1, address: 1, email: 1 })",
+    "ar": "db.students.find({ $or: [ { age: { $gt: 18 } }, { degree: { $gt: 90 } } ] }, { \"student-name\": 1, address: 1, email: 1 })"
+   }
+  ],
+  "why_ar": "الشروط بـ $gt أولاً (الفاصلة بين الشرطين = AND)، ثم projection ثانياً، والحقل student-name يجب أن يكون بين علامتي تنصيص لأنه يحتوي شرطة.",
+  "why_en": "Conditions with $gt first, projection second, and the hyphenated field quoted.",
+  "explain_ar": "أخطاء البدائل: (1) student-name بدون تنصيص خطأ لأن الشرطة - تُقرأ كعملية طرح. (2) وضع projection أولاً. (3) استخدام $or بدل AND. يمكن أيضاً كتابة الشرط بـ $and: [ {age:{$gt:18}}, {degree:{$gt:90}} ] وهو صحيح.",
+  "slide": [
+   20,
+   21,
+   22
+  ],
+  "hot": true
+ },
+ {
+  "id": "mg-038",
+  "lecture": "mongo",
+  "topic_en": "Query operators & queries",
+  "topic_ar": "معاملات الاستعلام وكتابة الاستعلامات",
+  "type": "mcq",
+  "q_en": "Which query displays product-name and price for products whose quantity is less than 20 and address is Sana'a or Ibb?",
+  "q_ar": "أي استعلام يعرض product-name و price للمنتجات التي كميتها أقل من 20 وعنوانها Sana'a أو Ibb؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "db.products.find({ quantity: { $gt: 20 }, address: { $in: [\"Sana'a\", \"Ibb\"] } }, { \"product-name\": 1, price: 1 })",
+    "ar": "db.products.find({ quantity: { $gt: 20 }, address: { $in: [\"Sana'a\", \"Ibb\"] } }, { \"product-name\": 1, price: 1 })"
+   },
+   {
+    "en": "db.products.find({ quantity: { $lt: 20 }, address: { $nin: [\"Sana'a\", \"Ibb\"] } }, { \"product-name\": 1, price: 1 })",
+    "ar": "db.products.find({ quantity: { $lt: 20 }, address: { $nin: [\"Sana'a\", \"Ibb\"] } }, { \"product-name\": 1, price: 1 })"
+   },
+   {
+    "en": "db.products.find({ quantity: { $lt: 20 }, address: { $in: ['Sana'a', 'Ibb'] } }, { \"product-name\": 1, price: 1 })",
+    "ar": "db.products.find({ quantity: { $lt: 20 }, address: { $in: ['Sana'a', 'Ibb'] } }, { \"product-name\": 1, price: 1 })"
+   },
+   {
+    "en": "db.products.find({ quantity: { $lt: 20 }, address: { $in: [\"Sana'a\", \"Ibb\"] } }, { \"product-name\": 1, price: 1 })",
+    "ar": "db.products.find({ quantity: { $lt: 20 }, address: { $in: [\"Sana'a\", \"Ibb\"] } }, { \"product-name\": 1, price: 1 })"
+   }
+  ],
+  "why_ar": "$lt لأقل من، و $in لـ (Sana'a أو Ibb)، و Sana'a تُكتب بين علامتي تنصيص مزدوجة لأنها تحتوي فاصلة علوية.",
+  "why_en": "$lt for less than, $in for \"Sana'a or Ibb\", and Sana'a must be in double quotes.",
+  "explain_ar": "أخطاء البدائل: $gt بدل $lt، و $nin (ليس ضمن) بدل $in، و 'Sana'a' بتنصيص مفرد ينكسر النص عند الفاصلة العلوية. بديل صحيح آخر للعنوان: $or: [ {address:\"Sana'a\"}, {address:\"Ibb\"} ].",
+  "slide": [
+   20,
+   21
+  ],
+  "hot": true
+ },
+ {
+  "id": "mg-039",
+  "lecture": "mongo",
+  "topic_en": "Query operators & queries",
+  "topic_ar": "معاملات الاستعلام وكتابة الاستعلامات",
+  "type": "mcq",
+  "q_en": "Which query displays only the prices (without _id) of products whose price is greater than 50?",
+  "q_ar": "أي استعلام يعرض الأسعار فقط (بدون _id) للمنتجات التي سعرها أكبر من 50؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "db.products.find({ price: { $gt: 50 } }, { price: 1, _id: 0 })",
+    "ar": "db.products.find({ price: { $gt: 50 } }, { price: 1, _id: 0 })"
+   },
+   {
+    "en": "db.products.find({ price: { $gte: 50 } }, { price: 1, _id: 0 })",
+    "ar": "db.products.find({ price: { $gte: 50 } }, { price: 1, _id: 0 })"
+   },
+   {
+    "en": "db.products.find({ price: 1, _id: 0 }, { price: { $gt: 50 } })",
+    "ar": "db.products.find({ price: 1, _id: 0 }, { price: { $gt: 50 } })"
+   },
+   {
+    "en": "db.products.find({ price: { $gt: 50 } }, { price: 0, _id: 1 })",
+    "ar": "db.products.find({ price: { $gt: 50 } }, { price: 0, _id: 1 })"
+   }
+  ],
+  "why_ar": "الشرط $gt: 50 (أكبر من وليس أكبر أو يساوي)، و projection { price: 1, _id: 0 } يظهر السعر ويخفي _id.",
+  "why_en": "$gt 50 in the query; projection { price: 1, _id: 0 } shows price and hides _id.",
+  "explain_ar": "في الـ projection: 1 = أظهر، 0 = أخفِ. الحقل _id يظهر افتراضياً لذلك نكتب _id: 0 لإخفائه. $gte تشمل 50 نفسها فهي خطأ هنا.",
+  "slide": [
+   20,
+   21
+  ],
+  "hot": true
+ },
+ {
+  "id": "mg-040",
+  "lecture": "mongo",
+  "topic_en": "Query operators & queries",
+  "topic_ar": "معاملات الاستعلام وكتابة الاستعلامات",
+  "type": "mcq",
+  "q_en": "Which MongoDB query is equivalent to: SELECT * FROM users WHERE status = \"A\"",
+  "q_ar": "أي استعلام MongoDB يكافئ: SELECT * FROM users WHERE status = \"A\"",
+  "answer": 1,
+  "options": [
+   {
+    "en": "db.users.find({ }, { status: \"A\" })",
+    "ar": "db.users.find({ }, { status: \"A\" })"
+   },
+   {
+    "en": "db.users.find({ status: \"A\" })",
+    "ar": "db.users.find({ status: \"A\" })"
+   },
+   {
+    "en": "db.users.find({ status: { $ne: \"A\" } })",
+    "ar": "db.users.find({ status: { $ne: \"A\" } })"
+   },
+   {
+    "en": "db.users.find()",
+    "ar": "db.users.find()"
+   }
+  ],
+  "why_ar": "شرط WHERE يوضع في الوسيط الأول (query)؛ و db.users.find() وحدها تعني SELECT * بلا شرط.",
+  "why_en": "The WHERE condition goes in the first argument (query).",
+  "slide": 20,
+  "hot": true
+ },
+ {
+  "id": "mg-041",
+  "lecture": "mongo",
+  "topic_en": "Indexes",
+  "topic_ar": "الفهارس (Indexes)",
+  "type": "tf",
+  "q_en": "By default, all collections have an index on the _id field.",
+  "q_ar": "افتراضياً، جميع المجموعات (collections) لديها فهرس (index) على الحقل _id.",
+  "answer": true,
+  "why_ar": "صح؛ ويمكن للتطبيقات والمستخدمين إضافة فهارس أخرى لدعم الاستعلامات المهمة.",
+  "why_en": "True — applications and users may add additional indexes.",
+  "slide": 24,
+  "hot": false
+ },
+ {
+  "id": "mg-042",
+  "lecture": "mongo",
+  "topic_en": "Indexes",
+  "topic_ar": "الفهارس (Indexes)",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT one of the MongoDB index types?",
+  "q_ar": "أيٌّ مما يلي ليس من أنواع الفهارس في MongoDB؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Compound Index",
+    "ar": "Compound Index"
+   },
+   {
+    "en": "Geospatial Index",
+    "ar": "Geospatial Index"
+   },
+   {
+    "en": "Region Index",
+    "ar": "Region Index"
+   },
+   {
+    "en": "Hashed Indexes",
+    "ar": "Hashed Indexes"
+   }
+  ],
+  "why_ar": "أنواع الفهارس: Single Field و Compound و Multikey و Geospatial و Text و Hashed؛ و Region مصطلح من HBase.",
+  "why_en": "Index types: Single Field, Compound, Multikey, Geospatial, Text, Hashed.",
+  "explain_ar": "احفظ الستة: Single Field، Compound، Multikey، Geospatial، Text، Hashed. أي اسم آخر (مثل Region أو Shard) دخيل.",
+  "slide": 23,
+  "hot": false
+ },
+ {
+  "id": "mg-043",
+  "lecture": "mongo",
+  "topic_en": "Indexes",
+  "topic_ar": "الفهارس (Indexes)",
+  "type": "mcq",
+  "q_en": "db.records.createIndex( { score: 1 } ) creates:",
+  "q_ar": "الأمر db.records.createIndex( { score: 1 } ) ينشئ:",
+  "answer": 3,
+  "options": [
+   {
+    "en": "A descending index on the score field",
+    "ar": "فهرساً تنازلياً (descending) على الحقل score"
+   },
+   {
+    "en": "A text index on the score field",
+    "ar": "فهرساً نصياً (text) على الحقل score"
+   },
+   {
+    "en": "An index on the _id field only",
+    "ar": "فهرساً على الحقل _id فقط"
+   },
+   {
+    "en": "An ascending index on the score field",
+    "ar": "فهرساً تصاعدياً (ascending) على الحقل score"
+   }
+  ],
+  "why_ar": "القيمة 1 تعني تصاعدي (ascending) كما في الشريحة.",
+  "why_en": "The value 1 means ascending.",
+  "slide": 25,
+  "hot": false
+ },
+ {
+  "id": "mg-044",
+  "lecture": "mongo",
+  "topic_en": "Indexes",
+  "topic_ar": "الفهارس (Indexes)",
+  "type": "mcq",
+  "q_en": "Which command creates an index on the state field inside the embedded location document?",
+  "q_ar": "أي أمر ينشئ فهرساً على الحقل state الموجود داخل المستند المضمن location؟",
+  "answer": 0,
+  "options": [
+   {
+    "en": "db.records.createIndex({ \"location.state\": 1 })",
+    "ar": "db.records.createIndex({ \"location.state\": 1 })"
+   },
+   {
+    "en": "db.records.createIndex({ location.state: 1 })",
+    "ar": "db.records.createIndex({ location.state: 1 })"
+   },
+   {
+    "en": "db.records.createIndex({ state: 1 })",
+    "ar": "db.records.createIndex({ state: 1 })"
+   },
+   {
+    "en": "db.records.find({ \"location.state\": 1 })",
+    "ar": "db.records.find({ \"location.state\": 1 })"
+   }
+  ],
+  "why_ar": "نستخدم النقطة (dot notation) بين علامتي تنصيص: \"location.state\".",
+  "why_en": "Dot notation in quotes: \"location.state\".",
+  "slide": 25,
+  "hot": false
+ },
+ {
+  "id": "mg-045",
+  "lecture": "mongo",
+  "topic_en": "HBase definition, architecture & storage",
+  "topic_ar": "تعريف HBase وبنيته وآلية التخزين",
+  "type": "tf",
+  "q_en": "HBase is a distributed column-oriented database implementation of Google's Big Table storage architecture. It can manage structured and semi-structured data.",
+  "q_ar": "HBase قاعدة بيانات موزعة موجهة بالأعمدة (column-oriented) وهي تطبيق لبنية التخزين Big Table من Google. يمكنها إدارة البيانات المهيكلة وشبه المهيكلة.",
+  "answer": true,
+  "why_ar": "صح؛ هذا تعريف HBase في الشريحة.",
+  "why_en": "True — this is the slide definition of HBase.",
+  "slide": 27,
+  "hot": true
+ },
+ {
+  "id": "mg-046",
+  "lecture": "mongo",
+  "topic_en": "HBase definition, architecture & storage",
+  "topic_ar": "تعريف HBase وبنيته وآلية التخزين",
+  "type": "tf",
+  "q_en": "HBase is a distributed document-oriented database.",
+  "q_ar": "HBase قاعدة بيانات موزعة موجهة بالمستندات (document-oriented).",
+  "answer": false,
+  "correct_en": "HBase is a distributed column-oriented database implementation of Google's Big Table storage architecture.",
+  "why_ar": "خطأ؛ HBase موجهة بالأعمدة (column-oriented)، أما document-oriented فهي MongoDB.",
+  "why_en": "False — HBase is column-oriented; MongoDB is document-oriented.",
+  "explain_ar": "سؤال حقيقي من الميدتيرم. HBase = عمود (Column) = Google BigTable = فوق HDFS. MongoDB = مستند (Document) = BSON.",
+  "slide": 27,
+  "hot": true
+ },
+ {
+  "id": "mg-047",
+  "lecture": "mongo",
+  "topic_en": "HBase definition, architecture & storage",
+  "topic_ar": "تعريف HBase وبنيته وآلية التخزين",
+  "type": "tf",
+  "q_en": "In HBase, row is a collection of columns.",
+  "q_ar": "في HBase، الصف (row) هو مجموعة من الأعمدة (columns).",
+  "answer": false,
+  "correct_en": "Row is a collection of column families.",
+  "why_ar": "خطأ؛ الصف مجموعة من عائلات الأعمدة (column families)، وعائلة الأعمدة هي مجموعة من الأعمدة.",
+  "why_en": "False — row is a collection of column families.",
+  "explain_ar": "سؤال حقيقي من الميدتيرم. التسلسل: Table ← Rows ← Column families ← Columns ← key value pairs. الفخ هو القفز مستوى (حذف column families).",
+  "slide": 31,
+  "hot": true
+ },
+ {
+  "id": "mg-048",
+  "lecture": "mongo",
+  "topic_en": "HBase definition, architecture & storage",
+  "topic_ar": "تعريف HBase وبنيته وآلية التخزين",
+  "type": "tf",
+  "q_en": "Mongo database is built on top of the Hadoop file system.",
+  "q_ar": "قاعدة بيانات Mongo مبنية فوق نظام ملفات Hadoop.",
+  "answer": false,
+  "correct_en": "HBase is built on top of the Hadoop file system.",
+  "why_ar": "خطأ؛ HBase هي المبنية فوق نظام ملفات Hadoop (HDFS) وليست MongoDB.",
+  "why_en": "False — HBase (not MongoDB) is built on top of the Hadoop file system.",
+  "explain_ar": "سؤال حقيقي من الميدتيرم بتبديل HBase ↔ MongoDB. تذكّر: H في HBase تذكرك بـ Hadoop/HDFS.",
+  "slide": 28,
+  "hot": true
+ },
+ {
+  "id": "mg-049",
+  "lecture": "mongo",
+  "topic_en": "HBase definition, architecture & storage",
+  "topic_ar": "تعريف HBase وبنيته وآلية التخزين",
+  "type": "tf",
+  "q_en": "In HBase, tables are split into regions and are served by the region servers. Regions are vertically divided by column families into \"Stores\".",
+  "q_ar": "في HBase، تُقسَّم الجداول إلى مناطق (regions) وتخدمها خوادم المناطق (region servers). وتُقسَّم المناطق عمودياً حسب عائلات الأعمدة (column families) إلى \"Stores\".",
+  "answer": true,
+  "why_ar": "صح؛ وتُحفظ الـ Stores كملفات في HDFS.",
+  "why_en": "True — and Stores are saved as files in HDFS.",
+  "explain_ar": "تسلسل البنية: Table ← Regions (تخدمها Region servers) ← Stores (حسب column family) ← ملفات في HDFS.",
+  "slide": 29,
+  "hot": true
+ },
+ {
+  "id": "mg-050",
+  "lecture": "mongo",
+  "topic_en": "HBase definition, architecture & storage",
+  "topic_ar": "تعريف HBase وبنيته وآلية التخزين",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT true about HBase?",
+  "q_ar": "أيٌّ مما يلي ليس صحيحاً عن HBase؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "It is an open-source project and is horizontally scalable.",
+    "ar": "مشروع مفتوح المصدر وقابل للتوسع أفقياً (horizontally scalable)."
+   },
+   {
+    "en": "It stores data in JSON-like documents (BSON).",
+    "ar": "تخزن البيانات في مستندات شبيهة بـ JSON (BSON)."
+   },
+   {
+    "en": "It was designed to provide quick random access to huge amounts of structured data.",
+    "ar": "صُممت لتوفير وصول عشوائي سريع (quick random access) إلى كميات ضخمة من البيانات المهيكلة."
+   },
+   {
+    "en": "It is built on top of the Hadoop file system.",
+    "ar": "مبنية فوق نظام ملفات Hadoop."
+   }
+  ],
+  "why_ar": "التخزين في مستندات BSON صفة MongoDB لا HBase؛ باقي الخيارات منصوصة في شرائح HBase.",
+  "why_en": "Storing data in BSON documents describes MongoDB, not HBase.",
+  "slide": [
+   3,
+   27,
+   28
+  ],
+  "hot": true
+ },
+ {
+  "id": "mg-051",
+  "lecture": "mongo",
+  "topic_en": "HBase definition, architecture & storage",
+  "topic_ar": "تعريف HBase وبنيته وآلية التخزين",
+  "type": "mcq",
+  "q_en": "Which order describes the storage mechanism in HBase correctly (from largest to smallest)?",
+  "q_ar": "أي ترتيب يصف آلية التخزين في HBase بشكل صحيح (من الأكبر إلى الأصغر)؟",
+  "answer": 2,
+  "options": [
+   {
+    "en": "Table → Column family → Row → Column → key value pairs",
+    "ar": "Table → Column family → Row → Column → key value pairs"
+   },
+   {
+    "en": "Table → Row → Column → Column family → key value pairs",
+    "ar": "Table → Row → Column → Column family → key value pairs"
+   },
+   {
+    "en": "Table → Row → Column family → Column → key value pairs",
+    "ar": "Table → Row → Column family → Column → key value pairs"
+   },
+   {
+    "en": "Table → Collection → Document → Field → key value pairs",
+    "ar": "Table → Collection → Document → Field → key value pairs"
+   }
+  ],
+  "why_ar": "الجدول مجموعة صفوف، والصف مجموعة column families، و column family مجموعة أعمدة، والعمود مجموعة key value pairs.",
+  "why_en": "Table = rows; row = column families; column family = columns; column = key value pairs.",
+  "slide": 31,
+  "hot": true
+ },
+ {
+  "id": "mg-052",
+  "lecture": "mongo",
+  "topic_en": "HBase DDL & DML commands",
+  "topic_ar": "أوامر DDL و DML في HBase",
+  "type": "tf",
+  "q_en": "In HBase, truncate disables, drops, and recreates a specified table.",
+  "q_ar": "في HBase، الأمر truncate يعطّل الجدول المحدد ثم يحذفه ثم يعيد إنشاءه.",
+  "answer": true,
+  "why_ar": "صح؛ truncate يعطّل ويحذف ويعيد إنشاء الجدول (فيفرغه من البيانات).",
+  "why_en": "True — truncate = disable + drop + recreate.",
+  "slide": 32,
+  "hot": false
+ },
+ {
+  "id": "mg-053",
+  "lecture": "mongo",
+  "topic_en": "HBase DDL & DML commands",
+  "topic_ar": "أوامر DDL و DML في HBase",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT a Data Definition Language (DDL) command in HBase?",
+  "q_ar": "أيٌّ مما يلي ليس من أوامر لغة تعريف البيانات (DDL) في HBase؟",
+  "answer": 3,
+  "options": [
+   {
+    "en": "create",
+    "ar": "create"
+   },
+   {
+    "en": "disable",
+    "ar": "disable"
+   },
+   {
+    "en": "exists",
+    "ar": "exists"
+   },
+   {
+    "en": "scan",
+    "ar": "scan"
+   }
+  ],
+  "why_ar": "scan من أوامر DML (معالجة البيانات)، أما create و disable و exists فمن DDL.",
+  "why_en": "scan is a DML command; create, disable and exists are DDL.",
+  "explain_ar": "DDL تتعامل مع الجدول نفسه: create, list, disable, alter, exists, drop, truncate. DML تتعامل مع البيانات داخله: put, get, delete, deleteall, scan, count.",
+  "slide": [
+   32,
+   33
+  ],
+  "hot": false
+ },
+ {
+  "id": "mg-054",
+  "lecture": "mongo",
+  "topic_en": "HBase DDL & DML commands",
+  "topic_ar": "أوامر DDL و DML في HBase",
+  "type": "mcq",
+  "q_en": "____ deletes all the cells in a given row.",
+  "q_ar": "____ يحذف جميع الخلايا (cells) في صف معين.",
+  "answer": 0,
+  "options": [
+   {
+    "en": "deleteall",
+    "ar": "deleteall"
+   },
+   {
+    "en": "delete",
+    "ar": "delete"
+   },
+   {
+    "en": "drop",
+    "ar": "drop"
+   },
+   {
+    "en": "truncate",
+    "ar": "truncate"
+   }
+  ],
+  "why_ar": "deleteall يحذف كل خلايا الصف، أما delete فيحذف قيمة خلية واحدة، و drop يحذف الجدول.",
+  "why_en": "deleteall deletes all cells in a row; delete deletes one cell value.",
+  "slide": [
+   32,
+   33
+  ],
+  "hot": false
+ },
+ {
+  "id": "mg-055",
+  "lecture": "mongo",
+  "topic_en": "HBase DDL & DML commands",
+  "topic_ar": "أوامر DDL و DML في HBase",
+  "type": "mcq",
+  "q_en": "In the HBase command put 'emp','1','personal data:name','raju' — what is '1'?",
+  "q_ar": "في أمر HBase التالي: put 'emp','1','personal data:name','raju' — ماذا يمثل '1'؟",
+  "answer": 1,
+  "options": [
+   {
+    "en": "The column family",
+    "ar": "عائلة الأعمدة (column family)"
+   },
+   {
+    "en": "The row",
+    "ar": "الصف (row)"
+   },
+   {
+    "en": "The table",
+    "ar": "الجدول (table)"
+   },
+   {
+    "en": "The cell value",
+    "ar": "قيمة الخلية (cell value)"
+   }
+  ],
+  "why_ar": "الصيغة: put 'الجدول','الصف','column family:column','القيمة'؛ إذن '1' هو الصف، و emp الجدول، و raju القيمة.",
+  "why_en": "put puts a cell value at a specified column in a specified row in a table: put 'table','row','family:column','value'.",
+  "explain_ar": "put هو أمر DML يضع قيمة خلية في عمود محدد داخل صف محدد في جدول. في المثال: emp = الجدول، 1 = الصف، personal data = column family، name = العمود، raju = القيمة.",
+  "slide": [
+   33,
+   34
+  ],
+  "hot": false
+ }
+]

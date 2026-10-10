@@ -286,8 +286,8 @@ const exams = [
       },
       {
         statement: "In HBase, a row is a collection of columns.",
-        answer: true,
-        explanation: "صحيح؛ HBase من عائلة الأعمدة وينظّم بيانات الصف ضمن أعمدة وعائلات."
+        answer: false,
+        explanation: "خطأ؛ في محاضرة الأستاذة: Row is a collection of column families، أما Column family فهي a collection of columns."
       }
     ],
     fills: [
@@ -590,8 +590,8 @@ const exams = [
       },
       {
         statement: "In HBase, a row is a collection of columns.",
-        answer: true,
-        explanation: "صحيح؛ صف HBase يحتوي أعمدة منظمة ضمن عائلات."
+        answer: false,
+        explanation: "خطأ؛ في محاضرة الأستاذة: Row is a collection of column families، أما Column family فهي a collection of columns."
       },
       {
         statement: "HBase is a distributed document-oriented database.",

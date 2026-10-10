@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>
+<title>خريطة البيانات الضخمة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Readex+Pro:wght@500;700&display=swap">
+<style>
+/* Layout: a reference atlas — sticky lecture rail on top, then per-lecture "classification cards" (count badge + items) and comparison tables; a global index groups every list by its item count. */
+:root{
+  --paper:#f2f4f7; --sheet:#ffffff; --ink:#141c29; --muted:#5c6677; --line:#dce1e9;
+  --accent:#2a55c0; --accent-soft:#e7edfa; --hot:#b7790b; --hot-soft:#fbf1dc;
+  --pair-a:#1d7f52; --pair-a-soft:#e3f4ea; --pair-b:#b93b26; --pair-b-soft:#fbe8e3; --code:#eef1f6;
+  --f-display:"Readex Pro","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --f-ar:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --f-en:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f141c; --sheet:#171e2a; --ink:#e7ecf3; --muted:#98a3b5; --line:#2a3445;
+  --accent:#7d9bf0; --accent-soft:#1e2a45; --hot:#e3a93b; --hot-soft:#33270f;
+  --pair-a:#4cc28a; --pair-a-soft:#12301f; --pair-b:#f07d68; --pair-b-soft:#3a1a14; --code:#1f2836; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f141c; --sheet:#171e2a; --ink:#e7ecf3; --muted:#98a3b5; --line:#2a3445;
+  --accent:#7d9bf0; --accent-soft:#1e2a45; --hot:#e3a93b; --hot-soft:#33270f;
+  --pair-a:#4cc28a; --pair-a-soft:#12301f; --pair-b:#f07d68; --pair-b-soft:#3a1a14; --code:#1f2836; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-ar);font-size:15.5px;line-height:1.7;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1040px;margin-inline:auto}
+header{padding-block:28px 10px}
+h1{font-family:var(--f-display);font-size:clamp(1.5rem,4vw,2.2rem);margin:0;line-height:1.25;text-wrap:balance}
+.sub{color:var(--muted);font-size:.92rem;margin-top:4px}
+.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line);padding-block:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.rail a,.rail button{font:inherit;font-size:.86rem;color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--sheet);border-radius:8px;padding:4px 10px;cursor:pointer}
+.rail a:hover{border-color:var(--accent);color:var(--accent)}
+.rail .sp{flex:1}
+.rail button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.rail a:focus-visible,.rail button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+section{margin-top:34px;scroll-margin-top:70px}
+h2{font-family:var(--f-display);font-size:1.4rem;margin:0 0 4px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+h2 .en{font-family:var(--f-en);font-weight:500;font-size:.9rem;color:var(--muted)}
+.lede{color:var(--muted);margin:0 0 14px;font-size:.92rem;max-width:70ch}
+h3{font-size:1rem;margin:22px 0 10px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:6px;align-content:start;min-width:0}
+.card.hot{border-color:color-mix(in srgb,var(--hot) 55%,var(--line))}
+.card .top{display:flex;gap:8px;align-items:flex-start;justify-content:space-between}
+.card .t{font-weight:700;line-height:1.4}
+.card .t .en{display:block;font-family:var(--f-en);font-weight:500;font-size:.8rem;color:var(--muted);direction:ltr;text-align:right}
+.count{flex:none;font-family:var(--f-display);font-size:.8rem;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:1px 9px;white-space:nowrap}
+.card.hot .count{background:var(--hot-soft);color:var(--hot)}
+.by{font-size:.78rem;color:var(--muted)}
+.items{display:flex;flex-wrap:wrap;gap:5px}
+.it{font-family:var(--f-en);direction:ltr;font-size:.86rem;background:var(--code);border-radius:6px;padding:2px 8px;overflow-wrap:anywhere}
+.note{font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:6px}
+.tbl{overflow-x:auto;background:var(--sheet);border:1px solid var(--line);border-radius:10px;margin-top:10px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.88rem}
+caption{text-align:start;font-weight:700;padding:10px 12px 0;font-family:var(--f-display);font-size:.95rem}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+thead th{font-size:.8rem;color:var(--muted);font-weight:600;background:color-mix(in srgb,var(--code) 60%,transparent)}
+tbody tr:last-child td{border-bottom:0}
+td.en,th.en{font-family:var(--f-en);direction:ltr;text-align:left}
+td .en{font-family:var(--f-en)}
+code{font-family:var(--f-mono);font-size:.84em;background:var(--code);padding:1px 5px;border-radius:4px;direction:ltr;unicode-bidi:isolate}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:var(--f-en);direction:ltr;justify-content:flex-end}
+.flow span{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:.86rem}
+.flow i{color:var(--muted);font-style:normal}
+.map{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.map a{display:grid;gap:4px;text-decoration:none;color:inherit;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.map a:hover{border-color:var(--accent)}
+.map b{font-family:var(--f-display)}
+.map small{color:var(--muted);font-size:.82rem;line-height:1.5}
+.map .n{font-family:var(--f-mono);font-size:.75rem;color:var(--accent)}
+.pairs td:nth-child(1) b{color:var(--pair-a)} .pairs td:nth-child(2) b{color:var(--pair-b)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.82rem;color:var(--muted);margin-top:8px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:5px;vertical-align:-1px;background:var(--accent-soft);border:1px solid var(--accent)}
+.legend span.h::before{background:var(--hot-soft);border-color:var(--hot)}
+/* self-test: cover answers */
+body.quiz .it,body.quiz td.ans,body.quiz .ans{filter:blur(6px);cursor:pointer;user-select:none;transition:filter .15s}
+body.quiz .it.shown,body.quiz td.ans.shown,body.quiz .ans.shown{filter:none}
+@media (prefers-reduced-motion:reduce){body.quiz .it{transition:none}}
+.idx-group{margin-top:12px}
+.idx-group h4{margin:0 0 8px;font-family:var(--f-display);font-size:1rem}
+.idx-row{display:flex;gap:8px;flex-wrap:wrap}
+.idx-row a{font-size:.84rem;text-decoration:none;color:var(--ink);background:var(--sheet);border:1px solid var(--line);border-radius:7px;padding:3px 9px}
+.idx-row a:hover{border-color:var(--accent);color:var(--accent)}
+.idx-row a .l{color:var(--muted);font-size:.75rem}
+</style>
+
+<div class="wrap" dir="rtl" lang="ar">
+  <header>
+    <h1>خريطة مقرر البيانات الضخمة</h1>
+    <div class="sub">كل التصنيفات والقوائم والمقارنات في المقرر، مرتبة حسب المحاضرة · أ. سعاد عثمان · مأخوذة من نص الشرائح</div>
+  </header>
+
+  <nav class="rail" aria-label="التنقل">
+    <a href="#map">الخريطة</a>
+    <a href="#traps">فخاخ التبديل</a>
+    <a href="#count">حسب العدد</a>
+    <a href="#intro">مقدمة</a>
+    <a href="#storage">Storage</a>
+    <a href="#nosql">NoSQL</a>
+    <a href="#mongo">MongoDB + HBase</a>
+    <a href="#p1">Processing 1</a>
+    <a href="#p2">Processing 2</a>
+    <a href="#vis">Visualization</a>
+    <span class="sp"></span>
+    <button id="quiz" aria-pressed="false">غطِّ الإجابات</button>
+  </nav>
+
+  <section id="map">
+    <h2>الخريطة الفوقية <span class="en">Course map</span></h2>
+    <p class="lede">المقرر يمشي من «وين نخزن البيانات الضخمة» إلى «كيف نعالجها ونحللها ونعرضها». اضغط أي محاضرة للانتقال لها. 🔥 = فكرة جاءت في نماذج النصفي.</p>
+    <div class="map" id="mapgrid"></div>
+    <div class="legend"><span>تصنيف أو قائمة</span><span class="h">🔥 جاء في النصفي</span></div>
+  </section>
+
+  <section id="traps">
+    <h2>فخاخ التبديل <span class="en">Words she swaps</span></h2>
+    <p class="lede">الأستاذة تصنع عبارة الخطأ بتبديل كلمة بأختها. إذا شفت أي كلمة من هذي في سؤال صح وخطأ، تأكد إنها في مكانها الصحيح.</p>
+    <div class="tbl"><table class="pairs"><thead><tr><th>الكلمة</th><th>أختها التي تُبدَّل بها</th><th>كيف تفرّق</th></tr></thead><tbody id="traprows"></tbody></table></div>
+  </section>
+
+  <section id="count">
+    <h2>كل القوائم حسب عدد عناصرها <span class="en">Lists by count</span></h2>
+    <p class="lede">سؤال «classified into ___ and ___» يكشف عدد العناصر من عدد الفراغات. احفظ كم عنصر في كل قائمة.</p>
+    <div id="countidx"></div>
+  </section>
+
+  <div id="lectures"></div>
+</div>
+
+<script>
+/* ---------------- DATA (from the slides) ---------------- */
+const LECTURES = [
+  {key:"intro", ar:"مقدمة البيانات الضخمة", en:"Intro (from midterms)", gist:"خصائص البيانات الضخمة وأنواعها وحجمها."},
+  {key:"storage", ar:"Big Data Storage", en:"Storage Concepts", gist:"العناقيد، توزيع البيانات، DFS، RDBMS مقابل NoSQL و NewSQL، والتوسع."},
+  {key:"nosql", ar:"NoSQL", en:"NoSQL Databases", gist:"BASE مقابل ACID، CAP، والأنواع الأربعة ومتى تستخدم كل نوع."},
+  {key:"mongo", ar:"MongoDB + HBase", en:"MongoDB & HBase", gist:"مقابلة SQL و Mongo، الأوامر، CRUD، المعاملات، الفهارس، و HBase."},
+  {key:"p1", ar:"Processing 1", en:"Processing & Management", gist:"دورة المعالجة، المعماريات، الافتراضية، السحابة، و Hadoop."},
+  {key:"p2", ar:"Processing 2", en:"Hadoop tools & Analytics", gist:"YARN وأدوات المنظومة، وأنواع التحليل وتقنياته، NLP، و OLAP."},
+  {key:"vis", ar:"Visualization", en:"Big Data Visualization", gist:"تقنيات العرض وأدواته، و Tableau."}
+];
+
+// classification / list cards: [lecture, title_ar, title_en, basis, items[], hot, note]
+const LISTS = [
+ ["intro","خصائص البيانات الضخمة (3Vs)","Big data characterized by","",["Volume","Velocity","Variety"],1,""],
+ ["intro","أنواع البيانات الضخمة","Data types of big data","",["Structured","Semi-structured","Unstructured"],1,""],
+ ["intro","نطاق حجم البيانات","Big data range","",["Petabytes → Zettabytes"],1,"الخطأ في النصفي: gigabytes to terabytes."],
+
+ ["storage","أنواع العناقيد","Types of cluster","حسب الغرض (purpose)",["High availability","Load balancing"],1,"لا تخلطها مع البنية (Symmetric/Asymmetric)."],
+ ["storage","بنية العنقود","Cluster structure","حسب طريقة الربط (how linked)",["Symmetric","Asymmetric"],1,""],
+ ["storage","نماذج الحوسبة العنقودية","Cluster computing models","",["Master-slave","Peer-to-peer"],0,""],
+ ["storage","مزايا العناقيد","Benefits of cluster computers","",["High availability","Scalable performance","Fault tolerance","Cost-effective commodity hardware"],0,""],
+ ["storage","أهداف موازنة الحمل","Load balancing objectives","",["Optimize resources","Minimize response time","Maximize throughput","Avoid overload"],0,""],
+ ["storage","أدوار العقد في Asymmetric","Asymmetric node roles","",["Head Node / Master","Worker Nodes","Gateway Nodes"],0,"Head = يدير ويجدول ويراقب · Worker = ينفذ · Gateway = اتصالات خارجية."],
+ ["storage","نماذج توزيع البيانات","Distribution models","",["Replication","Sharding"],0,"تُستخدم منفردة أو معًا."],
+ ["storage","طرق Replication","Replication models","",["Peer-to-peer","Master-slave"],0,""],
+ ["storage","مزايا DFS","DFS key features","",["Fault tolerance (3 copies)","Data locality","Scalability"],0,"أمثلة: HDFS (batch) و GFS (ملهمة HDFS)."],
+ ["storage","مكونات DFS","DFS core components","",["Metadata Node (NameNode)","Data Nodes","Blocks"],1,"Blocks ثابتة الحجم 64–256MB، و HDFS = 128MB."],
+ ["storage","تحديات RDBMS","RDBMS big data challenges","",["Scalability","Schema rigidity","Performance"],0,""],
+ ["storage","نموذج BASE","BASE model","",["Basically Available","Soft state","Eventual consistency"],0,""],
+ ["storage","أنواع NoSQL","Types of NoSQL","",["Document","Key-Value","Columnar","Graph"],1,""],
+ ["storage","طبقات NewSQL","NewSQL layers","",["Administrative","Transactional","Storage"],0,"NewSQL = توسع NoSQL + خصائص ACID."],
+ ["storage","أمثلة NewSQL","NewSQL examples","",["VoltDB","NuoDB","Clustrix","MemSQL","TokuDB"],0,""],
+ ["storage","طرق التوسع","Scaling storage","",["Scaling-up (vertical)","Scaling-out (horizontal)"],1,"البيانات الضخمة تعتمد على Scaling-out."],
+
+ ["nosql","خصائص NoSQL","NoSQL = Not Only SQL","Next-generation DBs",["Non-relational","Distributed","Open-source","Horizontally scalable"],0,"وأيضًا: BASE لا ACID، schema-free، replication سهل، simple API."],
+ ["nosql","خصائص CAP","CAP theorem","أقصى حد: اثنتان من ثلاث",["Consistency","Availability","Partition tolerance"],0,"عند انقسام الشبكة يختار النظام بين C و A."],
+ ["nosql","أنواع NoSQL","Types of NoSQL","أكثر من 225 قاعدة",["Key-value","Document","Column-family","Graph"],1,""],
+ ["nosql","عمليات Key-value","Key-value operations","",["Insert(key,value)","Fetch(key)","Update(key)","Delete(key)"],0,""],
+ ["nosql","متى لا تستخدم Key-value","Key-value: not to use","",["Relationships among data","Multi-operation transactions","Query by data","Operations by sets"],0,""],
+ ["nosql","معايير اختيار الأفضل","Which one is the best?","حسب متطلبات التطبيق",["Size of data","Complexity","CAP theory","Format of data"],0,""],
+
+ ["mongo","قيمة الحقل في MongoDB","Value of a field","",["Native data types","Arrays","Other documents"],0,""],
+ ["mongo","علاقات المستندات","Document relations","",["Embedded documents","Reference (linking) documents"],0,"`_id` هو المفتاح الأساسي دائمًا."],
+ ["mongo","أنواع الفهارس","Index types","",["Single Field","Compound","Multikey","Geospatial","Text","Hashed"],0,"كل collection لها فهرس افتراضي على `_id`."],
+ ["mongo","المعاملات المنطقية","Logical operators","",["$and","$or","$not","$nor"],0,""],
+ ["mongo","هيكل تخزين HBase","HBase storage mechanism","من الأكبر للأصغر",["Table","Row","Column family","Column","Key-value pair"],1,"Row = collection of column families (ليس columns)."],
+ ["mongo","أوامر HBase DDL","HBase DDL","تعريف الجداول",["create","list","disable","alter","exists","drop","truncate"],0,""],
+ ["mongo","أوامر HBase DML","HBase DML","التعامل مع البيانات",["put","get","delete","deleteall","scan","count"],0,""],
+
+ ["p1","أنواع معالجة البيانات","Types of data processing","",["Centralized","Distributed"],0,""],
+ ["p1","مراحل دورة المعالجة","Data processing cycle","",["Data Input","Data Processing","Data Storage","Data Output"],0,"تخزن البيانات فقط إذا قيمتها أكبر من تكلفة تخزينها."],
+ ["p1","معماريات المعالجة الموزعة","Distributed processing architectures","",["Client-server","Three-tier","N-tier","Cluster","Peer-to-peer"],0,""],
+ ["p1","أنواع Shared everything","Shared everything","يحد من التوسع",["SMP (single memory pool)","DSM (multiple memory pools)"],0,""],
+ ["p1","خصائص الافتراضية","Attributes of virtualization","",["Encapsulation","Partitioning","Isolation"],0,""],
+ ["p1","أنواع السحابة","Cloud computing types","",["Public","Private","Hybrid"],0,"Private = corporate / internal cloud."],
+ ["p1","خدمات السحابة","Cloud services","",["SaaS","PaaS","IaaS"],0,""],
+ ["p1","وحدات Hadoop","Hadoop modules","",["Hadoop Common","Hadoop YARN","HDFS","Hadoop MapReduce"],1,""],
+ ["p1","دوال MapReduce","MapReduce interfaces","",["Map","Reduce"],1,"MapReduce = نموذج المعالجة الدفعية (batch) في Hadoop."],
+ ["p1","مكونات تشغيل Job","Running a job — components","",["User node","JobTracker","TaskTrackers"],0,""],
+ ["p1","مراحل تشغيل Job","Running a job — data flow","",["Job submission","Task assignment","Task execution","Task running check"],0,"التحقق يتم عبر heartbeat."],
+ ["p1","Data Access Framework","Ecosystem — data access","",["Pig","Hive","Sqoop","Avro"],0,""],
+ ["p1","Orchestration Framework","Ecosystem — orchestration","",["HBase","Chukwa","Flume","ZooKeeper"],0,""],
+ ["p1","مزايا Hadoop","Advantages of Hadoop","",["Quick write & test","High availability & scalable","Add/remove servers dynamically","Multiple copies automatically","Open source → economical"],0,""],
+
+ ["p2","أنواع Writable","Hadoop primitive data types","",["BooleanWritable","ByteWritable","IntWritable","VIntWritable","FloatWritable","LongWritable","VLongWritable","DoubleWritable"],0,"لا يوجد StringWritable في القائمة."],
+ ["p2","صيغ مدخلات MapReduce","MapReduce input formats","",["TextInputFormat (default)","KeyValueTextInputFormat","NLineInputFormat","SequenceFileInputFormat","SequenceFileAsTextInputFormat"],0,"في TextInputFormat: المفتاح LongWritable = byte offset لبداية السطر."],
+ ["p2","مكونات YARN","Core components of YARN","",["ResourceManager","ApplicationMaster","NodeManager"],0,""],
+ ["p2","تنظيم بيانات Hive","Data in Hive","",["Tables","Partitions","Buckets"],0,""],
+ ["p2","أنواع التحليلات","Types of analytics","",["Descriptive","Diagnostic","Predictive","Prescriptive"],0,""],
+ ["p2","دورة حياة التحليل","Data analytics life cycle","",["Define business problem","Data selection","Data preparation","Extraction & transformation","Analysis & visualization","Analytics application"],0,""],
+ ["p2","تقنيات التحليل","Big data analytics techniques","",["Quantitative","Qualitative","Statistical"],0,""],
+ ["p2","أنواع البيانات الكمية","Quantitative data","",["Nominal","Ordinal","Interval","Ratio"],0,""],
+ ["p2","مناهج التحليل النوعي","Qualitative approaches","",["Deductive","Inductive"],0,"Deductive يبدأ من أسئلة البحث · Inductive يبدأ من إطار يظهر من البحث."],
+ ["p2","أنواع التحليل النوعي","Qualitative analysis types","",["Content","Narrative","Discourse","Framework","Grounded theory"],0,""],
+ ["p2","التحليل الإحصائي","Statistical analysis","",["A/B testing","Correlation","Regression"],0,"A/B testing = split / bucket testing."],
+ ["p2","أنواع الارتباط","Correlation","",["Positive","Negative","No correlation"],0,""],
+ ["p2","التحليل الدلالي","Semantic analysis","",["NLP","Text analytics","Sentiment analysis"],0,"Sentiment = opinion mining."],
+ ["p2","مكونات NLP","NLP components","",["NLU","NLG"],0,""],
+ ["p2","مراحل NLP","NLP stages","",["Lexical","Syntactic","Semantic","Pragmatic"],0,""],
+ ["p2","خطوات تحليل النص","Text analytics steps","",["Parsing","Searching & retrieval","Text mining"],0,""],
+ ["p2","أنواع OLAP","Types of OLAP","",["MOLAP","ROLAP","HOLAP"],0,""],
+
+ ["vis","أهمية التصوير","Why visualization matters","",["Millions of records → understandable","Trends, patterns, outliers","Compare categories/locations/time","Data-driven decisions","Better communication"],0,"الهدف ليس جعل البيانات جذابة، بل إظهار المعلومة المهمة."],
+ ["vis","منتجات Tableau","Main Tableau products","",["Tableau Desktop","Tableau Prep","Tableau Server / Cloud"],0,""],
+ ["vis","مكونات العمل في Tableau","Tableau building blocks","",["Worksheet","Dashboard","Story"],0,""]
+];
+
+// comparison tables: [lecture, title, [colA, colB], rows [[aspect, a, b]]]
+const COMPARES = [
+ ["storage","High availability مقابل Load balancing",["High availability","Load balancing"],[
+   ["الهدف","تقليل وقت التوقف وخدمة مستمرة عند تعطل العقد","توزيع الحمل على عقد العنقود"],
+   ["التفاصيل","عقد احتياطية، Fault-tolerant، تحتاج shared storage","Optimize resources, minimize response time, maximize throughput"],
+   ["SPOF","eliminates single point of failures","—"]]],
+ ["storage","Symmetric مقابل Asymmetric",["Symmetric","Asymmetric"],[
+   ["العقد","كل عقدة كمبيوتر مستقل، كلها متطابقة","عقدة رئيسية head node هي البوابة بين المستخدم وباقي العقد"],
+   ["الأدوار","No dedicated roles، القيادة متغيرة","Specialized roles: Head، Worker، Gateway"],
+   ["التحكم","مسؤوليات مشتركة، و fault tolerance بإعادة التوزيع","Centralized control من الـ master"],
+   ["الإعداد","Simple and straightforward، تضيف أجهزة حسب الحاجة","—"]]],
+ ["storage","Replication مقابل Sharding",["Replication","Sharding"],[
+   ["الفكرة","نفس البيانات على عدة عقد","بيانات مختلفة على عقد مختلفة"],
+   ["الطرق","peer-to-peer أو master-slave","—"]]],
+ ["storage","NameNode مقابل DataNode",["Metadata Node (NameNode)","Data Nodes"],[
+   ["يخزن","metadata: الأسماء والمواقع والصلاحيات وخريطة الـ blocks","الـ blocks الفعلية (128MB)"],
+   ["دوره","Coordinates file operations (read/write)","Serve read/write requests directly to clients"]]],
+ ["storage","Scaling-up مقابل Scaling-out",["Scaling-up (vertical)","Scaling-out (horizontal)"],[
+   ["الطريقة","إضافة موارد (CPU/storage) للخادم الموجود","إضافة خوادم أو مكونات جديدة، والمكون الجديد اسمه node"],
+   ["الحد","Limited to the maximum capacity of the server","يتوسع بدون تعقيد كبير"],
+   ["الاستخدام","Traditional RDBMS، ونمو بيانات منخفض إلى متوسط","Big data technologies، و commodity hardware منخفض التكلفة"]]],
+ ["nosql","BASE مقابل ACID",["BASE (NoSQL)","ACID (RDBMS)"],[
+   ["الاتساق","Consistency eventually","Strong consistency"],
+   ["الأولوية","Availability first","Isolation"],
+   ["التطور","Simpler, faster, easier evolution","Difficult evolution"],
+   ["التطبيقات","Non-financial web-based apps","Financial portals"],
+   ["الصفة","Fast","Safe"],
+   ["المشاركة","Shared nothing","Shared something (disk, memory)"],
+   ["التوسع","Scale out (unlimited)","Scale up (limited)"],
+   ["الكود","Complex code, simple database","Simple code, robust database"],
+   ["البيئة","A cluster","Single machine"],
+   ["الفهرسة","Indexing mostly on keys","Full indexes"]]],
+ ["p1","Shared everything مقابل Shared nothing",["Shared everything","Shared nothing"],[
+   ["المشاركة","يشارك storage و memory و processor","كل node لها ذاكرة وتخزين وأقراص خاصة"],
+   ["التوسع","Limits scalability","Scalable"],
+   ["الأنواع","SMP (مجمع ذاكرة واحد) و DSM (عدة مجمعات)","—"]]],
+ ["p1","Batch مقابل Real-time",["Batch","Real-time"],[
+   ["الفكرة","مهام مترابطة تنفذ بالتتابع أو بالتوازي ثم تُجمع مخرجاتها","تدفق بيانات مستمر يُعالج in-memory"],
+   ["التخزين","—","يُخزن على القرص بعد المعالجة"]]],
+ ["p1","Parallel مقابل Distributed computing",["Parallel","Distributed"],[
+   ["المكان","عدة معالجات داخل جهاز واحد","أجهزة منفصلة متصلة بشبكة (cluster)"],
+   ["المشترك","كلاهما يقسم المهمة إلى مهام فرعية","كلاهما يقسم المهمة إلى مهام فرعية"]]],
+ ["p1","Master مقابل Slave في Hadoop",["Master node","Slave nodes"],[
+   ["MapReduce layer","JobTracker","TaskTracker (map / reduce)"],
+   ["HDFS layer","NameNode + metadata","DataNode + blocks"]]],
+ ["p2","Correlation مقابل Regression",["Correlation","Regression"],[
+   ["السؤال","هل توجد علاقة بين متغيرين؟","ما قيمة Y بمعرفة X؟"],
+   ["السببية","لا تعني سببية (no causation)","تعني درجة من السببية"],
+   ["المتغيرات","—","Y = dependent / outcome · X = independent / predictor"]]],
+ ["p2","OLTP مقابل OLAP",["OLTP","OLAP"],[
+   ["الغرض","معاملات وتطبيقات تشغيلية","استعلامات تحليلية وبيانات متعددة الأبعاد"],
+   ["المعالجة","Real time، وليس batch","عدد معاملات أقل نسبيًا"],
+   ["الأنواع","—","MOLAP, ROLAP, HOLAP"]]],
+ ["p2","Deductive مقابل Inductive",["Deductive","Inductive"],[
+   ["البداية","أسئلة البحث (research questions)","إطار يظهر من البحث (emergent framework)"],
+   ["يبحث عن","التشابه والاختلاف","العلاقات"]]]
+];
+
+// generic wide tables: [lecture, caption, headers[], rows[][]]
+const TABLES = [
+ ["storage","جدول أنواع NoSQL (شريحة 20)",["النوع","البنية","حالة الاستخدام","أمثلة"],[
+   ["Document","JSON-like documents","Real-time analytics, user profiles","MongoDB, Couchbase"],
+   ["Key-Value","Key → Value pairs","Caching, session management","Redis, DynamoDB"],
+   ["Columnar","Columns grouped","Time-series, IoT data","Cassandra, HBase"],
+   ["Graph","Nodes / relationships","Fraud detection, social networks","Neo4j, Amazon Neptune"]]],
+ ["nosql","CAP: من في أي مجموعة؟",["المجموعة","معناها","الأمثلة"],[
+   ["CP","Consistency + Partition tolerance","BigTable, MongoDB, HBase"],
+   ["AP","Availability + Partition tolerance","Voldemort, CouchDB, Riak, Cassandra, DynamoDB, Couchbase"],
+   ["CA","Consistency + Availability","Relational databases (Vertica, GreenPlum): typically single-node"]]],
+ ["nosql","الأنواع الأربعة: النموذج والاستخدام",["النوع","نموذج البيانات","أمثلة","يناسب","لا يناسب"],[
+   ["Key-value","(key, value)، بسيط وسريع جدًا","DynamoDB, Voldemort, Scalaris, Redis","Sessions، caching layer، shopping carts، leaderboards، user preferences، rate limiting، pub/sub","العلاقات، multi-operation transactions، query by data، operations by sets"],
+   ["Document","(key, document) بصيغة JSON/XML، والجلب بالمحتوى","MongoDB, CouchDB, SimpleDB","Event logging، CMS، web analytics، e-commerce، schema يتغير بسرعة","بيانات علائقية مطبّعة بكثرة، تقارير SQL ثقيلة، many-to-many joins، schema صارم"],
+   ["Column-family","families of attributes، big hashed distributed tables","Cassandra, HBase, BigTable","Time-series و sensors و logs، write-heavy (clickstream و fraud events)، chat histories، recommendation بكثافة كتابة عالية","Ad-hoc queries و joins، ACID كامل عبر الصفوف، بيانات صغيرة، SQL كامل"],
+   ["Graph","nodes و edges (properties و labels)","Neo4j, FlockDB, Pregel","Social networks (friends of friends)، fraud rings، «also bought»، knowledge graphs، network topology","بيانات جدولية، time-series رقمية، OLAP، full-text search"]]],
+ ["nosql","جدول الرخص (شريحة 12)",["القاعدة","النوع","الرخصة"],[
+   ["BigTable","Column","Proprietary"],["Voldemort","Key-value","Open source"],["Dynamo","Key-value","Open source"],
+   ["MongoDB","Document","Open source / GPL"],["CouchDB","Document","Open source"],["SimpleDB","Document","Proprietary"],
+   ["Cassandra","Column","Open source"],["HBase","Column","Open source"],["Neo4j","Graph","Open source"]]],
+ ["mongo","SQL مقابل MongoDB",["SQL","MongoDB"],[
+   ["Database","Database"],["Table","Collection"],["Row","Document"],["Column","Field"],["Index","Index"],
+   ["Join","Embedded documents & linking"],["Primary key","_id field (always)"],["Aggregation","Aggregation pipeline"],
+   ["Foreign key","Reference"],["Partition","Shard"]]],
+ ["mongo","أوامر قاعدة البيانات والـ Collection",["الأمر","وظيفته"],[
+   ["use <db>","ينتقل لقاعدة البيانات"],["db","يعرض القاعدة الحالية 🔥"],["show dbs","يعرض كل القواعد"],["db.dropDatabase()","يحذف القاعدة"],
+   ["db.createCollection(\"Stud\")","ينشئ collection 🔥"],["show collections","يعرض أسماء الـ collections 🔥"],
+   ["db.Stud.insert({...})","يُدخل مستند، وينشئ الـ collection تلقائيًا"],["db.Stud.drop()","يحذف الـ collection"]]],
+ ["mongo","عمليات CRUD",["العملية","الأوامر"],[
+   ["Create","insertOne() · insertMany()، والقديمة: insert() · save() · update(..., {upsert:true})"],
+   ["Read","find(<query>, <projection>) · findOne()"],
+   ["Update","updateOne() · updateMany() · replaceOne() مع $set"],
+   ["Delete","deleteOne() · deleteMany()، والقديمة: remove(<query>, <justOne>)"]]],
+ ["mongo","معاملات المقارنة",["المعامل","المعنى"],[
+   ["$eq","يساوي"],["$ne","لا يساوي"],["$gt","أكبر من"],["$gte","أكبر من أو يساوي"],["$lt","أصغر من"],["$lte","أصغر من أو يساوي"],["$in","أي قيمة من مصفوفة"],["$nin","ولا قيمة من مصفوفة"]]],
+ ["mongo","قالب سؤال الاستعلام (Q3)",["المطلوب","الصيغة"],[
+   ["display X, Y where a > 18 and b > 90","db.students.find({ age: {$gt: 18}, degree: {$gt: 90} }, { \"student-name\": 1, address: 1, _id: 0 })"],
+   ["in (Sana'a or Ibb)","address: { $in: [\"Sana'a\", \"Ibb\"] }"],
+   ["قواعد ذهبية","الـ projection هو المعامل الثاني · الحقل اللي فيه شرطة بين علامتي تنصيص · _id: 0 يخفي الـ id"]]],
+ ["mongo","معمارية HBase",["المستوى","الوصف"],[
+   ["Table","تنقسم إلى Regions"],["Region","تخدمها Region Servers، وتنقسم حسب column families إلى Stores"],["Store","تُحفظ كملفات في HDFS"],
+   ["الهوية","Column-oriented · تطبيق لـ Google BigTable · مبني فوق HDFS · quick random access · horizontally scalable"]]],
+ ["p1","دورة معالجة البيانات بالتفصيل",["Input","Processing","Storage","Output"],[
+   ["Data capturing","Classify","Storage","Advanced computing"],
+   ["Collection from subsystems","Sort / merge","Retrieval","Format"],
+   ["Collection from web portals","Mathematical operations","Archival","Present"],
+   ["Data transmission","Transform","Governance","—"]]],
+ ["p1","Hadoop: الوحدات الأربع",["الوحدة","الوظيفة"],[
+   ["Hadoop Common","مكتبات Java وأدوات تحتاجها بقية الوحدات"],["Hadoop YARN","جدولة المهام وإدارة موارد الـ cluster"],
+   ["HDFS","نظام ملفات موزع بـ high-throughput"],["Hadoop MapReduce","معالجة متوازية مبنية على YARN (YARN-based)"]]],
+ ["p1","تاريخ Hadoop",["السنة","الحدث"],[
+   ["2005","Doug Cutting و Michael J. Cafarella طوّروا Hadoop لمشروع محرك البحث Nutch، بتمويل Yahoo"],
+   ["2006","Yahoo أعطت المشروع لـ Apache Software Foundation"],
+   ["قبلها","Google طوّرت GFS و MapReduce، وهي الفكرة الملهمة"]]],
+ ["p1","الافتراضية والسحابة",["المفهوم","المعنى"],[
+   ["Encapsulation","الـ VM محفوظة كملف واحد"],["Partitioning","تقسيم العتاد إلى أقسام منطقية، لكل قسم OS"],["Isolation","الـ VMs معزولة عن بعضها وعن المضيف"],
+   ["Public cloud","طرف ثالث عبر الإنترنت"],["Private cloud","ملك شركة واحدة (corporate / internal)"],["Hybrid cloud","يجمع مزايا الاثنين"]]],
+ ["p2","أدوات منظومة Hadoop",["الأداة","وظيفتها"],[
+   ["ZooKeeper","تنسيق مركزي بين مكونات النظام الموزع"],["Sqoop","نقل البيانات من RDBMS إلى HBase و Hive"],
+   ["Flume","جمع البيانات المتدفقة (streaming) من مصادر متعددة"],["Avro","Serialization، ومتعدد اللغات"],
+   ["Pig","من Yahoo: لغة Pig Latin + بيئة تنفيذ، وأي نوع بيانات"],["Mahout","تعلم آلة: clustering و classification و recommendation"],
+   ["Oozie","إدارة الـ workflow وجمع MapReduce jobs"],["Hive","بيانات مهيكلة بلغة HQL عبر ODBC/JDBC"]]],
+ ["p2","YARN: من يفعل ماذا؟",["المكون","العدد","الوظيفة"],[
+   ["ResourceManager","واحد لكل cluster","يوزع الموارد على التطبيقات"],
+   ["ApplicationMaster","لكل تطبيق","ينفذ ويراقب ويعيد التشغيل عند الفشل"],
+   ["NodeManager","في كل slave node","ينفذ جزءًا من الـ job"]]],
+ ["p2","أنواع التحليلات",["النوع","السؤال"],[
+   ["Descriptive","ماذا حدث؟ (الماضي)"],["Diagnostic","لماذا حدث؟"],["Predictive","ماذا سيحدث؟ (المستقبل)"],["Prescriptive","ماذا نفعل؟ (نصيحة)"]]],
+ ["p2","مراحل NLP وأنواع التحليل النوعي",["العنصر","المعنى"],[
+   ["Lexical","تقسيم النص إلى فقرات وجمل وكلمات"],["Syntactic","القواعد وترتيب الكلمات"],["Semantic","المعنى من القاموس أو السياق"],["Pragmatic","قصد المتكلم الفعلي"],
+   ["Content","تصنيف وجدولة وتلخيص"],["Narrative","تفريغ بيانات الملاحظة أو المقابلات"],["Discourse","نص مكتوب أو محادثة طبيعية"],["Framework","تحديد الإطار الأولي من المشكلة"],["Grounded theory","حالة واحدة تُعمَّم إلى نظرية"]]],
+ ["vis","تقنيات التصوير",["التقنية","أمثلة","الاستخدام"],[
+   ["Charts","Bar, Line, Area, Scatter","المقارنة والاتجاهات"],["Geospatial","Maps, Heat maps","التحليل حسب الموقع"],
+   ["Hierarchical","Treemap, Sunburst","العلاقات الهرمية"],["Network","Node–link graph","العلاقات والاتصالات"],
+   ["Temporal","Time series","التغير عبر الزمن"],["Interactive","Filters, Drill-down","الاستكشاف على مستويات"]]],
+ ["vis","أدوات التصوير",["الأداة","تُستخدم لـ"],[
+   ["Tableau","Dashboards تفاعلية بالسحب والإفلات"],["Microsoft Power BI","تقارير الأعمال ومصادر بيانات متعددة"],["Apache Superset","مفتوح المصدر لاستكشاف البيانات و dashboards"],
+   ["Grafana","مراقبة المقاييس و time-series والأنظمة التشغيلية"],["D3.js","رسوم ويب مخصصة بـ JavaScript"],["Python","Matplotlib, Plotly, Bokeh"]]],
+ ["vis","Tableau",["العنصر","المعنى"],[
+   ["Tableau Desktop","إنشاء التصورات وتحليلها"],["Tableau Prep","تنظيف البيانات وتجهيزها"],["Tableau Server / Cloud","النشر والمشاركة والتعاون"],
+   ["Worksheet","مساحة عمل لرسم واحد أو أكثر"],["Dashboard","عدة views في شاشة تفاعلية واحدة"],["Story","تسلسل views أو dashboards يحكي قصة تحليلية"]]]
+];
+
+// swap traps: [word, sibling, how to tell]
+const TRAPS = [
+ ["Scaling-up","Scaling-out","up = موارد لنفس الخادم ومحدود · out = خوادم جديدة، وهو أساس البيانات الضخمة"],
+ ["High availability","Load balancing","HA = يمنع التوقف ويلغي SPOF · LB = يوزع الحمل"],
+ ["Types of cluster","Cluster structure","الأنواع = HA و LB · البنية = Symmetric و Asymmetric"],
+ ["eliminates / decrease SPOF","increase SPOF","النظام عالي التوفر يقلل نقاط الفشل، ولا يزيدها"],
+ ["NameNode","DataNode","NameNode ينسق العمليات ويحمل metadata · DataNode يخزن الـ blocks"],
+ ["Replication","Sharding","Replication = نفس البيانات · Sharding = بيانات مختلفة"],
+ ["Column families","Columns","HBase: Row = collection of column families"],
+ ["HBase (column-oriented)","MongoDB (document-oriented)","HBase فوق HDFS ومن BigTable · Mongo مستندات BSON"],
+ ["Petabytes → Zettabytes","Gigabytes → Terabytes","نطاق البيانات الضخمة = PB إلى ZB"],
+ ["BASE","ACID","BASE = eventual، scale out، non-financial · ACID = strong، scale up، financial"],
+ ["Key-value","Document","cache، session، cart = KV · JSON، CMS، e-commerce = Document"],
+ ["Column-family","Graph","clickstream، sensors، fraud events = Column · rings، friends، also bought = Graph"],
+ ["Parallel","Distributed","Parallel = جهاز واحد · Distributed = أجهزة متعددة"],
+ ["Shared everything","Shared nothing","everything يحد من التوسع · nothing قابل للتوسع"],
+ ["Batch","Real-time","Real-time = in-memory ثم يُخزن بعد المعالجة"],
+ ["Yahoo","Google","Yahoo موّلت Hadoop · Google طوّرت GFS و MapReduce"],
+ ["YARN-based MapReduce","HDFS-based","الشريحة: MapReduce is YARN-based"],
+ ["ResourceManager","NodeManager","RM واحد لكل cluster · NM في كل slave node"],
+ ["Sqoop","Flume","Sqoop = من RDBMS إلى HBase و Hive · Flume = بيانات متدفقة"],
+ ["Pig","Hive","Pig = Pig Latin وأي بيانات · Hive = HQL وبيانات مهيكلة"],
+ ["Oozie","ZooKeeper","Oozie = workflow · ZooKeeper = coordination"],
+ ["LongWritable","IntWritable","مفتاح TextInputFormat = LongWritable (byte offset)"],
+ ["Correlation","Regression","Correlation لا تعني سببية · Regression تعني درجة منها"],
+ ["OLTP","OLAP","OLTP معاملات real-time · OLAP تحليل بعدد معاملات أقل"],
+ ["Lexical","Syntactic","Lexical = تقسيم · Syntactic = قواعد"],
+ ["Grafana","Superset","Grafana = monitoring و time-series · Superset = استكشاف open-source"],
+ ["Story","Dashboard","Story = تسلسل وسرد · Dashboard = شاشة واحدة"],
+ ["Tableau Desktop","Tableau Prep","Desktop = إنشاء وتحليل · Prep = تنظيف"],
+ ["$or","$nor","$or = يطابق أحدهما · $nor = لا يطابق أيًّا منهما"],
+ ["show collections","show dbs","collections داخل القاعدة · dbs = القواعد كلها"]
+];
+
+/* ---------------- RENDER ---------------- */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>");
+const lecOf = k => LECTURES.find(l => l.key === k);
+const slug = (l, i) => `c-${l}-${i}`;
+
+document.getElementById("mapgrid").innerHTML = LECTURES.map((l, i) => {
+  const n = LISTS.filter(x => x[0] === l.key).length, hot = LISTS.filter(x => x[0] === l.key && x[5]).length;
+  return `<a href="#${l.key}"><span class="n">${String(i).padStart(2, "0")} · ${n} تصنيف${hot ? ` · 🔥${hot}` : ""}</span><b>${esc(l.ar)}</b><small>${esc(l.gist)}</small></a>`;
+}).join("");
+
+document.getElementById("traprows").innerHTML = TRAPS.map(([a, b, how]) =>
+  `<tr><td class="en"><b>${esc(a)}</b></td><td class="en"><b>${esc(b)}</b></td><td>${fmt(how)}</td></tr>`).join("");
+
+const byCount = {};
+LISTS.forEach((x, i) => { const n = x[4].length; (byCount[n] = byCount[n] || []).push(i); });
+const countName = n => ({1:"عنصر واحد",2:"ثنائيات (2)",3:"ثلاثيات (3)",4:"رباعيات (4)",5:"خماسيات (5)",6:"سداسيات (6)"}[n] || `${n} عناصر`);
+document.getElementById("countidx").innerHTML = Object.keys(byCount).map(Number).sort((a, b) => a - b).filter(n => n > 1).map(n =>
+  `<div class="idx-group"><h4>${countName(n)}</h4><div class="idx-row">${byCount[n].map(i => {
+    const x = LISTS[i]; return `<a href="#${slug(x[0], i)}">${x[5] ? "🔥 " : ""}${esc(x[2])} <span class="l">· ${esc(lecOf(x[0]).en)}</span></a>`; }).join("")}</div></div>`).join("");
+
+document.getElementById("lectures").innerHTML = LECTURES.map(l => {
+  const cards = LISTS.map((x, i) => [x, i]).filter(([x]) => x[0] === l.key).map(([x, i]) => `
+    <div class="card ${x[5] ? "hot" : ""}" id="${slug(x[0], i)}">
+      <div class="top"><div class="t">${x[5] ? "🔥 " : ""}${esc(x[1])}<span class="en">${esc(x[2])}</span></div><span class="count">${x[4].length}</span></div>
+      ${x[3] ? `<div class="by">${esc(x[3])}</div>` : ""}
+      <div class="items">${x[4].map(it => `<span class="it">${esc(it)}</span>`).join("")}</div>
+      ${x[6] ? `<div class="note">${fmt(x[6])}</div>` : ""}
+    </div>`).join("");
+  const comps = COMPARES.filter(c => c[0] === l.key).map(c => `
+    <div class="tbl"><table><caption>${esc(c[1])}</caption><thead><tr><th></th><th class="en">${esc(c[2][0])}</th><th class="en">${esc(c[2][1])}</th></tr></thead>
+    <tbody>${c[3].map(r => `<tr><th>${esc(r[0])}</th><td class="ans" dir="auto">${fmt(r[1])}</td><td class="ans" dir="auto">${fmt(r[2])}</td></tr>`).join("")}</tbody></table></div>`).join("");
+  const tables = TABLES.filter(t => t[0] === l.key).map(t => `
+    <div class="tbl"><table><caption>${esc(t[1])}</caption><thead><tr>${t[2].map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead>
+    <tbody>${t[3].map(r => `<tr>${r.map((c, j) => j === 0 ? `<th class="en">${fmt(c)}</th>` : `<td class="ans" dir="auto">${fmt(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`).join("");
+  return `<section id="${l.key}">
+    <h2>${esc(l.ar)} <span class="en">${esc(l.en)}</span></h2><p class="lede">${esc(l.gist)}</p>
+    <h3>التصنيفات والقوائم</h3><div class="grid">${cards}</div>
+    ${comps ? `<h3>مقارنات</h3>${comps}` : ""}
+    ${tables ? `<h3>جداول</h3>${tables}` : ""}
+  </section>`;
+}).join("");
+
+/* self-test toggle: blur answers, tap to reveal */
+const qb = document.getElementById("quiz");
+qb.addEventListener("click", () => {
+  const on = !document.body.classList.contains("quiz");
+  document.body.classList.toggle("quiz", on); qb.setAttribute("aria-pressed", String(on));
+  qb.textContent = on ? "أظهر الكل" : "غطِّ الإجابات";
+  document.querySelectorAll(".shown").forEach(e => e.classList.remove("shown"));
+});
+document.addEventListener("click", e => {
+  if (!document.body.classList.contains("quiz")) return;
+  const t = e.target.closest(".it, td.ans"); if (t) t.classList.toggle("shown");
+});
+</script>
+
+</body></html>

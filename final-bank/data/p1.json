@@ -1,0 +1,1395 @@
+[
+ {
+  "id": "p1-001",
+  "lecture": "p1",
+  "topic_en": "Data processing and the processing cycle",
+  "topic_ar": "معالجة البيانات ودورة المعالجة",
+  "type": "tf",
+  "q_en": "Data becomes information only when it undergoes a process by which it is manipulated and organized.",
+  "q_ar": "تصبح البيانات معلومات (information) فقط عندما تخضع لعملية يتم فيها معالجتها وتنظيمها.",
+  "answer": true,
+  "why_en": "True — verbatim from the slide.",
+  "why_ar": "صحيح؛ هذا نص الشريحة حرفياً: البيانات لا تصبح معلومات إلا بعد معالجتها وتنظيمها.",
+  "slide": 2,
+  "hot": false
+ },
+ {
+  "id": "p1-002",
+  "lecture": "p1",
+  "topic_en": "Data processing and the processing cycle",
+  "topic_ar": "معالجة البيانات ودورة المعالجة",
+  "type": "tf",
+  "q_en": "There are basically two different types of data processing, namely, centralized and parallel data processing.",
+  "q_ar": "يوجد نوعان أساسيان لمعالجة البيانات، هما: المعالجة المركزية (centralized) والمعالجة المتوازية (parallel).",
+  "answer": false,
+  "correct_en": "There are basically two different types of data processing, namely, centralized and distributed data processing.",
+  "why_en": "False — the two types are centralized and distributed data processing.",
+  "why_ar": "خطأ؛ النوعان هما المركزية (centralized) والموزعة (distributed)، وليس المتوازية.",
+  "slide": 2,
+  "hot": false
+ },
+ {
+  "id": "p1-003",
+  "lecture": "p1",
+  "topic_en": "Data processing and the processing cycle",
+  "topic_ar": "معالجة البيانات ودورة المعالجة",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT one of the four stages of the data processing cycle?",
+  "q_ar": "أيٌّ مما يلي ليس من المراحل الأربع لدورة معالجة البيانات (data processing cycle)؟",
+  "options": [
+   {
+    "en": "Data Input",
+    "ar": "إدخال البيانات (Data Input)"
+   },
+   {
+    "en": "Data Storage",
+    "ar": "تخزين البيانات (Data Storage)"
+   },
+   {
+    "en": "Data Visualization",
+    "ar": "تصوير البيانات (Data Visualization)"
+   },
+   {
+    "en": "Data Output",
+    "ar": "إخراج البيانات (Data Output)"
+   }
+  ],
+  "answer": 2,
+  "why_en": "The four stages are Data Input, Data Processing, Data Storage and Data Output.",
+  "why_ar": "المراحل الأربع هي: Input ثم Processing ثم Storage ثم Output؛ ولا توجد مرحلة Visualization.",
+  "explain_ar": "احفظ الترتيب كأنه حاسوب بسيط: إدخال ← معالجة ← تخزين ← إخراج (Input → Processing → Storage → Output). أي خيار خارج هذه الأربع هو الجواب في سؤال NOT.",
+  "slide": 3,
+  "hot": false
+ },
+ {
+  "id": "p1-004",
+  "lecture": "p1",
+  "topic_en": "Data processing and the processing cycle",
+  "topic_ar": "معالجة البيانات ودورة المعالجة",
+  "type": "mcq",
+  "q_en": "Retrieval, Archival, and Governance are sub-steps of which stage of the data processing cycle?",
+  "q_ar": "الاسترجاع (Retrieval) والأرشفة (Archival) والحوكمة (Governance) خطوات فرعية لأي مرحلة من دورة معالجة البيانات؟",
+  "options": [
+   {
+    "en": "Data Input",
+    "ar": "إدخال البيانات (Data Input)"
+   },
+   {
+    "en": "Data Processing",
+    "ar": "معالجة البيانات (Data Processing)"
+   },
+   {
+    "en": "Data Storage",
+    "ar": "تخزين البيانات (Data Storage)"
+   },
+   {
+    "en": "Data Output",
+    "ar": "إخراج البيانات (Data Output)"
+   }
+  ],
+  "answer": 2,
+  "why_en": "Data Storage contains Storage, Retrieval, Archival and Governance.",
+  "why_ar": "مرحلة التخزين (Data Storage) تضم: Storage و Retrieval و Archival و Governance.",
+  "explain_ar": "فرّق بين المراحل من خطواتها: Input = capturing و collection و transmission، Processing = classify و sort/merge و mathematical operations و transform، Storage = storage و retrieval و archival و governance، Output = advanced computing و format و present.",
+  "slide": 3,
+  "hot": false
+ },
+ {
+  "id": "p1-005",
+  "lecture": "p1",
+  "topic_en": "Data processing and the processing cycle",
+  "topic_ar": "معالجة البيانات ودورة المعالجة",
+  "type": "tf",
+  "q_en": "Data has to be stored only if the storage cost exceeds the value of storing them for future use.",
+  "q_ar": "يجب تخزين البيانات فقط إذا كانت تكلفة التخزين (storage cost) تتجاوز قيمة تخزينها للاستخدام المستقبلي.",
+  "answer": false,
+  "correct_en": "Data has to be stored only if the value of storing them for future use exceeds the storage cost.",
+  "why_en": "False — data is stored only if the value of storing it exceeds the storage cost.",
+  "why_ar": "خطأ؛ العكس هو الصحيح: نخزّن البيانات فقط إذا كانت قيمة تخزينها للمستقبل أكبر من تكلفة التخزين.",
+  "explain_ar": "منطق تجاري بسيط: لا تدفع على تخزين شيء أكثر مما يساويه. الفخ هنا هو قلب طرفي المقارنة (value ↔ cost).",
+  "slide": 4,
+  "hot": false
+ },
+ {
+  "id": "p1-006",
+  "lecture": "p1",
+  "topic_en": "Data processing and the processing cycle",
+  "topic_ar": "معالجة البيانات ودورة المعالجة",
+  "type": "tf",
+  "q_en": "With the increase in big data volume, moving the data between the computing and the storage layers for storage and manipulation has always been a challenging task.",
+  "q_ar": "مع زيادة حجم البيانات الضخمة، كان نقل البيانات بين طبقتي الحوسبة (computing) والتخزين (storage) للتخزين والمعالجة دائماً مهمة صعبة.",
+  "answer": true,
+  "why_en": "True — the slide names this as the challenge of big data volume.",
+  "why_ar": "صحيح؛ الشريحة تذكر أن نقل البيانات بين طبقة الحوسبة وطبقة التخزين أصبح تحدياً مع تضخم الحجم.",
+  "slide": 4,
+  "hot": false
+ },
+ {
+  "id": "p1-007",
+  "lecture": "p1",
+  "topic_en": "Centralized vs distributed processing architectures",
+  "topic_ar": "المعالجة المركزية مقابل الموزعة ومعمارياتها",
+  "type": "tf",
+  "q_en": "Centralized data processing mandates data collection to be at one central location.",
+  "q_ar": "المعالجة المركزية للبيانات (Centralized data processing) تُلزم بأن يكون جمع البيانات في موقع مركزي واحد.",
+  "answer": true,
+  "why_en": "True — centralized processing keeps data collection at one central location.",
+  "why_ar": "صحيح؛ المركزية = جمع البيانات في مكان مركزي واحد، أما الموزعة فتوزعها على مواقع فعلية مختلفة.",
+  "slide": 5,
+  "hot": false
+ },
+ {
+  "id": "p1-008",
+  "lecture": "p1",
+  "topic_en": "Centralized vs distributed processing architectures",
+  "topic_ar": "المعالجة المركزية مقابل الموزعة ومعمارياتها",
+  "type": "tf",
+  "q_en": "In client-server architecture, the server manages the data collection and its presentation while data processing and management are handled by the client.",
+  "q_ar": "في معمارية العميل-الخادم (client-server)، يدير الخادم جمع البيانات وعرضها بينما يتولى العميل معالجة البيانات وإدارتها.",
+  "answer": false,
+  "correct_en": "In client-server architecture, client manages the data collection and its presentation while data processing and management are handled by the server.",
+  "why_en": "False — the roles are swapped: the client handles collection and presentation; the server handles processing and management.",
+  "why_ar": "خطأ؛ الأدوار معكوسة: العميل (client) يجمع البيانات ويعرضها، والخادم (server) يعالجها ويديرها.",
+  "explain_ar": "تذكّر: العميل هو ما يراه المستخدم (واجهة: جمع + عرض)، والخادم هو العقل الخلفي (معالجة + إدارة). أي سؤال يعكس الأدوار فهو خطأ.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "p1-009",
+  "lecture": "p1",
+  "topic_en": "Centralized vs distributed processing architectures",
+  "topic_ar": "المعالجة المركزية مقابل الموزعة ومعمارياتها",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT one of the architectures by which distributed processing is implemented?",
+  "q_ar": "أيٌّ مما يلي ليس من المعماريات التي تُطبَّق بها المعالجة الموزعة (distributed processing)؟",
+  "options": [
+   {
+    "en": "Three-tier architecture",
+    "ar": "معمارية الطبقات الثلاث (Three-tier)"
+   },
+   {
+    "en": "Cluster architecture",
+    "ar": "معمارية العنقود (Cluster)"
+   },
+   {
+    "en": "Peer-to-peer architecture",
+    "ar": "معمارية الند للند (Peer-to-peer)"
+   },
+   {
+    "en": "Symmetric multiprocessing architecture",
+    "ar": "معمارية المعالجة المتعددة المتماثلة (Symmetric multiprocessing)"
+   }
+  ],
+  "answer": 3,
+  "why_en": "Distributed processing architectures are client-server, three-tier, n-tier, cluster and peer-to-peer; SMP is a shared everything architecture.",
+  "why_ar": "معماريات المعالجة الموزعة خمس: client-server و three-tier و n-tier و cluster و peer-to-peer. أما SMP فهي من نوع shared everything.",
+  "explain_ar": "احفظ الخمسة بالترتيب: client-server، three-tier، n-tier، cluster، peer-to-peer. الـ SMP والـ DSM يأتيان تحت Shared everything في شريحة أخرى، فهما مشتّتات مقصودة.",
+  "slide": 5,
+  "hot": false
+ },
+ {
+  "id": "p1-010",
+  "lecture": "p1",
+  "topic_en": "Centralized vs distributed processing architectures",
+  "topic_ar": "المعالجة المركزية مقابل الموزعة ومعمارياتها",
+  "type": "mcq",
+  "q_en": "____ is a type of architecture where all the machines have equal responsibilities in data processing.",
+  "q_ar": "____ نوع من المعماريات تكون فيه لجميع الأجهزة مسؤوليات متساوية في معالجة البيانات.",
+  "options": [
+   {
+    "en": "Client-server",
+    "ar": "العميل-الخادم (Client-server)"
+   },
+   {
+    "en": "Peer-to-peer",
+    "ar": "الند للند (Peer-to-peer)"
+   },
+   {
+    "en": "Cluster",
+    "ar": "العنقود (Cluster)"
+   },
+   {
+    "en": "Three-tier",
+    "ar": "الطبقات الثلاث (Three-tier)"
+   }
+  ],
+  "answer": 1,
+  "why_en": "Peer-to-peer: all machines have equal responsibilities.",
+  "why_ar": "الند للند (Peer-to-peer) تعني أن كل الأجهزة نظراء متساوون في المسؤولية، لا يوجد خادم رئيسي.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "p1-011",
+  "lecture": "p1",
+  "topic_en": "Centralized vs distributed processing architectures",
+  "topic_ar": "المعالجة المركزية مقابل الموزعة ومعمارياتها",
+  "type": "mcq",
+  "q_en": "____ isolate servers, applications, and middleware into different tiers for better scalability and performance.",
+  "q_ar": "____ تعزل الخوادم والتطبيقات والبرمجيات الوسيطة (middleware) في طبقات (tiers) مختلفة لتحسين قابلية التوسع والأداء.",
+  "options": [
+   {
+    "en": "Three-tier and n-tier architectures",
+    "ar": "معماريتا الطبقات الثلاث والطبقات المتعددة (Three-tier و n-tier)"
+   },
+   {
+    "en": "Client-server architectures",
+    "ar": "معماريات العميل-الخادم (Client-server)"
+   },
+   {
+    "en": "Cluster architectures",
+    "ar": "معماريات العنقود (Cluster)"
+   },
+   {
+    "en": "Peer-to-peer architectures",
+    "ar": "معماريات الند للند (Peer-to-peer)"
+   }
+  ],
+  "answer": 0,
+  "why_en": "Three-tier and n-tier architectures isolate servers, applications and middleware into tiers.",
+  "why_ar": "كلمة tiers (طبقات) هي المفتاح: معماريتا Three-tier و n-tier تفصلان الخوادم والتطبيقات والـ middleware.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "p1-012",
+  "lecture": "p1",
+  "topic_en": "Centralized vs distributed processing architectures",
+  "topic_ar": "المعالجة المركزية مقابل الموزعة ومعمارياتها",
+  "type": "tf",
+  "q_en": "Client-server architecture introduces a latency and overhead in carrying the data between the client and the server.",
+  "q_ar": "معمارية العميل-الخادم (client-server) تُدخل تأخيراً (latency) وعبئاً إضافياً (overhead) في نقل البيانات بين العميل والخادم.",
+  "answer": true,
+  "why_en": "True — this is the stated drawback of client-server architecture.",
+  "why_ar": "صحيح؛ عيب client-server هو التأخير والعبء الناتجان عن نقل البيانات بين الطرفين.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "p1-013",
+  "lecture": "p1",
+  "topic_en": "Centralized vs distributed processing architectures",
+  "topic_ar": "المعالجة المركزية مقابل الموزعة ومعمارياتها",
+  "type": "tf",
+  "q_en": "Cluster is an architecture where machines are connected together to form a network and process the computation in sequential fashion to reduce latency.",
+  "q_ar": "العنقود (Cluster) معمارية تتصل فيها الأجهزة معاً لتكوين شبكة وتعالج الحسابات بشكل تسلسلي (sequential) لتقليل التأخير.",
+  "answer": false,
+  "correct_en": "Cluster is an architecture where machines are connected together to form a network and process the computation in parallel fashion to reduce latency.",
+  "why_en": "False — a cluster processes the computation in parallel fashion to reduce latency.",
+  "why_ar": "خطأ؛ العنقود يعالج الحسابات بشكل متوازٍ (parallel) وليس تسلسلياً، وهذا ما يقلل التأخير.",
+  "explain_ar": "لاحظ التضاد: client-server تُسبب latency، أما cluster فتقلل latency لأنها تعالج بالتوازي. المعالجة التسلسلية لا تقلل التأخير أصلاً.",
+  "slide": 6,
+  "hot": false
+ },
+ {
+  "id": "p1-014",
+  "lecture": "p1",
+  "topic_en": "Shared everything vs shared-nothing",
+  "topic_ar": "المشاركة الكاملة مقابل عدم المشاركة",
+  "type": "tf",
+  "q_en": "Shared everything architecture is a type of system architecture sharing all the resources such as storage, memory, and processor.",
+  "q_ar": "معمارية المشاركة الكاملة (Shared everything) نوع من معماريات الأنظمة يتشارك فيه جميع الموارد مثل التخزين والذاكرة والمعالج.",
+  "answer": true,
+  "why_en": "True — verbatim definition of shared everything.",
+  "why_ar": "صحيح؛ في Shared everything تُشارك كل الموارد: التخزين والذاكرة والمعالج.",
+  "slide": 7,
+  "hot": false
+ },
+ {
+  "id": "p1-015",
+  "lecture": "p1",
+  "topic_en": "Shared everything vs shared-nothing",
+  "topic_ar": "المشاركة الكاملة مقابل عدم المشاركة",
+  "type": "tf",
+  "q_en": "Shared everything architecture improves scalability.",
+  "q_ar": "معمارية المشاركة الكاملة (Shared everything) تحسّن قابلية التوسع (scalability).",
+  "answer": false,
+  "correct_en": "Shared everything architecture is a type of system architecture sharing all the resources such as storage, memory, and processor. But this type of architecture limits scalability.",
+  "why_en": "False — shared everything architecture limits scalability.",
+  "why_ar": "خطأ؛ الشريحة تقول إن Shared everything تحدّ من (limits) قابلية التوسع.",
+  "explain_ar": "عندما يتشارك الجميع نفس الذاكرة والتخزين يحدث تزاحم على المورد نفسه، فلا يمكن التوسع بسهولة. لذلك Shared everything = limits scalability، بينما Shared-nothing = scalable.",
+  "slide": 7,
+  "hot": false
+ },
+ {
+  "id": "p1-016",
+  "lecture": "p1",
+  "topic_en": "Shared everything vs shared-nothing",
+  "topic_ar": "المشاركة الكاملة مقابل عدم المشاركة",
+  "type": "mcq",
+  "q_en": "In ____, a single memory pool is shared by all the processors for concurrent read-write access.",
+  "q_ar": "في ____، تتشارك جميع المعالجات مجمّع ذاكرة واحداً (single memory pool) للقراءة والكتابة المتزامنة.",
+  "options": [
+   {
+    "en": "Distributed Shared Memory",
+    "ar": "الذاكرة المشتركة الموزعة (Distributed Shared Memory)"
+   },
+   {
+    "en": "Symmetric Multiprocessing Architecture",
+    "ar": "معمارية المعالجة المتعددة المتماثلة (Symmetric Multiprocessing)"
+   },
+   {
+    "en": "Shared-nothing architecture",
+    "ar": "معمارية عدم المشاركة (Shared-nothing)"
+   },
+   {
+    "en": "Peer-to-peer architecture",
+    "ar": "معمارية الند للند (Peer-to-peer)"
+   }
+  ],
+  "answer": 1,
+  "why_en": "SMP uses a single memory pool shared by all processors.",
+  "why_ar": "معمارية SMP تستخدم مجمّع ذاكرة واحداً تتشاركه كل المعالجات.",
+  "explain_ar": "كلاهما تحت Shared everything لكن الفرق في عدد مجمّعات الذاكرة: SMP = مجمّع واحد (single)، DSM = مجمّعات متعددة (multiple). تذكّر: Distributed = موزعة = أكثر من مجمّع.",
+  "slide": 7,
+  "hot": false
+ },
+ {
+  "id": "p1-017",
+  "lecture": "p1",
+  "topic_en": "Shared everything vs shared-nothing",
+  "topic_ar": "المشاركة الكاملة مقابل عدم المشاركة",
+  "type": "mcq",
+  "q_en": "____ is a type of memory architecture that provides multiple memory pools for the processors.",
+  "q_ar": "____ نوع من معماريات الذاكرة يوفّر مجمّعات ذاكرة متعددة (multiple memory pools) للمعالجات.",
+  "options": [
+   {
+    "en": "Symmetric Multiprocessing",
+    "ar": "المعالجة المتعددة المتماثلة (Symmetric Multiprocessing)"
+   },
+   {
+    "en": "Batch processing",
+    "ar": "المعالجة الدفعية (Batch processing)"
+   },
+   {
+    "en": "Centralized data processing",
+    "ar": "المعالجة المركزية (Centralized data processing)"
+   },
+   {
+    "en": "Distributed Shared Memory",
+    "ar": "الذاكرة المشتركة الموزعة (Distributed Shared Memory)"
+   }
+  ],
+  "answer": 3,
+  "why_en": "Distributed Shared Memory provides multiple memory pools.",
+  "why_ar": "الذاكرة المشتركة الموزعة (DSM) هي التي توفر عدة مجمّعات ذاكرة للمعالجات.",
+  "slide": 7,
+  "hot": false
+ },
+ {
+  "id": "p1-018",
+  "lecture": "p1",
+  "topic_en": "Shared everything vs shared-nothing",
+  "topic_ar": "المشاركة الكاملة مقابل عدم المشاركة",
+  "type": "tf",
+  "q_en": "In shared-nothing architecture, each node has its own dedicated memory, storage, and disks independent of other nodes in the network.",
+  "q_ar": "في معمارية عدم المشاركة (Shared-nothing)، لكل عقدة (node) ذاكرتها وتخزينها وأقراصها المخصصة المستقلة عن العقد الأخرى في الشبكة.",
+  "answer": true,
+  "why_en": "True — that independence is why it is called shared-nothing and why it is scalable.",
+  "why_ar": "صحيح؛ كل عقدة مستقلة بمواردها، ولهذا سُميت Shared-nothing وهي قابلة للتوسع (scalable).",
+  "explain_ar": "Shared-nothing هي عكس Shared everything تماماً: هنا كل عقدة تملك مواردها الخاصة وتتصل بالبقية عبر الشبكة، فيسهل إضافة عقد جديدة (scalable).",
+  "slide": 8,
+  "hot": false
+ },
+ {
+  "id": "p1-019",
+  "lecture": "p1",
+  "topic_en": "Batch vs real-time processing",
+  "topic_ar": "المعالجة الدفعية مقابل الآنية",
+  "type": "tf",
+  "q_en": "Real-time data processing involves processing continual data flow producing the results.",
+  "q_ar": "المعالجة الآنية للبيانات (Real-time data processing) تتضمن معالجة تدفق مستمر للبيانات وإنتاج النتائج.",
+  "answer": true,
+  "why_en": "True — real-time processing handles a continual data flow.",
+  "why_ar": "صحيح؛ المعالجة الآنية تعمل على تدفق بيانات مستمر (continual data flow).",
+  "slide": 10,
+  "hot": false
+ },
+ {
+  "id": "p1-020",
+  "lecture": "p1",
+  "topic_en": "Batch vs real-time processing",
+  "topic_ar": "المعالجة الدفعية مقابل الآنية",
+  "type": "tf",
+  "q_en": "In real-time data processing, data are stored on the disk before the data is being processed.",
+  "q_ar": "في المعالجة الآنية (real-time)، تُخزَّن البيانات على القرص (disk) قبل معالجتها.",
+  "answer": false,
+  "correct_en": "Here data are processed in-memory due to the requirement to analyze the data while it is streaming. Hence data are stored on the disk after the data is being processed.",
+  "why_en": "False — data are stored on the disk after the data is processed.",
+  "why_ar": "خطأ؛ في المعالجة الآنية تُعالج البيانات في الذاكرة أولاً ثم تُخزَّن على القرص بعد المعالجة (after).",
+  "explain_ar": "البيانات المتدفقة يجب تحليلها لحظة وصولها، فلا وقت لكتابتها على القرص أولاً؛ لذلك: in-memory أولاً ثم disk بعد المعالجة. الفخ هو استبدال after بـ before.",
+  "slide": 10,
+  "hot": false
+ },
+ {
+  "id": "p1-021",
+  "lecture": "p1",
+  "topic_en": "Batch vs real-time processing",
+  "topic_ar": "المعالجة الدفعية مقابل الآنية",
+  "type": "mcq",
+  "q_en": "In real-time data processing, data are processed ____ due to the requirement to analyze the data while it is streaming.",
+  "q_ar": "في المعالجة الآنية، تُعالج البيانات ____ بسبب الحاجة إلى تحليلها أثناء تدفقها.",
+  "options": [
+   {
+    "en": "on the disk",
+    "ar": "على القرص (on the disk)"
+   },
+   {
+    "en": "in-memory",
+    "ar": "في الذاكرة (in-memory)"
+   },
+   {
+    "en": "in batches of logically connected jobs",
+    "ar": "على دفعات من مهام مترابطة منطقياً"
+   },
+   {
+    "en": "at one central location",
+    "ar": "في موقع مركزي واحد"
+   }
+  ],
+  "answer": 1,
+  "why_en": "Real-time data are processed in-memory.",
+  "why_ar": "تُعالج البيانات الآنية في الذاكرة (in-memory) لأنها تُحلَّل أثناء تدفقها.",
+  "slide": 10,
+  "hot": false
+ },
+ {
+  "id": "p1-022",
+  "lecture": "p1",
+  "topic_en": "Batch vs real-time processing",
+  "topic_ar": "المعالجة الدفعية مقابل الآنية",
+  "type": "mcq",
+  "q_en": "____ is a type of processing where series of jobs that are logically connected are executed sequentially or in parallel, and then the output of all the individual jobs are put together to give a final output.",
+  "q_ar": "____ نوع من المعالجة تُنفَّذ فيه سلسلة من المهام المترابطة منطقياً بشكل تسلسلي أو متوازٍ، ثم تُجمع مخرجات المهام الفردية لتعطي مخرجاً نهائياً.",
+  "options": [
+   {
+    "en": "Real-time data processing",
+    "ar": "المعالجة الآنية (Real-time data processing)"
+   },
+   {
+    "en": "Centralized data processing",
+    "ar": "المعالجة المركزية (Centralized data processing)"
+   },
+   {
+    "en": "Batch processing",
+    "ar": "المعالجة الدفعية (Batch processing)"
+   },
+   {
+    "en": "Data virtualization",
+    "ar": "افتراضية البيانات (Data virtualization)"
+   }
+  ],
+  "answer": 2,
+  "why_en": "This is the definition of batch processing.",
+  "why_ar": "هذا تعريف المعالجة الدفعية (Batch processing): مهام مترابطة تُنفذ ثم تُجمع مخرجاتها.",
+  "explain_ar": "الكلمات المفتاحية للدفعية: series of jobs و logically connected و put together to give a final output. أما الآنية فكلماتها: continual data flow و in-memory و streaming.",
+  "slide": 9,
+  "hot": false
+ },
+ {
+  "id": "p1-023",
+  "lecture": "p1",
+  "topic_en": "Parallel vs distributed computing",
+  "topic_ar": "الحوسبة المتوازية مقابل الموزعة",
+  "type": "tf",
+  "q_en": "In parallel computing, the execution of subtasks is carried out on multiple processors within a single machine.",
+  "q_ar": "في الحوسبة المتوازية (Parallel computing)، يتم تنفيذ المهام الفرعية على معالجات متعددة داخل جهاز واحد.",
+  "answer": true,
+  "why_en": "True — parallel computing uses multiple processors in a single machine.",
+  "why_ar": "صحيح؛ المتوازية = عدة معالجات داخل جهاز واحد (single machine).",
+  "slide": 11,
+  "hot": false
+ },
+ {
+  "id": "p1-024",
+  "lecture": "p1",
+  "topic_en": "Parallel vs distributed computing",
+  "topic_ar": "الحوسبة المتوازية مقابل الموزعة",
+  "type": "tf",
+  "q_en": "In parallel computing, the execution of subtasks takes place in separate machines networked together forming a cluster.",
+  "q_ar": "في الحوسبة المتوازية، يتم تنفيذ المهام الفرعية على أجهزة منفصلة متصلة بالشبكة مكوّنةً عنقوداً (cluster).",
+  "answer": false,
+  "correct_en": "Distributed computing, similar to parallel computing, splits up larger tasks into subtasks, but the execution takes place in separate machines networked together forming a cluster.",
+  "why_en": "False — that describes distributed computing; parallel computing runs on multiple processors within a single machine.",
+  "why_ar": "خطأ؛ هذا وصف الحوسبة الموزعة (Distributed computing). المتوازية تكون على عدة معالجات داخل جهاز واحد.",
+  "explain_ar": "كلاهما يقسم المهمة الكبيرة إلى مهام فرعية؛ الفرق فقط في مكان التنفيذ: Parallel = جهاز واحد بعدة معالجات، Distributed = أجهزة منفصلة على شبكة (cluster).",
+  "slide": [
+   11,
+   12
+  ],
+  "hot": false
+ },
+ {
+  "id": "p1-025",
+  "lecture": "p1",
+  "topic_en": "Parallel vs distributed computing",
+  "topic_ar": "الحوسبة المتوازية مقابل الموزعة",
+  "type": "mcq",
+  "q_en": "____, similar to parallel computing, splits up larger tasks into subtasks, but the execution takes place in separate machines networked together forming a cluster.",
+  "q_ar": "____، مثل الحوسبة المتوازية، تقسم المهام الكبيرة إلى مهام فرعية، لكن التنفيذ يتم على أجهزة منفصلة متصلة بالشبكة مكوّنةً عنقوداً.",
+  "options": [
+   {
+    "en": "Distributed computing",
+    "ar": "الحوسبة الموزعة (Distributed computing)"
+   },
+   {
+    "en": "Batch processing",
+    "ar": "المعالجة الدفعية (Batch processing)"
+   },
+   {
+    "en": "Symmetric multiprocessing",
+    "ar": "المعالجة المتعددة المتماثلة (Symmetric multiprocessing)"
+   },
+   {
+    "en": "Centralized data processing",
+    "ar": "المعالجة المركزية (Centralized data processing)"
+   }
+  ],
+  "answer": 0,
+  "why_en": "Distributed computing executes subtasks on separate networked machines.",
+  "why_ar": "الحوسبة الموزعة (Distributed computing) تنفّذ المهام الفرعية على أجهزة منفصلة متصلة بالشبكة.",
+  "slide": 12,
+  "hot": false
+ },
+ {
+  "id": "p1-026",
+  "lecture": "p1",
+  "topic_en": "Parallel vs distributed computing",
+  "topic_ar": "الحوسبة المتوازية مقابل الموزعة",
+  "type": "tf",
+  "q_en": "Parallel computing splits up a larger task into multiple subtasks and executes them simultaneously to increase the overall execution time.",
+  "q_ar": "الحوسبة المتوازية تقسم المهمة الكبيرة إلى مهام فرعية متعددة وتنفذها في نفس الوقت لزيادة (increase) زمن التنفيذ الكلي.",
+  "answer": false,
+  "correct_en": "Parallel computing is the process of splitting up a larger task into multiple subtasks and executing them simultaneously to reduce the overall execution time.",
+  "why_en": "False — the goal is to reduce the overall execution time.",
+  "why_ar": "خطأ؛ الهدف هو تقليل (reduce) زمن التنفيذ الكلي وليس زيادته.",
+  "slide": 11,
+  "hot": false
+ },
+ {
+  "id": "p1-027",
+  "lecture": "p1",
+  "topic_en": "Big data virtualization",
+  "topic_ar": "افتراضية البيانات الضخمة",
+  "type": "tf",
+  "q_en": "Data virtualization treats data accessed from a heterogeneous environment as a single logical entity, and its main purpose in big data is to provide a single point of access to the data aggregated from multiple sources.",
+  "q_ar": "افتراضية البيانات (Data virtualization) تعامل البيانات القادمة من بيئة غير متجانسة (heterogeneous) ككيان منطقي واحد، وهدفها الرئيسي في البيانات الضخمة توفير نقطة وصول واحدة (single point of access) للبيانات المجمّعة من مصادر متعددة.",
+  "answer": true,
+  "why_en": "True — this matches the slide definition and purpose of virtualization.",
+  "why_ar": "صحيح؛ الافتراضية تجعل المصادر المتعددة المختلفة تظهر ككيان منطقي واحد بنقطة وصول واحدة.",
+  "slide": 13,
+  "hot": false
+ },
+ {
+  "id": "p1-028",
+  "lecture": "p1",
+  "topic_en": "Big data virtualization",
+  "topic_ar": "افتراضية البيانات الضخمة",
+  "type": "tf",
+  "q_en": "Virtualization significantly increases the framework cost by assigning a set of virtual resources to each application rather than allocating dedicated physical resources.",
+  "q_ar": "الافتراضية (Virtualization) تزيد بشكل كبير تكلفة إطار العمل بتخصيص مجموعة موارد افتراضية لكل تطبيق بدلاً من تخصيص موارد مادية مخصصة.",
+  "answer": false,
+  "correct_en": "Virtualization significantly reduces the framework cost by assigning a set of virtual resources to each application rather than allocating dedicated physical resources.",
+  "why_en": "False — virtualization significantly reduces the framework cost.",
+  "why_ar": "خطأ؛ الافتراضية تقلل (reduces) التكلفة لأنها تستخدم موارد افتراضية بدل موارد مادية مخصصة.",
+  "slide": 13,
+  "hot": false
+ },
+ {
+  "id": "p1-029",
+  "lecture": "p1",
+  "topic_en": "Big data virtualization",
+  "topic_ar": "افتراضية البيانات الضخمة",
+  "type": "mcq",
+  "q_en": "A ____ is a software representation of a physical machine that can perform functions similar to a physical machine.",
+  "q_ar": "____ هو تمثيل برمجي لجهاز مادي يمكنه أداء وظائف مشابهة للجهاز المادي.",
+  "options": [
+   {
+    "en": "VM (virtual machine)",
+    "ar": "الآلة الافتراضية (VM)"
+   },
+   {
+    "en": "node",
+    "ar": "العقدة (node)"
+   },
+   {
+    "en": "cluster",
+    "ar": "العنقود (cluster)"
+   },
+   {
+    "en": "host physical system",
+    "ar": "النظام المادي المضيف (host physical system)"
+   }
+  ],
+  "answer": 0,
+  "why_en": "A VM is a software representation of a physical machine.",
+  "why_ar": "الآلة الافتراضية (VM) هي التمثيل البرمجي للجهاز المادي.",
+  "slide": 13,
+  "hot": false
+ },
+ {
+  "id": "p1-030",
+  "lecture": "p1",
+  "topic_en": "Big data virtualization",
+  "topic_ar": "افتراضية البيانات الضخمة",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT one of the three main attributes of virtualization?",
+  "q_ar": "أيٌّ مما يلي ليس من الخصائص الرئيسية الثلاث للافتراضية (virtualization)؟",
+  "options": [
+   {
+    "en": "Encapsulation",
+    "ar": "التغليف (Encapsulation)"
+   },
+   {
+    "en": "Partitioning",
+    "ar": "التقسيم (Partitioning)"
+   },
+   {
+    "en": "Isolation",
+    "ar": "العزل (Isolation)"
+   },
+   {
+    "en": "Replication",
+    "ar": "النسخ المتماثل (Replication)"
+   }
+  ],
+  "answer": 3,
+  "why_en": "The three attributes are Encapsulation, Partitioning and Isolation.",
+  "why_ar": "الخصائص الثلاث هي: Encapsulation و Partitioning و Isolation فقط.",
+  "explain_ar": "احفظها بالحروف E-P-I: Encapsulation (الآلة كملف واحد)، Partitioning (تقسيم العتاد إلى أقسام منطقية لكل منها نظام تشغيل)، Isolation (عزل الآلات عن بعضها وعن المضيف).",
+  "slide": 14,
+  "hot": false
+ },
+ {
+  "id": "p1-031",
+  "lecture": "p1",
+  "topic_en": "Big data virtualization",
+  "topic_ar": "افتراضية البيانات الضخمة",
+  "type": "mcq",
+  "q_en": "____ is a technique where the VM is stored or represented as a single file, and hence it can be identified easily based on the service it provides.",
+  "q_ar": "____ تقنية تُخزَّن فيها الآلة الافتراضية (VM) أو تُمثَّل كملف واحد، وبالتالي يسهل التعرف عليها بناءً على الخدمة التي تقدمها.",
+  "options": [
+   {
+    "en": "Partitioning",
+    "ar": "التقسيم (Partitioning)"
+   },
+   {
+    "en": "Isolation",
+    "ar": "العزل (Isolation)"
+   },
+   {
+    "en": "Encapsulation",
+    "ar": "التغليف (Encapsulation)"
+   },
+   {
+    "en": "Virtualization of storage",
+    "ar": "افتراضية التخزين"
+   }
+  ],
+  "answer": 2,
+  "why_en": "Encapsulation represents the VM as a single file.",
+  "why_ar": "التغليف (Encapsulation) يعني أن الآلة الافتراضية تُحفظ كملف واحد.",
+  "explain_ar": "تغليف = كبسولة واحدة = ملف واحد (single file). أما Partitioning فهو تقسيم العتاد، و Isolation هو عزل الآلات عن بعضها وعن المضيف.",
+  "slide": 14,
+  "hot": false
+ },
+ {
+  "id": "p1-032",
+  "lecture": "p1",
+  "topic_en": "Big data virtualization",
+  "topic_ar": "افتراضية البيانات الضخمة",
+  "type": "tf",
+  "q_en": "Isolation is a technique that partitions the physical hardware of a host machine into multiple logical partitions to be run by the VMs each with separate operating systems.",
+  "q_ar": "العزل (Isolation) تقنية تقسّم العتاد المادي للجهاز المضيف إلى أقسام منطقية متعددة تشغّلها الآلات الافتراضية، لكل منها نظام تشغيل منفصل.",
+  "answer": false,
+  "correct_en": "Partitioning is a technique that partitions the physical hardware of a host machine into multiple logical partitions to be run by the VMs each with separate operating systems.",
+  "why_en": "False — this is Partitioning; Isolation means VMs are isolated from each other and from the host physical system.",
+  "why_ar": "خطأ؛ هذا تعريف التقسيم (Partitioning). أما العزل (Isolation) فهو عزل الآلات الافتراضية عن بعضها وعن النظام المادي المضيف.",
+  "slide": 14,
+  "hot": false
+ },
+ {
+  "id": "p1-033",
+  "lecture": "p1",
+  "topic_en": "Cloud computing for big data",
+  "topic_ar": "الحوسبة السحابية للبيانات الضخمة",
+  "type": "tf",
+  "q_en": "Cloud computing is the delivery of shared computing resources and the stored data on demand, enabling organizations to pay only for the resources consumed and services utilized.",
+  "q_ar": "الحوسبة السحابية (Cloud computing) هي تقديم موارد حوسبة مشتركة والبيانات المخزنة عند الطلب (on demand)، مما يمكّن المؤسسات من الدفع فقط مقابل الموارد المستهلكة والخدمات المستخدمة.",
+  "answer": true,
+  "why_en": "True — this matches the slide definition and its cost-effectiveness.",
+  "why_ar": "صحيح؛ السحابة تقدم الموارد عند الطلب، وتدفع فقط مقابل ما تستهلكه (pay only for what you consume).",
+  "slide": 15,
+  "hot": false
+ },
+ {
+  "id": "p1-034",
+  "lecture": "p1",
+  "topic_en": "Cloud computing for big data",
+  "topic_ar": "الحوسبة السحابية للبيانات الضخمة",
+  "type": "tf",
+  "q_en": "In private cloud, services are provided over the Internet by third-party vendors.",
+  "q_ar": "في السحابة الخاصة (Private cloud)، تُقدَّم الخدمات عبر الإنترنت من قبل موردين خارجيين (third-party vendors).",
+  "answer": false,
+  "correct_en": "In public cloud, services are provided over the Internet by third-party vendors.",
+  "why_en": "False — this describes the public cloud; a private cloud is owned exclusively by a single company.",
+  "why_ar": "خطأ؛ هذا وصف السحابة العامة (Public cloud). السحابة الخاصة مملوكة حصرياً لشركة واحدة تدير مركز بياناتها.",
+  "explain_ar": "Public = موردون خارجيون عبر الإنترنت. Private = شركة واحدة تملكها وتدير مركز بياناتها بنفسها. Hybrid = خليط من الاثنين يجمع مزاياهما.",
+  "slide": 16,
+  "hot": false
+ },
+ {
+  "id": "p1-035",
+  "lecture": "p1",
+  "topic_en": "Cloud computing for big data",
+  "topic_ar": "الحوسبة السحابية للبيانات الضخمة",
+  "type": "mcq",
+  "q_en": "A private cloud is also known as:",
+  "q_ar": "السحابة الخاصة (Private cloud) تُعرف أيضاً باسم:",
+  "options": [
+   {
+    "en": "Public cloud or Internet cloud",
+    "ar": "السحابة العامة أو سحابة الإنترنت"
+   },
+   {
+    "en": "Corporate cloud or internal cloud",
+    "ar": "سحابة الشركة أو السحابة الداخلية (Corporate / internal cloud)"
+   },
+   {
+    "en": "Hybrid cloud or combined cloud",
+    "ar": "السحابة الهجينة أو المدمجة"
+   },
+   {
+    "en": "Third-party cloud or vendor cloud",
+    "ar": "سحابة الطرف الثالث أو سحابة المورد"
+   }
+  ],
+  "answer": 1,
+  "why_en": "A private cloud is also known as corporate cloud or internal cloud.",
+  "why_ar": "السحابة الخاصة تُسمى أيضاً corporate cloud أو internal cloud.",
+  "slide": 16,
+  "hot": false
+ },
+ {
+  "id": "p1-036",
+  "lecture": "p1",
+  "topic_en": "Cloud computing for big data",
+  "topic_ar": "الحوسبة السحابية للبيانات الضخمة",
+  "type": "tf",
+  "q_en": "Hybrid clouds are a combination of the public and the private cloud where the advantages of both types of cloud environments are clubbed.",
+  "q_ar": "السحب الهجينة (Hybrid clouds) مزيج من السحابة العامة والخاصة تُجمع فيه مزايا البيئتين.",
+  "answer": true,
+  "why_en": "True — hybrid combines public and private clouds.",
+  "why_ar": "صحيح؛ الهجينة = عامة + خاصة مع الجمع بين مزايا النوعين.",
+  "slide": 16,
+  "hot": false
+ },
+ {
+  "id": "p1-037",
+  "lecture": "p1",
+  "topic_en": "Cloud computing for big data",
+  "topic_ar": "الحوسبة السحابية للبيانات الضخمة",
+  "type": "mcq",
+  "q_en": "The cloud offers three different services, namely:",
+  "q_ar": "تقدم السحابة ثلاث خدمات مختلفة، هي:",
+  "options": [
+   {
+    "en": "SaaS, PaaS, and IaaS",
+    "ar": "SaaS و PaaS و IaaS"
+   },
+   {
+    "en": "Public, private, and hybrid",
+    "ar": "عامة وخاصة وهجينة (Public, private, hybrid)"
+   },
+   {
+    "en": "HDFS, YARN, and MapReduce",
+    "ar": "HDFS و YARN و MapReduce"
+   },
+   {
+    "en": "Encapsulation, partitioning, and isolation",
+    "ar": "التغليف والتقسيم والعزل"
+   }
+  ],
+  "answer": 0,
+  "why_en": "The three cloud services are software, platform and infrastructure as a service.",
+  "why_ar": "خدمات السحابة: SaaS (برمجيات كخدمة) و PaaS (منصة كخدمة) و IaaS (بنية تحتية كخدمة).",
+  "explain_ar": "لا تخلط بين أنواع السحابة (types) وهي Public/Private/Hybrid، وخدمات السحابة (services) وهي SaaS/PaaS/IaaS. السؤال يقول services إذن الجواب ما ينتهي بـ aaS.",
+  "slide": 17,
+  "hot": false
+ },
+ {
+  "id": "p1-038",
+  "lecture": "p1",
+  "topic_en": "Cloud computing for big data",
+  "topic_ar": "الحوسبة السحابية للبيانات الضخمة",
+  "type": "mcq",
+  "q_en": "Cloud storage adopts:",
+  "q_ar": "التخزين السحابي (Cloud storage) يعتمد على:",
+  "options": [
+   {
+    "en": "a centralized file system and a relational database",
+    "ar": "نظام ملفات مركزي وقاعدة بيانات علائقية"
+   },
+   {
+    "en": "a single shared memory pool and a centralized database",
+    "ar": "مجمّع ذاكرة مشترك واحد وقاعدة بيانات مركزية"
+   },
+   {
+    "en": "a distributed file system and a centralized relational database",
+    "ar": "نظام ملفات موزع وقاعدة بيانات علائقية مركزية"
+   },
+   {
+    "en": "a distributed file system and a distributed NoSQL database",
+    "ar": "نظام ملفات موزع (distributed file system) وقاعدة بيانات NoSQL موزعة"
+   }
+  ],
+  "answer": 3,
+  "why_en": "Cloud storage adopts a distributed file system and a distributed (NoSQL) database.",
+  "why_ar": "التخزين السحابي = نظام ملفات موزع لتخزين الملفات + قاعدة بيانات NoSQL موزعة للمعالجة والتحليل.",
+  "explain_ar": "كل شيء في التخزين السحابي موزع (distributed): الملفات تُخزن بنظام ملفات موزع، والمعالجة والتحليل تدعمهما قاعدة NoSQL موزعة. أي خيار فيه centralized أو relational خاطئ.",
+  "slide": 18,
+  "hot": false
+ },
+ {
+  "id": "p1-039",
+  "lecture": "p1",
+  "topic_en": "Cloud computing for big data",
+  "topic_ar": "الحوسبة السحابية للبيانات الضخمة",
+  "type": "mcq",
+  "q_en": "To overcome the problems faced with the storage and analysis of Google web pages, Google developed:",
+  "q_ar": "للتغلب على مشاكل تخزين وتحليل صفحات الويب في Google، طوّرت Google:",
+  "options": [
+   {
+    "en": "Hadoop and the Nutch search engine",
+    "ar": "Hadoop ومحرك البحث Nutch"
+   },
+   {
+    "en": "Google File System and the MapReduce distributed programming model",
+    "ar": "نظام ملفات Google (Google File System) ونموذج البرمجة الموزعة MapReduce"
+   },
+   {
+    "en": "HBase and Hive",
+    "ar": "HBase و Hive"
+   },
+   {
+    "en": "YARN and HDFS",
+    "ar": "YARN و HDFS"
+   }
+  ],
+  "answer": 1,
+  "why_en": "Google developed Google File System and MapReduce based on it.",
+  "why_ar": "طورت Google نظام GFS ونموذج MapReduce المبني عليه.",
+  "explain_ar": "انتبه للمالك: Google طورت GFS و MapReduce، بينما Hadoop طوّره Doug Cutting و Michael J. Cafarella بتمويل Yahoo. خلط المالك (Google ↔ Yahoo) فخ معتاد.",
+  "slide": 18,
+  "hot": false
+ },
+ {
+  "id": "p1-040",
+  "lecture": "p1",
+  "topic_en": "Apache Hadoop basics and history",
+  "topic_ar": "أساسيات Apache Hadoop وتاريخه",
+  "type": "tf",
+  "q_en": "Apache Hadoop is an open-source framework written in Java that supports processing of large data sets in streaming access pattern across clusters in a distributed computing environment.",
+  "q_ar": "Apache Hadoop إطار عمل مفتوح المصدر (open-source) مكتوب بلغة Java يدعم معالجة مجموعات البيانات الكبيرة بنمط وصول تدفقي (streaming access pattern) عبر العناقيد في بيئة حوسبة موزعة.",
+  "answer": true,
+  "why_en": "True — verbatim definition of Apache Hadoop.",
+  "why_ar": "صحيح؛ Hadoop مفتوح المصدر، مكتوب بـ Java، ويستخدم نمط الوصول التدفقي.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "p1-041",
+  "lecture": "p1",
+  "topic_en": "Apache Hadoop basics and history",
+  "topic_ar": "أساسيات Apache Hadoop وتاريخه",
+  "type": "tf",
+  "q_en": "Hadoop files are written once and read many times, and the contents of the files can be changed.",
+  "q_ar": "ملفات Hadoop تُكتب مرة واحدة وتُقرأ مرات عديدة، ويمكن تغيير محتويات الملفات.",
+  "answer": false,
+  "correct_en": "Hadoop files are written once and read many times. The contents of the files cannot be changed.",
+  "why_en": "False — the contents of Hadoop files cannot be changed.",
+  "why_ar": "خطأ؛ ملفات Hadoop تُكتب مرة وتُقرأ مرات (write once, read many)، ولا يمكن تغيير محتوياتها.",
+  "explain_ar": "مبدأ Write Once Read Many (WORM): تكتب الملف مرة واحدة ثم تقرؤه كثيراً، ولا تعدّله. الفخ هو تحويل cannot إلى can.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "p1-042",
+  "lecture": "p1",
+  "topic_en": "Apache Hadoop basics and history",
+  "topic_ar": "أساسيات Apache Hadoop وتاريخه",
+  "type": "mcq",
+  "q_en": "Hadoop can store a large volume of which kinds of data in a distributed file system (DFS)?",
+  "q_ar": "يمكن لـ Hadoop تخزين حجم كبير من أي أنواع البيانات في نظام ملفات موزع (DFS)؟",
+  "options": [
+   {
+    "en": "Structured data only",
+    "ar": "البيانات المهيكلة فقط"
+   },
+   {
+    "en": "Structured and semi-structured data only",
+    "ar": "البيانات المهيكلة وشبه المهيكلة فقط"
+   },
+   {
+    "en": "Structured, semi-structured, and unstructured data",
+    "ar": "البيانات المهيكلة وشبه المهيكلة وغير المهيكلة"
+   },
+   {
+    "en": "Unstructured data only",
+    "ar": "البيانات غير المهيكلة فقط"
+   }
+  ],
+  "answer": 2,
+  "why_en": "Hadoop stores structured, semi-structured and unstructured data.",
+  "why_ar": "يخزّن Hadoop الأنواع الثلاثة: المهيكلة وشبه المهيكلة وغير المهيكلة.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "p1-043",
+  "lecture": "p1",
+  "topic_en": "Apache Hadoop basics and history",
+  "topic_ar": "أساسيات Apache Hadoop وتاريخه",
+  "type": "mcq",
+  "q_en": "Large number of computers interconnected and working together as a single system is called a ____.",
+  "q_ar": "العدد الكبير من الحواسيب المترابطة التي تعمل معاً كنظام واحد يُسمى ____.",
+  "options": [
+   {
+    "en": "node",
+    "ar": "عقدة (node)"
+   },
+   {
+    "en": "virtual machine",
+    "ar": "آلة افتراضية (virtual machine)"
+   },
+   {
+    "en": "DataNode",
+    "ar": "عقدة بيانات (DataNode)"
+   },
+   {
+    "en": "cluster",
+    "ar": "عنقود (cluster)"
+   }
+  ],
+  "answer": 3,
+  "why_en": "Interconnected computers working as a single system form a cluster.",
+  "why_ar": "الحواسيب المترابطة العاملة كنظام واحد تُسمى عنقوداً (cluster)؛ وكل جهاز فيه يسمى node.",
+  "slide": 20,
+  "hot": false
+ },
+ {
+  "id": "p1-044",
+  "lecture": "p1",
+  "topic_en": "Apache Hadoop basics and history",
+  "topic_ar": "أساسيات Apache Hadoop وتاريخه",
+  "type": "tf",
+  "q_en": "Hadoop is designed to scale up from single servers to hundreds of machines, each offering local computation and storage.",
+  "q_ar": "صُمم Hadoop للتوسع من خوادم مفردة إلى مئات (hundreds) الأجهزة، يوفر كل منها حوسبة وتخزيناً محليين.",
+  "answer": false,
+  "correct_en": "It is designed to scale up from single servers to thousands of machines, each offering local computation and storage.",
+  "why_en": "False — Hadoop scales from single servers to thousands of machines.",
+  "why_ar": "خطأ؛ الشريحة تقول إلى آلاف (thousands) الأجهزة وليس مئات.",
+  "slide": 21,
+  "hot": false
+ },
+ {
+  "id": "p1-045",
+  "lecture": "p1",
+  "topic_en": "Apache Hadoop basics and history",
+  "topic_ar": "أساسيات Apache Hadoop وتاريخه",
+  "type": "tf",
+  "q_en": "Hadoop runs applications using the MapReduce algorithm, where the data is processed in parallel on different CPU nodes.",
+  "q_ar": "يشغّل Hadoop التطبيقات باستخدام خوارزمية MapReduce، حيث تُعالج البيانات بالتوازي على عقد معالجة (CPU nodes) مختلفة.",
+  "answer": true,
+  "why_en": "True — MapReduce is how Hadoop processes data in parallel.",
+  "why_ar": "صحيح؛ MapReduce هو أسلوب Hadoop في المعالجة المتوازية على عقد مختلفة.",
+  "explain_ar": "Hadoop له جزءان رئيسيان: HDFS للتخزين و MapReduce للمعالجة. MapReduce يقسم العمل على العقد لتُعالج البيانات بالتوازي (in parallel) لا بالتسلسل.",
+  "slide": 22,
+  "hot": true
+ },
+ {
+  "id": "p1-046",
+  "lecture": "p1",
+  "topic_en": "Apache Hadoop basics and history",
+  "topic_ar": "أساسيات Apache Hadoop وتاريخه",
+  "type": "mcq",
+  "q_en": "In 2005, Doug Cutting and Michael J. Cafarella developed Hadoop to support distribution for the ____ project.",
+  "q_ar": "في عام 2005، طوّر Doug Cutting و Michael J. Cafarella نظام Hadoop لدعم التوزيع لمشروع ____.",
+  "options": [
+   {
+    "en": "Nutch search engine",
+    "ar": "محرك البحث Nutch"
+   },
+   {
+    "en": "Google File System",
+    "ar": "نظام ملفات Google"
+   },
+   {
+    "en": "Apache Hive",
+    "ar": "Apache Hive"
+   },
+   {
+    "en": "ZooKeeper",
+    "ar": "ZooKeeper"
+   }
+  ],
+  "answer": 0,
+  "why_en": "Hadoop was developed for the Nutch search engine project.",
+  "why_ar": "طُوّر Hadoop لدعم مشروع محرك البحث Nutch.",
+  "slide": 23,
+  "hot": false
+ },
+ {
+  "id": "p1-047",
+  "lecture": "p1",
+  "topic_en": "Apache Hadoop basics and history",
+  "topic_ar": "أساسيات Apache Hadoop وتاريخه",
+  "type": "mcq",
+  "q_en": "The Hadoop project was funded by ____, which gave it to Apache Software Foundation in 2006.",
+  "q_ar": "مشروع Hadoop موّلته ____، والتي سلّمته إلى مؤسسة Apache للبرمجيات (Apache Software Foundation) عام 2006.",
+  "options": [
+   {
+    "en": "Google",
+    "ar": "Google"
+   },
+   {
+    "en": "Yahoo",
+    "ar": "Yahoo"
+   },
+   {
+    "en": "Nutch",
+    "ar": "Nutch"
+   },
+   {
+    "en": "Doug Cutting",
+    "ar": "Doug Cutting"
+   }
+  ],
+  "answer": 1,
+  "why_en": "Yahoo funded Hadoop and gave it to Apache in 2006.",
+  "why_ar": "Yahoo هي الممولة، وسلّمت المشروع إلى Apache عام 2006.",
+  "explain_ar": "التسلسل الزمني: 2005 تطوير Hadoop على يد Doug Cutting و Michael J. Cafarella لمشروع Nutch بتمويل Yahoo ← 2006 Yahoo تعطي المشروع لـ Apache. Google طوّرت GFS و MapReduce لكنها ليست ممولة Hadoop.",
+  "slide": 23,
+  "hot": false
+ },
+ {
+  "id": "p1-048",
+  "lecture": "p1",
+  "topic_en": "Hadoop modules and MapReduce",
+  "topic_ar": "وحدات Hadoop و MapReduce",
+  "type": "mcq",
+  "q_en": "____ is a framework for job scheduling and cluster resource management.",
+  "q_ar": "____ إطار عمل لجدولة المهام (job scheduling) وإدارة موارد العنقود (cluster resource management).",
+  "options": [
+   {
+    "en": "Hadoop Common",
+    "ar": "Hadoop Common"
+   },
+   {
+    "en": "Hadoop YARN",
+    "ar": "Hadoop YARN"
+   },
+   {
+    "en": "HDFS",
+    "ar": "HDFS"
+   },
+   {
+    "en": "Hadoop MapReduce",
+    "ar": "Hadoop MapReduce"
+   }
+  ],
+  "answer": 1,
+  "why_en": "YARN handles job scheduling and cluster resource management.",
+  "why_ar": "YARN هو المسؤول عن جدولة المهام وإدارة موارد العنقود.",
+  "explain_ar": "الوحدات الأربع ووظائفها: Common = مكتبات Java وأدوات، YARN = جدولة المهام وإدارة الموارد، HDFS = نظام ملفات موزع بإنتاجية عالية، MapReduce = معالجة متوازية مبنية على YARN.",
+  "slide": 24,
+  "hot": false
+ },
+ {
+  "id": "p1-049",
+  "lecture": "p1",
+  "topic_en": "Hadoop modules and MapReduce",
+  "topic_ar": "وحدات Hadoop و MapReduce",
+  "type": "tf",
+  "q_en": "Hadoop Common contains Java libraries and utilities required by other Hadoop modules.",
+  "q_ar": "تحتوي Hadoop Common على مكتبات وأدوات Java تحتاجها وحدات Hadoop الأخرى.",
+  "answer": true,
+  "why_en": "True — Hadoop Common is the Java libraries and utilities module.",
+  "why_ar": "صحيح؛ Hadoop Common هي مكتبات Java وأدواتها، وتحتوي ملفات وسكربتات تشغيل Hadoop.",
+  "slide": 24,
+  "hot": false
+ },
+ {
+  "id": "p1-050",
+  "lecture": "p1",
+  "topic_en": "Hadoop modules and MapReduce",
+  "topic_ar": "وحدات Hadoop و MapReduce",
+  "type": "tf",
+  "q_en": "Hadoop Distributed File System (HDFS) is a distributed file system that provides high-throughput access to application data.",
+  "q_ar": "نظام الملفات الموزع في Hadoop (HDFS) نظام ملفات موزع يوفر وصولاً عالي الإنتاجية (high-throughput) إلى بيانات التطبيقات.",
+  "answer": true,
+  "why_en": "True — HDFS provides high-throughput access to application data.",
+  "why_ar": "صحيح؛ HDFS هو نظام الملفات الموزع ويوفر وصولاً عالي الإنتاجية لبيانات التطبيقات.",
+  "slide": 24,
+  "hot": false
+ },
+ {
+  "id": "p1-051",
+  "lecture": "p1",
+  "topic_en": "Hadoop modules and MapReduce",
+  "topic_ar": "وحدات Hadoop و MapReduce",
+  "type": "tf",
+  "q_en": "Hadoop MapReduce is an HDFS-based system for parallel processing of large data sets.",
+  "q_ar": "Hadoop MapReduce نظام مبني على HDFS للمعالجة المتوازية لمجموعات البيانات الكبيرة.",
+  "answer": false,
+  "correct_en": "Hadoop MapReduce: This is YARN-based system for parallel processing of large data sets.",
+  "why_en": "False — Hadoop MapReduce is a YARN-based system.",
+  "why_ar": "خطأ؛ الشريحة تقول إن MapReduce نظام مبني على YARN (YARN-based) وليس HDFS.",
+  "explain_ar": "MapReduce يحتاج من يجدول مهامه ويوزع الموارد عليه، وهذا دور YARN؛ لذلك هو YARN-based. صحيح أنه يقرأ البيانات من HDFS، لكن التعريف في الشريحة: YARN-based.",
+  "slide": 24,
+  "hot": true
+ },
+ {
+  "id": "p1-052",
+  "lecture": "p1",
+  "topic_en": "Hadoop modules and MapReduce",
+  "topic_ar": "وحدات Hadoop و MapReduce",
+  "type": "mcq",
+  "q_en": "MapReduce abstracts the data flow of running a parallel program on a distributed computing system by providing users with two interfaces in the form of two functions:",
+  "q_ar": "يُجرِّد MapReduce تدفق بيانات تشغيل برنامج متوازٍ على نظام حوسبة موزع بتزويد المستخدمين بواجهتين على شكل دالتين هما:",
+  "options": [
+   {
+    "en": "Map and Reduce",
+    "ar": "Map و Reduce"
+   },
+   {
+    "en": "Split and Merge",
+    "ar": "Split و Merge"
+   },
+   {
+    "en": "Read and Write",
+    "ar": "Read و Write"
+   },
+   {
+    "en": "Sort and Classify",
+    "ar": "Sort و Classify"
+   }
+  ],
+  "answer": 0,
+  "why_en": "MapReduce gives users two functions: Map and Reduce.",
+  "why_ar": "MapReduce يقدم للمستخدم دالتين فقط: Map و Reduce، ومنها جاء اسمه.",
+  "slide": 25,
+  "hot": true
+ },
+ {
+  "id": "p1-053",
+  "lecture": "p1",
+  "topic_en": "Hadoop architecture and running a job",
+  "topic_ar": "معمارية Hadoop وتشغيل مهمة",
+  "type": "tf",
+  "q_en": "In Hadoop architecture, the master node runs the JobTracker and the DataNode, which holds the metadata.",
+  "q_ar": "في معمارية Hadoop، تشغّل العقدة الرئيسية (master) الـ JobTracker والـ DataNode التي تحتفظ بالبيانات الوصفية (metadata).",
+  "answer": false,
+  "correct_en": "In Hadoop architecture, the master node runs the JobTracker (MapReduce engine layer) and the NameNode with the metadata (HDFS layer).",
+  "why_en": "False — the master runs the JobTracker and the NameNode, which holds the metadata.",
+  "why_ar": "خطأ؛ العقدة الرئيسية تشغّل JobTracker و NameNode، والـ NameNode هي التي تحمل الـ metadata. أما DataNode فتحمل الكتل (blocks) في العقد التابعة.",
+  "explain_ar": "ثنائيات الشكل: Master = JobTracker + NameNode (metadata)، Slave = TaskTracker + DataNode (blocks). الكلمة Job/Name للرئيس، و Task/Data للتابع.",
+  "slide": 26,
+  "hot": false
+ },
+ {
+  "id": "p1-054",
+  "lecture": "p1",
+  "topic_en": "Hadoop architecture and running a job",
+  "topic_ar": "معمارية Hadoop وتشغيل مهمة",
+  "type": "tf",
+  "q_en": "In Hadoop architecture, each slave node runs a TaskTracker in the MapReduce engine layer and a DataNode holding blocks in the HDFS layer.",
+  "q_ar": "في معمارية Hadoop، تشغّل كل عقدة تابعة (slave) الـ TaskTracker في طبقة محرك MapReduce والـ DataNode التي تحمل الكتل (blocks) في طبقة HDFS.",
+  "answer": true,
+  "why_en": "True — slaves run TaskTracker and DataNode with blocks.",
+  "why_ar": "صحيح؛ العقد التابعة تشغّل TaskTracker (لمهام map/reduce) و DataNode (لتخزين الكتل).",
+  "slide": 26,
+  "hot": false
+ },
+ {
+  "id": "p1-055",
+  "lecture": "p1",
+  "topic_en": "Hadoop architecture and running a job",
+  "topic_ar": "معمارية Hadoop وتشغيل مهمة",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT one of the three components that contribute in running a job in Hadoop?",
+  "q_ar": "أيٌّ مما يلي ليس من المكونات الثلاثة التي تساهم في تشغيل مهمة (job) في Hadoop؟",
+  "options": [
+   {
+    "en": "User node",
+    "ar": "عقدة المستخدم (User node)"
+   },
+   {
+    "en": "JobTracker",
+    "ar": "JobTracker"
+   },
+   {
+    "en": "Several TaskTrackers",
+    "ar": "عدة TaskTrackers"
+   },
+   {
+    "en": "Rack",
+    "ar": "الحامل (Rack)"
+   }
+  ],
+  "answer": 3,
+  "why_en": "The three components are the user node, the JobTracker and several TaskTrackers.",
+  "why_ar": "المكونات الثلاثة: user node و JobTracker وعدة TaskTrackers؛ أما Rack فهو جزء من شكل المعمارية فقط.",
+  "slide": 27,
+  "hot": false
+ },
+ {
+  "id": "p1-056",
+  "lecture": "p1",
+  "topic_en": "Hadoop architecture and running a job",
+  "topic_ar": "معمارية Hadoop وتشغيل مهمة",
+  "type": "mcq",
+  "q_en": "What is the correct order of the data flow of running a MapReduce job in Hadoop?",
+  "q_ar": "ما الترتيب الصحيح لتدفق البيانات عند تشغيل مهمة MapReduce في Hadoop؟",
+  "options": [
+   {
+    "en": "Task assignment → Job submission → Task execution → Task running check",
+    "ar": "إسناد المهام ← تقديم المهمة ← تنفيذ المهام ← فحص تشغيل المهام"
+   },
+   {
+    "en": "Job submission → Task execution → Task assignment → Task running check",
+    "ar": "تقديم المهمة ← تنفيذ المهام ← إسناد المهام ← فحص تشغيل المهام"
+   },
+   {
+    "en": "Job submission → Task assignment → Task execution → Task running check",
+    "ar": "تقديم المهمة (Job submission) ← إسناد المهام (Task assignment) ← تنفيذ المهام (Task execution) ← فحص تشغيل المهام (Task running check)"
+   },
+   {
+    "en": "Task running check → Job submission → Task assignment → Task execution",
+    "ar": "فحص تشغيل المهام ← تقديم المهمة ← إسناد المهام ← تنفيذ المهام"
+   }
+  ],
+  "answer": 2,
+  "why_en": "The flow is job submission, task assignment, task execution, then task running check.",
+  "why_ar": "الترتيب: تقديم المهمة ← إسنادها ← تنفيذها ← فحص تشغيلها.",
+  "explain_ar": "منطقياً: المستخدم يقدّم المهمة لـ JobTracker أولاً، ثم يوزعها JobTracker على TaskTrackers، ثم تُنفَّذ، ثم يتابع JobTracker تشغيلها عبر نبضات (heartbeat).",
+  "slide": 27,
+  "hot": false
+ },
+ {
+  "id": "p1-057",
+  "lecture": "p1",
+  "topic_en": "Hadoop architecture and running a job",
+  "topic_ar": "معمارية Hadoop وتشغيل مهمة",
+  "type": "mcq",
+  "q_en": "While running a MapReduce job, TaskTrackers send a heartbeat back to the:",
+  "q_ar": "أثناء تشغيل مهمة MapReduce، ترسل الـ TaskTrackers نبضة (heartbeat) إلى:",
+  "options": [
+   {
+    "en": "User node",
+    "ar": "عقدة المستخدم (User node)"
+   },
+   {
+    "en": "DataNode",
+    "ar": "DataNode"
+   },
+   {
+    "en": "Rack",
+    "ar": "الحامل (Rack)"
+   },
+   {
+    "en": "JobTracker",
+    "ar": "JobTracker"
+   }
+  ],
+  "answer": 3,
+  "why_en": "TaskTrackers send heartbeats to the JobTracker, which assigns their tasks.",
+  "why_ar": "ترسل TaskTrackers النبضات إلى JobTracker الذي أسند إليها المهام، ليتأكد أنها تعمل.",
+  "slide": 27,
+  "hot": false
+ },
+ {
+  "id": "p1-058",
+  "lecture": "p1",
+  "topic_en": "Hadoop ecosystem and advantages",
+  "topic_ar": "منظومة Hadoop ومزاياه",
+  "type": "mcq",
+  "q_en": "In the Hadoop ecosystem, Pig, Hive, Sqoop, and Avro belong to the:",
+  "q_ar": "في منظومة Hadoop (Hadoop ecosystem)، تنتمي Pig و Hive و Sqoop و Avro إلى:",
+  "options": [
+   {
+    "en": "Data Access Framework",
+    "ar": "إطار الوصول إلى البيانات (Data Access Framework)"
+   },
+   {
+    "en": "Orchestration Framework",
+    "ar": "إطار التنسيق (Orchestration Framework)"
+   },
+   {
+    "en": "Data Storage Framework",
+    "ar": "إطار تخزين البيانات (Data Storage Framework)"
+   },
+   {
+    "en": "Data Processing Framework",
+    "ar": "إطار معالجة البيانات (Data Processing Framework)"
+   }
+  ],
+  "answer": 0,
+  "why_en": "Pig, Hive, Sqoop and Avro form the Data Access Framework.",
+  "why_ar": "Pig و Hive و Sqoop و Avro هي طبقة الوصول إلى البيانات (Data Access).",
+  "explain_ar": "طبقات المنظومة من الأسفل: الخوادم ← Linux ← JVM ← HDFS (تخزين) + MapReduce (معالجة) ← الشبكة ← Data Access (Pig, Hive, Sqoop, Avro) ← Orchestration (HBase, Chukwa, Flume, ZooKeeper) ← تطبيقات BI.",
+  "slide": 28,
+  "hot": false
+ },
+ {
+  "id": "p1-059",
+  "lecture": "p1",
+  "topic_en": "Hadoop ecosystem and advantages",
+  "topic_ar": "منظومة Hadoop ومزاياه",
+  "type": "tf",
+  "q_en": "In the Hadoop ecosystem, HBase, Chukwa, Flume, and ZooKeeper belong to the Data Access Framework.",
+  "q_ar": "في منظومة Hadoop، تنتمي HBase و Chukwa و Flume و ZooKeeper إلى إطار الوصول إلى البيانات (Data Access Framework).",
+  "answer": false,
+  "correct_en": "In the Hadoop ecosystem, HBase, Chukwa, Flume, and ZooKeeper belong to the Orchestration Framework.",
+  "why_en": "False — they belong to the Orchestration Framework.",
+  "why_ar": "خطأ؛ هذه الأدوات تنتمي إلى إطار التنسيق (Orchestration Framework)، أما Data Access فهي Pig و Hive و Sqoop و Avro.",
+  "slide": 28,
+  "hot": false
+ },
+ {
+  "id": "p1-060",
+  "lecture": "p1",
+  "topic_en": "Hadoop ecosystem and advantages",
+  "topic_ar": "منظومة Hadoop ومزاياه",
+  "type": "mcq",
+  "q_en": "Which of the following is NOT an advantage of Hadoop?",
+  "q_ar": "أيٌّ مما يلي ليس من مزايا Hadoop؟",
+  "options": [
+   {
+    "en": "Servers can be added or removed from the cluster dynamically",
+    "ar": "يمكن إضافة الخوادم أو إزالتها من العنقود ديناميكياً"
+   },
+   {
+    "en": "It automatically maintains multiple copies of data",
+    "ar": "يحتفظ تلقائياً بعدة نسخ من البيانات"
+   },
+   {
+    "en": "File contents can be changed freely after they are written",
+    "ar": "يمكن تغيير محتويات الملفات بحرية بعد كتابتها"
+   },
+   {
+    "en": "It is open source, so it is economical",
+    "ar": "مفتوح المصدر، لذا فهو اقتصادي"
+   }
+  ],
+  "answer": 2,
+  "why_en": "Hadoop files are write-once; their contents cannot be changed. The other options are listed advantages.",
+  "why_ar": "محتويات ملفات Hadoop لا يمكن تغييرها (write once read many)؛ أما الخيارات الأخرى فهي مزايا مذكورة في الشريحة.",
+  "explain_ar": "مزايا Hadoop في الشريحة: سرعة كتابة واختبار الأنظمة الموزعة، إتاحية عالية وقابلية توسع، إضافة/إزالة الخوادم ديناميكياً، نسخ متعددة تلقائياً للبيانات، ومفتوح المصدر فهو اقتصادي.",
+  "slide": [
+   20,
+   29
+  ],
+  "hot": false
+ }
+]
